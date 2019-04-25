@@ -385,6 +385,11 @@ blockquote {
     }
 
 /* ----------!FOOTER---------- */
+#footer .zone {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: right;
+    }
 #footer .copyright {
-    margin-left: -15px !important;
+    line-height: 35px;
     }
