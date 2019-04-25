@@ -3291,16 +3291,6 @@ button,
   opacity: 0;
   z-index: -1; }
 
-/* ----------!MAIN---------- */
-/* ----------!FOOTER---------- */
-#footer .copyright {
-  margin-left: -15px !important; }
-
-@media (min-width: 992px) {
-  #footer .copyright {
-    margin-left: auto !important;
-    margin-right: -15px !important; } }
-
 /* =============================== */
 /* ==========!RESPONSIVE========== */
 /* =============================== */
