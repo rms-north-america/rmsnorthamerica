@@ -43,7 +43,7 @@ u {
 
 /* ----------!BLOCKQUOTE---------- */
 blockquote {
-    border-left: 5px solid #fafafa;
+    border-left: 5px solid #f2f2f2;
     padding: 20px 25px;
     }
 
@@ -93,7 +93,7 @@ blockquote {
 .dropdown .dropdown-menu .dropdown-item:active,
 .dropdown .dropdown-menu .dropdown-item:hover,
 .dropdown .dropdown-menu .dropdown-item:focus {
-    background-color: #fafafa;
+    background-color: #f2f2f2;
     color: #222;
     }
 .dropdown .dropdown-menu .dropdown-item.active,
@@ -369,14 +369,14 @@ blockquote {
     }
 @media (min-width: 992px) {
     #___gatsby {
-        padding-top: 50px;
+        padding-top: 80px;
         padding-bottom: 0;
         }
     }
 
 /* ----------!HEADER---------- */
 #header {
-    background-color: #fafafa;
+    background-color: transparent;
     }
 
 /* ----------!MAIN---------- */
@@ -386,10 +386,48 @@ blockquote {
 
 /* ----------!FOOTER---------- */
 #footer .zone {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
     text-align: right;
     }
 #footer .copyright {
     line-height: 35px;
     }
+
+/* =============================== */
+/* ==========!RESPONSIVE========== */
+/* =============================== */
+
+/* ----------!MEDIUM---------- */
+@media (max-width: 1199.98px) {
+    span > br {
+        display: none;
+        }
+    }
+
+/* ----------!LARGE---------- */
+@media (min-width: 992px) {
+    #main {
+        margin-bottom: 80px;
+        }
+    #footer {
+        height: 80px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        }
+    }
+
+/* ----------!HUGE---------- */
+/* @media (min-width: 1440px) {
+    .container {
+        max-width: 1380px;
+        }
+    } */
+
+/* ----------!GIANT---------- */
+/* @media (min-width: 1712px) {
+    .container {
+        max-width: 1560px;
+        }
+    } */

@@ -3124,23 +3124,6 @@ p + .instagram-media {
 /* =========================== */
 /* ==========!SCRIPT========== */
 /* =========================== */
-/* ----------!MEASURE---------- */
-.measure {
-  background-color: #ffa0a0;
-  height: 50px;
-  position: fixed;
-  top: 340px;
-  right: 0;
-  left: 0;
-  opacity: 0.5; }
-
-/* ----------!BOTTOM---------- */
-@media (min-width: 992px) {
-  .bottom {
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0; } }
 
 /* ----------!HEIGHT---------- */
 .height-auto,
@@ -3290,40 +3273,3 @@ button,
   bottom: 0;
   opacity: 0;
   z-index: -1; }
-
-/* =============================== */
-/* ==========!RESPONSIVE========== */
-/* =============================== */
-/* ----------!PHONE---------- */
-@media (max-width: 575px) {
-  address br {
-    display: block; }
-  .sidebar,
-  .sidebar [class*="space-"],
-  .hidden-xs + [class*="col-"] {
-    padding-top: 0 !important; } }
-
-/* ----------!TABLET---------- */
-/* ----------!CLASSIC---------- */
-/* ----------!LAPTOP---------- */
-@media (min-width: 992px) {
-  .bottom #main {
-    margin-bottom: 0; }
-  .bottom #footer {
-    height: 0; } }
-
-/* ----------!DESKTOP---------- */
-/* ----------!WIDE---------- */
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1380px; } }
-
-/* ----------!CINEMA---------- */
-@media (min-width: 1712px) {
-  .container {
-    max-width: 1560px; } }
-
-/* ============================ */
-/* ==========!PROJECT========== */
-/* ============================ */
-/* ----------!MAIN---------- */
