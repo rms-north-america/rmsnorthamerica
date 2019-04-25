@@ -13,9 +13,13 @@
         "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
     },
     "dependencies": {
+        "bootstrap": "^4.3.1",
         "gatsby": "^2.3.29",
+        "prop-types": "^15.7.2",
         "react": "^16.8.6",
-        "react-dom": "^16.8.6"
+        "react-aria-offcanvas": "^1.1.10",
+        "react-dom": "^16.8.6",
+        "react-scroll": "^1.7.11"
     },
     "devDependencies": {
         "prettier": "^1.17.0"
@@ -25,6 +29,6 @@
         "url": "https://github.com/jokokoloko/ghost"
     },
     "bugs": {
-        "url": "https://github.com/gatsbyjs/gatsby/issues"
+        "url": "https://github.com/jokokoloko/ghost/issues"
     }
 }
