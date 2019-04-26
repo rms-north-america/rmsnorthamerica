@@ -14,9 +14,12 @@ Gatsby + Contentful Starter
 
 [Pagination](https://www.gatsbyjs.org/docs/adding-pagination/)<br>
 [Image](https://www.gatsbyjs.org/packages/gatsby-image)<br>
-[Mailchimp](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp)<br>
 [Remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark)<br>
-[Carousel](https://react-bootstrap.github.io/components/carousel)<br>
 [Helmet](https://github.com/nfl/react-helmet)<br>
 [Offcanvas](https://github.com/neosiae/react-aria-offcanvas)<br>
 [Scroll](https://www.npmjs.com/package/react-scroll)
+
+## Extras
+
+[Mailchimp](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp)<br>
+[Carousel](https://react-bootstrap.github.io/components/carousel)
