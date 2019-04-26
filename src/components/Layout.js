@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/theme.css';
 import '../styles/project.css';
+import SEO from './SEO';
 import Menu from './Menu';
 import Header from './region/Header';
 import Footer from './region/Footer';
@@ -35,7 +36,7 @@ class Layout extends Component {
         });
     }
     render() {
-        const { children } = this.props;
+        const { title, children } = this.props;
         const { isOpen } = this.state;
         const style = {
             overlay: {
@@ -48,6 +49,7 @@ class Layout extends Component {
         };
         return (
             <Fragment>
+                <SEO title={title} />
                 <OffCanvas position="right" width="80%" height="100%" labelledby="menu-button" style={style} isOpen={isOpen} onClose={this.onClose}>
                     <Menu offcanvas />
                 </OffCanvas>

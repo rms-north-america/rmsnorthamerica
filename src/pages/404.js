@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import Basic from '../components/section/Basic';
 
 export default () => (
-    <Layout>
+    <Layout title="404: Not Found">
         <Basic id="not-found" space="space-xs-50 space-lg-80">
             <header>
                 <h3 className="p-xs-25">404: Not Found</h3>
