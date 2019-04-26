@@ -4,6 +4,7 @@
 
 /* ----------!BODY---------- */
 body {
+    background-color: #222;
     font-family: "Roboto Condensed", sans-serif;
     font-weight: 300;
     color: #222;
@@ -184,8 +185,8 @@ blockquote {
     background-color: transparent;
     }
 .navbar .navbar-brand {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     }
 @media (min-width: 992px) {
     .navbar .navbar-brand {
@@ -251,7 +252,7 @@ blockquote {
 .offcanvas-menu .nav > li.active > button:hover,
 .offcanvas-menu .nav > li.active > button:focus {
     background-color: #222;
-    color: #222;
+    color: #fff;
     cursor: default;
     }
 .offcanvas-action > .btn {
@@ -324,6 +325,9 @@ blockquote {
 .style-border-top-grey {
     border-top: 1px solid #eaeaea;
     }
+.style-border-top-grey .zone {
+    margin-top: -1px;
+    }
 
 /* =============================== */
 /* ==========!PAGINATION========== */
@@ -376,21 +380,49 @@ blockquote {
 
 /* ----------!HEADER---------- */
 #header {
-    background-color: transparent;
+    background-color: #fff;
     }
 
 /* ----------!MAIN---------- */
 #main {
     background-color: #fff;
+    margin-bottom: 50px;
+    min-height: calc(100vh - 100px) !important;
+    }
+@media (min-width: 992px) {
+    #main {
+        margin-bottom: 80px;
+        min-height: calc(100vh - 160px) !important;
+        }
     }
 
 /* ----------!FOOTER---------- */
+#footer {
+    background-color: #fff;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    }
+@media (min-width: 992px) {
+    #footer {
+        height: 80px;
+        }
+    }
 #footer .zone {
-    padding-top: 20px;
-    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+@media (min-width: 992px) {
+    #footer .zone {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        text-align: right;
+        }
     }
 #footer .copyright {
-    line-height: 35px;
+    margin: 0;
     }
 
 /* =============================== */
@@ -401,20 +433,6 @@ blockquote {
 @media (max-width: 1199.98px) {
     span > br {
         display: none;
-        }
-    }
-
-/* ----------!LARGE---------- */
-@media (min-width: 992px) {
-    #main {
-        margin-bottom: 80px;
-        }
-    #footer {
-        height: 80px;
-        position: absolute;
-        right: 0;
-        left: 0;
-        bottom: 0;
         }
     }
 

@@ -40,7 +40,7 @@ class Layout extends Component {
         const { isOpen } = this.state;
         const style = {
             overlay: {
-                background: 'rgba(0, 0, 0, 0.5)',
+                background: 'rgba(34, 34, 34, 0.5)',
                 zIndex: 9999,
             },
             content: {
