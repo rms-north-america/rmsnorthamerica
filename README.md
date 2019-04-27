@@ -23,3 +23,13 @@ Gatsby + Contentful Starter
 
 [Mailchimp](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp)<br>
 [Carousel](https://react-bootstrap.github.io/components/carousel)
+
+## Setup
+
+Below are the steps required to use this starter for a new project:
+
+1. In GitHub, create a new repository by importing a clone of this repository.
+2. In Netlify, click on the "New site from Git" button and select the newly created repository.
+3. In Contentful, create a new space for the project.
+4. In Contentful, go to Settings -> API keys and copy the "Space ID" and the "Content Delivery API - access token" and paste it into a .env file within the local copy of the new project's repository.
+5. In Netlify, add the same "Space ID" and "Content Delivery API - access token" as environment variables under Settings -> Build & deploy -> Environment.
