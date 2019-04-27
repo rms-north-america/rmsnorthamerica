@@ -25,6 +25,7 @@
         "react-scroll": "^1.7.11"
     },
     "devDependencies": {
+        "dotenv": "^7.0.0",
         "prettier": "^1.17.0"
     },
     "repository": {
