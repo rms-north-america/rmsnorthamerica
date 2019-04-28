@@ -9,7 +9,7 @@ export default ({ data }) => {
         <Layout>
             {introduction && (
                 <Basic id={introduction.slug} space="space-xs-50 space-lg-80">
-                    <header dangerouslySetInnerHTML={{ __html: introduction.body.body }} />
+                    <header dangerouslySetInnerHTML={{ __html: introduction.body.childMarkdownRemark.html }} />
                 </Basic>
             )}
         </Layout>

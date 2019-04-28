@@ -17,6 +17,7 @@
         "gatsby": "^2.3.32",
         "gatsby-plugin-react-helmet": "^3.0.12",
         "gatsby-source-contentful": "^2.0.53",
+        "gatsby-transformer-remark": "^2.3.12",
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
         "react-aria-offcanvas": "^1.1.10",

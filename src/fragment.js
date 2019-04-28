@@ -6,7 +6,9 @@ export const contentGeneral = graphql`
         title
         slug
         body {
-            body
+            childMarkdownRemark {
+                html
+            }
         }
     }
 `;
