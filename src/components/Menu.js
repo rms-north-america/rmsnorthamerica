@@ -13,14 +13,14 @@ const Menu = ({ offcanvas }) => {
         <nav className={offcanvas ? 'offcanvas-menu' : 'navbar-collapse collapse'}>
             <ul className={offcanvas ? 'offcanvas-nav nav flex-column' : 'navbar-nav ml-auto'}>
                 <li className="nav-item">
-                    <ScrollTo className="nav-link" to="about" spy={spy} smooth={smooth} duration={duration} offset={offset}>
-                        About
-                    </ScrollTo>
+                    <Link className="nav-link" activeClassName="active" title="Archive" rel="archive" to={path.Post} partiallyActive>
+                        Archive
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" activeClassName="active" title="Blog" rel="blog" to={path.Post} partiallyActive>
-                        Blog
-                    </Link>
+                    <ScrollTo className="nav-link" to="footer" spy={spy} smooth={smooth} duration={duration} offset={offset}>
+                        Scroll
+                    </ScrollTo>
                 </li>
             </ul>
         </nav>
