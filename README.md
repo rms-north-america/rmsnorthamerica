@@ -33,3 +33,12 @@ Below are the steps required to use this starter for a new project:
 3. In Contentful, create a new space for the project.
 4. In Contentful, go to Settings -> API keys and copy the "Space ID" and the "Content Delivery API - access token" and paste it into a .env file within the local copy of the new project's repository.
 5. In Netlify, add the same "Space ID" and "Content Delivery API - access token" as environment variables under Settings -> Build & deploy -> Environment.
+6. In Netlify, go to Settings -> Build & deploy -> Build hooks, click the "Add build hook" button, name it "Contentful", and copy just the generated URL.
+7. In Contentful, go to Settings -> Webhooks, click the link to add the Netlify webhook template, and paste the URL that Netlify provided into the form.
+8. In Netlify, go to Settings -> Build & deploy -> Post processing and enable all settings within Asset optimization.
+
+## Resources
+
+[JAMstack Basics: How to Create a Gatsby Starter with Contentful and Deploy to Netlify](https://itnext.io/jamstack-basics-how-to-create-a-gatsby-starter-with-contentful-and-deploy-to-netlify-846354cc74bc)<br>
+[Setting Up a Continuous Deployment Pipeline with Gatsby.js, Contentful and Netlify](https://www.halfelectronic.com/post/setting-up-gatsby-js-contentful-and-netlify)<br>
+[Rebuild your static site automatically with Contentful webhooks](https://www.contentful.com/developers/docs/tutorials/general/automate-site-builds-with-webhooks/#netlify)
