@@ -382,6 +382,10 @@ blockquote {
 #header {
     background-color: #fff;
     }
+#header .logo {
+    width: 30px;
+    height: 30px;
+    }
 
 /* ----------!MAIN---------- */
 #main {

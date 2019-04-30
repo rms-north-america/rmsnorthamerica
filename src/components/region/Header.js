@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import * as path from '../../path';
 import siteMetadata from '../../queries/siteMetadata';
 import Menu from '../Menu';
+import Logo from '../unit/Logo';
 
 const Header = ({ isOpen, onOpen }) => {
     const { title } = siteMetadata();
@@ -17,7 +18,7 @@ const Header = ({ isOpen, onOpen }) => {
         >
             <div className={container}>
                 <Link className="navbar-brand" title={title} rel="home" to={path.Root}>
-                    {title}
+                    <Logo alternate={title} />
                 </Link>
                 <button
                     type="button"
