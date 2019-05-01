@@ -15,9 +15,12 @@
     "dependencies": {
         "bootstrap": "^4.3.1",
         "gatsby": "^2.3.34",
+        "gatsby-image": "^2.0.41",
         "gatsby-plugin-react-helmet": "^3.0.12",
+        "gatsby-plugin-sharp": "^2.0.35",
         "gatsby-source-contentful": "^2.0.54",
         "gatsby-transformer-remark": "^2.3.12",
+        "gatsby-transformer-sharp": "^2.1.18",
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
         "react-aria-offcanvas": "^1.1.10",
