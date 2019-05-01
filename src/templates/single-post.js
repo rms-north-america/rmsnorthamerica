@@ -3,12 +3,14 @@ import { graphql } from 'gatsby';
 import * as path from '../path';
 import Layout from '../components/Layout';
 import Basic from '../components/section/Basic';
+import Hero from '../components/section/Hero';
 import Pagination from '../components/widget/Pagination';
 
 export default ({ data, pageContext }) => {
     const { post } = data;
     return (
         <Layout title={post.title}>
+            <Hero source={post.image.fluid} alternate={post.title} />
             <Basic id={post.slug} space="space-xs-80 space-lg-130">
                 <header className="node-xs-30 node-lg-50">
                     <h1>{post.title}</h1>
@@ -31,9 +33,12 @@ export default ({ data, pageContext }) => {
 export const query = graphql`
     query postBySlug($slug: String!) {
         post: contentfulPost(slug: { eq: $slug }) {
+            createdAt(formatString: "MMMM DD, YYYY")
             title
             slug
-            createdAt(formatString: "MMMM DD, YYYY")
+            image {
+                ...imageHero
+            }
             body {
                 childMarkdownRemark {
                     html
