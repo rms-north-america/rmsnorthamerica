@@ -1,6 +1,6 @@
 # Ghost
 
-Gatsby + Contentful Starter
+Gatsby + Contentful + Netlify Starter
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/377359ec-49a2-4993-98de-6900f5e9a632/deploy-status)](https://app.netlify.com/sites/dreamy-khorana-1f4974/deploys)
 
