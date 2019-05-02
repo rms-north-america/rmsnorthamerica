@@ -8,6 +8,14 @@ export const imageHero = graphql`
     }
 `;
 
+export const imageFeed = graphql`
+    fragment imageFeed on ContentfulAsset {
+        fluid(maxWidth: 550, maxHeight: 340, quality: 80) {
+            ...GatsbyContentfulFluid
+        }
+    }
+`;
+
 export const contentGeneral = graphql`
     fragment contentGeneral on ContentfulGeneral {
         id

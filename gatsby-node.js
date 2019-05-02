@@ -23,6 +23,24 @@ exports.createPages = ({ graphql, actions }) => {
         const total = posts.edges.length;
         const archive = 'post';
 
+        // Posts - Archive
+        const postsPerPage = 1;
+        const numPages = Math.ceil(total / postsPerPage);
+        Array.from({ length: numPages }).forEach((_, i) => {
+            createPage({
+                path: i === 0 ? `/${archive}` : `/${archive}/${i + 1}`,
+                component: path.resolve('./src/templates/archive-post.js'),
+                context: {
+                    limit: postsPerPage,
+                    skip: i * postsPerPage,
+                    currentPage: i + 1,
+                    numPages,
+                    total,
+                    archive,
+                },
+            });
+        });
+
         // Posts - Single
         posts.edges.forEach(({ node }, index) => {
             const { slug } = node;
@@ -35,8 +53,8 @@ exports.createPages = ({ graphql, actions }) => {
                     slug,
                     previous,
                     next,
-                    archive,
                     total,
+                    archive,
                 },
             });
         });
