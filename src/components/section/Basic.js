@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 
 const Basic = ({ container, height, align, space, tint, color, id, source, alternate, children }) => (
     <section id={id} className={`basic block height-${height} align-${align} background-${source ? 'image' : 'none'} color-${color}`}>
-        {source && <img className="fit exact-center img-fluid" src={source} alt={alternate} />}
-
+        {source && <Img className="fit exact-center absolute" fluid={source} alt={alternate} critical />}
         {children && (
             <div className={`zone relative ${space} ${tint}`}>
                 <div className={container}>{children}</div>

@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 
 const Hero = ({ container, height, align, space, tint, color, id, source, alternate, children }) => (
     <section id={id} className={`hero block height-${height} align-${align} background-${source ? 'image' : 'none'} color-${color}`}>
-        <Img className="fit exact-center absolute" fluid={source} alt={alternate} critical />
+        {source && <Img className="fit exact-center absolute" fluid={source} alt={alternate} critical />}
         {children && (
             <div className={`display-table relative ${space} ${tint}`}>
                 <div className="display-cell">
