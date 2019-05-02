@@ -362,6 +362,64 @@ blockquote {
     min-width: 130px;
     }
 
+/* ============================= */
+/* ==========!CAROUSEL========== */
+/* ============================= */
+
+/* ----------!MAIN---------- */
+.carousel {
+	min-height: 340px;
+	overflow: hidden;
+	cursor: default;
+    color: #fff;
+	}
+@media (min-width: 992px) {
+	.carousel {
+		height: 550px;
+		}
+	}
+.carousel .carousel-indicators {
+	margin-bottom: 10px;
+	}
+.carousel .carousel-indicators > li {
+	cursor: pointer;
+	}
+.carousel .carousel-inner,
+.carousel .carousel-inner > .carousel-item {
+	height: 100%;
+	}
+.carousel .carousel-control-next,
+.carousel .carousel-control-prev {
+	width: 5%;
+	display: none;
+	z-index: 15;
+	}
+@media (min-width: 992px) {
+	.carousel .carousel-control-next,
+	.carousel .carousel-control-prev {
+		width: 10%;
+		display: -ms-flexbox;
+		display: flex;
+		}
+	}
+
+/* ========================= */
+/* ==========!HERO========== */
+/* ========================= */
+
+/* ----------!PARENT---------- */
+.hero {
+    min-height: 340px;
+    overflow: hidden;
+    cursor: default;
+    color: #fff;
+    }
+@media (min-width: 992px) {
+    .hero {
+        height: 550px;
+        }
+    }
+
 /* =========================== */
 /* ==========!REGION========== */
 /* =========================== */
@@ -381,6 +439,10 @@ blockquote {
 /* ----------!HEADER---------- */
 #header {
     background-color: #fff;
+    }
+#header .logo {
+    width: 30px;
+    height: 30px;
     }
 
 /* ----------!MAIN---------- */

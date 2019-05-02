@@ -2,18 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
-const Basic = ({ container, height, align, space, tint, color, id, source, alternate, children }) => (
-    <section id={id} className={`basic block height-${height} align-${align} background-${source ? 'image' : 'none'} color-${color}`}>
+const Hero = ({ container, height, align, space, tint, color, id, source, alternate, children }) => (
+    <section id={id} className={`hero block height-${height} align-${align} background-${source ? 'image' : 'none'} color-${color}`}>
         {source && <Img className="fit exact-center absolute" fluid={source} alt={alternate} critical />}
         {children && (
-            <div className={`zone relative ${space} ${tint}`}>
-                <div className={container}>{children}</div>
+            <div className={`display-table relative ${space} ${tint}`}>
+                <div className="display-cell">
+                    <div className="zone">
+                        <div className={container}>{children}</div>
+                    </div>
+                </div>
             </div>
         )}
     </section>
 );
 
-Basic.propTypes = {
+Hero.propTypes = {
     container: PropTypes.string,
     height: PropTypes.string,
     align: PropTypes.string,
@@ -21,14 +25,14 @@ Basic.propTypes = {
     tint: PropTypes.string,
     color: PropTypes.number,
     id: PropTypes.string,
-    source: PropTypes.string,
+    source: PropTypes.object,
     alternate: PropTypes.string,
     children: PropTypes.node,
 };
 
-Basic.defaultProps = {
+Hero.defaultProps = {
     container: 'container',
-    height: 'auto',
+    height: 'standard',
     align: 'left',
     space: 'space-xs-50',
     tint: 'tint-none',
@@ -39,4 +43,4 @@ Basic.defaultProps = {
     children: undefined,
 };
 
-export default Basic;
+export default Hero;
