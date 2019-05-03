@@ -3,6 +3,8 @@ require('dotenv').config();
 module.exports = {
     siteMetadata: {
         title: 'Ghost',
+        description: 'a Gatsby + Contentful + Netlify starter',
+        author: 'Jonathan Howland',
     },
     plugins: [
         'gatsby-plugin-react-helmet',
