@@ -3,19 +3,38 @@ import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import siteMetadata from '../queries/siteMetadata';
 
-const SEO = ({ lang, title: pageTitle }) => {
-    const { title } = siteMetadata();
-    return <Helmet htmlAttributes={{ lang }} defaultTitle={title} titleTemplate={`%s - ${title}`} title={pageTitle} />;
+const SEO = ({ location, template, title: pageTitle, description: pageDescription }) => {
+    const { title, description, author } = siteMetadata();
+    const metaDescription = pageDescription || description;
+    return (
+        <Helmet defaultTitle={title} titleTemplate={`%s - ${title}`} title={pageTitle}>
+            <html lang="en" />
+            <body id="body" className={template} />
+            <link rel="canonical" href={location.href} />
+            <meta property="og:site_name" content={title} />
+            <meta property="og:description" content={metaDescription} />
+            <meta property="og:url" content={location.origin} />
+            {pageTitle && <meta property="og:title" content={pageTitle} />}
+            <meta property="og:type" content={template.includes('single') ? 'article' : 'website'} />
+            {pageTitle && <meta name="twitter:title" content={pageTitle} />}
+            <meta name="twitter:description" content={metaDescription} />
+            <meta name="twitter:creator" content={author} />
+            <meta name="twitter:card" content="summary" />
+            <meta name="description" content={metaDescription} />
+        </Helmet>
+    );
 };
 
 SEO.propTypes = {
-    lang: PropTypes.string,
+    location: PropTypes.object.isRequired,
+    template: PropTypes.string.isRequired,
     title: PropTypes.string,
+    description: PropTypes.string,
 };
 
 SEO.defaultProps = {
-    lang: 'en',
     title: undefined,
+    description: undefined,
 };
 
 export default SEO;
