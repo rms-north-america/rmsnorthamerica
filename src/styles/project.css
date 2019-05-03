@@ -4,7 +4,6 @@
 
 /* ----------!BODY---------- */
 body {
-    background-color: #222;
     font-family: "Roboto Condensed", sans-serif;
     font-weight: 300;
     color: #222;
@@ -423,6 +422,11 @@ blockquote {
 /* =========================== */
 /* ==========!REGION========== */
 /* =========================== */
+
+/* ----------!BODY---------- */
+#body {
+    background-color: #222;
+	}
 
 /* ----------!ROOT---------- */
 #___gatsby {

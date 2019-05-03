@@ -4,8 +4,8 @@ import * as path from '../path';
 import Layout from '../components/Layout';
 import Basic from '../components/section/Basic';
 
-export default () => (
-    <Layout title="404: Not Found">
+export default ({ location }) => (
+    <Layout template="not-found" title="404: Not Found" description="This page does not exist." location={location}>
         <Basic id="not-found" space="space-xs-80 space-lg-130">
             <header>
                 <h3 className="p-xs-25">404: Not Found</h3>

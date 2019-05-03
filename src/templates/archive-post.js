@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 import Feed from '../components/section/Feed';
 import Pagination from '../components/widget/Pagination';
 
-export default ({ data, pageContext }) => {
+export default ({ location, data, pageContext }) => {
     const { posts } = data;
     const loopPost = posts.edges.map(({ node: post }) => (
         <article key={post.id} id={post.slug} className="post">
@@ -22,14 +22,18 @@ export default ({ data, pageContext }) => {
                         <p>{post.createdAt}</p>
                     </header>
                     <section>
-                        <p dangerouslySetInnerHTML={{ __html: post.excerpt ? post.excerpt.excerpt : post.body.childMarkdownRemark.excerpt }} />
+                        <p
+                            dangerouslySetInnerHTML={{
+                                __html: post.excerpt ? post.excerpt.excerpt : post.body.childMarkdownRemark.excerpt.replace(/\n/g, ' '),
+                            }}
+                        />
                     </section>
                 </div>
             </div>
         </article>
     ));
     return (
-        <Layout title="Blog">
+        <Layout template="archive archive-post" title="Blog" description="View all blog posts." location={location}>
             {loopPost && (
                 <Feed id="posts" space="space-xs-50 space-lg-80" item="post">
                     <section className="node-xs-50 node-lg-80">

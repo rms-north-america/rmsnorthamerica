@@ -6,10 +6,11 @@ import Basic from '../components/section/Basic';
 import Hero from '../components/section/Hero';
 import Pagination from '../components/widget/Pagination';
 
-export default ({ data, pageContext }) => {
+export default ({ location, data, pageContext }) => {
     const { post } = data;
+    const description = post.excerpt ? post.excerpt.excerpt : post.body.childMarkdownRemark.excerpt.replace(/\n/g, ' ');
     return (
-        <Layout title={post.title}>
+        <Layout template="single single-post" title={post.title} description={description} location={location}>
             <Hero source={post.image.fluid} alternate={post.title} />
             <Basic id={post.slug} space="space-xs-80 space-lg-130">
                 <header className="node-xs-30 node-lg-50">
@@ -42,7 +43,11 @@ export const query = graphql`
             body {
                 childMarkdownRemark {
                     html
+                    excerpt
                 }
+            }
+            excerpt {
+                excerpt
             }
         }
     }
