@@ -14,13 +14,13 @@
     },
     "dependencies": {
         "bootstrap": "^4.3.1",
-        "gatsby": "^2.3.35",
+        "gatsby": "^2.4.2",
         "gatsby-image": "^2.0.41",
         "gatsby-plugin-react-helmet": "^3.0.12",
-        "gatsby-plugin-sharp": "^2.0.35",
-        "gatsby-source-contentful": "^2.0.54",
+        "gatsby-plugin-sharp": "^2.0.36",
+        "gatsby-source-contentful": "^2.0.55",
         "gatsby-transformer-remark": "^2.3.12",
-        "gatsby-transformer-sharp": "^2.1.18",
+        "gatsby-transformer-sharp": "^2.1.19",
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
         "react-aria-offcanvas": "^1.1.10",
@@ -29,7 +29,7 @@
         "react-scroll": "^1.7.11"
     },
     "devDependencies": {
-        "dotenv": "^7.0.0",
+        "dotenv": "^8.0.0",
         "prettier": "^1.17.0"
     },
     "repository": {

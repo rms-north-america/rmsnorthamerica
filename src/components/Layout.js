@@ -36,7 +36,7 @@ class Layout extends Component {
         });
     }
     render() {
-        const { title, children } = this.props;
+        const { location, template, title, description, children } = this.props;
         const { isOpen } = this.state;
         const style = {
             overlay: {
@@ -49,7 +49,7 @@ class Layout extends Component {
         };
         return (
             <Fragment>
-                <SEO title={title} />
+                <SEO location={location} template={template} title={title} description={description} />
                 <OffCanvas position="right" width="80%" height="100%" labelledby="menu-button" style={style} isOpen={isOpen} onClose={this.onClose}>
                     <Menu offcanvas />
                 </OffCanvas>
@@ -64,8 +64,18 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
+    location: PropTypes.object,
+    template: PropTypes.string,
     title: PropTypes.string,
+    description: PropTypes.string,
     children: PropTypes.node.isRequired,
+};
+
+Layout.defaultProps = {
+    location: undefined,
+    template: undefined,
+    title: undefined,
+    description: undefined,
 };
 
 export default Layout;
