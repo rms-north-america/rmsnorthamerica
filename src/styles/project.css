@@ -43,7 +43,7 @@ u {
 
 /* ----------!BLOCKQUOTE---------- */
 blockquote {
-    border-left: 5px solid #f2f2f2;
+    border-left: 5px solid #fafafa;
     padding: 20px 25px;
     }
 
@@ -53,7 +53,12 @@ blockquote {
 
 /* ----------!DROPDOWN---------- */
 .dropdown .dropdown-toggle::after {
-    margin-left: 8px;
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-bottom: 0;
+    border-left: 5px solid transparent;
+    margin-left: 6px;
+    vertical-align: 6px;
     }
 .dropdown .dropdown-toggle.no-caret::after {
     content: normal;
@@ -71,41 +76,44 @@ blockquote {
     }
 .dropdown .dropdown-menu,
 .dropdown .dropdown-menu .dropdown-divider {
-    border-color: #e5e5e5;
+    border-color: #eaeaea;
     }
 .dropdown .dropdown-menu .dropdown-divider {
     margin: 9px 0 10px;
     }
 .dropdown .dropdown-menu .dropdown-header,
 .dropdown .dropdown-menu .dropdown-text,
-.dropdown .dropdown-menu .dropdown-item {
+.dropdown .dropdown-menu .nav-link {
     margin: 0;
     padding: 0 19px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 30px;
     }
 .dropdown .dropdown-menu .dropdown-header,
 .dropdown .dropdown-menu .dropdown-text {
-    color: #e5e5e5;
+    color: #eaeaea;
     }
-.dropdown .dropdown-menu .dropdown-item {
+.dropdown .dropdown-menu .nav-link {
     color: #1d2c3c;
     cursor: pointer;
     }
-.dropdown .dropdown-menu .dropdown-item:active,
-.dropdown .dropdown-menu .dropdown-item:hover,
-.dropdown .dropdown-menu .dropdown-item:focus {
-    background-color: #f2f2f2;
+.dropdown .dropdown-menu .nav-link:active,
+.dropdown .dropdown-menu .nav-link:hover,
+.dropdown .dropdown-menu .nav-link:focus {
+    background-color: #fafafa;
     color: #1d2c3c;
     }
-.dropdown .dropdown-menu .dropdown-item.active,
-.dropdown .dropdown-menu .dropdown-item.active:active,
-.dropdown .dropdown-menu .dropdown-item.active:hover,
-.dropdown .dropdown-menu .dropdown-item.active:focus {
-    background-color: #1d2c3c;
-    color: #fff;
+.dropdown .dropdown-menu .nav-link.active,
+.dropdown .dropdown-menu .nav-link.active:active,
+.dropdown .dropdown-menu .nav-link.active:hover,
+.dropdown .dropdown-menu .nav-link.active:focus {
+    background-color: transparent;
+    color: #1d2c3c;
     cursor: default;
+    }
+.dropdown .dropdown-menu .nav-link + .nav-link {
+    margin-top: 5px;
     }
 
 /* ----------!NAVBAR---------- */
@@ -157,7 +165,7 @@ blockquote {
 .navbar .navbar-nav > li.show > button:active,
 .navbar .navbar-nav > li.show > button:hover,
 .navbar .navbar-nav > li.show > button:focus {
-    background-color: transparent;
+    background-color: #fafafa;
     color: #1d2c3c;
     }
 .navbar .navbar-nav > li > a.active,
@@ -480,7 +488,7 @@ blockquote {
 /* ----------!HEADER---------- */
 #header {
     background-color: #fff;
-    border-bottom: 1px solid #006c8c;
+    border-bottom: 1px solid #eaeaea;
     }
 #header .logo {
     width: 30px;
