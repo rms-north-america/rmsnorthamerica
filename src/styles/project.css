@@ -214,16 +214,23 @@ blockquote {
 .offcanvas-menu .logo + .nav {
     padding-top: 5px;
     }
-.offcanvas-menu .nav > li > a {
+.offcanvas-menu .nav > li > a,
+.offcanvas-menu .nav > li > .nav-btn,
+.offcanvas-menu .nav > li.dropdown .dropdown-menu a {
     background-color: transparent;
+    border: 0 none transparent;
     margin: 0;
     padding: 10px 15px;
+    width: 100%;
     font-size: 20px;
     line-height: 30px;
+    text-align: left;
     display: block;
     cursor: pointer;
     }
-.offcanvas-menu .nav > li > a {
+.offcanvas-menu .nav > li > a,
+.offcanvas-menu .nav > li > .nav-btn,
+.offcanvas-menu .nav > li.dropdown .dropdown-menu a {
     font-weight: 400;
     color: #fff;
     }
@@ -233,7 +240,14 @@ blockquote {
 .offcanvas-menu .nav > li.show > a,
 .offcanvas-menu .nav > li.show > a:active,
 .offcanvas-menu .nav > li.show > a:hover,
-.offcanvas-menu .nav > li.show > a:focus {
+.offcanvas-menu .nav > li.show > a:focus,
+.offcanvas-menu .nav > li > .nav-btn:active,
+.offcanvas-menu .nav > li > .nav-btn:hover,
+.offcanvas-menu .nav > li > .nav-btn:focus,
+.offcanvas-menu .nav > li.show > .nav-btn,
+.offcanvas-menu .nav > li.show > .nav-btn:active,
+.offcanvas-menu .nav > li.show > .nav-btn:hover,
+.offcanvas-menu .nav > li.show > .nav-btn:focus {
     background-color: transparent;
     color: #fff;
     }
@@ -245,6 +259,10 @@ blockquote {
 .offcanvas-menu .nav > li > button.active:active,
 .offcanvas-menu .nav > li > button.active:hover,
 .offcanvas-menu .nav > li > button.active:focus,
+.offcanvas-menu .nav > li > .nav-btn.active,
+.offcanvas-menu .nav > li > .nav-btn.active:active,
+.offcanvas-menu .nav > li > .nav-btn.active:hover,
+.offcanvas-menu .nav > li > .nav-btn.active:focus,
 .offcanvas-menu .nav > li.active > a,
 .offcanvas-menu .nav > li.active > a:active,
 .offcanvas-menu .nav > li.active > a:hover,
@@ -252,10 +270,26 @@ blockquote {
 .offcanvas-menu .nav > li.active > button,
 .offcanvas-menu .nav > li.active > button:active,
 .offcanvas-menu .nav > li.active > button:hover,
-.offcanvas-menu .nav > li.active > button:focus {
+.offcanvas-menu .nav > li.active > button:focus,
+.offcanvas-menu .nav > li.active > .nav-btn,
+.offcanvas-menu .nav > li.active > .nav-btn:active,
+.offcanvas-menu .nav > li.active > .nav-btn:hover,
+.offcanvas-menu .nav > li.active > .nav-btn:focus {
     background-color: #1d2c3c;
     color: #fff;
     cursor: default;
+    }
+.offcanvas-menu .nav > li.dropdown .dropdown-menu {
+    background-color: transparent;
+    border: 0 none transparent;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    float: none;
+    box-shadow: none;
+    }
+.offcanvas-menu .nav > li.dropdown .dropdown-menu a {
+    padding-left: 30px;
     }
 .offcanvas-action > .btn {
     width: 100%;
