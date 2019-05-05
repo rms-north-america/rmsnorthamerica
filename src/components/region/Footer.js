@@ -13,7 +13,7 @@ const Footer = ({ isOpen }) => {
                 <section className="style-border-top-grey">
                     <div className="zone relative">
                         <p className="copyright">
-                            <Link className="navbar-link" title={title} rel="home" to={path.Root}>
+                            <Link className="navbar-link" title={title} rel="home" to={path.ROOT}>
                                 {title}
                             </Link>{' '}
                             &copy; {new Date().getFullYear()}

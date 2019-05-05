@@ -23,7 +23,7 @@ export default ({ location, data, pageContext }) => {
                 />
                 {pageContext.total > 1 && (
                     <footer className="node-xs-30 node-lg-50">
-                        <Pagination pageContext={pageContext} path={path.Post} single />
+                        <Pagination pageContext={pageContext} path={path.POST} single />
                     </footer>
                 )}
             </Basic>

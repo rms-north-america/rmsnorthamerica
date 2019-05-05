@@ -1,4 +1,4 @@
 // Public
-export const Post = '/post';
-export const About = '/about';
-export const Root = '/';
+export const POST = '/post';
+export const ABOUT = '/about';
+export const ROOT = '/';

@@ -41,7 +41,7 @@ export default ({ location, data, pageContext }) => {
                     </section>
                     {pageContext.numPages > 1 && (
                         <footer className="node-xs-50 node-lg-80">
-                            <Pagination pageContext={pageContext} path={path.Post} />
+                            <Pagination pageContext={pageContext} path={path.POST} />
                         </footer>
                     )}
                 </Feed>

@@ -17,7 +17,7 @@ const Header = ({ isOpen, onOpen }) => {
             role="banner"
         >
             <div className={container}>
-                <Link className="navbar-brand" title={title} rel="home" to={path.Root}>
+                <Link className="navbar-brand" title={title} rel="home" to={path.ROOT}>
                     <Logo alternate={title} />
                 </Link>
                 <button
