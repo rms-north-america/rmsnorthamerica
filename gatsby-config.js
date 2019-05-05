@@ -7,6 +7,20 @@ module.exports = {
         author: 'Jonathan Howland',
     },
     plugins: [
+        {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                name: 'Ghost',
+                short_name: 'Ghost',
+                start_url: '/',
+                background_color: '#ffffff',
+                theme_color: '#222222',
+                display: 'standalone',
+                icon: 'src/images/icon.png',
+                crossOrigin: 'use-credentials',
+            },
+        },
+        'gatsby-plugin-offline',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sharp',
         {
