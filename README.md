@@ -37,6 +37,11 @@ Below are the steps required to use this starter for a new project:
 7. In Contentful, go to Settings -> Webhooks, click the link to add the Netlify webhook template, and paste the URL that Netlify provided into the form.
 8. In Netlify, go to Settings -> Build & deploy -> Post processing and enable all settings within Asset optimization.
 
+## Requirements
+
+1. Add client provided "icon.png" that must be square and 512x512.
+2. Update "gatsby-config.js" to client's information.
+
 ## Resources
 
 [JAMstack Basics: How to Create a Gatsby Starter with Contentful and Deploy to Netlify](https://itnext.io/jamstack-basics-how-to-create-a-gatsby-starter-with-contentful-and-deploy-to-netlify-846354cc74bc)<br>
