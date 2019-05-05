@@ -20,6 +20,7 @@ module.exports = {
                 crossOrigin: 'use-credentials',
             },
         },
+        'gatsby-plugin-offline',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sharp',
         {
