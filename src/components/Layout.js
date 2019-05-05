@@ -51,7 +51,9 @@ class Layout extends Component {
             <Fragment>
                 <SEO location={location} template={template} title={title} description={description} />
                 <OffCanvas position="right" width="80%" height="100%" labelledby="menu-button" style={style} isOpen={isOpen} onClose={this.onClose}>
-                    <Menu offcanvas />
+                    <nav id="menu-offcanvas" className="offcanvas-menu">
+                        <Menu offcanvas />
+                    </nav>
                 </OffCanvas>
                 <Header isOpen={isOpen} onOpen={this.onOpen} />
                 <main id="main" className={isOpen ? 'offcanvas-push offcanvas-push-out' : 'offcanvas-push'} role="main">

@@ -15,11 +15,23 @@ export const INDUSTRIES = [
 // Main
 export const MAIN = [
     {
+        label: 'Product',
+        to: path.POST,
+    },
+    {
         label: 'Industries',
         children: INDUSTRIES,
     },
     {
         label: 'News',
+        to: path.POST,
+    },
+    {
+        label: 'About',
+        to: path.POST,
+    },
+    {
+        label: 'Contact',
         to: path.POST,
     },
 ];

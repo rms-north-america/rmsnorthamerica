@@ -34,11 +34,7 @@ const Menu = ({ offcanvas }) => {
             </li>
         );
     });
-    return (
-        <nav id={offcanvas ? 'menu-offcanvas' : 'menu'} className={offcanvas ? 'offcanvas-menu' : 'navbar-collapse collapse'}>
-            <ul className={offcanvas ? 'offcanvas-nav nav flex-column' : 'navbar-nav ml-auto'}>{loopMain}</ul>
-        </nav>
-    );
+    return <ul className={offcanvas ? 'offcanvas-nav nav flex-column' : 'navbar-nav ml-auto'}>{loopMain}</ul>;
 };
 
 Menu.propTypes = {

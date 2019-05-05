@@ -108,8 +108,8 @@ blockquote {
 .dropdown .dropdown-menu .nav-link.active:active,
 .dropdown .dropdown-menu .nav-link.active:hover,
 .dropdown .dropdown-menu .nav-link.active:focus {
-    background-color: transparent;
-    color: #1d2c3c;
+    background-color: #006c8c;
+    color: #fff;
     cursor: default;
     }
 .dropdown .dropdown-menu .nav-link + .nav-link {
@@ -142,9 +142,6 @@ blockquote {
 .navbar .navbar-nav > li > button > .caret {
     color: #1d2c3c;
     }
-.navbar .navbar-brand:active,
-.navbar .navbar-brand:hover,
-.navbar .navbar-brand:focus,
 .navbar .navbar-search:active,
 .navbar .navbar-search:hover,
 .navbar .navbar-search:focus,

@@ -34,7 +34,9 @@ const Header = ({ isOpen, onOpen }) => {
                     <span className="icon-bar">&#9472;</span>
                     <span className="icon-bar">&#9472;</span>
                 </button>
-                <Menu />
+                <nav id="menu" className="navbar-collapse collapse">
+                    <Menu />
+                </nav>
             </div>
         </header>
     );
