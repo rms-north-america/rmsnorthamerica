@@ -25,7 +25,7 @@ const Header = ({ isOpen, onOpen }) => {
                     id="menu-button"
                     className="navbar-menu navbar-toggler"
                     aria-label="Menu"
-                    aria-controls="menu"
+                    aria-controls="menu-offcanvas"
                     aria-expanded={isOpen}
                     onClick={onOpen}
                 >

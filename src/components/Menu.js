@@ -10,7 +10,7 @@ const Menu = ({ offcanvas }) => {
     const duration = 500;
     const offset = offcanvas ? -90 : 30;
     return (
-        <nav className={offcanvas ? 'offcanvas-menu' : 'navbar-collapse collapse'}>
+        <nav id={offcanvas ? 'menu-offcanvas' : 'menu'} className={offcanvas ? 'offcanvas-menu' : 'navbar-collapse collapse'}>
             <ul className={offcanvas ? 'offcanvas-nav nav flex-column' : 'navbar-nav ml-auto'}>
                 <li className="nav-item">
                     <Link className="nav-link" activeClassName="active" title="Archive" rel="archive" to={path.Post} partiallyActive>
