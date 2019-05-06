@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import * as path from '../../path';
 import siteMetadata from '../../queries/siteMetadata';
+import Account from '../Account';
 import Menu from '../Menu';
 import Logo from '../unit/Logo';
 
@@ -36,6 +37,7 @@ const Header = ({ isOpen, onOpen }) => {
                 </button>
                 <nav id="menu" className="navbar-collapse collapse">
                     <Menu />
+                    <Account />
                 </nav>
             </div>
         </header>
