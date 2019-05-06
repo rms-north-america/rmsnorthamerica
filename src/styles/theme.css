@@ -3208,7 +3208,8 @@ button,
 .btn {
   margin: 0; }
 
-.navbar-nav .nav-btn {
+.navbar-nav .nav-btn,
+.navbar-action .dropdown-toggle {
   border: 0 none transparent; }
 
 @media (min-width: 992px) {
@@ -3219,9 +3220,6 @@ button,
 /* =========================== */
 /* ==========!BUTTON========== */
 /* =========================== */
-/* ----------!BASIC---------- */
-.btn-initial {
-  min-width: 130px; }
 
 /* ----------!HOLLOW---------- */
 .btn-hollow {

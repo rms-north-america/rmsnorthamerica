@@ -47,6 +47,34 @@ blockquote {
     padding: 20px 25px;
     }
 
+/* =========================== */
+/* ==========!BUTTON========== */
+/* =========================== */
+
+/* ----------!GENERAL---------- */
+.btn:active,
+.btn:hover,
+.btn:focus {
+    color: #fff;
+    }
+
+/* ----------!INITIAL---------- */
+.btn-initial {
+    min-width: 130px;
+    }
+
+/* ----------!MAIN---------- */
+.btn-main {
+    background-color: #f89c02;
+    border-color: #f89c02;
+    color: #fff;
+    }
+.btn-main:active,
+.btn-main:hover,
+.btn-main:focus {
+    background-color: #f9ad13;
+    }
+
 /* =============================== */
 /* ==========!NAVIGATION========== */
 /* =============================== */
@@ -119,17 +147,21 @@ blockquote {
 /* ----------!NAVBAR---------- */
 .navbar .navbar-brand,
 .navbar .navbar-nav > li > a,
-.navbar .navbar-nav > li > button {
+.navbar .navbar-nav > li > button,
+.navbar .navbar-action > li > .nav-link,
+.navbar .navbar-action > li > .dropdown-toggle {
     font-weight: 300;
     }
 .navbar .navbar-brand,
 .navbar .navbar-text,
 .navbar .navbar-nav > li > a,
-.navbar .navbar-nav > li > button {
+.navbar .navbar-nav > li > button,
+.navbar .navbar-action > li > .nav-link,
+.navbar .navbar-action > li > .dropdown-toggle {
     background-color: transparent;
     margin: 0;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding: 25px 15px;
+    font-size: 20px;
     line-height: 30px;
     }
 .navbar .navbar-brand,
@@ -139,7 +171,11 @@ blockquote {
 .navbar .navbar-nav > li > a,
 .navbar .navbar-nav > li > a > .caret,
 .navbar .navbar-nav > li > button,
-.navbar .navbar-nav > li > button > .caret {
+.navbar .navbar-nav > li > button > .caret,
+.navbar .navbar-action > li > .nav-link,
+.navbar .navbar-action > li > .nav-link > .caret,
+.navbar .navbar-action > li > .dropdown-toggle,
+.navbar .navbar-action > li > .dropdown-toggle > .caret {
     color: #1d2c3c;
     }
 .navbar .navbar-search:active,
@@ -154,6 +190,12 @@ blockquote {
 .navbar .navbar-nav > li > button:active,
 .navbar .navbar-nav > li > button:hover,
 .navbar .navbar-nav > li > button:focus,
+.navbar .navbar-action > li > .nav-link:active,
+.navbar .navbar-action > li > .nav-link:hover,
+.navbar .navbar-action > li > .nav-link:focus,
+.navbar .navbar-action > li > .dropdown-toggle:active,
+.navbar .navbar-action > li > .dropdown-toggle:hover,
+.navbar .navbar-action > li > .dropdown-toggle:focus,
 .navbar .navbar-nav > li.show > a,
 .navbar .navbar-nav > li.show > a:active,
 .navbar .navbar-nav > li.show > a:hover,
@@ -161,7 +203,15 @@ blockquote {
 .navbar .navbar-nav > li.show > button,
 .navbar .navbar-nav > li.show > button:active,
 .navbar .navbar-nav > li.show > button:hover,
-.navbar .navbar-nav > li.show > button:focus {
+.navbar .navbar-nav > li.show > button:focus,
+.navbar .navbar-action > li.show > .nav-link,
+.navbar .navbar-action > li.show > .nav-link:active,
+.navbar .navbar-action > li.show > .nav-link:hover,
+.navbar .navbar-action > li.show > .nav-link:focus,
+.navbar .navbar-action > li.show > .dropdown-toggle,
+.navbar .navbar-action > li.show > .dropdown-toggle:active,
+.navbar .navbar-action > li.show > .dropdown-toggle:hover,
+.navbar .navbar-action > li.show > .dropdown-toggle:focus {
     background-color: #fafafa;
     color: #1d2c3c;
     }
@@ -173,6 +223,14 @@ blockquote {
 .navbar .navbar-nav > li > button.active:active,
 .navbar .navbar-nav > li > button.active:hover,
 .navbar .navbar-nav > li > button.active:focus,
+.navbar .navbar-action > li > .nav-link.active,
+.navbar .navbar-action > li > .nav-link.active:active,
+.navbar .navbar-action > li > .nav-link.active:hover,
+.navbar .navbar-action > li > .nav-link.active:focus,
+.navbar .navbar-action > li > .dropdown-toggle.active,
+.navbar .navbar-action > li > .dropdown-toggle.active:active,
+.navbar .navbar-action > li > .dropdown-toggle.active:hover,
+.navbar .navbar-action > li > .dropdown-toggle.active:focus,
 .navbar .navbar-nav > li.active > a,
 .navbar .navbar-nav > li.active > a:active,
 .navbar .navbar-nav > li.active > a:hover,
@@ -180,7 +238,15 @@ blockquote {
 .navbar .navbar-nav > li.active > button,
 .navbar .navbar-nav > li.active > button:active,
 .navbar .navbar-nav > li.active > button:hover,
-.navbar .navbar-nav > li.active > button:focus {
+.navbar .navbar-nav > li.active > button:focus,
+.navbar .navbar-action > li.active > .nav-link,
+.navbar .navbar-action > li.active > .nav-link:active,
+.navbar .navbar-action > li.active > .nav-link:hover,
+.navbar .navbar-action > li.active > .nav-link:focus,
+.navbar .navbar-action > li.active > .dropdown-toggle,
+.navbar .navbar-action > li.active > .dropdown-toggle:active,
+.navbar .navbar-action > li.active > .dropdown-toggle:hover,
+.navbar .navbar-action > li.active > .dropdown-toggle:focus {
     background-color: transparent;
     color: #1d2c3c;
     cursor: default;
@@ -188,8 +254,23 @@ blockquote {
 .navbar .navbar-nav > li > a.no-focus:active,
 .navbar .navbar-nav > li > a.no-focus:focus,
 .navbar .navbar-nav > li > button.no-focus:active,
-.navbar .navbar-nav > li > button.no-focus:focus {
+.navbar .navbar-nav > li > button.no-focus:focus,
+.navbar .navbar-action > li > .nav-link.no-focus:active,
+.navbar .navbar-action > li > .nav-link.no-focus:focus,
+.navbar .navbar-action > li > .dropdown-toggle.no-focus:active,
+.navbar .navbar-action > li > .dropdown-toggle.no-focus:focus {
     background-color: transparent;
+    }
+.navbar .navbar-action {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
+.navbar .navbar-action .nav-btn {
+    margin: 0 15px;
     }
 .navbar .navbar-brand {
     padding-top: 10px;
@@ -210,9 +291,6 @@ blockquote {
         padding-top: 33px;
         padding-bottom: 33px;
         }
-    }
-.navbar .navbar-nav + .navbar-action {
-    padding-left: 15px;
     }
 
 /* ----------!OFFCANVAS---------- */
@@ -401,6 +479,15 @@ blockquote {
 .page-link-previous,
 .page-link-next {
     min-width: 130px;
+    }
+
+/* ============================ */
+/* ==========!ACCOUNT========== */
+/* ============================ */
+
+/* ----------!GUEST---------- */
+.account-guest {
+    margin-right: -15px;
     }
 
 /* ============================= */
