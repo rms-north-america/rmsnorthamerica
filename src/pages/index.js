@@ -9,10 +9,10 @@ export default ({ location, data }) => {
     const { introduction } = data;
     return (
         <Layout template="home" location={location}>
-            <Hero id="splash" color={3}>
+            <Hero id="splash" height="fill" color={3}>
                 <div className="row align-items-center gutter-80">
-                    <div className="col">
-                        <header className="node-xs-50">
+                    <div className="col-8">
+                        <header className="node-xs-30 node-lg-50">
                             <h1>The Hospitality Cloud</h1>
                             <h2>
                                 A fully integrated Cloud Based Property Management System.
@@ -20,8 +20,8 @@ export default ({ location, data }) => {
                                 The perfect, seamless solution for your hospitality needs.
                             </h2>
                         </header>
-                        <section className="node-xs-50">
-                            <ButtonMain label="Request a demo" />
+                        <section className="node-xs-30 node-lg-50">
+                            <ButtonMain size="xl" label="Request a demo" />
                         </section>
                     </div>
                     <div className="col">2 of 2</div>
@@ -38,7 +38,7 @@ export default ({ location, data }) => {
 
 export const query = graphql`
     query pageHome {
-        introduction: contentfulGeneral(slug: { eq: "introduction" }) {
+        introduction: contentfulGeneral(slug: { eq: "splash" }) {
             ...contentGeneral
         }
     }

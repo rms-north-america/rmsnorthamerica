@@ -3,18 +3,20 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import * as path from '../../path';
 
-const ButtonMain = ({ label, to }) => (
-    <Link className="nav-btn btn btn-lg btn-main btn-initial to-register" to={to}>
+const ButtonMain = ({ size, label, to }) => (
+    <Link className={`nav-btn btn btn-${size} btn-main btn-initial to-register`} to={to}>
         {label}
     </Link>
 );
 
 ButtonMain.propTypes = {
+    size: PropTypes.string,
     label: PropTypes.string,
     to: PropTypes.string,
 };
 
 ButtonMain.defaultProps = {
+    size: 'lg',
     label: 'Request Demo',
     to: path.POST,
 };
