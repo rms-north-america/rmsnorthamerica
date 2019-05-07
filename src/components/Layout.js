@@ -44,7 +44,7 @@ class Layout extends Component {
                 zIndex: 9999,
             },
             content: {
-                background: '#222',
+                background: '#1d2c3c',
             },
         };
         return (
