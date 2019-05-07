@@ -405,6 +405,15 @@ blockquote {
 .color-0 {
     background-color: transparent !important;
     }
+.color-1 {
+    background-color: #fff !important;
+    }
+.color-2 {
+    background-color: #1d2c3c !important;
+    }
+.color-3 {
+    background-color: #006c8c !important;
+    }
 
 /* ----------!TINT---------- */
 .dark-20 {
@@ -446,6 +455,57 @@ blockquote {
     }
 .style-border-top-grey .zone {
     margin-top: -1px;
+    }
+
+/* ========================= */
+/* ==========!TEXT========== */
+/* ========================= */
+
+/* ----------!H1---------- */
+.carousel h1,
+.hero h1 {
+    margin-top: -9px;
+    margin-bottom: -11px;
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 60px;
+    }
+@media (min-width: 992px) {
+    .carousel h1,
+    .hero h1 {
+        margin-top: -9px;
+        margin-bottom: -11px;
+        font-size: 55px;
+        line-height: 60px;
+        }
+    }
+
+/* ----------!H2---------- */
+.carousel h2,
+.hero h2 {
+    margin-top: -7px;
+    margin-bottom: -8px;
+    font-size: 20px;
+    line-height: 30px;
+    }
+@media (min-width: 992px) {
+    .carousel h2,
+    .hero h2 {
+        margin-top: -7px;
+        margin-bottom: -8px;
+        font-size: 20px;
+        line-height: 30px;
+        }
+    }
+
+/* ========================== */
+/* ==========!SPACE========== */
+/* ========================== */
+
+/* ----------!H2---------- */
+.carousel h1 + h2,
+.hero h1 + h2 {
+    padding-top: 23px;
     }
 
 /* =============================== */
