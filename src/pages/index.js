@@ -15,9 +15,7 @@ export default ({ location, data }) => {
                         <header className="node-xs-30 node-lg-50">
                             <h1>The Hospitality Cloud</h1>
                             <h2>
-                                A fully integrated Cloud Based Property Management System.
-                                <br />
-                                The perfect, seamless solution for your hospitality needs.
+                                A fully integrated Cloud Based Property Management System. The perfect, seamless solution for your hospitality needs.
                             </h2>
                         </header>
                         <section className="node-xs-30 node-lg-50">
