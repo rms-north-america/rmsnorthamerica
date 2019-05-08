@@ -10,7 +10,7 @@ const Footer = ({ isOpen }) => {
     return (
         <footer id="footer" className={isOpen ? 'offcanvas-push offcanvas-push-out' : 'offcanvas-push'} role="contentinfo">
             <div className={container}>
-                <section className="style-border-top-grey">
+                <section>
                     <div className="zone relative">
                         <p className="copyright">
                             <Link className="navbar-link" title={title} rel="home" to={path.ROOT}>
