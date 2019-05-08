@@ -136,7 +136,7 @@ blockquote {
     }
 .dropdown .dropdown-menu,
 .dropdown .dropdown-menu .dropdown-divider {
-    border-color: #eaeaea;
+    border-color: #1d2c3c;
     }
 .dropdown .dropdown-menu .dropdown-divider {
     margin: 9px 0 10px;
@@ -590,6 +590,50 @@ blockquote {
     margin-right: -15px;
     }
 
+/* ============================== */
+/* ==========!SCROLL-TO========== */
+/* ============================== */
+
+/* ----------!MAIN---------- */
+.scroll-to {
+    border: 0 none transparent;
+    padding: 20px;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    }
+
+/* ----------!ICON---------- */
+.scroll-to > .scroll-to-icon {
+    font-size: 34px;
+    line-height: 30px;
+    }
+
+/* ----------!ICON-UP---------- */
+.scroll-to > .scroll-to-icon-up {
+    margin-top: -4px;
+    margin-bottom: -16px;
+    }
+
+/* ----------!ICON-DOWN---------- */
+.scroll-to > .scroll-to-icon-down {
+    margin-top: -16px;
+    margin-bottom: -4px;
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+    }
+
+/* ----------!TOP---------- */
+.scroll-to-top {
+    background-color: #fff;
+    margin: 15px;
+    bottom: 0;
+    right: 0;
+    color: #1d2c3c !important;
+    }
+
 /* ============================= */
 /* ==========!CAROUSEL========== */
 /* ============================= */
@@ -648,6 +692,12 @@ blockquote {
         }
     }
 
+/* ----------!SCROLL-TO---------- */
+.hero .scroll-to {
+    margin-bottom: 30px;
+    bottom: 0;
+    }
+
 /* =========================== */
 /* ==========!REGION========== */
 /* =========================== */
@@ -675,8 +725,10 @@ blockquote {
     border-bottom: 1px solid #eaeaea;
     }
 #header .logo {
-    width: 30px;
-    height: 30px;
+    margin-top: -5px;
+    margin-bottom: -12px;
+    width: 183px;
+    height: 47px;
     }
 
 /* ----------!MAIN---------- */
@@ -694,7 +746,6 @@ blockquote {
 
 /* ----------!FOOTER---------- */
 #footer {
-    background-color: #fff;
     height: 50px;
     position: absolute;
     right: 0;
@@ -717,8 +768,10 @@ blockquote {
         text-align: right;
         }
     }
-#footer .copyright {
+#footer .copyright,
+#footer .copyright > a {
     margin: 0;
+    color: #fff;
     }
 
 /* =============================== */
