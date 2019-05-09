@@ -9,7 +9,7 @@ export default ({ location, data }) => {
     const { introduction } = data;
     return (
         <Layout template="home" location={location}>
-            <Hero id="splash" height="fill" color={3}>
+            <Hero id="splash" height="fill" scroll="introduction" color={3}>
                 <div className="row align-items-center gutter-80">
                     <div className="col-lg-8">
                         <header className="node-xs-30 node-lg-50">

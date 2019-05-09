@@ -15,7 +15,7 @@ const Hero = ({ container, height, align, space, tint, color, id, source, altern
                 </div>
             </div>
         )}
-        <Scroll to={scroll} />
+        {scroll && <Scroll to={scroll} />}
     </section>
 );
 
