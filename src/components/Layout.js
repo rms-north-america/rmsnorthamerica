@@ -16,14 +16,18 @@ class Layout extends Component {
         super(props);
         this.state = {
             isOpen: false,
+            showScroll: false,
         };
         this.onOpen = this.onOpen.bind(this);
         this.onClose = this.onClose.bind(this);
+        this.onScroll = this.onScroll.bind(this);
     }
     componentDidMount() {
+        window.addEventListener('scroll', this.onScroll);
         Events.scrollEvent.register('end', () => this.onClose());
     }
     componentWillUnmount() {
+        window.removeEventListener('scroll', this.onScroll);
         Events.scrollEvent.remove('end');
     }
     onOpen() {
@@ -36,9 +40,24 @@ class Layout extends Component {
             isOpen: false,
         });
     }
+    onScroll() {
+        const { showScroll } = this.state;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const offset = 210;
+        showScroll &&
+            scrollTop <= offset &&
+            this.setState({
+                showScroll: false,
+            });
+        !showScroll &&
+            scrollTop >= offset &&
+            this.setState({
+                showScroll: true,
+            });
+    }
     render() {
         const { location, template, title, description, children } = this.props;
-        const { isOpen } = this.state;
+        const { isOpen, showScroll } = this.state;
         const style = {
             overlay: {
                 background: 'rgba(34, 34, 34, 0.5)',
@@ -61,7 +80,7 @@ class Layout extends Component {
                     <div className="container-fluid">{children}</div>
                 </main>
                 <Footer isOpen={isOpen} />
-                <Scroll position="fixed" up top />
+                {showScroll && <Scroll position="fixed" up top />}
             </Fragment>
         );
     }
