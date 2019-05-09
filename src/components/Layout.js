@@ -9,6 +9,7 @@ import SEO from './SEO';
 import Menu from './Menu';
 import Header from './region/Header';
 import Footer from './region/Footer';
+import Scroll from './widget/Scroll';
 
 class Layout extends Component {
     constructor(props) {
@@ -60,6 +61,7 @@ class Layout extends Component {
                     <div className="container-fluid">{children}</div>
                 </main>
                 <Footer isOpen={isOpen} />
+                <Scroll position="fixed" up top />
             </Fragment>
         );
     }
