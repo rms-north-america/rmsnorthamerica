@@ -23,9 +23,10 @@ MenuLink.defaultProps = {
 
 const Menu = ({ offcanvas }) => {
     const loopMain = menu.MAIN.map(({ label, to, children }) => {
+        const name = slugify(label);
         const loopChildren = children && children.map(({ label, to }) => <MenuLink key={generateID()} label={label} to={to} />);
         return children ? (
-            <Dropdown key={generateID()} name={slugify(label)} label={label} alignment="right" caret>
+            <Dropdown key={generateID()} name={offcanvas ? `offcanvas-${name}` : name} label={label} alignment="right" caret>
                 {loopChildren}
             </Dropdown>
         ) : (
