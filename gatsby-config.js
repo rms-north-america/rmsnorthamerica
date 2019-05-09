@@ -2,19 +2,19 @@ require('dotenv').config();
 
 module.exports = {
     siteMetadata: {
-        title: 'Ghost',
-        description: 'a Gatsby + Contentful + Netlify starter',
-        author: 'Jonathan Howland',
+        title: 'RMS',
+        description: 'A fully integrated Cloud Based Property Management System',
+        author: 'RMS',
     },
     plugins: [
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
-                name: 'Ghost',
-                short_name: 'Ghost',
+                name: 'RMS',
+                short_name: 'RMS',
                 start_url: '/',
-                background_color: '#ffffff',
-                theme_color: '#222222',
+                background_color: '#006c8c',
+                theme_color: '#006c8c',
                 display: 'standalone',
                 icon: 'src/images/icon.png',
                 crossOrigin: 'use-credentials',

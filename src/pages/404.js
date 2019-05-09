@@ -13,7 +13,7 @@ export default ({ location }) => (
             <section>
                 <p>
                     This page does not exist.{' '}
-                    <Link title="Home" rel="home" to={path.Root}>
+                    <Link title="Home" rel="home" to={path.ROOT}>
                         Return home &rarr;
                     </Link>
                 </p>

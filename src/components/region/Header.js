@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import * as path from '../../path';
 import siteMetadata from '../../queries/siteMetadata';
+import Account from '../Account';
 import Menu from '../Menu';
 import Logo from '../unit/Logo';
 
@@ -17,7 +18,7 @@ const Header = ({ isOpen, onOpen }) => {
             role="banner"
         >
             <div className={container}>
-                <Link className="navbar-brand" title={title} rel="home" to={path.Root}>
+                <Link className="navbar-brand" title={title} rel="home" to={path.ROOT}>
                     <Logo alternate={title} />
                 </Link>
                 <button
@@ -34,7 +35,10 @@ const Header = ({ isOpen, onOpen }) => {
                     <span className="icon-bar">&#9472;</span>
                     <span className="icon-bar">&#9472;</span>
                 </button>
-                <Menu />
+                <nav id="menu" className="navbar-collapse collapse">
+                    <Menu />
+                    <Account />
+                </nav>
             </div>
         </header>
     );

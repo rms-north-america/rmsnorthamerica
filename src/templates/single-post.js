@@ -18,12 +18,12 @@ export default ({ location, data, pageContext }) => {
                     <p>{post.createdAt}</p>
                 </header>
                 <section
-                    className="node-xs-30 node-lg-50"
+                    className="node-xs-30 node-xs-50 node-lg-50 node-lg-80"
                     dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html.replace(/\n/g, '<br>').replace(/<br><p>/g, '<p>') }}
                 />
                 {pageContext.total > 1 && (
-                    <footer className="node-xs-30 node-lg-50">
-                        <Pagination pageContext={pageContext} path={path.Post} single />
+                    <footer className="node-xs-30 node-xs-50 node-lg-50 node-lg-80">
+                        <Pagination pageContext={pageContext} path={path.POST} single />
                     </footer>
                 )}
             </Basic>

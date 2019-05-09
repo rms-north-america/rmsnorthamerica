@@ -9,6 +9,7 @@ import SEO from './SEO';
 import Menu from './Menu';
 import Header from './region/Header';
 import Footer from './region/Footer';
+import Scroll from './widget/Scroll';
 
 class Layout extends Component {
     constructor(props) {
@@ -44,20 +45,23 @@ class Layout extends Component {
                 zIndex: 9999,
             },
             content: {
-                background: '#222',
+                background: '#1d2c3c',
             },
         };
         return (
             <Fragment>
                 <SEO location={location} template={template} title={title} description={description} />
                 <OffCanvas position="right" width="80%" height="100%" labelledby="menu-button" style={style} isOpen={isOpen} onClose={this.onClose}>
-                    <Menu offcanvas />
+                    <nav id="menu-offcanvas" className="offcanvas-menu">
+                        <Menu offcanvas />
+                    </nav>
                 </OffCanvas>
                 <Header isOpen={isOpen} onOpen={this.onOpen} />
                 <main id="main" className={isOpen ? 'offcanvas-push offcanvas-push-out' : 'offcanvas-push'} role="main">
                     <div className="container-fluid">{children}</div>
                 </main>
                 <Footer isOpen={isOpen} />
+                <Scroll position="fixed" up top />
             </Fragment>
         );
     }

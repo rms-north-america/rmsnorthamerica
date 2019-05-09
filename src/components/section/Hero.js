@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import Scroll from '../widget/Scroll';
 
-const Hero = ({ container, height, align, space, tint, color, id, source, alternate, children }) => (
+const Hero = ({ container, height, align, space, tint, color, id, source, alternate, scroll, children }) => (
     <section id={id} className={`hero block height-${height} align-${align} background-${source ? 'image' : 'none'} color-${color}`}>
         {source && <Img className="fit exact-center absolute" fluid={source} alt={alternate} critical />}
         {children && (
@@ -14,6 +15,7 @@ const Hero = ({ container, height, align, space, tint, color, id, source, altern
                 </div>
             </div>
         )}
+        {scroll && <Scroll to={scroll} />}
     </section>
 );
 
@@ -27,6 +29,7 @@ Hero.propTypes = {
     id: PropTypes.string,
     source: PropTypes.object,
     alternate: PropTypes.string,
+    scroll: PropTypes.string,
     children: PropTypes.node,
 };
 
@@ -40,6 +43,7 @@ Hero.defaultProps = {
     id: undefined,
     source: undefined,
     alternate: undefined,
+    scroll: undefined,
     children: undefined,
 };
 

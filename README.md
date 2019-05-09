@@ -1,8 +1,8 @@
-# Ghost
+# RMS North America
 
-Gatsby + Contentful + Netlify Starter
+Corporate website built with the Gatsby + Contentful + Netlify stack
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/377359ec-49a2-4993-98de-6900f5e9a632/deploy-status)](https://app.netlify.com/sites/dreamy-khorana-1f4974/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/37eaf333-4873-4ed3-ba55-a06c6590d43d/deploy-status)](https://app.netlify.com/sites/sleepy-pasteur-0771b3/deploys)
 
 ## Stack
 
@@ -29,9 +29,9 @@ Gatsby + Contentful + Netlify Starter
 Below are the steps required to use this starter for a new project:
 
 1. In GitHub, create a new repository by importing a clone of this repository.
-2. In Netlify, click on the "New site from Git" button and select the newly created repository.
-3. In Contentful, create a new space for the project.
-4. In Contentful, go to Settings -> API keys and copy the "Space ID" and the "Content Delivery API - access token" and paste it into a .env file within the local copy of the new project's repository.
+2. In Contentful, create a new space for the project.
+3. In Contentful, go to Settings -> API keys and copy the "Space ID" and the "Content Delivery API - access token" and paste it into a .env file within the local copy of the new project's repository (it might be necessary to move the .env file in and out of the project folder, running the build command multiple times, and populating the base content models and content entries for the data from the new space to be sourced correctly by Gatsby).
+4. In Netlify, click on the "New site from Git" button and select the newly created repository.
 5. In Netlify, add the same "Space ID" and "Content Delivery API - access token" as environment variables under Settings -> Build & deploy -> Environment.
 6. In Netlify, go to Settings -> Build & deploy -> Build hooks, click the "Add build hook" button, name it "Contentful", and copy just the generated URL.
 7. In Contentful, go to Settings -> Webhooks, click the link to add the Netlify webhook template, and paste the URL that Netlify provided into the form.
