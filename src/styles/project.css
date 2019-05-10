@@ -473,12 +473,18 @@ blockquote {
 	background: rgba(255, 255, 255, 0.8);
 	}
 
-/* ----------!BACKGROUND---------- */
-.background-image {
-    background-color: transparent !important;
+/* ----------!OPACITY---------- */
+.opacity-20 {
+    opacity: 0.2;
     }
-.background-parallax {
-    background-color: transparent !important;
+.opacity-30 {
+    opacity: 0.3;
+    }
+.opacity-50 {
+    opacity: 0.5;
+    }
+.opacity-80 {
+    opacity: 0.8;
     }
 
 /* ----------!BORDER---------- */
