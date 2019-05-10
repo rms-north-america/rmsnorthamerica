@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import * as style from '../style';
 import Layout from '../components/Layout';
 import Hero from '../components/section/Hero';
 import ButtonMain from '../components/project/ButtonMain';
@@ -10,14 +11,14 @@ export default ({ location, data }) => {
         <Layout template="home" location={location}>
             {splash && (
                 <Hero
-                    opacity="opacity-30"
-                    tint="dark-50"
+                    opacity={style.HERO_OPACITY}
+                    tint={style.HERO_TINT}
+                    color={style.HERO_COLOR}
                     id={splash.slug}
                     height={splash.height}
                     source={splash.image.fluid}
                     alternate={splash.title}
                     scroll={splash.scroll}
-                    color={3}
                 >
                     <div className="row">
                         <div className="col-lg-8">
