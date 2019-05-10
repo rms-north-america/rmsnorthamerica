@@ -301,7 +301,7 @@ blockquote {
     flex-direction: row;
     align-items: center;
     }
-.navbar .navbar-action .nav-btn {
+.navbar .navbar-action .btn {
     margin: 0 15px;
     }
 .navbar .navbar-brand {
@@ -330,7 +330,7 @@ blockquote {
     padding-top: 5px;
     }
 .offcanvas-menu .nav > li > a,
-.offcanvas-menu .nav > li > .nav-btn,
+.offcanvas-menu .nav > li > .btn,
 .offcanvas-menu .nav > li.dropdown .dropdown-menu a {
     background-color: transparent;
     border: 0 none transparent;
@@ -344,7 +344,7 @@ blockquote {
     cursor: pointer;
     }
 .offcanvas-menu .nav > li > a,
-.offcanvas-menu .nav > li > .nav-btn,
+.offcanvas-menu .nav > li > .btn,
 .offcanvas-menu .nav > li.dropdown .dropdown-menu a {
     font-weight: 400;
     color: #fff;
@@ -356,13 +356,13 @@ blockquote {
 .offcanvas-menu .nav > li.show > a:active,
 .offcanvas-menu .nav > li.show > a:hover,
 .offcanvas-menu .nav > li.show > a:focus,
-.offcanvas-menu .nav > li > .nav-btn:active,
-.offcanvas-menu .nav > li > .nav-btn:hover,
-.offcanvas-menu .nav > li > .nav-btn:focus,
-.offcanvas-menu .nav > li.show > .nav-btn,
-.offcanvas-menu .nav > li.show > .nav-btn:active,
-.offcanvas-menu .nav > li.show > .nav-btn:hover,
-.offcanvas-menu .nav > li.show > .nav-btn:focus {
+.offcanvas-menu .nav > li > .btn:active,
+.offcanvas-menu .nav > li > .btn:hover,
+.offcanvas-menu .nav > li > .btn:focus,
+.offcanvas-menu .nav > li.show > .btn,
+.offcanvas-menu .nav > li.show > .btn:active,
+.offcanvas-menu .nav > li.show > .btn:hover,
+.offcanvas-menu .nav > li.show > .btn:focus {
     background-color: transparent;
     color: #fff;
     }
@@ -374,10 +374,10 @@ blockquote {
 .offcanvas-menu .nav > li > button.active:active,
 .offcanvas-menu .nav > li > button.active:hover,
 .offcanvas-menu .nav > li > button.active:focus,
-.offcanvas-menu .nav > li > .nav-btn.active,
-.offcanvas-menu .nav > li > .nav-btn.active:active,
-.offcanvas-menu .nav > li > .nav-btn.active:hover,
-.offcanvas-menu .nav > li > .nav-btn.active:focus,
+.offcanvas-menu .nav > li > .btn.active,
+.offcanvas-menu .nav > li > .btn.active:active,
+.offcanvas-menu .nav > li > .btn.active:hover,
+.offcanvas-menu .nav > li > .btn.active:focus,
 .offcanvas-menu .nav > li.active > a,
 .offcanvas-menu .nav > li.active > a:active,
 .offcanvas-menu .nav > li.active > a:hover,
@@ -386,10 +386,10 @@ blockquote {
 .offcanvas-menu .nav > li.active > button:active,
 .offcanvas-menu .nav > li.active > button:hover,
 .offcanvas-menu .nav > li.active > button:focus,
-.offcanvas-menu .nav > li.active > .nav-btn,
-.offcanvas-menu .nav > li.active > .nav-btn:active,
-.offcanvas-menu .nav > li.active > .nav-btn:hover,
-.offcanvas-menu .nav > li.active > .nav-btn:focus {
+.offcanvas-menu .nav > li.active > .btn,
+.offcanvas-menu .nav > li.active > .btn:active,
+.offcanvas-menu .nav > li.active > .btn:hover,
+.offcanvas-menu .nav > li.active > .btn:focus {
     background-color: #1d2c3c;
     color: #fff;
     cursor: default;
