@@ -2738,9 +2738,6 @@ h6 + .btn,
 p + .btn {
   margin-top: 30px; }
 
-.btn + .btn {
-  margin-left: 20px; }
-
 .d-flex h1 + button,
 .d-flex h2 + button,
 .d-flex h3 + button,
