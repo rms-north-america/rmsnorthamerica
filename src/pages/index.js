@@ -1,33 +1,33 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Basic from '../components/section/Basic';
 import Hero from '../components/section/Hero';
 import ButtonMain from '../components/project/ButtonMain';
 
 export default ({ location, data }) => {
-    const { introduction } = data;
+    const { splash } = data;
     return (
         <Layout template="home" location={location}>
-            <Hero id="splash" height="fill" scroll="introduction" color={3}>
-                <div className="row align-items-center gutter-80">
-                    <div className="col-lg-8">
-                        <header className="node-xs-30 node-lg-50">
-                            <h1>The Hospitality Cloud</h1>
-                            <h2>
-                                A fully integrated Cloud Based Property Management System. The perfect, seamless solution for your hospitality needs.
-                            </h2>
-                        </header>
-                        <section className="node-xs-30 node-lg-50">
-                            <ButtonMain size="xl" label="Request a demo" />
-                        </section>
+            {splash && (
+                <Hero
+                    opacity="opacity-30"
+                    tint="dark-50"
+                    id={splash.slug}
+                    height={splash.height}
+                    source={splash.image.fluid}
+                    alternate={splash.title}
+                    scroll={splash.scroll}
+                    color={3}
+                >
+                    <div className="row">
+                        <div className="col-lg-8">
+                            <header className="node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: splash.body.childMarkdownRemark.html }} />
+                            <section className="node-xs-30 node-lg-50">
+                                <ButtonMain size="xl" label={splash.action} />
+                            </section>
+                        </div>
                     </div>
-                </div>
-            </Hero>
-            {introduction && (
-                <Basic id="introduction" space="space-xs-80 space-lg-130">
-                    <header dangerouslySetInnerHTML={{ __html: introduction.body.childMarkdownRemark.html }} />
-                </Basic>
+                </Hero>
             )}
         </Layout>
     );
@@ -35,8 +35,8 @@ export default ({ location, data }) => {
 
 export const query = graphql`
     query pageHome {
-        introduction: contentfulGeneral(slug: { eq: "splash" }) {
-            ...contentGeneral
+        splash: contentfulHero(slug: { eq: "splash" }) {
+            ...contentSplash
         }
     }
 `;
