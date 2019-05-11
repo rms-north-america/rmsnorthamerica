@@ -23,8 +23,11 @@ export default ({ location, data }) => {
                     <div className="row">
                         <div className="col-lg-8">
                             <header className="node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: splash.body.childMarkdownRemark.html }} />
-                            <section className="node-xs-30 node-lg-50">
+                            <section className="node-xs-30 node-lg-50 d-flex">
                                 <ButtonMain size="xl" label={splash.action} />
+                                <button type="button" className="btn btn-link btn-xl btn-trigger d-flex icon-play to-video">
+                                    {splash.trigger}
+                                </button>
                             </section>
                         </div>
                     </div>

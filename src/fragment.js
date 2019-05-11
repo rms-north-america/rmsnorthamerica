@@ -52,6 +52,7 @@ export const contentSplash = graphql`
             }
         }
         action
+        trigger
         scroll
     }
 `;
@@ -71,6 +72,7 @@ export const contentHero = graphql`
             }
         }
         action
+        trigger
         scroll
     }
 `;
