@@ -17,7 +17,7 @@ ButtonMain.propTypes = {
 
 ButtonMain.defaultProps = {
     size: 'lg',
-    label: 'Request Demo',
+    label: 'Request demo',
     to: path.POST,
 };
 
