@@ -54,6 +54,9 @@ blockquote {
 /* =========================== */
 
 /* ----------!GENERAL---------- */
+.btn {
+    border-width: 3px;
+    }
 .btn:active,
 .btn:hover,
 .btn:focus {
@@ -67,21 +70,21 @@ blockquote {
 
 /* ----------!MAIN---------- */
 .btn-main {
-    background-color: #f89c02;
     border-color: #f89c02;
-    color: #fff;
+    color: #f89c02;
     }
 .btn-main:active,
 .btn-main:hover,
 .btn-main:focus {
     background-color: #f9ad13;
+    color: #fff;
     }
 
 /* ----------!SIZE---------- */
 .btn-lg,
 .btn-xl,
 .btn-hg {
-    padding: 9px 14px;
+    padding: 7px 12px;
     font-size: 20px;
     line-height: 30px;
     }
@@ -93,17 +96,37 @@ blockquote {
     }
 @media (min-width: 992px) {
     .btn-xl {
-        padding: 14px 19px;
+        padding: 12px 17px;
         min-width: 210px;
         font-size: 27px;
         line-height: 30px;
         }
-    .btn-hg {
-        padding: 24px 29px;
-        max-width: 340px;
-        font-size: 34px;
-        line-height: 30px;
-        }
+    }
+
+/* ----------!TO-VIDEO---------- */
+.to-video {
+    min-width: unset;
+    color: #fff !important;
+    }
+
+/* ========================= */
+/* ==========!ICON========== */
+/* ========================= */
+
+/* ----------!VIDEO---------- */
+.icon-play::before {
+    border: 2px solid #fff;
+    border-radius: 100%;
+    margin-right: 10px;
+    padding-top: 1px;
+    padding-left: 2px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    content:'\25B6';
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
 
 /* =============================== */
@@ -556,7 +579,10 @@ blockquote {
 
 /* ----------!BUTTON---------- */
 .btn + .btn {
-    margin-left: 30px;
+    margin-left: 15px;
+    }
+.btn-xl + .btn-xl.btn-link {
+    margin-left: 10px;
     }
 
 /* =============================== */
