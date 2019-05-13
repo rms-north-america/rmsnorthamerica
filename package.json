@@ -27,6 +27,7 @@
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
         "react-aria-offcanvas": "^1.1.10",
+        "react-bootstrap": "^1.0.0-beta.8",
         "react-dom": "^16.8.6",
         "react-helmet": "^5.2.1",
         "react-scroll": "^1.7.11"
