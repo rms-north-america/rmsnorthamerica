@@ -579,10 +579,7 @@ blockquote {
 
 /* ----------!BUTTON---------- */
 .btn + .btn {
-    margin-left: 15px;
-    }
-.btn-xl + .btn-xl.btn-link {
-    margin-left: 10px;
+    margin-left: 30px;
     }
 
 /* =============================== */
