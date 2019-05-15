@@ -1,5 +1,13 @@
 import { graphql } from 'gatsby';
 
+export const imageGeneral = graphql`
+    fragment imageGeneral on ContentfulAsset {
+        fluid(quality: 80) {
+            ...GatsbyContentfulFluid
+        }
+    }
+`;
+
 export const imageSplash = graphql`
     fragment imageSplash on ContentfulAsset {
         fluid(maxWidth: 1680, quality: 80, cropFocus: CENTER) {
@@ -29,6 +37,9 @@ export const contentGeneral = graphql`
         id
         title
         slug
+        image {
+            ...imageGeneral
+        }
         body {
             childMarkdownRemark {
                 html
