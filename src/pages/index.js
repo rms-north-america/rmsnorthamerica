@@ -26,7 +26,7 @@ export default ({ location, data }) => {
                             <header className="node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: splash.body.childMarkdownRemark.html }} />
                             <footer className="node-xs-30 node-lg-50 d-flex">
                                 <ButtonMain size="xl" label={splash.action} />
-                                <Modal kind="link" size="xl" icon="play" label={splash.trigger} />
+                                <Modal kind="link" size="xl" icon="play" label={splash.trigger} video={splash.video} />
                             </footer>
                         </div>
                     </div>

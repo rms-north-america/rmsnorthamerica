@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import Parent from 'react-bootstrap/Modal';
+import Parent, { Body } from 'react-bootstrap/Modal';
+import Embed from 'react-bootstrap/ResponsiveEmbed';
 import PropTypes from 'prop-types';
 
 class Modal extends Component {
@@ -22,8 +23,12 @@ class Modal extends Component {
         });
     }
     render() {
-        const { label, kind, size, display, icon, to, disabled } = this.props;
+        const { label, kind, size, display, icon, to, video, disabled } = this.props;
         const { show } = this.state;
+        const host = 'https://www.youtube.com/embed/';
+        const parameter =
+            '?autoplay=1&autohide=1&controls=1&showinfo=0&hd=1&modestbranding=1&loop=1&rel=0&fs=1&cc_load_policy=0&iv_load_policy=3&disablekb=1&enablejsapi=1&widgetid=1';
+        const source = host + video + parameter;
         return (
             <Fragment>
                 <button
@@ -34,17 +39,24 @@ class Modal extends Component {
                 >
                     {label}
                 </button>
-                <Parent show={show} onHide={this.onHide}>
-                    <Parent.Header closeButton>
-                        <Parent.Title>Modal heading</Parent.Title>
-                    </Parent.Header>
-                    <Parent.Body>Woohoo, you're reading this text in a modal!</Parent.Body>
-                    <Parent.Footer>
-                        <button type="button" onClick={this.onHide}>
-                            Close
-                        </button>
-                    </Parent.Footer>
+                <Parent dialogClassName="modal-total modal-video" show={show} onHide={this.onHide} centered>
+                    <Body>
+                        <Embed aspectRatio="16by9">
+                            <iframe
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                src={source}
+                                title={label}
+                                allowFullScreen
+                            />
+                        </Embed>
+                    </Body>
                 </Parent>
+                {show && (
+                    <button type="button" className="modal-close close" onClick={this.onHide}>
+                        <span aria-hidden="true">×</span>
+                        <span className="sr-only">Close</span>
+                    </button>
+                )}
             </Fragment>
         );
     }
@@ -57,6 +69,7 @@ Modal.propTypes = {
     display: PropTypes.string,
     icon: PropTypes.string,
     to: PropTypes.string,
+    video: PropTypes.string,
     disabled: PropTypes.bool,
 };
 
@@ -67,6 +80,7 @@ Modal.defaultProps = {
     display: 'trigger',
     icon: 'none',
     to: 'video',
+    video: undefined,
     disabled: false,
 };
 
