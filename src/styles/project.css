@@ -591,7 +591,12 @@ blockquote {
 
 /* ----------!BUTTON---------- */
 .btn + .btn {
-    margin-left: 30px;
+    margin-left: 15px;
+    }
+@media (min-width: 992px) {
+    .btn + .btn {
+        margin-left: 30px;
+        }
     }
 
 /* ========================== */
@@ -600,22 +605,40 @@ blockquote {
 
 /* ----------!MAIN---------- */
 .modal .modal-dialog {
-    max-width: none;
-    margin: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    max-width: 1380px;
     }
-.modal .close {
+@media (min-width: 1440px) {
+    .modal .modal-dialog {
+        margin-left: auto;
+        margin-right: auto;
+        }
+    }
+.modal-close.close {
     padding: 15px;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    right: 0;
     line-height: 20px;
     color: #fff;
     text-shadow: none;
     opacity: 0.2;
+    z-index: 9999;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     }
-.modal .close:hover,
-.modal .close:focus {
+.modal-close.close:hover,
+.modal-close.close:focus {
     opacity: 0.8;
     }
-.modal .close .fa {
-    line-height: 15px;
+.modal-close.close > span {
+    margin-top: -3px;
+    display: block;
     }
 
 /* ----------!BACKDROP---------- */
@@ -631,6 +654,9 @@ blockquote {
     }
 .modal-total .modal-content .modal-body {
     padding: 0;
+    }
+.modal-total .modal-content .modal-body iframe {
+    background-color: #000;
     }
 
 /* ----------!SEARCH---------- */
@@ -824,10 +850,18 @@ blockquote {
     border-bottom: 1px solid #eaeaea;
     }
 #header .logo {
-    margin-top: -5px;
-    margin-bottom: -12px;
-    width: 183px;
-    height: 47px;
+    margin-top: 3px;
+    margin-bottom: -3px;
+    width: 117px;
+    height: 30px;
+    }
+@media (min-width: 992px) {
+    #header .logo {
+        margin-top: -5px;
+        margin-bottom: -12px;
+        width: 183px;
+        height: 47px;
+        }
     }
 
 /* ----------!MAIN---------- */
