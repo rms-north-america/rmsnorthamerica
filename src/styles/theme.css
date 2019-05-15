@@ -2626,19 +2626,6 @@ h6 + p {
 .d-flex p + p {
   padding-top: 0; }
 
-/* ----------!LIST---------- */
-ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) > li + li,
-ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) > li + li {
-  padding-top: 23px; }
-
-ol + p,
-ul + p {
-  padding-top: 43px; }
-
-p + ol,
-p + ul {
-  padding-top: 50px; }
-
 /* ----------!BETWEEN---------- */
 p + h1,
 ol + h1,

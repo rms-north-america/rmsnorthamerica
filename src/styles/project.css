@@ -18,13 +18,7 @@ body {
 /* ----------!LIST---------- */
 ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]),
 ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) {
-    padding-left: 20px;
-    }
-@media (min-width: 768px) {
-    ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]),
-    ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) {
-        padding-left: 50px;
-        }
+    padding-left: 50px;
     }
 
 /* ----------!ANCHOR---------- */
@@ -530,6 +524,11 @@ blockquote {
     margin-top: -1px;
     }
 
+/* ----------!CHEAT---------- */
+.cheat-left {
+    margin-left: -80px;
+    }
+
 /* ========================= */
 /* ==========!TEXT========== */
 /* ========================= */
@@ -573,9 +572,37 @@ blockquote {
         }
     }
 
+/* ----------!COPY---------- */
+.copy h3 {
+    margin-top: -7px;
+    margin-bottom: -8px;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 40px;
+    color: #006c8c;
+    }
+
 /* ========================== */
 /* ==========!SPACE========== */
 /* ========================== */
+
+/* ----------!LIST---------- */
+ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) > li + li,
+ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) > li + li {
+    padding-top: 8px;
+    }
+ol + p,
+ul + p {
+    padding-top: 43px;
+    }
+h3 + ol,
+h3 + ul {
+    padding-top: 50px;
+    }
+p + ol,
+p + ul {
+    padding-top: 50px;
+    }
 
 /* ----------!H2---------- */
 .carousel h1 + h2,
