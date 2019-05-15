@@ -8,7 +8,7 @@ const Account = () => (
         <li className="nav-item">
             <ButtonMain />
         </li>
-        <Dropdown name="login" label="Log In" alignment="right" caret>
+        <Dropdown name="log-in" label="Log in" alignment="right" caret>
             <a className="nav-link" title="Log in to RMS9" href={path.LOG_IN_RMS_NINE} target="_blank" rel="noopener noreferrer">
                 Log in to RMS9
             </a>

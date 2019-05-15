@@ -967,63 +967,6 @@ address {
     float: none;
     vertical-align: top; } }
 
-/* ========================== */
-/* ==========!MODAL========== */
-/* ========================== */
-/* ----------!MAIN---------- */
-.modal .modal-dialog {
-  max-width: none;
-  margin: 0; }
-
-.modal .close {
-  padding: 15px;
-  line-height: 20px;
-  color: #fff;
-  text-shadow: none;
-  opacity: 0.2; }
-
-.modal .close:hover,
-.modal .close:focus {
-  opacity: 0.8; }
-
-.modal .close .fa {
-  line-height: 15px; }
-
-/* ----------!BACKDROP---------- */
-.modal-backdrop.show {
-  opacity: 0.8; }
-
-/* ----------!TOTAL---------- */
-.modal-total .modal-content {
-  background-color: transparent;
-  border: 0 none transparent;
-  box-shadow: none; }
-
-.modal-total .modal-content .modal-body {
-  padding: 0; }
-
-/* ----------!SEARCH---------- */
-#modal-search .input-group > .form-control,
-#modal-search .input-group > .input-group-addon,
-#modal-search .input-group > .input-group-btn > .btn {
-  height: 80px;
-  padding: 10px 20px;
-  font-size: 27px;
-  line-height: 30px; }
-
-#modal-search .input-group > .form-control {
-  padding-right: 65px;
-  z-index: 1; }
-
-#modal-search .input-group > .form-submit {
-  margin-left: -65px;
-  width: 65px;
-  z-index: 2; }
-
-#modal-search .input-group > .input-group-btn > .btn {
-  background-color: transparent;
-  border: 0 none transparent !important; }
-
 /* ================================ */
 /* ==========!INFORMATION========== */
 /* ================================ */
@@ -2683,19 +2626,6 @@ h6 + p {
 .d-flex p + p {
   padding-top: 0; }
 
-/* ----------!LIST---------- */
-ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) > li + li,
-ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) > li + li {
-  padding-top: 23px; }
-
-ol + p,
-ul + p {
-  padding-top: 43px; }
-
-p + ol,
-p + ul {
-  padding-top: 50px; }
-
 /* ----------!BETWEEN---------- */
 p + h1,
 ol + h1,
@@ -2737,9 +2667,6 @@ h5 + .btn,
 h6 + .btn,
 p + .btn {
   margin-top: 30px; }
-
-.btn + .btn {
-  margin-left: 20px; }
 
 .d-flex h1 + button,
 .d-flex h2 + button,

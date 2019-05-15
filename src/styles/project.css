@@ -18,13 +18,7 @@ body {
 /* ----------!LIST---------- */
 ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]),
 ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) {
-    padding-left: 20px;
-    }
-@media (min-width: 768px) {
-    ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]),
-    ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) {
-        padding-left: 50px;
-        }
+    padding-left: 50px;
     }
 
 /* ----------!ANCHOR---------- */
@@ -54,6 +48,9 @@ blockquote {
 /* =========================== */
 
 /* ----------!GENERAL---------- */
+.btn {
+    border-width: 3px;
+    }
 .btn:active,
 .btn:hover,
 .btn:focus {
@@ -67,21 +64,21 @@ blockquote {
 
 /* ----------!MAIN---------- */
 .btn-main {
-    background-color: #f89c02;
     border-color: #f89c02;
-    color: #fff;
+    color: #f89c02;
     }
 .btn-main:active,
 .btn-main:hover,
 .btn-main:focus {
     background-color: #f9ad13;
+    color: #fff;
     }
 
 /* ----------!SIZE---------- */
 .btn-lg,
 .btn-xl,
 .btn-hg {
-    padding: 9px 14px;
+    padding: 7px 12px;
     font-size: 20px;
     line-height: 30px;
     }
@@ -93,17 +90,40 @@ blockquote {
     }
 @media (min-width: 992px) {
     .btn-xl {
-        padding: 14px 19px;
+        padding: 12px 17px;
         min-width: 210px;
         font-size: 27px;
         line-height: 30px;
         }
-    .btn-hg {
-        padding: 24px 29px;
-        max-width: 340px;
-        font-size: 34px;
-        line-height: 30px;
-        }
+    }
+
+/* ----------!TO-VIDEO---------- */
+.to-video {
+    min-width: unset;
+    color: #fff !important;
+    }
+
+/* ========================= */
+/* ==========!ICON========== */
+/* ========================= */
+
+/* ----------!PLAY---------- */
+.icon-play,
+.icon-play::before {
+    display: flex;
+    }
+.icon-play::before {
+    border: 2px solid #fff;
+    border-radius: 100%;
+    margin-right: 10px;
+    padding-top: 1px;
+    padding-left: 2px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    content:'\25B6';
+    align-items: center;
+    justify-content: center;
     }
 
 /* =============================== */
@@ -301,7 +321,7 @@ blockquote {
     flex-direction: row;
     align-items: center;
     }
-.navbar .navbar-action .nav-btn {
+.navbar .navbar-action .btn {
     margin: 0 15px;
     }
 .navbar .navbar-brand {
@@ -330,7 +350,7 @@ blockquote {
     padding-top: 5px;
     }
 .offcanvas-menu .nav > li > a,
-.offcanvas-menu .nav > li > .nav-btn,
+.offcanvas-menu .nav > li > .btn,
 .offcanvas-menu .nav > li.dropdown .dropdown-menu a {
     background-color: transparent;
     border: 0 none transparent;
@@ -344,7 +364,7 @@ blockquote {
     cursor: pointer;
     }
 .offcanvas-menu .nav > li > a,
-.offcanvas-menu .nav > li > .nav-btn,
+.offcanvas-menu .nav > li > .btn,
 .offcanvas-menu .nav > li.dropdown .dropdown-menu a {
     font-weight: 400;
     color: #fff;
@@ -356,13 +376,13 @@ blockquote {
 .offcanvas-menu .nav > li.show > a:active,
 .offcanvas-menu .nav > li.show > a:hover,
 .offcanvas-menu .nav > li.show > a:focus,
-.offcanvas-menu .nav > li > .nav-btn:active,
-.offcanvas-menu .nav > li > .nav-btn:hover,
-.offcanvas-menu .nav > li > .nav-btn:focus,
-.offcanvas-menu .nav > li.show > .nav-btn,
-.offcanvas-menu .nav > li.show > .nav-btn:active,
-.offcanvas-menu .nav > li.show > .nav-btn:hover,
-.offcanvas-menu .nav > li.show > .nav-btn:focus {
+.offcanvas-menu .nav > li > .btn:active,
+.offcanvas-menu .nav > li > .btn:hover,
+.offcanvas-menu .nav > li > .btn:focus,
+.offcanvas-menu .nav > li.show > .btn,
+.offcanvas-menu .nav > li.show > .btn:active,
+.offcanvas-menu .nav > li.show > .btn:hover,
+.offcanvas-menu .nav > li.show > .btn:focus {
     background-color: transparent;
     color: #fff;
     }
@@ -374,10 +394,10 @@ blockquote {
 .offcanvas-menu .nav > li > button.active:active,
 .offcanvas-menu .nav > li > button.active:hover,
 .offcanvas-menu .nav > li > button.active:focus,
-.offcanvas-menu .nav > li > .nav-btn.active,
-.offcanvas-menu .nav > li > .nav-btn.active:active,
-.offcanvas-menu .nav > li > .nav-btn.active:hover,
-.offcanvas-menu .nav > li > .nav-btn.active:focus,
+.offcanvas-menu .nav > li > .btn.active,
+.offcanvas-menu .nav > li > .btn.active:active,
+.offcanvas-menu .nav > li > .btn.active:hover,
+.offcanvas-menu .nav > li > .btn.active:focus,
 .offcanvas-menu .nav > li.active > a,
 .offcanvas-menu .nav > li.active > a:active,
 .offcanvas-menu .nav > li.active > a:hover,
@@ -386,10 +406,10 @@ blockquote {
 .offcanvas-menu .nav > li.active > button:active,
 .offcanvas-menu .nav > li.active > button:hover,
 .offcanvas-menu .nav > li.active > button:focus,
-.offcanvas-menu .nav > li.active > .nav-btn,
-.offcanvas-menu .nav > li.active > .nav-btn:active,
-.offcanvas-menu .nav > li.active > .nav-btn:hover,
-.offcanvas-menu .nav > li.active > .nav-btn:focus {
+.offcanvas-menu .nav > li.active > .btn,
+.offcanvas-menu .nav > li.active > .btn:active,
+.offcanvas-menu .nav > li.active > .btn:hover,
+.offcanvas-menu .nav > li.active > .btn:focus {
     background-color: #1d2c3c;
     color: #fff;
     cursor: default;
@@ -409,6 +429,15 @@ blockquote {
 .offcanvas-action > .btn {
     width: 100%;
     text-align: left;
+    }
+
+/* ============================ */
+/* ==========!ACCOUNT========== */
+/* ============================ */
+
+/* ----------!GUEST---------- */
+.account-guest {
+    margin-right: -15px;
     }
 
 /* =============================== */
@@ -473,12 +502,18 @@ blockquote {
 	background: rgba(255, 255, 255, 0.8);
 	}
 
-/* ----------!BACKGROUND---------- */
-.background-image {
-    background-color: transparent !important;
+/* ----------!OPACITY---------- */
+.opacity-20 {
+    opacity: 0.2;
     }
-.background-parallax {
-    background-color: transparent !important;
+.opacity-30 {
+    opacity: 0.3;
+    }
+.opacity-50 {
+    opacity: 0.5;
+    }
+.opacity-80 {
+    opacity: 0.8;
     }
 
 /* ----------!BORDER---------- */
@@ -487,6 +522,11 @@ blockquote {
     }
 .style-border-top-grey .zone {
     margin-top: -1px;
+    }
+
+/* ----------!CHEAT---------- */
+.cheat-left {
+    margin-left: -80px;
     }
 
 /* ========================= */
@@ -532,9 +572,37 @@ blockquote {
         }
     }
 
+/* ----------!COPY---------- */
+.copy h3 {
+    margin-top: -7px;
+    margin-bottom: -8px;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 40px;
+    color: #006c8c;
+    }
+
 /* ========================== */
 /* ==========!SPACE========== */
 /* ========================== */
+
+/* ----------!LIST---------- */
+ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) > li + li,
+ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) > li + li {
+    padding-top: 8px;
+    }
+ol + p,
+ul + p {
+    padding-top: 43px;
+    }
+h3 + ol,
+h3 + ul {
+    padding-top: 50px;
+    }
+p + ol,
+p + ul {
+    padding-top: 50px;
+    }
 
 /* ----------!H2---------- */
 .carousel h1 + h2,
@@ -546,6 +614,99 @@ blockquote {
     .hero h1 + h2 {
         padding-top: 44px;
         }
+    }
+
+/* ----------!BUTTON---------- */
+.btn + .btn {
+    margin-left: 15px;
+    }
+@media (min-width: 992px) {
+    .btn + .btn {
+        margin-left: 30px;
+        }
+    }
+
+/* ========================== */
+/* ==========!MODAL========== */
+/* ========================== */
+
+/* ----------!MAIN---------- */
+.modal .modal-dialog {
+    margin-left: 15px;
+    margin-right: 15px;
+    max-width: 1380px;
+    }
+@media (min-width: 1440px) {
+    .modal .modal-dialog {
+        margin-left: auto;
+        margin-right: auto;
+        }
+    }
+.modal-close.close {
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    line-height: 20px;
+    color: #fff;
+    text-shadow: none;
+    opacity: 0.2;
+    z-index: 9999;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    }
+.modal-close.close:hover,
+.modal-close.close:focus {
+    opacity: 0.8;
+    }
+.modal-close.close > span {
+    margin-top: -3px;
+    display: block;
+    }
+
+/* ----------!BACKDROP---------- */
+.modal-backdrop.show {
+    opacity: 0.8;
+    }
+
+/* ----------!TOTAL---------- */
+.modal-total .modal-content {
+    background-color: transparent;
+    border: 0 none transparent;
+    box-shadow: none;
+    }
+.modal-total .modal-content .modal-body {
+    padding: 0;
+    }
+.modal-total .modal-content .modal-body iframe {
+    background-color: #000;
+    }
+
+/* ----------!SEARCH---------- */
+#modal-search .input-group > .form-control,
+#modal-search .input-group > .input-group-addon,
+#modal-search .input-group > .input-group-btn > .btn {
+    height: 80px;
+    padding: 10px 20px;
+    font-size: 27px;
+    line-height: 30px;
+    }
+#modal-search .input-group > .form-control {
+    padding-right: 65px;
+    z-index: 1;
+    }
+#modal-search .input-group > .form-submit {
+    margin-left: -65px;
+    width: 65px;
+    z-index: 2;
+    }
+#modal-search .input-group > .input-group-btn > .btn {
+    background-color: transparent;
+    border: 0 none transparent !important;
     }
 
 /* =============================== */
@@ -579,15 +740,6 @@ blockquote {
 .page-link-previous,
 .page-link-next {
     min-width: 130px;
-    }
-
-/* ============================ */
-/* ==========!ACCOUNT========== */
-/* ============================ */
-
-/* ----------!GUEST---------- */
-.account-guest {
-    margin-right: -15px;
     }
 
 /* ============================== */
@@ -725,10 +877,18 @@ blockquote {
     border-bottom: 1px solid #eaeaea;
     }
 #header .logo {
-    margin-top: -5px;
-    margin-bottom: -12px;
-    width: 183px;
-    height: 47px;
+    margin-top: 3px;
+    margin-bottom: -3px;
+    width: 117px;
+    height: 30px;
+    }
+@media (min-width: 992px) {
+    #header .logo {
+        margin-top: -5px;
+        margin-bottom: -12px;
+        width: 183px;
+        height: 47px;
+        }
     }
 
 /* ----------!MAIN---------- */
