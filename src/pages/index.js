@@ -37,10 +37,10 @@ export default ({ location, data }) => {
             {introduction && (
                 <Basic id={introduction.slug} space="space-xs-80 space-lg-130">
                     <div className="row align-items-center gutter-80">
-                        <div className="col-lg">
+                        <div className="col-xl">
                             <Img className="cheat-left" fluid={introduction.image.fluid} alt={introduction.title} />
                         </div>
-                        <div className="col-lg">
+                        <div className="col-xl">
                             <header
                                 className="copy node-xs-30 node-lg-50"
                                 dangerouslySetInnerHTML={{ __html: introduction.body.childMarkdownRemark.html }}
