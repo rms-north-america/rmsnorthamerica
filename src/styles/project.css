@@ -915,19 +915,25 @@ p + ul {
     }
 
 /* ----------!FOOTER---------- */
-#footer {
+#footer,
+#footer a {
+    color: #fff;
+    }
+#footer .footer-first {
     padding-top: 50px;
     padding-bottom: 50px;
     }
 @media (min-width: 992px) {
-    #footer {
+    #footer .footer-first {
         padding-top: 80px;
         padding-bottom: 80px;
         }
     }
-#footer,
-#footer a {
-    color: #fff;
+#footer .footer-second {
+    padding-bottom: 25px;
+    }
+#footer .copyright {
+    margin-bottom: 0;
     }
 @media (min-width: 992px) {
     #footer .copyright {

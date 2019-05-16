@@ -11,8 +11,8 @@ const Footer = ({ isOpen }) => {
     return (
         <footer id="footer" className={isOpen ? 'offcanvas-push offcanvas-push-out' : 'offcanvas-push'} role="contentinfo">
             <div className={container}>
-                <MenuFooter className="node-xs-50 node-lg-80" />
-                <section className="node-xs-50 node-lg-80">
+                <MenuFooter className="footer-first" />
+                <section className="footer-second">
                     <p className="copyright">
                         <Link className="navbar-link" title={title} rel="home" to={path.ROOT}>
                             {title}

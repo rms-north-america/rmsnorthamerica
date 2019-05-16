@@ -29,7 +29,7 @@ MenuList.defaultProps = {
 
 const MenuFooter = ({ className }) => (
     <section className={className}>
-        <div className="row gutter-80">
+        <div className="row gutter-50 gutter-lg-80">
             <div className="col-lg">
                 <MenuList list={menu.FOOTER_ONE} />
             </div>
