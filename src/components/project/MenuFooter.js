@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { generateID } from '../../function';
 import * as menu from '../../menu';
+import Social from './Social';
 
 const MenuList = ({ list, label, to }) => {
     const loopList = list.map(({ label, to }) => (
@@ -40,7 +41,7 @@ const MenuFooter = ({ className }) => (
                 <MenuList list={menu.FOOTER_THREE} />
             </div>
             <div className="col-lg">
-                <p>Social</p>
+                <Social />
             </div>
         </div>
     </section>
