@@ -23,6 +23,7 @@ ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class
 
 /* ----------!ANCHOR---------- */
 a {
+    font-weight: 400;
     color: #006c8c;
     }
 a:active:not([class*="btn"]),
@@ -495,6 +496,12 @@ blockquote {
 .color-3 {
     background-color: #006c8c !important;
     }
+.color-4 {
+    background-color: #f89c02 !important;
+    }
+.color-5 {
+    background-color: #fafafa !important;
+    }
 
 /* ----------!TINT---------- */
 .dark-20 {
@@ -874,6 +881,24 @@ p + ul {
     bottom: 0;
     }
 
+/* ============================ */
+/* ==========!SECTION========== */
+/* ============================ */
+
+/* ----------!BODY---------- */
+#action .copy {
+    margin: 0 auto;
+    max-width: 890px;
+	}
+@media (min-width: 992px) {
+    #action .copy {
+        text-align: center;
+    	}
+    }
+#action .copy a {
+    color: #f89c02;
+	}
+
 /* =========================== */
 /* ==========!REGION========== */
 /* =========================== */
@@ -924,6 +949,7 @@ p + ul {
 /* ----------!FOOTER---------- */
 #footer,
 #footer a {
+    font-weight: 300;
     color: #fff;
     }
 #footer .footer-first {
