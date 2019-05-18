@@ -9,7 +9,7 @@ import Modal from '../components/widget/Modal';
 import ButtonMain from '../components/project/ButtonMain';
 
 export default ({ location, data }) => {
-    const { splash, introduction } = data;
+    const { splash, introduction, action } = data;
     return (
         <Layout template="home" location={location}>
             {splash && (
@@ -36,7 +36,7 @@ export default ({ location, data }) => {
             )}
             {introduction && (
                 <Basic id={introduction.slug} space="space-xs-80 space-lg-130">
-                    <div className="row align-items-center gutter-80">
+                    <div className="row align-items-center gutter-50 gutter-lg-80">
                         <div className="col-xl">
                             <Img className="cheat-left" fluid={introduction.image.fluid} alt={introduction.title} />
                         </div>
@@ -49,6 +49,11 @@ export default ({ location, data }) => {
                     </div>
                 </Basic>
             )}
+            {action && (
+                <Basic id={action.slug} space="space-xs-50 space-lg-80" color={5}>
+                    <header className="copy node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: action.body.childMarkdownRemark.html }} />
+                </Basic>
+            )}
         </Layout>
     );
 };
@@ -59,6 +64,9 @@ export const query = graphql`
             ...contentSplash
         }
         introduction: contentfulGeneral(slug: { eq: "introduction" }) {
+            ...contentGeneral
+        }
+        action: contentfulGeneral(slug: { eq: "action" }) {
             ...contentGeneral
         }
     }
