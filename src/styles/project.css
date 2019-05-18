@@ -441,6 +441,16 @@ blockquote {
     list-style: none !important;
     }
 
+/* =========================== */
+/* ==========!SOCIAL========== */
+/* =========================== */
+
+/* ----------!LIST---------- */
+.social > li + li {
+    padding-top: 0 !important;
+    padding-left: 15px !important;
+    }
+
 /* ============================ */
 /* ==========!ACCOUNT========== */
 /* ============================ */
@@ -889,7 +899,7 @@ p + ul {
 #header {
     background-color: #fff;
     border-bottom: 1px solid #fafafa;
-    box-shadow: 0 3px #fafafa;
+    box-shadow: 0 2px #fafafa;
     }
 #header .logo {
     margin-top: 3px;

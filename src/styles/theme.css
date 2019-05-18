@@ -1804,7 +1804,7 @@ ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class
   font-size: 20px;
   line-height: 30px; }
 
-.p-xs-20, .card-panel .card-body .card-headline, .social > li > a {
+.p-xs-20, .card-panel .card-body .card-headline {
   margin-top: -6px;
   margin-bottom: -9px;
   font-size: 27px;
@@ -2866,16 +2866,6 @@ p + .instagram-media {
 
 .table tbody th {
   font-weight: 300; }
-
-/* =========================== */
-/* ==========!WIDGET========== */
-/* =========================== */
-/* ----------!SOCIAL---------- */
-.social > li > a {
-  margin: 0; }
-
-.social > li > a > .fa {
-  width: 25px; }
 
 /* ============================== */
 /* ==========!COMPONENT========== */
