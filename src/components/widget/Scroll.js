@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-const Scroll = ({ className, position, to, duration, smooth, up, top }) =>
+const Scroll = ({ className, position, to, offset, duration, smooth, up, top }) =>
     top ? (
         <button
             type="button"
@@ -16,7 +16,7 @@ const Scroll = ({ className, position, to, duration, smooth, up, top }) =>
             </div>
         </button>
     ) : (
-        <ScrollTo className={`scroll-to scroll-to-${to} btn ${position} ${className}`} to={to} smooth={smooth} duration={duration}>
+        <ScrollTo className={`scroll-to scroll-to-${to} btn ${position} ${className}`} to={to} offset={offset} duration={duration} smooth={smooth}>
             <div className={`scroll-to-icon scroll-to-icon-${up ? 'up' : 'down'}`}>
                 <FontAwesomeIcon icon={up ? faChevronUp : faChevronDown} />
             </div>
@@ -27,6 +27,7 @@ Scroll.propTypes = {
     className: PropTypes.string,
     position: PropTypes.string,
     to: PropTypes.string,
+    offset: PropTypes.number,
     duration: PropTypes.number,
     smooth: PropTypes.bool,
     top: PropTypes.bool,
@@ -37,6 +38,7 @@ Scroll.defaultProps = {
     className: 'no-class',
     position: 'exact-center-horizontal',
     to: 'introduction',
+    offset: -50,
     duration: 500,
     smooth: true,
     top: false,

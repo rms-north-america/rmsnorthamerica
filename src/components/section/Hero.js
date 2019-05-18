@@ -15,7 +15,7 @@ const Hero = ({ container, height, align, space, opacity, tint, color, id, sourc
                 </div>
             </div>
         )}
-        {scroll && (height === 'fill' || height === 'full') && <Scroll to={scroll} />}
+        {scroll && (height === 'fill' || height === 'full') && <Scroll to={scroll} offset={-80} />}
     </section>
 );
 
