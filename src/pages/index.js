@@ -9,7 +9,7 @@ import Modal from '../components/widget/Modal';
 import ButtonMain from '../components/project/ButtonMain';
 
 export default ({ location, data }) => {
-    const { splash, introduction, action } = data;
+    const { splash, introduction, feature, action } = data;
     return (
         <Layout template="home" location={location}>
             {splash && (
@@ -35,15 +35,30 @@ export default ({ location, data }) => {
                 </Hero>
             )}
             {introduction && (
-                <Basic id={introduction.slug} space="space-xs-80 space-lg-130">
+                <Basic id={introduction.slug} space="space-xs-50 space-lg-80" color={5}>
+                    <div className="row align-items-center gutter-50 gutter-lg-80">
+                        <div className="col-2 d-none d-md-block">
+                            <Img fluid={introduction.image.fluid} alt={introduction.title} />
+                        </div>
+                        <div className="col">
+                            <header
+                                className="copy action node-xs-30 node-lg-50"
+                                dangerouslySetInnerHTML={{ __html: introduction.body.childMarkdownRemark.html }}
+                            />
+                        </div>
+                    </div>
+                </Basic>
+            )}
+            {feature && (
+                <Basic id={feature.slug} space="space-xs-80 space-md-130 space-xl-210">
                     <div className="row align-items-center gutter-50 gutter-lg-80">
                         <div className="col-xl">
-                            <Img className="cheat-left" fluid={introduction.image.fluid} alt={introduction.title} />
+                            <Img className="cheat-left" fluid={feature.image.fluid} alt={feature.title} />
                         </div>
                         <div className="col-xl">
                             <header
                                 className="copy node-xs-30 node-lg-50"
-                                dangerouslySetInnerHTML={{ __html: introduction.body.childMarkdownRemark.html }}
+                                dangerouslySetInnerHTML={{ __html: feature.body.childMarkdownRemark.html }}
                             />
                         </div>
                     </div>
@@ -51,7 +66,10 @@ export default ({ location, data }) => {
             )}
             {action && (
                 <Basic id={action.slug} space="space-xs-50 space-lg-80" color={5}>
-                    <header className="copy node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: action.body.childMarkdownRemark.html }} />
+                    <header
+                        className="copy action node-xs-30 node-lg-50"
+                        dangerouslySetInnerHTML={{ __html: action.body.childMarkdownRemark.html }}
+                    />
                 </Basic>
             )}
         </Layout>
@@ -64,6 +82,9 @@ export const query = graphql`
             ...contentSplash
         }
         introduction: contentfulGeneral(slug: { eq: "introduction" }) {
+            ...contentGeneral
+        }
+        feature: contentfulGeneral(slug: { eq: "feature" }) {
             ...contentGeneral
         }
         action: contentfulGeneral(slug: { eq: "action" }) {
