@@ -9,7 +9,7 @@ import Modal from '../components/widget/Modal';
 import ButtonMain from '../components/project/ButtonMain';
 
 export default ({ location, data }) => {
-    const { splash, introduction, feature, action } = data;
+    const { splash, introduction, product, contact } = data;
     return (
         <Layout template="home" location={location}>
             {splash && (
@@ -49,26 +49,26 @@ export default ({ location, data }) => {
                     </div>
                 </Basic>
             )}
-            {feature && (
-                <Basic id={feature.slug} space="space-xs-80 space-md-130 space-xl-210">
+            {product && (
+                <Basic id={product.slug} space="space-xs-80 space-md-130 space-xl-210">
                     <div className="row align-items-center gutter-50 gutter-lg-80">
                         <div className="col-xl">
-                            <Img className="cheat-left" fluid={feature.image.fluid} alt={feature.title} />
+                            <Img className="cheat-left" fluid={product.image.fluid} alt={product.title} />
                         </div>
                         <div className="col-xl">
                             <header
                                 className="copy node-xs-30 node-lg-50"
-                                dangerouslySetInnerHTML={{ __html: feature.body.childMarkdownRemark.html }}
+                                dangerouslySetInnerHTML={{ __html: product.body.childMarkdownRemark.html }}
                             />
                         </div>
                     </div>
                 </Basic>
             )}
-            {action && (
-                <Basic id={action.slug} space="space-xs-50 space-lg-80" color={5}>
+            {contact && (
+                <Basic id={contact.slug} space="space-xs-50 space-lg-80" color={5}>
                     <header
-                        className="copy action node-xs-30 node-lg-50"
-                        dangerouslySetInnerHTML={{ __html: action.body.childMarkdownRemark.html }}
+                        className="copy action node-xs-30 node-lg-50 text-lg-center"
+                        dangerouslySetInnerHTML={{ __html: contact.body.childMarkdownRemark.html }}
                     />
                 </Basic>
             )}
@@ -84,10 +84,10 @@ export const query = graphql`
         introduction: contentfulGeneral(slug: { eq: "introduction" }) {
             ...contentGeneral
         }
-        feature: contentfulGeneral(slug: { eq: "feature" }) {
+        product: contentfulGeneral(slug: { eq: "product" }) {
             ...contentGeneral
         }
-        action: contentfulGeneral(slug: { eq: "action" }) {
+        contact: contentfulGeneral(slug: { eq: "contact" }) {
             ...contentGeneral
         }
     }
