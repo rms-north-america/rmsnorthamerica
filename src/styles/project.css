@@ -616,6 +616,25 @@ blockquote {
     color: #006c8c;
     }
 
+/* ----------!ACTION---------- */
+@media (min-width: 992px) {
+    .action p {
+        margin-top: -6px;
+        margin-bottom: -9px;
+        font-size: 27px;
+        line-height: 35px;
+        }
+    }
+.action a {
+    color: #f89c02;
+	}
+.action a:active:not([class*="btn"]),
+.action a:hover:not([class*="btn"]),
+.action a:focus:not([class*="btn"]) {
+    text-decoration: none;
+    color: #f9ad13;
+    }
+
 /* ========================== */
 /* ==========!SPACE========== */
 /* ========================== */
@@ -885,19 +904,12 @@ p + ul {
 /* ==========!SECTION========== */
 /* ============================ */
 
-/* ----------!BODY---------- */
-#action .copy {
-    margin: 0 auto;
-    max-width: 890px;
-	}
+/* ----------!ACTION---------- */
 @media (min-width: 992px) {
     #action .copy {
         text-align: center;
     	}
     }
-#action .copy a {
-    color: #f89c02;
-	}
 
 /* =========================== */
 /* ==========!REGION========== */
