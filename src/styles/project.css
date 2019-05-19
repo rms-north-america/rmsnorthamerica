@@ -608,12 +608,20 @@ blockquote {
 
 /* ----------!COPY---------- */
 .copy h3 {
-    margin-top: -7px;
-    margin-bottom: -8px;
-    font-size: 34px;
+    margin-top: -6px;
+    margin-bottom: -9px;
+    font-size: 27px;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 35px;
     color: #006c8c;
+    }
+@media (min-width: 992px) {
+    .copy h3 {
+        margin-top: -7px;
+        margin-bottom: -8px;
+        font-size: 34px;
+        line-height: 40px;
+        }
     }
 
 /* ----------!ACTION---------- */
@@ -898,17 +906,6 @@ p + ul {
 .hero .scroll-to {
     margin-bottom: 30px;
     bottom: 0;
-    }
-
-/* ============================ */
-/* ==========!SECTION========== */
-/* ============================ */
-
-/* ----------!ACTION---------- */
-@media (min-width: 992px) {
-    #action .copy {
-        text-align: center;
-    	}
     }
 
 /* =========================== */

@@ -1848,7 +1848,7 @@ h3 {
   font-size: 34px;
   line-height: 40px; }
 
-.h-xs-30, h1, .title, .carousel h2, .hero h2, .hero .scroll a {
+.h-xs-30, h1, .title {
   margin-top: -6px;
   margin-bottom: -9px;
   font-size: 41px;
@@ -1860,7 +1860,7 @@ h3 {
   font-size: 48px;
   line-height: 50px; }
 
-.h-xs-40, .carousel h1, .hero h1 {
+.h-xs-40 {
   margin-top: -9px;
   margin-bottom: -11px;
   font-size: 55px;
