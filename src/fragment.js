@@ -45,6 +45,7 @@ export const contentGeneral = graphql`
                 html
             }
         }
+        action
     }
 `;
 
