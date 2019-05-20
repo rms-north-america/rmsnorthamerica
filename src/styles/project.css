@@ -63,6 +63,18 @@ blockquote {
     min-width: 130px;
     }
 
+/* ----------!DEFAULT---------- */
+.btn-default {
+    border-color: #006c8c;
+    color: #006c8c;
+    }
+.btn-default:active,
+.btn-default:hover,
+.btn-default:focus {
+    background-color: #117d9d;
+    color: #fff;
+    }
+
 /* ----------!MAIN---------- */
 .btn-main {
     border-color: #f89c02;
@@ -556,11 +568,128 @@ blockquote {
     .cheat-left {
         margin-left: -50px;
         }
+    .cheat-right {
+        margin-right: -50px;
+        }
+    .cheat-both {
+        margin-left: -50px;
+        margin-right: -50px;
+        }
     }
 @media (min-width: 1440px) {
     .cheat-left {
         margin-left: -80px;
         }
+    .cheat-right {
+        margin-right: -80px;
+        }
+    .cheat-both {
+        margin-left: -80px;
+        margin-right: -80px;
+        }
+    }
+
+/* =========================== */
+/* ==========!EFFECT========== */
+/* =========================== */
+
+/* ----------!BASIC---------- */
+.effect-image figure {
+    background: #1d2c3c;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    cursor: default;
+    }
+.effect-image figure .image {
+    position: relative;
+    display: block;
+    opacity: 0.8;
+    }
+.effect-image figure figcaption {
+    padding: 30px;
+    font-size: 18px;
+    line-height: 25px;
+    color: #fff;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    }
+.effect-image figure figcaption::before,
+.effect-image figure figcaption::after {
+    pointer-events: none;
+    }
+.effect-image figure figcaption,
+.effect-image figure figcaption > .link {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+.effect-image figure figcaption > .link {
+    font-size: 0;
+    text-indent: 200%;
+    white-space: nowrap;
+    opacity: 0;
+    z-index: 1000;
+    }
+
+/* ----------!OSCAR---------- */
+.effect-image .effect-oscar {
+    background: #006c8c;
+    }
+.effect-image .effect-oscar .image {
+    opacity: 1;
+    transition: opacity 0.3s;
+    }
+.effect-image .effect-oscar figcaption {
+    padding: 20px;
+    }
+@media (min-width: 992px) {
+    .effect-image .effect-oscar figcaption {
+        padding: 80px;
+        }
+    }
+.effect-image .effect-oscar figcaption::before {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    border: 1px solid #fff;
+    content: '';
+    }
+@media (max-width: 991.98px) {
+    .effect-image .effect-oscar figcaption::before {
+        border: 0 none transparent;
+        }
+    }
+.effect-image .effect-oscar figcaption h2,
+.effect-image .effect-oscar figcaption h3,
+.effect-image .effect-oscar figcaption h4 {
+    opacity: 1;
+    transition: opacity 0.3s;
+    }
+.effect-image .effect-oscar figcaption::before,
+.effect-image .effect-oscar figcaption .caption {
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: scale(0);
+    }
+.effect-image .effect-oscar:hover figcaption h2,
+.effect-image .effect-oscar:hover figcaption h3,
+.effect-image .effect-oscar:hover figcaption h4 {
+    opacity: 0;
+    }
+.effect-image .effect-oscar:hover figcaption::before,
+.effect-image .effect-oscar:hover figcaption .caption {
+    opacity: 1;
+    transform: scale(1);
+    }
+.effect-image .effect-oscar:hover .image {
+    opacity: 0.1;
     }
 
 /* ========================= */
