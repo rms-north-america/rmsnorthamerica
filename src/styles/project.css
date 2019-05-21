@@ -491,7 +491,7 @@ blockquote {
 
 /* ----------!SELECTION---------- */
 ::selection {
-    background-color: #1d2c3c;
+    background-color: #117d9d;
     color: #fff;
     }
 
@@ -675,8 +675,8 @@ blockquote {
 .effect-image .effect-oscar figcaption::before,
 .effect-image .effect-oscar figcaption .caption {
     opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
     transform: scale(0);
+    transition: opacity 0.3s, transform 0.3s;
     }
 .effect-image .effect-oscar:hover figcaption h2,
 .effect-image .effect-oscar:hover figcaption h3,
@@ -1036,6 +1036,25 @@ p + ul {
     margin-bottom: 30px;
     bottom: 0;
     }
+
+/* ============================ */
+/* ==========!SECTION========== */
+/* ============================ */
+
+/* ----------!INDUSTRY---------- */
+@media (min-width: 992px) {
+    .industry figure {
+        height: 340px
+    	}
+    }
+.industry .headline {
+    padding: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-weight: 400;
+	}
 
 /* =========================== */
 /* ==========!REGION========== */

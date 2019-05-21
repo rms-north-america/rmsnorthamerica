@@ -12,11 +12,11 @@ import Button from '../components/unit/Button';
 export default ({ location, data }) => {
     const { splash, introduction, product, industry, industries, contact } = data;
     const loopIndustry = industries.edges.map(({ node }) => (
-        <article key={node.id} id={`industry-${node.slug}`} className={`industry industry-${node.order} effect-image col-lg-6`}>
+        <article key={node.id} id={`industry-${node.slug}`} className={`industry industry-${node.order} effect-image col-lg`}>
             <figure className="effect-oscar">
-                <Img className="image" fluid={node.image.fluid} alt={node.title} />
+                <Img className="image fit" fluid={node.image.fluid} alt={node.title} />
                 <figcaption className="dark-30 d-flex align-items-center">
-                    <h4 className="headline p-xs-20 exact-center">{node.title}</h4>
+                    <h4 className="headline">{node.title}</h4>
                     <div className="caption">
                         <p
                             dangerouslySetInnerHTML={{
@@ -93,10 +93,10 @@ export default ({ location, data }) => {
                         dangerouslySetInnerHTML={{ __html: industry.body.childMarkdownRemark.html }}
                     />
                     <section className="node-xs-50 node-lg-80 cheat-both">
-                        <div className="row gutter-50 gutter-lg-80">{loopIndustry}</div>
+                        <div className="row gutter-20">{loopIndustry}</div>
                     </section>
                     <footer className="node-xs-50 node-lg-80 text-lg-center">
-                        <Button size="xl" label={industry.action} />
+                        <Button label={industry.action} />
                     </footer>
                 </Feed>
             )}
