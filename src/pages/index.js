@@ -8,9 +8,10 @@ import Hero from '../components/section/Hero';
 import Feed from '../components/section/Feed';
 import Modal from '../components/widget/Modal';
 import Button from '../components/unit/Button';
+import CarouselTestimonial from '../components/project/CarouselTestimonial';
 
 export default ({ location, data }) => {
-    const { splash, introduction, product, industry, industries, contact } = data;
+    const { splash, introduction, product, industry, industries, testimonials, contact } = data;
     const loopIndustry = industries.edges.map(({ node }) => (
         <article key={node.id} id={`industry-${node.slug}`} className={`industry industry-${node.order} effect-image col-lg`}>
             <figure className="effect-oscar">
@@ -100,6 +101,9 @@ export default ({ location, data }) => {
                     </footer>
                 </Feed>
             )}
+            {testimonials.edges.length > 0 && (
+                <CarouselTestimonial id="testimonial" fade={true} controls={false} indicators={false} slides={testimonials} />
+            )}
             {contact && (
                 <Basic id={contact.slug} space="space-xs-50 space-lg-80" color={5}>
                     <header
@@ -143,6 +147,21 @@ export const query = graphql`
                     excerpt {
                         excerpt
                     }
+                    order
+                }
+            }
+        }
+        testimonials: allContentfulTestimonial(sort: { fields: order, order: ASC }) {
+            edges {
+                node {
+                    id
+                    title
+                    body {
+                        childMarkdownRemark {
+                            html
+                        }
+                    }
+                    company
                     order
                 }
             }

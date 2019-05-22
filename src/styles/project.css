@@ -1003,6 +1003,7 @@ p + ul {
 .scroll-to {
     border: 0 none transparent;
     padding: 20px;
+    z-index: 9999;
     cursor: pointer;
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -1076,6 +1077,9 @@ p + ul {
 		display: flex;
 		}
 	}
+.carousel .carousel-item {
+    background-color: #fff;
+    }
 
 /* ========================= */
 /* ==========!HERO========== */
@@ -1107,7 +1111,7 @@ p + ul {
 /* ----------!INDUSTRY---------- */
 @media (min-width: 992px) {
     .industry figure {
-        height: 340px
+        height: 340px;
     	}
     }
 .industry .headline {
@@ -1118,6 +1122,55 @@ p + ul {
     left: 0;
     font-weight: 400;
 	}
+
+/* ----------!TESTIMONIAL---------- */
+#testimonial {
+    overflow: visible;
+    }
+#testimonial p {
+    font-style: italic;
+    }
+@media (min-width: 992px) {
+    #testimonial p {
+        margin-top: -6px;
+        margin-bottom: -9px;
+        font-size: 27px;
+        line-height: 35px;
+        }
+    }
+#testimonial .icon-quote {
+    margin-top: -25px;
+    position: relative;
+    font-size: 48px;
+    color: #f89c02;
+	}
+#testimonial .icon-quote::after {
+    background-color: #fafafa;
+    margin-top: 25px;
+    width: 210px;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    content: '';
+    }
+#testimonial .icon-quote svg {
+    background-color: #fff;
+    padding: 10px;
+    z-index: 1;
+	}
+#testimonial .carousel {
+    color: #1d2c3c;
+    text-align: center;
+	}
+#testimonial .carousel-indicators li {
+    background-color: #006c8c;
+    }
+#testimonial .author + .company {
+    padding-top: 7px;
+    }
+#testimonial .company {
+    color: #006c8c;
+    }
 
 /* =========================== */
 /* ==========!REGION========== */
