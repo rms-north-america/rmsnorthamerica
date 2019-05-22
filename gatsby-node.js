@@ -1,11 +1,18 @@
 const path = require('path');
 
-// Posts
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions;
     return graphql(`
         {
             posts: allContentfulPost(sort: { fields: createdAt, order: DESC }, limit: 1000) {
+                edges {
+                    node {
+                        title
+                        slug
+                    }
+                }
+            }
+            simples: allContentfulSimple {
                 edges {
                     node {
                         title
@@ -19,42 +26,67 @@ exports.createPages = ({ graphql, actions }) => {
             throw errors;
         }
 
-        const { posts } = data;
-        const total = posts.edges.length;
-        const archive = 'post';
+        // Data
+        const { posts, simples } = data;
 
-        // Posts - Archive
-        const postsPerPage = 1;
-        const numPages = Math.ceil(total / postsPerPage);
+        // Post
+        const postTotal = posts.edges.length;
+        const postArchive = 'post';
+
+        // Post - Single
+        posts.edges.forEach(({ node }, index) => {
+            const { slug } = node;
+            const previous = index === postTotal - 1 ? null : posts.edges[index + 1].node;
+            const next = index === 0 ? null : posts.edges[index - 1].node;
+            createPage({
+                path: `/${postArchive}/${slug}`,
+                component: path.resolve('./src/templates/single-post.js'),
+                context: {
+                    total: postTotal,
+                    archive: postArchive,
+                    slug,
+                    previous,
+                    next,
+                },
+            });
+        });
+
+        // Post - Archive
+        const postsPerPage = 10;
+        const numPages = Math.ceil(postTotal / postsPerPage);
         Array.from({ length: numPages }).forEach((_, i) => {
             createPage({
-                path: i === 0 ? `/${archive}` : `/${archive}/${i + 1}`,
+                path: i === 0 ? `/${postArchive}` : `/${postArchive}/${i + 1}`,
                 component: path.resolve('./src/templates/archive-post.js'),
                 context: {
                     limit: postsPerPage,
                     skip: i * postsPerPage,
                     currentPage: i + 1,
+                    total: postTotal,
+                    archive: postArchive,
                     numPages,
-                    total,
-                    archive,
                 },
             });
         });
 
-        // Posts - Single
-        posts.edges.forEach(({ node }, index) => {
+        // Simple
+        const simpleTotal = simples.edges.length;
+        const simpleArchive = '/';
+
+        // Simple - Single
+        simples.edges.forEach(({ node }, index) => {
             const { slug } = node;
-            const previous = index === total - 1 ? null : posts.edges[index + 1].node;
-            const next = index === 0 ? null : posts.edges[index - 1].node;
+            const previous = index === simpleTotal - 1 ? null : simples.edges[index + 1].node;
+            const next = index === 0 ? null : simples.edges[index - 1].node;
             createPage({
-                path: `/${archive}/${slug}`,
-                component: path.resolve('./src/templates/single-post.js'),
+                path: `/${slug}`,
+                component: path.resolve('./src/templates/single-simple.js'),
                 context: {
+                    total: simpleTotal,
+                    archive: simpleArchive,
                     slug,
                     previous,
                     next,
-                    total,
-                    archive,
                 },
             });
         });
