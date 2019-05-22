@@ -16,9 +16,9 @@ export default ({ location, data, pageContext }) => {
                 </div>
                 <div className="col-lg">
                     <header>
-                        <h2 className="p-xs-20 feed-title">
+                        <h3 className="p-xs-20 feed-title">
                             <Link to={`/${pageContext.archive}/${post.slug}`}>{post.title}</Link>
-                        </h2>
+                        </h3>
                         <p>{post.createdAt}</p>
                     </header>
                     <section>
