@@ -11,9 +11,15 @@ body {
     color: #1d2c3c;
     }
 
-/* ========================= */
-/* ==========!FONT========== */
-/* ========================= */
+/* ========================== */
+/* ==========!BASIC========== */
+/* ========================== */
+
+/* ----------!H1---------- */
+h1 {
+    font-weight: 400;
+    color: #006c8c;
+    }
 
 /* ----------!LIST---------- */
 ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]),
@@ -589,6 +595,14 @@ blockquote {
         }
     }
 
+/* ----------!WIDTH---------- */
+@media (min-width: 992px) {
+    .width {
+        margin: 0 auto;
+        width: 720px;
+        }
+    }
+
 /* =========================== */
 /* ==========!EFFECT========== */
 /* =========================== */
@@ -702,8 +716,8 @@ blockquote {
     margin-top: -6px;
     margin-bottom: -9px;
     font-size: 48px;
-    font-weight: 400;
     line-height: 50px;
+    color: #fff;
     }
 @media (min-width: 992px) {
     .carousel h1,
