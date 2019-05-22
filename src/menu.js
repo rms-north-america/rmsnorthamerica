@@ -84,6 +84,6 @@ export const FOOTER_THREE = [
     },
     {
         label: 'Privacy Policy',
-        to: path.ROOT,
+        to: path.PRIVACY_POLICY,
     },
 ];
