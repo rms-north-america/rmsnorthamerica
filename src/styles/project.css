@@ -21,6 +21,30 @@ h1 {
     color: #006c8c;
     }
 
+/* ----------!H2---------- */
+h2 {
+    margin-top: -7px;
+    margin-bottom: -8px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    }
+
+/* ----------!H3---------- */
+h3 {
+    margin-top: -6px;
+    margin-bottom: -9px;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 35px;
+    color: #006c8c;
+    }
+
+/* ----------!H4---------- */
+h4 {
+    font-weight: 700;
+    }
+
 /* ----------!LIST---------- */
 ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]),
 ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) {
@@ -737,6 +761,7 @@ blockquote {
     margin-left: -2px !important;
     margin-right: -2px !important;
     font-size: 20px;
+    font-weight: 300;
     line-height: 30px;
     }
 @media (min-width: 992px) {
@@ -750,14 +775,6 @@ blockquote {
     }
 
 /* ----------!COPY---------- */
-.copy h3 {
-    margin-top: -6px;
-    margin-bottom: -9px;
-    font-size: 27px;
-    font-weight: 700;
-    line-height: 35px;
-    color: #006c8c;
-    }
 @media (min-width: 992px) {
     .copy h3 {
         margin-top: -7px;
@@ -789,6 +806,38 @@ blockquote {
 /* ========================== */
 /* ==========!SPACE========== */
 /* ========================== */
+
+/* ----------!BETWEEN---------- */
+h3 + h4 {
+    padding-top: 46px;
+    }
+p + h1,
+ol + h1,
+ul + h1 {
+    padding-top: 44px;
+    }
+p + h2,
+ol + h2,
+ul + h2,
+h2 + h3,
+p + h3,
+ol + h3,
+ul + h3 {
+    padding-top: 74px;
+    }
+p + h4,
+ol + h4,
+ul + h4 {
+    padding-top: 46px;
+    }
+p + h5,
+ol + h5,
+ul + h5,
+p + h6,
+ol + h6,
+ul + h6 {
+    padding-top: 48px;
+    }
 
 /* ----------!LIST---------- */
 ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) > li + li,

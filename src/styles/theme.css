@@ -2605,31 +2605,6 @@ h5 + p,
 h6 + p {
   padding-top: 27px; }
 
-/* ----------!BETWEEN---------- */
-p + h1,
-ol + h1,
-ul + h1 {
-  padding-top: 44px; }
-
-p + h2,
-ol + h2,
-ul + h2,
-p + h3,
-ol + h3,
-ul + h3,
-p + h4,
-ol + h4,
-ul + h4 {
-  padding-top: 46px; }
-
-p + h5,
-ol + h5,
-ul + h5,
-p + h6,
-ol + h6,
-ul + h6 {
-  padding-top: 48px; }
-
 /* ----------!BUTTON---------- */
 h1 + button,
 h2 + button,
