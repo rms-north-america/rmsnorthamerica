@@ -1,10 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
-import siteMetadata from '../queries/siteMetadata';
+import site from '../queries/site';
 
 const SEO = ({ location, template, title: pageTitle, description: pageDescription }) => {
-    const { title, description, author } = siteMetadata();
+    const { description, name: title } = site();
     const metaDescription = pageDescription || description;
     return (
         <Helmet defaultTitle={title} titleTemplate={`%s - ${title}`} title={pageTitle}>
@@ -18,7 +18,7 @@ const SEO = ({ location, template, title: pageTitle, description: pageDescriptio
             <meta property="og:type" content={template.includes('single') ? 'article' : 'website'} />
             {pageTitle && <meta name="twitter:title" content={pageTitle} />}
             <meta name="twitter:description" content={metaDescription} />
-            <meta name="twitter:creator" content={author} />
+            <meta name="twitter:creator" content={title} />
             <meta name="twitter:card" content="summary" />
             <meta name="description" content={metaDescription} />
         </Helmet>

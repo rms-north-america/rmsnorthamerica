@@ -1,12 +1,12 @@
 import React from 'react';
 import * as path from '../path';
+import Button from './unit/Button';
 import Dropdown from './unit/Dropdown';
-import ButtonMain from './project/ButtonMain';
 
 const Account = () => (
     <ul className="navbar-action ml-auto account account-guest">
         <li className="nav-item">
-            <ButtonMain />
+            <Button label="Request demo" kind="main" to={path.REQUEST_DEMO} />
         </li>
         <Dropdown name="log-in" label="Log in" alignment="right" caret>
             <a className="nav-link" title="Log in to RMS9" href={path.LOG_IN_RMS_NINE} target="_blank" rel="noopener noreferrer">

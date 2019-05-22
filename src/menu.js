@@ -35,3 +35,55 @@ export const MAIN = [
         to: path.POST,
     },
 ];
+
+// Footer - One
+export const FOOTER_ONE = [
+    {
+        label: 'Home',
+        to: path.ROOT,
+    },
+    {
+        label: 'Support',
+        to: path.ROOT,
+    },
+];
+
+// Footer - Two
+export const FOOTER_TWO = [
+    {
+        label: 'About Us',
+        to: path.ROOT,
+    },
+    {
+        label: 'News & Events',
+        to: path.ROOT,
+    },
+    {
+        label: 'Contact Us',
+        to: path.ROOT,
+    },
+    {
+        label: 'Careers',
+        to: path.ROOT,
+    },
+];
+
+// Footer - Three
+export const FOOTER_THREE = [
+    {
+        label: 'Live Chat',
+        to: path.ROOT,
+    },
+    {
+        label: 'Referral Program',
+        to: path.ROOT,
+    },
+    {
+        label: 'User License',
+        to: path.ROOT,
+    },
+    {
+        label: 'Privacy Policy',
+        to: path.PRIVACY_POLICY,
+    },
+];

@@ -22,7 +22,7 @@ Corporate website built with the Gatsby + Contentful + Netlify stack
 ## Extras
 
 [Mailchimp](https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp)<br>
-[Carousel](https://react-bootstrap.github.io/components/carousel)
+[Carousel](https://react-bootstrap.github.io/components/carousel)<br>
 [Modal](https://react-bootstrap.github.io/components/modal/)
 
 ## Setup

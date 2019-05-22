@@ -7,6 +7,7 @@ module.exports = {
         author: 'RMS',
     },
     plugins: [
+        'gatsby-plugin-catch-links',
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
