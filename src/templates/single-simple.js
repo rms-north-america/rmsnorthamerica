@@ -12,10 +12,7 @@ export default ({ location, data }) => {
                 <header className="node-xs-30 node-lg-50 text-lg-center">
                     <h1>{simple.title}</h1>
                 </header>
-                <section
-                    className="node-xs-30 node-lg-50"
-                    dangerouslySetInnerHTML={{ __html: simple.body.childMarkdownRemark.html.replace(/\n/g, '<br>').replace(/<br><p>/g, '<p>') }}
-                />
+                <section className="node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: simple.body.childMarkdownRemark.html }} />
             </Basic>
         </Layout>
     );
