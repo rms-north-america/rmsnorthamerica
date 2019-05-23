@@ -1,6 +1,6 @@
 import * as path from './path';
 
-// Product
+// Industries
 export const INDUSTRIES = [
     {
         label: 'Hotel & Resort',
@@ -33,6 +33,26 @@ export const MAIN = [
     {
         label: 'Contact',
         to: path.POST,
+    },
+];
+
+// Account - Log In
+export const ACCOUNT_LOG_IN = [
+    {
+        label: 'Log in to RMS9',
+        to: path.LOG_IN_RMS_NINE,
+    },
+    {
+        label: 'Log in to RMS9+',
+        to: path.LOG_IN_RMS_NINE_PLUS,
+    },
+    {
+        label: 'Customer Support Center',
+        to: path.CUSTOMER_SUPPORT_CENTER,
+    },
+    {
+        label: 'Remote Assistance',
+        to: path.REMOTE_ASSISTANCE,
     },
 ];
 
