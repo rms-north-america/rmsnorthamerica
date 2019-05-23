@@ -1,19 +1,27 @@
 import React from 'react';
-import * as path from '../path';
+import { generateID } from '../function';
+import * as menu from '../menu';
+import site from '../queries/site';
 import Button from './unit/Button';
 import Dropdown from './unit/Dropdown';
 
-const Account = () => (
-    <ul className="navbar-action ml-auto account account-guest">
-        <li className="nav-item">
-            <Button label="Request demo" kind="main" to={path.REQUEST_DEMO} />
-        </li>
-        <Dropdown name="log-in" label="Log in" alignment="right" caret>
-            <a className="nav-link" title="Log in to RMS9" href={path.LOG_IN_RMS_NINE} target="_blank" rel="noopener noreferrer">
-                Log in to RMS9
-            </a>
-        </Dropdown>
-    </ul>
-);
+const Account = () => {
+    const { action, link } = site();
+    const loopChildren = menu.ACCOUNT_LOG_IN.map(({ label, to }) => (
+        <a key={generateID()} className="dropdown-item" title={label} href={to} target="_blank" rel="noopener noreferrer">
+            {label}
+        </a>
+    ));
+    return (
+        <ul className="navbar-action ml-auto account account-guest">
+            <li className="nav-item">
+                <Button kind="main" label={action} to={`/${link.slug}`} />
+            </li>
+            <Dropdown name="log-in" label="Log in" alignment="right" caret>
+                {loopChildren}
+            </Dropdown>
+        </ul>
+    );
+};
 
 export default Account;

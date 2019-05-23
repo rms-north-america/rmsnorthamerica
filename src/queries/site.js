@@ -7,6 +7,10 @@ export default () => {
                 contentfulSite(slug: { eq: "information" }) {
                     name
                     description
+                    action
+                    link {
+                        slug
+                    }
                 }
             }
         `,
