@@ -70,7 +70,7 @@ u {
 
 /* ----------!BLOCKQUOTE---------- */
 blockquote {
-    border-left: 5px solid #fafafa;
+    border-left: 5px solid #f7f7f7;
     padding: 20px 25px;
     }
 
@@ -206,7 +206,7 @@ blockquote {
     }
 .dropdown .dropdown-menu .dropdown-header,
 .dropdown .dropdown-menu .dropdown-text,
-.dropdown .dropdown-menu .nav-link {
+.dropdown .dropdown-menu .dropdown-item {
     margin: 0;
     padding: 0 19px;
     font-size: 16px;
@@ -217,25 +217,25 @@ blockquote {
 .dropdown .dropdown-menu .dropdown-text {
     color: #eaeaea;
     }
-.dropdown .dropdown-menu .nav-link {
+.dropdown .dropdown-menu .dropdown-item {
     color: #1d2c3c;
     cursor: pointer;
     }
-.dropdown .dropdown-menu .nav-link:active,
-.dropdown .dropdown-menu .nav-link:hover,
-.dropdown .dropdown-menu .nav-link:focus {
-    background-color: #fafafa;
+.dropdown .dropdown-menu .dropdown-item:active,
+.dropdown .dropdown-menu .dropdown-item:hover,
+.dropdown .dropdown-menu .dropdown-item:focus {
+    background-color: #f7f7f7;
     color: #1d2c3c;
     }
-.dropdown .dropdown-menu .nav-link.active,
-.dropdown .dropdown-menu .nav-link.active:active,
-.dropdown .dropdown-menu .nav-link.active:hover,
-.dropdown .dropdown-menu .nav-link.active:focus {
+.dropdown .dropdown-menu .dropdown-item.active,
+.dropdown .dropdown-menu .dropdown-item.active:active,
+.dropdown .dropdown-menu .dropdown-item.active:hover,
+.dropdown .dropdown-menu .dropdown-item.active:focus {
     background-color: #006c8c;
     color: #fff;
     cursor: default;
     }
-.dropdown .dropdown-menu .nav-link + .nav-link {
+.dropdown .dropdown-menu .dropdown-item + .dropdown-item {
     margin-top: 5px;
     }
 
@@ -307,7 +307,7 @@ blockquote {
 .navbar .navbar-action > li.show > .dropdown-toggle:active,
 .navbar .navbar-action > li.show > .dropdown-toggle:hover,
 .navbar .navbar-action > li.show > .dropdown-toggle:focus {
-    background-color: #fafafa;
+    background-color: #f7f7f7;
     color: #1d2c3c;
     }
 .navbar .navbar-nav > li > a.active,
@@ -542,7 +542,7 @@ blockquote {
     background-color: #f89c02 !important;
     }
 .color-5 {
-    background-color: #fafafa !important;
+    background-color: #f7f7f7 !important;
     }
 
 /* ----------!TINT---------- */
@@ -1145,7 +1145,7 @@ p + ul {
     color: #f89c02;
 	}
 #testimonial .icon-quote::after {
-    background-color: #fafafa;
+    background-color: #f7f7f7;
     margin-top: 25px;
     width: 210px;
     height: 3px;
@@ -1196,8 +1196,8 @@ p + ul {
 /* ----------!HEADER---------- */
 #header {
     background-color: #fff;
-    border-bottom: 1px solid #fafafa;
-    box-shadow: 0 2px #fafafa;
+    border-bottom: 1px solid #f7f7f7;
+    box-shadow: 0 2px #f7f7f7;
     }
 #header .logo {
     margin-top: 3px;
