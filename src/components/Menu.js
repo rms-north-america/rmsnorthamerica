@@ -5,8 +5,8 @@ import { slugify, generateID } from '../function';
 import * as menu from '../menu';
 import Dropdown from './unit/Dropdown';
 
-const MenuLink = ({ label, to }) => (
-    <Link className="nav-link" activeClassName="active" title={label} to={to} partiallyActive>
+const MenuLink = ({ label, to, child }) => (
+    <Link className={child ? 'dropdown-item' : 'nav-link'} activeClassName="active" title={label} to={to} partiallyActive>
         {label}
     </Link>
 );
@@ -14,17 +14,19 @@ const MenuLink = ({ label, to }) => (
 MenuLink.propTypes = {
     label: PropTypes.string,
     to: PropTypes.string,
+    child: PropTypes.bool,
 };
 
 MenuLink.defaultProps = {
     label: undefined,
     to: undefined,
+    child: false,
 };
 
 const Menu = ({ offcanvas }) => {
     const loopMain = menu.MAIN.map(({ label, to, children }) => {
         const name = slugify(label);
-        const loopChildren = children && children.map(({ label, to }) => <MenuLink key={generateID()} label={label} to={to} />);
+        const loopChildren = children && children.map(({ label, to }) => <MenuLink key={generateID()} label={label} to={to} child />);
         return children ? (
             <Dropdown key={generateID()} name={offcanvas ? `offcanvas-${name}` : name} label={label} alignment="right" caret>
                 {loopChildren}
