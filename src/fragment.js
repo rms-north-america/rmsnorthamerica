@@ -64,6 +64,9 @@ export const contentSplash = graphql`
             }
         }
         action
+        link {
+            slug
+        }
         trigger
         video
         scroll
@@ -85,6 +88,9 @@ export const contentHero = graphql`
             }
         }
         action
+        link {
+            slug
+        }
         trigger
         video
         scroll
