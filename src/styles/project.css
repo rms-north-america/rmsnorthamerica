@@ -1003,7 +1003,7 @@ p + ul {
 .scroll-to {
     border: 0 none transparent;
     padding: 20px;
-    z-index: 9999;
+    z-index: 999;
     cursor: pointer;
     -webkit-user-select: none;
        -moz-user-select: none;
