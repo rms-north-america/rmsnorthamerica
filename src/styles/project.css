@@ -62,6 +62,15 @@ a:focus:not([class*="btn"]) {
     text-decoration: none;
     color: #1d2c3c;
     }
+a[href="/request-demo"] {
+    color: #f89c02;
+	}
+a[href="/request-demo"]:active:not([class*="btn"]),
+a[href="/request-demo"]:hover:not([class*="btn"]),
+a[href="/request-demo"]:focus:not([class*="btn"]) {
+    text-decoration: none;
+    color: #f9ad13;
+    }
 
 /* ----------!UNDERLINE---------- */
 u {
@@ -784,23 +793,14 @@ blockquote {
         }
     }
 
-/* ----------!ACTION---------- */
+/* ----------!ATTENTION---------- */
 @media (min-width: 992px) {
-    .action p {
+    .attention p {
         margin-top: -6px;
         margin-bottom: -9px;
         font-size: 27px;
         line-height: 35px;
         }
-    }
-.action a {
-    color: #f89c02;
-	}
-.action a:active:not([class*="btn"]),
-.action a:hover:not([class*="btn"]),
-.action a:focus:not([class*="btn"]) {
-    text-decoration: none;
-    color: #f9ad13;
     }
 
 /* ========================== */
@@ -1108,13 +1108,22 @@ p + ul {
 /* ==========!SECTION========== */
 /* ============================ */
 
+/* ----------!POINT---------- */
+#point h3 {
+    margin-top: -7px;
+    margin-bottom: -8px;
+    font-size: 20px;
+    line-height: 30px;
+    color: #1d2c3c;
+    }
+
 /* ----------!INDUSTRY---------- */
 @media (min-width: 992px) {
-    .industry figure {
+    #industry .industry figure {
         height: 340px;
     	}
     }
-.industry .headline {
+#industry .industry .headline {
     padding: 30px;
     position: absolute;
     right: 0;

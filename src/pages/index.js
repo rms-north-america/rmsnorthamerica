@@ -11,9 +11,14 @@ import Button from '../components/unit/Button';
 import CarouselTestimonial from '../components/project/CarouselTestimonial';
 
 export default ({ location, data }) => {
-    const { splash, introduction, product, industry, industries, testimonials, contact } = data;
+    const { points, industries, testimonials, splash, introduction, product, industry, contact } = data;
+    const loopPoint = points.edges.map(({ node }) => (
+        <article key={node.id} id={`point-${node.slug}`} className={`point point-${node.order} col-lg-4`}>
+            <header dangerouslySetInnerHTML={{ __html: node.body.childMarkdownRemark.html }} />
+        </article>
+    ));
     const loopIndustry = industries.edges.map(({ node }) => (
-        <article key={node.id} id={`industry-${node.slug}`} className={`industry industry-${node.order} effect-image col-lg`}>
+        <article key={node.id} id={`industry-${node.slug}`} className={`industry industry-${node.order} effect-image col-lg-3`}>
             <figure className="effect-oscar">
                 <Img className="image fit" fluid={node.image.fluid} alt={node.title} />
                 <figcaption className="dark-30 d-flex align-items-center">
@@ -21,7 +26,7 @@ export default ({ location, data }) => {
                     <div className="caption">
                         <p
                             dangerouslySetInnerHTML={{
-                                __html: node.excerpt ? node.excerpt.excerpt : node.body.childMarkdownRemark.excerpt.replace(/\n/g, ' '),
+                                __html: node.excerpt ? node.excerpt.excerpt : node.body.childMarkdownRemark.excerpt,
                             }}
                         />
                         <p>Learn more →</p>
@@ -64,13 +69,17 @@ export default ({ location, data }) => {
                             <Img fluid={introduction.image.fluid} alt={introduction.title} />
                         </div>
                         <div className="col">
-                            <header
-                                className="copy action node-xs-30 node-lg-50"
-                                dangerouslySetInnerHTML={{ __html: introduction.body.childMarkdownRemark.html }}
-                            />
+                            <header className="copy attention" dangerouslySetInnerHTML={{ __html: introduction.body.childMarkdownRemark.html }} />
                         </div>
                     </div>
                 </Basic>
+            )}
+            {points.edges.length > 0 && (
+                <Feed id="point" space="space-xs-80 space-md-130 space-xl-210" item="point">
+                    <section>
+                        <div className="row gutter-50 gutter-lg-80">{loopPoint}</div>
+                    </section>
+                </Feed>
             )}
             {product && (
                 <Basic id={product.slug} space="space-xs-80 space-md-130 space-xl-210">
@@ -79,15 +88,12 @@ export default ({ location, data }) => {
                             <Img className="cheat-left" fluid={product.image.fluid} alt={product.title} />
                         </div>
                         <div className="col-xl">
-                            <header
-                                className="copy node-xs-30 node-lg-50"
-                                dangerouslySetInnerHTML={{ __html: product.body.childMarkdownRemark.html }}
-                            />
+                            <header className="copy" dangerouslySetInnerHTML={{ __html: product.body.childMarkdownRemark.html }} />
                         </div>
                     </div>
                 </Basic>
             )}
-            {industry && (
+            {industries.edges.length > 0 && (
                 <Feed id={industry.slug} space="space-xs-80 space-md-130 space-xl-210" item="industry">
                     <header
                         className="copy node-xs-50 node-lg-80 text-lg-center"
@@ -107,7 +113,7 @@ export default ({ location, data }) => {
             {contact && (
                 <Basic id={contact.slug} space="space-xs-50 space-lg-80" color={5}>
                     <header
-                        className="copy action node-xs-30 node-lg-50 text-lg-center"
+                        className="copy attention node-xs-30 node-lg-50 text-lg-center"
                         dangerouslySetInnerHTML={{ __html: contact.body.childMarkdownRemark.html }}
                     />
                 </Basic>
@@ -118,17 +124,20 @@ export default ({ location, data }) => {
 
 export const query = graphql`
     query pageHome {
-        splash: contentfulHero(slug: { eq: "splash" }) {
-            ...contentSplash
-        }
-        introduction: contentfulGeneral(slug: { eq: "introduction" }) {
-            ...contentGeneral
-        }
-        product: contentfulGeneral(slug: { eq: "product" }) {
-            ...contentGeneral
-        }
-        industry: contentfulGeneral(slug: { eq: "industry" }) {
-            ...contentGeneral
+        points: allContentfulPoint(sort: { fields: order, order: ASC }) {
+            edges {
+                node {
+                    id
+                    title
+                    slug
+                    body {
+                        childMarkdownRemark {
+                            html
+                        }
+                    }
+                    order
+                }
+            }
         }
         industries: allContentfulIndustry(sort: { fields: order, order: ASC }) {
             edges {
@@ -165,6 +174,18 @@ export const query = graphql`
                     order
                 }
             }
+        }
+        splash: contentfulHero(slug: { eq: "splash" }) {
+            ...contentSplash
+        }
+        introduction: contentfulGeneral(slug: { eq: "introduction" }) {
+            ...contentGeneral
+        }
+        product: contentfulGeneral(slug: { eq: "product" }) {
+            ...contentGeneral
+        }
+        industry: contentfulGeneral(slug: { eq: "industry" }) {
+            ...contentGeneral
         }
         contact: contentfulGeneral(slug: { eq: "contact" }) {
             ...contentGeneral
