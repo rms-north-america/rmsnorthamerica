@@ -16,7 +16,7 @@ const Carousel = ({ container, height, align, space, tint, color, id, source, fa
                         <div className={container}>
                             <section dangerouslySetInnerHTML={{ __html: slide.body.childMarkdownRemark.html }} />
                             <footer>
-                                <strong className="author p-xs-15 bold">{slide.title}</strong>
+                                <strong className="author p-xs-15">{slide.title}</strong>
                                 <h4 className="company p-xs-15">{slide.company}</h4>
                             </footer>
                         </div>

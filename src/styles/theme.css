@@ -2591,20 +2591,6 @@ h5 + h6,
 h6 + h6 {
   padding-top: 13px; }
 
-/* ----------!PARAGRAPH---------- */
-p + p,
-h1 + p {
-  padding-top: 23px; }
-
-h2 + p,
-h3 + p,
-h4 + p {
-  padding-top: 23px; }
-
-h5 + p,
-h6 + p {
-  padding-top: 27px; }
-
 /* ----------!BUTTON---------- */
 h1 + button,
 h2 + button,

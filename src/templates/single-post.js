@@ -15,11 +15,11 @@ export default ({ location, data, pageContext }) => {
             <Basic id={post.slug} space="space-xs-80 space-lg-130">
                 <header className="node-xs-30 node-lg-50">
                     <h1>{post.title}</h1>
-                    <p>{post.createdAt}</p>
+                    <p>{post.published}</p>
                 </header>
                 <section
                     className="node-xs-30 node-xs-50 node-lg-50 node-lg-80"
-                    dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html.replace(/\n/g, '<br>').replace(/<br><p>/g, '<p>') }}
+                    dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }}
                 />
                 {pageContext.total > 1 && (
                     <footer className="node-xs-30 node-xs-50 node-lg-50 node-lg-80">
@@ -34,7 +34,6 @@ export default ({ location, data, pageContext }) => {
 export const query = graphql`
     query postBySlug($slug: String!) {
         post: contentfulPost(slug: { eq: $slug }) {
-            createdAt(formatString: "MMMM DD, YYYY")
             title
             slug
             image {
@@ -49,6 +48,7 @@ export const query = graphql`
             excerpt {
                 excerpt
             }
+            published(formatString: "MMMM D, YYYY")
         }
     }
 `;

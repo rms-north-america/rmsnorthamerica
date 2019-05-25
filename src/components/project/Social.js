@@ -28,7 +28,7 @@ SocialLink.defaultProps = {
 const Social = () => {
     const { facebook, linkedin, youtube, instagram } = social();
     return (
-        <ul className="social menu-list d-flex justify-content-lg-end">
+        <ul className="social d-flex">
             {facebook && <SocialLink label="Facebook" to={facebook} icon={faFacebookF} />}
             {linkedin && <SocialLink label="LinkedIn" to={linkedin} icon={faLinkedinIn} />}
             {youtube && <SocialLink label="YouTube" to={youtube} icon={faYoutube} />}

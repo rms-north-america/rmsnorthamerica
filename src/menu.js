@@ -1,14 +1,90 @@
 import * as path from './path';
 
-// Industries
-export const INDUSTRIES = [
+// Product
+export const PRODUCT = [
     {
-        label: 'Hotel & Resort',
-        to: path.POST,
+        label: 'Overview',
+        to: path.PRODUCT + path.PRODUCT_OVERVIEW,
     },
     {
-        label: 'Motel',
-        to: path.ROOT,
+        label: 'Available Features',
+        to: path.PRODUCT + path.PRODUCT_FEATURES,
+    },
+    {
+        label: 'Resources',
+        to: path.PRODUCT + path.PRODUCT_RESOURCES,
+    },
+    {
+        label: 'Interfaces',
+        to: path.PRODUCT + path.PRODUCT_INTERFACES,
+    },
+    {
+        label: 'Support',
+        to: path.PRODUCT + path.PRODUCT_SUPPORT,
+    },
+];
+
+// Industry
+export const INDUSTRY = [
+    {
+        label: 'Hotel',
+        to: path.INDUSTRY + path.INDUSTRY_HOTEL,
+    },
+    {
+        label: 'RV Park',
+        to: path.INDUSTRY + path.INDUSTRY_RV_PARK,
+    },
+    {
+        label: 'Campground',
+        to: path.INDUSTRY + path.INDUSTRY_CAMPGROUND,
+    },
+    {
+        label: 'Marina',
+        to: path.INDUSTRY + path.INDUSTRY_MARINA,
+    },
+];
+
+// About
+export const ABOUT = [
+    {
+        label: 'Company Overview',
+        to: path.ABOUT + path.ABOUT_COMPANY,
+    },
+    {
+        label: 'Meet the Team',
+        to: path.ABOUT + path.ABOUT_TEAM,
+    },
+    {
+        label: 'Partner with Us',
+        to: path.ABOUT + path.ABOUT_PARTNER,
+    },
+];
+
+// Contact
+export const CONTACT = [
+    {
+        label: 'North America',
+        to: path.CONTACT + path.CONTACT_NORTH_AMERICA,
+    },
+    {
+        label: 'Australia / Asia',
+        to: path.CONTACT + path.CONTACT_AUSTRALIA_ASIA,
+    },
+    {
+        label: 'New Zealand',
+        to: path.CONTACT + path.CONTACT_NEW_ZEALAND,
+    },
+    {
+        label: 'India',
+        to: path.CONTACT + path.CONTACT_INDIA,
+    },
+    {
+        label: 'Middle East',
+        to: path.CONTACT + path.CONTACT_MIDDLE_EAST,
+    },
+    {
+        label: 'UK & Ireland',
+        to: path.CONTACT + path.CONTACT_UK_IRELAND,
     },
 ];
 
@@ -16,11 +92,11 @@ export const INDUSTRIES = [
 export const MAIN = [
     {
         label: 'Product',
-        to: path.POST,
+        children: PRODUCT,
     },
     {
         label: 'Industries',
-        children: INDUSTRIES,
+        children: INDUSTRY,
     },
     {
         label: 'News',
@@ -28,11 +104,11 @@ export const MAIN = [
     },
     {
         label: 'About',
-        to: path.POST,
+        children: ABOUT,
     },
     {
         label: 'Contact',
-        to: path.POST,
+        children: CONTACT,
     },
 ];
 
@@ -63,27 +139,27 @@ export const FOOTER_ONE = [
         to: path.ROOT,
     },
     {
-        label: 'Support',
-        to: path.ROOT,
+        label: 'About',
+        to: path.ABOUT + path.ABOUT_COMPANY,
+    },
+    {
+        label: 'News',
+        to: path.POST,
     },
 ];
 
 // Footer - Two
 export const FOOTER_TWO = [
     {
-        label: 'About Us',
-        to: path.ROOT,
-    },
-    {
-        label: 'News & Events',
-        to: path.ROOT,
-    },
-    {
-        label: 'Contact Us',
-        to: path.ROOT,
-    },
-    {
         label: 'Careers',
+        to: path.ROOT,
+    },
+    {
+        label: 'Partnerships',
+        to: path.ROOT,
+    },
+    {
+        label: 'Referral Program',
         to: path.ROOT,
     },
 ];
@@ -91,13 +167,21 @@ export const FOOTER_TWO = [
 // Footer - Three
 export const FOOTER_THREE = [
     {
+        label: 'Contact',
+        to: path.CONTACT_NORTH_AMERICA,
+    },
+    {
         label: 'Live Chat',
         to: path.ROOT,
     },
     {
-        label: 'Referral Program',
-        to: path.ROOT,
+        label: 'Product Support',
+        to: path.PRODUCT + path.PRODUCT_SUPPORT,
     },
+];
+
+// Footer - Four
+export const FOOTER_FOUR = [
     {
         label: 'User License',
         to: path.ROOT,
@@ -105,5 +189,9 @@ export const FOOTER_THREE = [
     {
         label: 'Privacy Policy',
         to: path.PRIVACY_POLICY,
+    },
+    {
+        label: 'PCI Compliance',
+        to: path.ROOT,
     },
 ];

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import * as path from '../path';
 import * as style from '../style';
 import Layout from '../components/Layout';
 import Basic from '../components/section/Basic';
@@ -29,9 +30,9 @@ export default ({ location, data }) => {
                                 __html: node.excerpt ? node.excerpt.excerpt : node.body.childMarkdownRemark.excerpt,
                             }}
                         />
-                        <p>Learn more →</p>
+                        <p>Learn More →</p>
                     </div>
-                    <Link className="link" to={`/${node.slug}`}>
+                    <Link className="link" to={`${path.INDUSTRY}/${node.slug}`}>
                         view more
                     </Link>
                 </figcaption>
@@ -139,7 +140,7 @@ export const query = graphql`
                 }
             }
         }
-        industries: allContentfulIndustry(sort: { fields: order, order: ASC }) {
+        industries: allContentfulIndustry(filter: { type: { eq: "main" } }, sort: { fields: order, order: ASC }) {
             edges {
                 node {
                     id
