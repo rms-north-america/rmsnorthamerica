@@ -16,10 +16,10 @@ export default ({ location, data, pageContext }) => {
                 </div>
                 <div className="col-lg">
                     <header>
-                        <h3 className="p-xs-20 feed-title">
+                        <h3 className="p-xs-20">
                             <Link to={`/${pageContext.archive}/${post.slug}`}>{post.title}</Link>
                         </h3>
-                        <p>{post.published}</p>
+                        <p className="date">{post.published}</p>
                     </header>
                     <section>
                         <p
