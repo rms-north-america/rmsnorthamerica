@@ -19,12 +19,12 @@ export default ({ location, data, pageContext }) => {
                         <h3 className="p-xs-20 feed-title">
                             <Link to={`/${pageContext.archive}/${post.slug}`}>{post.title}</Link>
                         </h3>
-                        <p>{post.createdAt}</p>
+                        <p>{post.published}</p>
                     </header>
                     <section>
                         <p
                             dangerouslySetInnerHTML={{
-                                __html: post.excerpt ? post.excerpt.excerpt : post.body.childMarkdownRemark.excerpt,
+                                __html: post.excerpt ? post.excerpt.excerpt : post.body.childMarkdownRemark.excerpt.replace(/\n/g, ' '),
                             }}
                         />
                     </section>
@@ -52,11 +52,10 @@ export default ({ location, data, pageContext }) => {
 
 export const query = graphql`
     query postsAll($limit: Int!, $skip: Int!) {
-        posts: allContentfulPost(sort: { fields: createdAt, order: DESC }, limit: $limit, skip: $skip) {
+        posts: allContentfulPost(sort: { fields: published, order: DESC }, limit: $limit, skip: $skip) {
             edges {
                 node {
                     id
-                    createdAt(formatString: "MMMM D, YYYY")
                     title
                     slug
                     image {
@@ -70,6 +69,7 @@ export const query = graphql`
                     excerpt {
                         excerpt
                     }
+                    published(formatString: "MMMM D, YYYY")
                 }
             }
         }

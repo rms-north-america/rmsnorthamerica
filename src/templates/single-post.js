@@ -8,14 +8,14 @@ import Pagination from '../components/widget/Pagination';
 
 export default ({ location, data, pageContext }) => {
     const { post } = data;
-    const description = post.excerpt ? post.excerpt.excerpt : post.body.childMarkdownRemark.excerpt;
+    const description = post.excerpt ? post.excerpt.excerpt : post.body.childMarkdownRemark.excerpt.replace(/\n/g, ' ');
     return (
         <Layout template="single single-post" title={post.title} description={description} location={location}>
             <Hero source={post.image.fluid} alternate={post.title} />
             <Basic id={post.slug} space="space-xs-80 space-lg-130">
                 <header className="node-xs-30 node-lg-50">
                     <h1>{post.title}</h1>
-                    <p>{post.createdAt}</p>
+                    <p>{post.published}</p>
                 </header>
                 <section
                     className="node-xs-30 node-xs-50 node-lg-50 node-lg-80"
@@ -34,7 +34,6 @@ export default ({ location, data, pageContext }) => {
 export const query = graphql`
     query postBySlug($slug: String!) {
         post: contentfulPost(slug: { eq: $slug }) {
-            createdAt(formatString: "MMMM D, YYYY")
             title
             slug
             image {
@@ -49,6 +48,7 @@ export const query = graphql`
             excerpt {
                 excerpt
             }
+            published(formatString: "MMMM D, YYYY")
         }
     }
 `;
