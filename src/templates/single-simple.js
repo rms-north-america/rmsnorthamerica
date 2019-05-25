@@ -5,7 +5,7 @@ import Basic from '../components/section/Basic';
 
 export default ({ location, data }) => {
     const { simple } = data;
-    const description = simple.excerpt ? simple.excerpt.excerpt : simple.body.childMarkdownRemark.excerpt.replace(/\n/g, ' ');
+    const description = simple.excerpt ? simple.excerpt.excerpt : simple.body.childMarkdownRemark.excerpt;
     return (
         <Layout template="single single-simple" title={simple.title} description={description} location={location}>
             <Basic id={simple.slug} space="space-xs-50 space-lg-80">

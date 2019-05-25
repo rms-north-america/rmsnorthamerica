@@ -10,7 +10,7 @@ export default ({ location, data, pageContext }) => {
     const { posts } = data;
     const loopPost = posts.edges.map(({ node: post }) => (
         <article key={post.id} id={post.slug} className="post">
-            <div className="row align-items-center gutter-80">
+            <div className="row gutter-80">
                 <div className="col-lg-4">
                     <Img fluid={post.image.fluid} alt={post.title} />
                 </div>
@@ -24,7 +24,7 @@ export default ({ location, data, pageContext }) => {
                     <section>
                         <p
                             dangerouslySetInnerHTML={{
-                                __html: post.excerpt ? post.excerpt.excerpt : post.body.childMarkdownRemark.excerpt.replace(/\n/g, ' '),
+                                __html: post.excerpt ? post.excerpt.excerpt : post.body.childMarkdownRemark.excerpt,
                             }}
                         />
                     </section>
@@ -56,7 +56,7 @@ export const query = graphql`
             edges {
                 node {
                     id
-                    createdAt(formatString: "MMMM DD, YYYY")
+                    createdAt(formatString: "MMMM D, YYYY")
                     title
                     slug
                     image {
