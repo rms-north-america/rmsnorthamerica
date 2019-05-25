@@ -17,7 +17,7 @@ const Account = () => {
             <li className="nav-item">
                 <Button kind="main" label={action} to={`/${link.slug}`} />
             </li>
-            <Dropdown name="log-in" label="Log in" alignment="right" caret>
+            <Dropdown name="log-in" label="Log In" alignment="right" caret>
                 {loopChildren}
             </Dropdown>
         </ul>
