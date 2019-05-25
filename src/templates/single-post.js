@@ -15,7 +15,7 @@ export default ({ location, data, pageContext }) => {
             <Basic id={post.slug} space="space-xs-80 space-lg-130">
                 <header className="node-xs-30 node-lg-50">
                     <h1>{post.title}</h1>
-                    <p>{post.published}</p>
+                    <p className="date">{post.published}</p>
                 </header>
                 <section
                     className="node-xs-30 node-xs-50 node-lg-50 node-lg-80"
