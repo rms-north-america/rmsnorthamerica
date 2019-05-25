@@ -30,9 +30,9 @@ export default ({ location, data }) => {
                                 __html: node.excerpt ? node.excerpt.excerpt : node.body.childMarkdownRemark.excerpt,
                             }}
                         />
-                        <p>Learn more →</p>
+                        <p>Learn More →</p>
                     </div>
-                    <Link className="link" to={`/${path.INDUSTRY}/${node.slug}`}>
+                    <Link className="link" to={`${path.INDUSTRY}/${node.slug}`}>
                         view more
                     </Link>
                 </figcaption>

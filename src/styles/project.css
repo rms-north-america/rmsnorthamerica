@@ -880,7 +880,9 @@ h2 + ul,
 h3 + ol,
 h3 + ul,
 h4 + ol,
-h4 + ul,
+h4 + ul {
+    padding-top: 30px;
+    }
 p + ol,
 p + ul {
     padding-top: 50px;
