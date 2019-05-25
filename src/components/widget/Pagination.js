@@ -10,7 +10,7 @@ const Pagination = ({ pageContext, path, single }) => {
     const nextPage = `${path}/${(currentPage + 1).toString()}`;
     return (
         <nav aria-label="pagination">
-            <ul className="pagination justify-content-center">
+            <ul className={`pagination pagination-${single ? 'single' : 'archive'} justify-content-center`}>
                 {single && previous && (
                     <li className="page-item mr-auto">
                         <Link className="page-link page-link-previous" to={`${path}/${previous.slug}`} rel="prev">
