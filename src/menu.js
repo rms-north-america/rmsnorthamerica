@@ -139,27 +139,27 @@ export const FOOTER_ONE = [
         to: path.ROOT,
     },
     {
-        label: 'Support',
-        to: path.ROOT,
+        label: 'About',
+        to: path.ABOUT + path.ABOUT_COMPANY,
+    },
+    {
+        label: 'News',
+        to: path.POST,
     },
 ];
 
 // Footer - Two
 export const FOOTER_TWO = [
     {
-        label: 'About Us',
-        to: path.ROOT,
-    },
-    {
-        label: 'News & Events',
-        to: path.ROOT,
-    },
-    {
-        label: 'Contact Us',
-        to: path.ROOT,
-    },
-    {
         label: 'Careers',
+        to: path.ROOT,
+    },
+    {
+        label: 'Partnerships',
+        to: path.ROOT,
+    },
+    {
+        label: 'Referral Program',
         to: path.ROOT,
     },
 ];
@@ -167,13 +167,21 @@ export const FOOTER_TWO = [
 // Footer - Three
 export const FOOTER_THREE = [
     {
+        label: 'Contact',
+        to: path.CONTACT_NORTH_AMERICA,
+    },
+    {
         label: 'Live Chat',
         to: path.ROOT,
     },
     {
-        label: 'Referral Program',
-        to: path.ROOT,
+        label: 'Product Support',
+        to: path.PRODUCT + path.PRODUCT_SUPPORT,
     },
+];
+
+// Footer - Four
+export const FOOTER_FOUR = [
     {
         label: 'User License',
         to: path.ROOT,
@@ -181,5 +189,9 @@ export const FOOTER_THREE = [
     {
         label: 'Privacy Policy',
         to: path.PRIVACY_POLICY,
+    },
+    {
+        label: 'PCI Compliance',
+        to: path.ROOT,
     },
 ];
