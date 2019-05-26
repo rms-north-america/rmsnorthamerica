@@ -26,8 +26,17 @@ h2 {
     margin-top: -7px;
     margin-bottom: -8px;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 300;
+    font-style: italic;
     line-height: 30px;
+    }
+@media (min-width: 992px) {
+    h2 {
+        margin-top: -6px;
+        margin-bottom: -9px;
+        font-size: 27px;
+        line-height: 35px;
+        }
     }
 
 /* ----------!H3---------- */
@@ -762,22 +771,9 @@ blockquote {
 /* ----------!H2---------- */
 .carousel h2,
 .hero h2 {
-    margin-top: -7px;
-    margin-bottom: -8px;
     margin-left: -2px !important;
     margin-right: -2px !important;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 30px;
-    }
-@media (min-width: 992px) {
-    .carousel h2,
-    .hero h2 {
-        margin-top: -6px;
-        margin-bottom: -9px;
-        font-size: 27px;
-        line-height: 35px;
-        }
+    font-style: normal;
     }
 
 /* ----------!COPY---------- */

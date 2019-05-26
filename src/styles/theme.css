@@ -2170,7 +2170,7 @@ h3 {
     margin-bottom: -8px;
     font-size: 34px;
     line-height: 40px; }
-  .h-md-30, .carousel h3, .hero h3 {
+  .h-md-30 {
     margin-top: -6px;
     margin-bottom: -9px;
     font-size: 41px;
@@ -2180,7 +2180,7 @@ h3 {
     margin-bottom: -9px;
     font-size: 48px;
     line-height: 50px; }
-  .h-md-40, .carousel h2, .hero h2 {
+  .h-md-40 {
     margin-top: -9px;
     margin-bottom: -11px;
     font-size: 55px;
@@ -2190,7 +2190,7 @@ h3 {
     margin-bottom: -14px;
     font-size: 62px;
     line-height: 70px; }
-  .h-md-50, .carousel h1, .hero h1 {
+  .h-md-50 {
     margin-top: -11px;
     margin-bottom: -14px;
     font-size: 69px;
