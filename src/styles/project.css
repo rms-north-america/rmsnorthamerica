@@ -97,6 +97,29 @@ blockquote {
     padding: 20px 25px;
     }
 
+/* ========================== */
+/* ==========!TABLE========== */
+/* ========================== */
+
+/* ----------!GENERAL---------- */
+.table {
+    margin-bottom: 0;
+    color: inherit;
+    }
+.table td,
+.table th {
+    padding: 10px 15px !important;
+    line-height: 30px !important;
+    }
+
+/* ----------!BORDERLESS---------- */
+.table-borderless {
+    margin-top: -18px!important;
+    margin-bottom: -17px!important;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    }
+
 /* =========================== */
 /* ==========!BUTTON========== */
 /* =========================== */
@@ -827,7 +850,7 @@ h2 + h3,
 p + h3,
 ol + h3,
 ul + h3 {
-    padding-top: 74px;
+    padding-top: 70px;
     }
 h1 + h4,
 h2 + h4,
@@ -849,10 +872,10 @@ ul + h6 {
 /* ----------!PARAGRAPH---------- */
 p + p,
 h1 + p,
-h2 + p {
+h2 + p,
+h3 + p {
     padding-top: 43px;
     }
-h3 + p,
 h4 + p,
 h5 + p,
 h6 + p {
@@ -893,6 +916,27 @@ p + ul {
     .hero h1 + h2 {
         padding-top: 44px;
         }
+    }
+
+/* ----------!H3---------- */
+h2 + h3,
+p + h3,
+ol + h3,
+ul + h3,
+table + h3 {
+    border-top: 3px solid #f7f7f7;
+    margin-top: 80px;
+    }
+.copy h3 + p {
+    padding-top: 23px;
+    }
+
+/* ----------!TABLE---------- */
+h3 + .table {
+    margin-top: 33px !important;
+    }
+.table + h3 {
+    padding-top: 68px !important;
     }
 
 /* ----------!DATE---------- */
@@ -1141,6 +1185,16 @@ h3 + .date {
 .hero .scroll-to {
     margin-bottom: 30px;
     bottom: 0;
+    }
+
+/* ============================= */
+/* ==========!TEMPLATE========== */
+/* ============================= */
+
+/* ----------!SINGLE-CONTACT---------- */
+.single-contact .image {
+    margin: 0 auto;
+    max-width: 1000px;
     }
 
 /* ============================ */
