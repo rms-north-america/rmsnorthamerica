@@ -15,7 +15,7 @@ export default ({ location, data }) => {
     const { points, industries, testimonials, splash, introduction, product, industry, contact } = data;
     const loopPoint = points.edges.map(({ node }) => (
         <article key={node.id} id={`point-${node.slug}`} className={`point point-${node.order} col-lg-4`}>
-            <header dangerouslySetInnerHTML={{ __html: node.body.childMarkdownRemark.html }} />
+            <header className="copy" dangerouslySetInnerHTML={{ __html: node.body.childMarkdownRemark.html }} />
         </article>
     ));
     const loopIndustry = industries.edges.map(({ node }) => (

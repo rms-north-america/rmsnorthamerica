@@ -26,8 +26,17 @@ h2 {
     margin-top: -7px;
     margin-bottom: -8px;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 300;
+    font-style: italic;
     line-height: 30px;
+    }
+@media (min-width: 992px) {
+    h2 {
+        margin-top: -6px;
+        margin-bottom: -9px;
+        font-size: 27px;
+        line-height: 35px;
+        }
     }
 
 /* ----------!H3---------- */
@@ -86,6 +95,42 @@ u {
 blockquote {
     border-left: 5px solid #f7f7f7;
     padding: 20px 25px;
+    }
+
+/* ========================== */
+/* ==========!TABLE========== */
+/* ========================== */
+
+/* ----------!GENERAL---------- */
+.table {
+    margin-bottom: 0;
+    color: inherit;
+    }
+.table td,
+.table th {
+    padding: 10px 15px !important;
+    line-height: 30px !important;
+    }
+.table > tbody > tr > td:first-child {
+    width: 37%;
+    }
+
+/* ----------!BORDERLESS---------- */
+.table-borderless {
+    margin-top: -18px !important;
+    margin-bottom: -17px !important;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    }
+
+/* ========================== */
+/* ==========!PANEL========== */
+/* ========================== */
+
+/* ----------!GENERAL---------- */
+.panel {
+    background-color: #f7f7f7;
+    padding: 30px;
     }
 
 /* =========================== */
@@ -485,6 +530,27 @@ blockquote {
     text-align: left;
     }
 
+/* ========================= */
+/* ==========!MENU========== */
+/* ========================= */
+
+/* ----------!LIST---------- */
+.menu-list {
+    margin-top: -19px !important;
+    margin-bottom: -19px !important;
+    padding-left: 0 !important;
+    list-style: none !important;
+    }
+.menu-list > .menu-item {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 50px !important;
+    }
+.menu-list > .menu-item > .menu-link {
+    font-size: 16px;
+    display: block;
+    }
+
 /* =========================== */
 /* ==========!SOCIAL========== */
 /* =========================== */
@@ -762,22 +828,9 @@ blockquote {
 /* ----------!H2---------- */
 .carousel h2,
 .hero h2 {
-    margin-top: -7px;
-    margin-bottom: -8px;
     margin-left: -2px !important;
     margin-right: -2px !important;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 30px;
-    }
-@media (min-width: 992px) {
-    .carousel h2,
-    .hero h2 {
-        margin-top: -6px;
-        margin-bottom: -9px;
-        font-size: 27px;
-        line-height: 35px;
-        }
+    font-style: normal;
     }
 
 /* ----------!COPY---------- */
@@ -831,7 +884,7 @@ h2 + h3,
 p + h3,
 ol + h3,
 ul + h3 {
-    padding-top: 74px;
+    padding-top: 70px;
     }
 h1 + h4,
 h2 + h4,
@@ -853,10 +906,10 @@ ul + h6 {
 /* ----------!PARAGRAPH---------- */
 p + p,
 h1 + p,
-h2 + p {
+h2 + p,
+h3 + p {
     padding-top: 43px;
     }
-h3 + p,
 h4 + p,
 h5 + p,
 h6 + p {
@@ -899,12 +952,43 @@ p + ul {
         }
     }
 
+/* ----------!H3---------- */
+h2 + h3,
+p + h3,
+ol + h3,
+ul + h3,
+table + h3 {
+    border-top: 3px solid #f7f7f7;
+    margin-top: 80px;
+    }
+.copy h3 + p {
+    padding-top: 23px;
+    }
+
+/* ----------!TABLE---------- */
+h3 + .table,
+h4 + .table,
+p + .table {
+    margin-top: 33px !important;
+    }
+.table + h3 {
+    padding-top: 68px !important;
+    }
+.table + h4 {
+    padding-top: 73px !important;
+    }
+
 /* ----------!DATE---------- */
 h1 + .date {
     padding-top: 46px;
     }
 h3 + .date {
     padding-top: 26px;
+    }
+
+/* ----------!MENU---------- */
+h4 + .menu-list {
+    padding-top: 33px;
     }
 
 /* ----------!BUTTON---------- */
@@ -1147,6 +1231,19 @@ h3 + .date {
     bottom: 0;
     }
 
+/* ============================= */
+/* ==========!TEMPLATE========== */
+/* ============================= */
+
+/* ----------!SINGLE-CONTACT---------- */
+.single-contact h4 + p {
+    padding-top: 8px;
+    }
+.single-contact .image {
+    margin: 0 auto;
+    max-width: 1000px;
+    }
+
 /* ============================ */
 /* ==========!SECTION========== */
 /* ============================ */
@@ -1292,20 +1389,6 @@ h3 + .date {
         padding-top: 80px;
         padding-bottom: 80px;
         }
-    }
-#footer .footer-first .menu-list {
-    margin-top: -19px !important;
-    margin-bottom: -19px !important;
-    padding-left: 0 !important;
-    list-style: none !important;
-    }
-#footer .footer-first .menu-list > .menu-item {
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 50px !important;
-    }
-#footer .footer-first .menu-list > .menu-item > .menu-link {
-    display: block;
     }
 #footer .footer-second {
     padding-bottom: 25px;
