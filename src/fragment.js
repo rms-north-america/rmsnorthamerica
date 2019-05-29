@@ -26,7 +26,7 @@ export const imageHero = graphql`
 
 export const imageFeed = graphql`
     fragment imageFeed on ContentfulAsset {
-        fluid(maxWidth: 550, maxHeight: 340, quality: 80) {
+        fluid(maxWidth: 550, maxHeight: 275, quality: 80) {
             ...GatsbyContentfulFluid
         }
     }
