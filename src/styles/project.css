@@ -665,18 +665,6 @@ blockquote {
     }
 
 /* ----------!CHEAT---------- */
-@media (min-width: 1200px) {
-    .cheat-left {
-        margin-left: -50px;
-        }
-    .cheat-right {
-        margin-right: -50px;
-        }
-    .cheat-both {
-        margin-left: -50px;
-        margin-right: -50px;
-        }
-    }
 @media (min-width: 1440px) {
     .cheat-left {
         margin-left: -80px;
@@ -772,6 +760,9 @@ blockquote {
     white-space: nowrap;
     opacity: 0;
     z-index: 1000;
+    }
+.effect-image figure figcaption > .caption > .excerpt + .action {
+    padding-top: 23px;
     }
 
 /* ----------!OSCAR---------- */
@@ -1272,6 +1263,20 @@ h4 + .menu-list {
     color: #1d2c3c;
     }
 
+/* ----------!CHEAT---------- */
+@media (min-width: 1200px) {
+    #product .cheat-custom {
+        margin-left: -25px;
+        margin-right: -25px;
+        }
+    }
+@media (min-width: 1440px) {
+    #product .cheat-custom {
+        margin-left: -110px;
+        margin-right: -30px;
+        }
+    }
+
 /* ----------!INDUSTRY---------- */
 @media (min-width: 992px) {
     #industry .industry figure {
@@ -1290,6 +1295,7 @@ h4 + .menu-list {
 /* ----------!TESTIMONIAL---------- */
 #testimonial {
     overflow: visible;
+    z-index: 0;
     }
 #testimonial p {
     font-style: italic;
@@ -1325,6 +1331,11 @@ h4 + .menu-list {
 #testimonial .carousel {
     color: #1d2c3c;
     text-align: center;
+	}
+@media (min-width: 992px) {
+	#testimonial .carousel {
+		height: 550px;
+		}
 	}
 #testimonial .carousel-indicators li {
     background-color: #006c8c;
