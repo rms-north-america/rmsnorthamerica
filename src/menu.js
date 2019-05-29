@@ -69,22 +69,27 @@ export const CONTACT = [
     {
         label: 'Australia / Asia',
         to: path.CONTACT_AUSTRALIA_ASIA,
+        external: true,
     },
     {
         label: 'New Zealand',
         to: path.CONTACT_NEW_ZEALAND,
+        external: true,
     },
     {
         label: 'India',
         to: path.CONTACT_INDIA,
+        external: true,
     },
     {
         label: 'Middle East',
         to: path.CONTACT_MIDDLE_EAST,
+        external: true,
     },
     {
         label: 'UK & Ireland',
         to: path.CONTACT_UK_IRELAND,
+        external: true,
     },
 ];
 
@@ -117,18 +122,22 @@ export const ACCOUNT_LOG_IN = [
     {
         label: 'Log in to RMS9',
         to: path.LOG_IN_RMS_NINE,
+        external: true,
     },
     {
         label: 'Log in to RMS9+',
         to: path.LOG_IN_RMS_NINE_PLUS,
+        external: true,
     },
     {
         label: 'Customer Support Center',
         to: path.CUSTOMER_SUPPORT_CENTER,
+        external: true,
     },
     {
         label: 'Remote Assistance',
         to: path.REMOTE_ASSISTANCE,
+        external: true,
     },
 ];
 
