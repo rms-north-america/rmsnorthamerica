@@ -665,18 +665,6 @@ blockquote {
     }
 
 /* ----------!CHEAT---------- */
-@media (min-width: 1200px) {
-    .cheat-left {
-        margin-left: -50px;
-        }
-    .cheat-right {
-        margin-right: -50px;
-        }
-    .cheat-both {
-        margin-left: -50px;
-        margin-right: -50px;
-        }
-    }
 @media (min-width: 1440px) {
     .cheat-left {
         margin-left: -80px;
@@ -696,6 +684,34 @@ blockquote {
         margin-left: auto !important;
         margin-right: auto !important;
         width: 720px;
+        }
+    }
+
+/* ----------!HEIGHT---------- */
+.height-auto,
+.height-half {
+    height: auto !important;
+    }
+@media (min-width: 576px) {
+    .height-half {
+        height: 50vh !important;
+        }
+    }
+.height-fill {
+    height: calc(100vh - 50px) !important;
+    }
+@media (min-width: 992px) {
+    .height-fill {
+        height: calc(100vh - 80px) !important;
+        }
+    }
+.height-full {
+    min-height: 340px;
+    height: 100vh !important;
+    }
+@media (min-width: 992px) {
+    .height-standard {
+        height: 550px !important;
         }
     }
 
@@ -744,6 +760,9 @@ blockquote {
     white-space: nowrap;
     opacity: 0;
     z-index: 1000;
+    }
+.effect-image figure figcaption > .caption > .excerpt + .action {
+    padding-top: 23px;
     }
 
 /* ----------!OSCAR---------- */
@@ -1170,15 +1189,10 @@ h4 + .menu-list {
 
 /* ----------!MAIN---------- */
 .carousel {
-	min-height: 340px;
+	height: 340px;
 	overflow: hidden;
 	cursor: default;
     color: #fff;
-	}
-@media (min-width: 992px) {
-	.carousel {
-		height: 550px;
-		}
 	}
 .carousel .carousel-indicators {
 	margin-bottom: 10px;
@@ -1214,15 +1228,10 @@ h4 + .menu-list {
 
 /* ----------!PARENT---------- */
 .hero {
-    min-height: 340px;
+    height: 340px;
     overflow: hidden;
     cursor: default;
     color: #fff;
-    }
-@media (min-width: 992px) {
-    .hero {
-        height: 550px;
-        }
     }
 
 /* ----------!SCROLL-TO---------- */
@@ -1235,13 +1244,9 @@ h4 + .menu-list {
 /* ==========!TEMPLATE========== */
 /* ============================= */
 
-/* ----------!SINGLE-CONTACT---------- */
-.single-contact h4 + p {
+/* ----------!PAGE-CONTACT---------- */
+.page-contact h4 + p {
     padding-top: 8px;
-    }
-.single-contact .image {
-    margin: 0 auto;
-    max-width: 1000px;
     }
 
 /* ============================ */
@@ -1256,6 +1261,20 @@ h4 + .menu-list {
     font-weight: 700;
     line-height: 30px;
     color: #1d2c3c;
+    }
+
+/* ----------!CHEAT---------- */
+@media (min-width: 1200px) {
+    #product .cheat-custom {
+        margin-left: -25px;
+        margin-right: -25px;
+        }
+    }
+@media (min-width: 1440px) {
+    #product .cheat-custom {
+        margin-left: -110px;
+        margin-right: -30px;
+        }
     }
 
 /* ----------!INDUSTRY---------- */
@@ -1276,6 +1295,7 @@ h4 + .menu-list {
 /* ----------!TESTIMONIAL---------- */
 #testimonial {
     overflow: visible;
+    z-index: 0;
     }
 #testimonial p {
     font-style: italic;
@@ -1311,6 +1331,11 @@ h4 + .menu-list {
 #testimonial .carousel {
     color: #1d2c3c;
     text-align: center;
+	}
+@media (min-width: 992px) {
+	#testimonial .carousel {
+		height: 550px;
+		}
 	}
 #testimonial .carousel-indicators li {
     background-color: #006c8c;

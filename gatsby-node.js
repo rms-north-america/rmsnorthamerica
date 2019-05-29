@@ -20,14 +20,6 @@ exports.createPages = ({ graphql, actions }) => {
                     }
                 }
             }
-            contacts: allContentfulContact {
-                edges {
-                    node {
-                        title
-                        slug
-                    }
-                }
-            }
         }
     `).then(({ data, errors }) => {
         if (errors) {
@@ -35,7 +27,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Data
-        const { posts, simples, contacts } = data;
+        const { posts, simples } = data;
 
         // Post
         const postTotal = posts.edges.length;
@@ -92,28 +84,6 @@ exports.createPages = ({ graphql, actions }) => {
                 context: {
                     total: simpleTotal,
                     archive: simpleArchive,
-                    slug,
-                    previous,
-                    next,
-                },
-            });
-        });
-
-        // Contact
-        const contactTotal = contacts.edges.length;
-        const contactArchive = 'contact';
-
-        // Contact - Single
-        contacts.edges.forEach(({ node }, index) => {
-            const { slug } = node;
-            const previous = index === contactTotal - 1 ? null : contacts.edges[index + 1].node;
-            const next = index === 0 ? null : contacts.edges[index - 1].node;
-            createPage({
-                path: `/${contactArchive}/${slug}`,
-                component: path.resolve('./src/templates/single-contact.js'),
-                context: {
-                    total: contactTotal,
-                    archive: contactArchive,
                     slug,
                     previous,
                     next,
