@@ -1253,13 +1253,9 @@ h4 + .menu-list {
 /* ==========!TEMPLATE========== */
 /* ============================= */
 
-/* ----------!SINGLE-CONTACT---------- */
-.single-contact h4 + p {
+/* ----------!PAGE-CONTACT---------- */
+.page-contact h4 + p {
     padding-top: 8px;
-    }
-.single-contact .image {
-    margin: 0 auto;
-    max-width: 1000px;
     }
 
 /* ============================ */

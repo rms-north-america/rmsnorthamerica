@@ -64,27 +64,27 @@ export const ABOUT = [
 export const CONTACT = [
     {
         label: 'North America',
-        to: path.CONTACT + path.CONTACT_NORTH_AMERICA,
+        to: path.CONTACT,
     },
     {
         label: 'Australia / Asia',
-        to: path.CONTACT + path.CONTACT_AUSTRALIA_ASIA,
+        to: path.CONTACT_AUSTRALIA_ASIA,
     },
     {
         label: 'New Zealand',
-        to: path.CONTACT + path.CONTACT_NEW_ZEALAND,
+        to: path.CONTACT_NEW_ZEALAND,
     },
     {
         label: 'India',
-        to: path.CONTACT + path.CONTACT_INDIA,
+        to: path.CONTACT_INDIA,
     },
     {
         label: 'Middle East',
-        to: path.CONTACT + path.CONTACT_MIDDLE_EAST,
+        to: path.CONTACT_MIDDLE_EAST,
     },
     {
         label: 'UK & Ireland',
-        to: path.CONTACT + path.CONTACT_UK_IRELAND,
+        to: path.CONTACT_UK_IRELAND,
     },
 ];
 
@@ -168,7 +168,7 @@ export const FOOTER_TWO = [
 export const FOOTER_THREE = [
     {
         label: 'Contact',
-        to: path.CONTACT_NORTH_AMERICA,
+        to: path.CONTACT,
     },
     {
         label: 'Live Chat',
