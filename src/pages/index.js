@@ -9,28 +9,30 @@ import Hero from '../components/section/Hero';
 import Feed from '../components/section/Feed';
 import Modal from '../components/widget/Modal';
 import Button from '../components/unit/Button';
+import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 import CarouselTestimonial from '../components/project/CarouselTestimonial';
 
 export default ({ location, data }) => {
-    const { points, industries, testimonials, splash, introduction, product, industry, contact } = data;
+    const { points, industries, testimonials, splash, introduction, product, industry } = data;
     const loopPoint = points.edges.map(({ node }) => (
         <article key={node.id} id={`point-${node.slug}`} className={`point point-${node.order} col-lg-4`}>
             <header className="copy" dangerouslySetInnerHTML={{ __html: node.body.childMarkdownRemark.html }} />
         </article>
     ));
     const loopIndustry = industries.edges.map(({ node }) => (
-        <article key={node.id} id={`industry-${node.slug}`} className={`industry industry-${node.order} effect-image col-lg-3`}>
+        <article key={node.id} id={`industry-${node.slug}`} className={`industry industry-${node.order} effect-image col-lg-6 col-xl-3`}>
             <figure className="effect-oscar">
                 <Img className="image fit" fluid={node.image.fluid} alt={node.title} />
                 <figcaption className="dark-30 d-flex align-items-center">
                     <h4 className="headline">{node.title}</h4>
                     <div className="caption">
                         <p
+                            className="excerpt"
                             dangerouslySetInnerHTML={{
                                 __html: node.excerpt ? node.excerpt.excerpt : node.body.childMarkdownRemark.excerpt,
                             }}
                         />
-                        <p>{`${node.action || 'Learn more'} →`}</p>
+                        <p className="action">{`${node.action || 'Learn more'} →`}</p>
                     </div>
                     <Link className="link" to={`${path.INDUSTRY}/${node.slug}`}>
                         view more
@@ -86,7 +88,7 @@ export default ({ location, data }) => {
                 <Basic id={product.slug} space="space-xs-80 space-md-130 space-xl-210">
                     <div className="row align-items-center gutter-50 gutter-lg-80">
                         <div className="col-xl">
-                            <Img className="cheat-left" fluid={product.image.fluid} alt={product.title} />
+                            <Img className="cheat-custom" fluid={product.image.fluid} alt={product.title} />
                         </div>
                         <div className="col-xl">
                             <header className="copy" dangerouslySetInnerHTML={{ __html: product.body.childMarkdownRemark.html }} />
@@ -111,14 +113,7 @@ export default ({ location, data }) => {
             {testimonials.edges.length > 0 && (
                 <CarouselTestimonial id="testimonial" fade={true} controls={false} indicators={false} slides={testimonials} />
             )}
-            {contact && (
-                <Basic id={contact.slug} space="space-xs-50 space-lg-80" color={5}>
-                    <header
-                        className="copy attention node-xs-30 node-lg-50 text-lg-center"
-                        dangerouslySetInnerHTML={{ __html: contact.body.childMarkdownRemark.html }}
-                    />
-                </Basic>
-            )}
+            <GeneralRequestDemo />
         </Layout>
     );
 };
@@ -187,9 +182,6 @@ export const query = graphql`
             ...contentGeneral
         }
         industry: contentfulGeneral(slug: { eq: "industry" }) {
-            ...contentGeneral
-        }
-        contact: contentfulGeneral(slug: { eq: "contact" }) {
             ...contentGeneral
         }
     }
