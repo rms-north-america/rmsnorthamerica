@@ -30,7 +30,7 @@ export default ({ location, data }) => {
                                 __html: node.excerpt ? node.excerpt.excerpt : node.body.childMarkdownRemark.excerpt,
                             }}
                         />
-                        <p>Learn More →</p>
+                        <p>{`${node.action || 'Learn more'} →`}</p>
                     </div>
                     <Link className="link" to={`${path.INDUSTRY}/${node.slug}`}>
                         view more
@@ -157,6 +157,7 @@ export const query = graphql`
                     excerpt {
                         excerpt
                     }
+                    action
                     order
                 }
             }
