@@ -6,7 +6,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import { contentify } from '../../function';
 
-const Carousel = ({ container, height, align, space, tint, color, id, source, fade, controls, indicators, interval, pauseOnHover, slides }) => {
+const CarouselTestimonial = ({
+    container,
+    height,
+    align,
+    space,
+    tint,
+    color,
+    id,
+    source,
+    fade,
+    controls,
+    indicators,
+    interval,
+    pauseOnHover,
+    slides,
+}) => {
     const loopSlide = slides.edges.map(({ node: slide }) => (
         <Item key={slide.id} className={`slide-${slide.order}`}>
             {slide.image && <Img className="fit exact-center absolute" fluid={slide.image.fluid} alt={contentify(slide.title)} critical />}
@@ -37,7 +52,7 @@ const Carousel = ({ container, height, align, space, tint, color, id, source, fa
     );
 };
 
-Carousel.propTypes = {
+CarouselTestimonial.propTypes = {
     container: PropTypes.string,
     height: PropTypes.string,
     align: PropTypes.string,
@@ -54,7 +69,7 @@ Carousel.propTypes = {
     slides: PropTypes.object.isRequired,
 };
 
-Carousel.defaultProps = {
+CarouselTestimonial.defaultProps = {
     container: 'container',
     height: 'standard',
     align: 'left',
@@ -70,4 +85,4 @@ Carousel.defaultProps = {
     pauseOnHover: undefined,
 };
 
-export default Carousel;
+export default CarouselTestimonial;
