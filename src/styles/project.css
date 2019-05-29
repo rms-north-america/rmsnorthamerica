@@ -699,6 +699,34 @@ blockquote {
         }
     }
 
+/* ----------!HEIGHT---------- */
+.height-auto,
+.height-half {
+    height: auto !important;
+    }
+@media (min-width: 576px) {
+    .height-half {
+        height: 50vh !important;
+        }
+    }
+.height-fill {
+    height: calc(100vh - 50px) !important;
+    }
+@media (min-width: 992px) {
+    .height-fill {
+        height: calc(100vh - 80px) !important;
+        }
+    }
+.height-full {
+    min-height: 340px;
+    height: 100vh !important;
+    }
+@media (min-width: 992px) {
+    .height-standard {
+        height: 550px !important;
+        }
+    }
+
 /* =========================== */
 /* ==========!EFFECT========== */
 /* =========================== */
@@ -1170,15 +1198,10 @@ h4 + .menu-list {
 
 /* ----------!MAIN---------- */
 .carousel {
-	min-height: 340px;
+	height: 340px;
 	overflow: hidden;
 	cursor: default;
     color: #fff;
-	}
-@media (min-width: 992px) {
-	.carousel {
-		height: 550px;
-		}
 	}
 .carousel .carousel-indicators {
 	margin-bottom: 10px;
@@ -1214,15 +1237,10 @@ h4 + .menu-list {
 
 /* ----------!PARENT---------- */
 .hero {
-    min-height: 340px;
+    height: 340px;
     overflow: hidden;
     cursor: default;
     color: #fff;
-    }
-@media (min-width: 992px) {
-    .hero {
-        height: 550px;
-        }
     }
 
 /* ----------!SCROLL-TO---------- */
