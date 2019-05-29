@@ -7,7 +7,7 @@ export default ({ location, data }) => {
     const { page, form } = data;
     const description = page.excerpt ? page.excerpt.excerpt : page.body.childMarkdownRemark.excerpt.replace(/\n/g, ' ');
     return (
-        <Layout template="single single-page" title={page.title} description={description} location={location}>
+        <Layout template={`page page-${page.slug}`} title={page.title} description={description} location={location}>
             {page && (
                 <Basic id={`basic-${page.slug}`} space="space-xs-50 space-lg-80">
                     <header
