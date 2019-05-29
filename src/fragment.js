@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 
 export const imageGeneral = graphql`
     fragment imageGeneral on ContentfulAsset {
-        fluid(quality: 80) {
+        fluid(maxWidth: 800, quality: 80) {
             ...GatsbyContentfulFluid
         }
     }
