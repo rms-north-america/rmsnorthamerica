@@ -5,35 +5,43 @@ import { slugify, generateID } from '../function';
 import * as menu from '../menu';
 import Dropdown from './unit/Dropdown';
 
-const MenuLink = ({ label, to, child }) => (
-    <Link className={child ? 'dropdown-item' : 'nav-link'} activeClassName="active" title={label} to={to} partiallyActive>
-        {label}
-    </Link>
-);
+const MenuLink = ({ label, to, external, child }) =>
+    external ? (
+        <a className={child ? 'dropdown-item' : 'nav-link'} title={label} href={to} target="_blank" rel="noopener noreferrer">
+            {label}
+        </a>
+    ) : (
+        <Link className={child ? 'dropdown-item' : 'nav-link'} activeClassName="active" title={label} to={to} partiallyActive>
+            {label}
+        </Link>
+    );
 
 MenuLink.propTypes = {
     label: PropTypes.string,
     to: PropTypes.string,
+    external: PropTypes.bool,
     child: PropTypes.bool,
 };
 
 MenuLink.defaultProps = {
     label: undefined,
     to: undefined,
+    external: false,
     child: false,
 };
 
 const Menu = ({ offcanvas }) => {
-    const loopMain = menu.MAIN.map(({ label, to, children }) => {
+    const loopMain = menu.MAIN.map(({ label, to, external, children }) => {
         const name = slugify(label);
-        const loopChildren = children && children.map(({ label, to }) => <MenuLink key={generateID()} label={label} to={to} child />);
+        const loopChildren =
+            children && children.map(({ label, to, external }) => <MenuLink key={generateID()} label={label} to={to} external={external} child />);
         return children ? (
             <Dropdown key={generateID()} name={offcanvas ? `offcanvas-${name}` : name} label={label} alignment="right" caret>
                 {loopChildren}
             </Dropdown>
         ) : (
             <li key={generateID()} className="nav-item">
-                <MenuLink label={label} to={to} />
+                <MenuLink label={label} to={to} external={external} />
             </li>
         );
     });
