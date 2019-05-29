@@ -18,11 +18,6 @@ export const INDUSTRY_CAMPGROUND = '/campground';
 export const INDUSTRY_MARINA = '/marina';
 export const INDUSTRY_MOTEL = '/motel';
 
-// About
-export const ABOUT_COMPANY = '/company';
-export const ABOUT_TEAM = '/team';
-export const ABOUT_PARTNER = '/partner-with-us';
-
 // Contact
 export const CONTACT_NORTH_AMERICA = '/north-america';
 export const CONTACT_AUSTRALIA_ASIA = '/australia-asia';
@@ -37,6 +32,8 @@ export const REQUEST_DEMO = '/request-demo';
 export const PRODUCT = '/product';
 export const INDUSTRY = '/industry';
 export const POST = '/post';
+export const PARTNER_WITH_US = '/partner-with-us';
+export const TEAM = '/team';
 export const ABOUT = '/about';
 export const CONTACT = '/contact';
 export const ROOT = '/';

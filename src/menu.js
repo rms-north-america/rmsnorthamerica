@@ -48,15 +48,15 @@ export const INDUSTRY = [
 export const ABOUT = [
     {
         label: 'Company Overview',
-        to: path.ABOUT + path.ABOUT_COMPANY,
+        to: path.ABOUT,
     },
     {
         label: 'Meet the Team',
-        to: path.ABOUT + path.ABOUT_TEAM,
+        to: path.TEAM,
     },
     {
         label: 'Partner with Us',
-        to: path.ABOUT + path.ABOUT_PARTNER,
+        to: path.PARTNER_WITH_US,
     },
 ];
 
@@ -140,7 +140,7 @@ export const FOOTER_ONE = [
     },
     {
         label: 'About',
-        to: path.ABOUT + path.ABOUT_COMPANY,
+        to: path.ABOUT,
     },
     {
         label: 'News',
