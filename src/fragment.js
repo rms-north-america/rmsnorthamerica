@@ -32,6 +32,14 @@ export const imageFeed = graphql`
     }
 `;
 
+export const imageArchive = graphql`
+    fragment imageArchive on ContentfulAsset {
+        fluid(maxWidth: 890, maxHeight: 445, quality: 80) {
+            ...GatsbyContentfulFluid
+        }
+    }
+`;
+
 export const imageSingle = graphql`
     fragment imageSingle on ContentfulAsset {
         fluid(maxWidth: 1110, maxHeight: 555, quality: 80) {

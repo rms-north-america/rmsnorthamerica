@@ -13,7 +13,7 @@ export default ({ location, data, pageContext }) => {
         <Layout template="single single-post" title={post.title} description={description} location={location}>
             <Basic id={post.slug} space="space-xs-50 space-lg-80">
                 <figure className="node-xs-50 node-lg-80">
-                    <Img className="image fit" fluid={post.image.fluid} alt={post.title} />
+                    <Img className="image" fluid={post.image.fluid} alt={post.title} />
                 </figure>
                 <header className="node-xs-50 node-lg-80">
                     <h1>{post.title}</h1>
