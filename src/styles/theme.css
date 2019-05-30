@@ -287,7 +287,11 @@ button:visited,
 .open > .dropdown-toggle.btn,
 .open > .dropdown-toggle.btn.focus,
 .open > .dropdown-toggle.btn:hover,
-.open > .dropdown-toggle.btn:focus {
+.open > .dropdown-toggle.btn:focus,
+.page-link,
+.page-link.focus,
+.page-link:hover,
+.page-link:focus {
   outline: 0 none transparent;
   outline-offset: 0;
   -webkit-box-shadow: none;
@@ -343,7 +347,9 @@ label,
 figure,
 .navbar,
 .carousel,
-.hero {
+.hero,
+.pagination,
+.menu-list {
   user-select: none; }
 
 /* ----------!CLEAR---------- */
