@@ -32,7 +32,19 @@ module.exports = {
                 accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
             },
         },
-        'gatsby-transformer-remark',
+        {
+            resolve: 'gatsby-transformer-remark',
+            options: {
+                plugins: [
+                    {
+                        resolve: 'gatsby-remark-images-contentful',
+                        options: {
+                            maxWidth: 1110,
+                        },
+                    },
+                ],
+            },
+        },
         'gatsby-transformer-sharp',
     ],
 };

@@ -1019,6 +1019,13 @@ h4 + .menu-list {
         }
     }
 
+/* ----------!IMAGE---------- */
+p > .gatsby-resp-image-link,
+p > .gatsby-resp-image-wrapper {
+    margin-top: 38px;
+    margin-bottom: 36px;
+    }
+
 /* ========================== */
 /* ==========!MODAL========== */
 /* ========================== */
