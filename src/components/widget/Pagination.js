@@ -11,17 +11,17 @@ const Pagination = ({ pageContext, path, single }) => {
     return (
         <nav aria-label="pagination">
             <ul className={`pagination pagination-${single ? 'single' : 'archive'} justify-content-center`}>
-                {single && previous && (
+                {single && next && (
                     <li className="page-item mr-auto">
-                        <Link className="page-link page-link-previous" to={`${path}/${previous.slug}`} rel="prev">
-                            &larr; {previous.title}
+                        <Link className="page-link page-link-next" to={`${path}/${next.slug}`} rel="next">
+                            &larr; {next.title}
                         </Link>
                     </li>
                 )}
-                {single && next && (
+                {single && previous && (
                     <li className="page-item ml-auto">
-                        <Link className="page-link page-link-next" to={`${path}/${next.slug}`} rel="next">
-                            {next.title} &rarr;
+                        <Link className="page-link page-link-previous" to={`${path}/${previous.slug}`} rel="prev">
+                            {previous.title} &rarr;
                         </Link>
                     </li>
                 )}
