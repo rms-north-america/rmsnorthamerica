@@ -25,11 +25,11 @@ export const INDUSTRY_MARINA = '/marina';
 export const INDUSTRY_MOTEL = '/motel';
 
 // Contact
-export const CONTACT_AUSTRALIA_ASIA = 'https://www.gatsbyjs.org/';
-export const CONTACT_NEW_ZEALAND = 'https://www.gatsbyjs.org/';
-export const CONTACT_INDIA = 'https://www.gatsbyjs.org/';
-export const CONTACT_MIDDLE_EAST = 'https://www.gatsbyjs.org/';
-export const CONTACT_UK_IRELAND = 'https://www.gatsbyjs.org/';
+export const CONTACT_AUSTRALIA_ASIA = 'https://www.rmscloud.com/about-us/contact-us/australia/';
+export const CONTACT_NEW_ZEALAND = 'https://www.rmscloud.com/about-us/contact-us/new-zealand/';
+export const CONTACT_INDIA = 'https://www.rmscloud.com/about-us/contact-us/india/';
+export const CONTACT_MIDDLE_EAST = 'https://www.rmscloud.com/about-us/contact-us/middle-east/';
+export const CONTACT_UK_IRELAND = 'https://www.rmscloud.com/about-us/contact-us/uk-and-ireland/';
 
 // Account
 export const LOG_IN_RMS_NINE = 'https://web.rmscloud.com/';
