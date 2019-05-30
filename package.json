@@ -26,6 +26,7 @@
         "gatsby-plugin-offline": "^2.1.1",
         "gatsby-plugin-react-helmet": "^3.0.12",
         "gatsby-plugin-sharp": "^2.1.2",
+        "gatsby-remark-images-contentful": "^2.0.11",
         "gatsby-source-contentful": "^2.0.65",
         "gatsby-transformer-remark": "^2.3.12",
         "gatsby-transformer-sharp": "^2.1.20",

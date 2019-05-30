@@ -4,7 +4,7 @@ exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions;
     return graphql(`
         {
-            posts: allContentfulPost(sort: { fields: createdAt, order: DESC }, limit: 1000) {
+            posts: allContentfulPost(sort: { fields: published, order: DESC }, limit: 1000) {
                 edges {
                     node {
                         title
