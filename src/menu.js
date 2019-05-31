@@ -42,6 +42,10 @@ export const INDUSTRY = [
         label: 'Marina',
         to: path.INDUSTRY + path.INDUSTRY_MARINA,
     },
+    {
+        label: 'Other',
+        to: path.INDUSTRY,
+    },
 ];
 
 // About
