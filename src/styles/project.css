@@ -729,6 +729,11 @@ blockquote {
     overflow: hidden;
     cursor: default;
     }
+@media (min-width: 992px) {
+    .effect-image figure {
+        height: 340px;
+    	}
+    }
 .effect-image figure .image {
     position: relative;
     display: block;
@@ -761,6 +766,14 @@ blockquote {
     opacity: 0;
     z-index: 1000;
     }
+.effect-image figure figcaption > .headline {
+    padding: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-weight: 400;
+	}
 .effect-image figure figcaption > .caption > .excerpt + .action {
     padding-top: 23px;
     }
@@ -1250,25 +1263,6 @@ p > .gatsby-resp-image-wrapper {
     margin-bottom: 30px;
     bottom: 0;
     }
-
-/* ========================= */
-/* ==========!FEED========== */
-/* ========================= */
-
-/* ----------!MAIN---------- */
-@media (min-width: 992px) {
-    .feed figure {
-        height: 340px;
-    	}
-    }
-.feed .headline {
-    padding: 30px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    font-weight: 400;
-	}
 
 /* ============================= */
 /* ==========!TEMPLATE========== */
