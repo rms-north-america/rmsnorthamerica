@@ -62,6 +62,9 @@ export const contentGeneral = graphql`
             }
         }
         action
+        link {
+            slug
+        }
     }
 `;
 

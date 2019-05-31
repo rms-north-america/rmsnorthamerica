@@ -729,6 +729,11 @@ blockquote {
     overflow: hidden;
     cursor: default;
     }
+@media (min-width: 992px) {
+    .effect-image figure {
+        height: 340px;
+    	}
+    }
 .effect-image figure .image {
     position: relative;
     display: block;
@@ -760,6 +765,17 @@ blockquote {
     white-space: nowrap;
     opacity: 0;
     z-index: 1000;
+    }
+.effect-image figure figcaption > .headline {
+    padding: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-weight: 400;
+	}
+.effect-image figure figcaption > .caption {
+    width: 100%;
     }
 .effect-image figure figcaption > .caption > .excerpt + .action {
     padding-top: 23px;
@@ -1237,7 +1253,7 @@ p > .gatsby-resp-image-wrapper {
 /* ==========!HERO========== */
 /* ========================= */
 
-/* ----------!PARENT---------- */
+/* ----------!MAIN---------- */
 .hero {
     height: 340px;
     overflow: hidden;
@@ -1274,7 +1290,7 @@ p > .gatsby-resp-image-wrapper {
     color: #1d2c3c;
     }
 
-/* ----------!CHEAT---------- */
+/* ----------!PRODUCT---------- */
 @media (min-width: 1200px) {
     #product .cheat-custom {
         margin-left: -25px;
@@ -1287,21 +1303,6 @@ p > .gatsby-resp-image-wrapper {
         margin-right: -30px;
         }
     }
-
-/* ----------!INDUSTRY---------- */
-@media (min-width: 992px) {
-    #industry .industry figure {
-        height: 340px;
-    	}
-    }
-#industry .industry .headline {
-    padding: 30px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    font-weight: 400;
-	}
 
 /* ----------!TESTIMONIAL---------- */
 #testimonial {
