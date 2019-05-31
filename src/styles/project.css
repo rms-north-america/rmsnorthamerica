@@ -1237,7 +1237,7 @@ p > .gatsby-resp-image-wrapper {
 /* ==========!HERO========== */
 /* ========================= */
 
-/* ----------!PARENT---------- */
+/* ----------!MAIN---------- */
 .hero {
     height: 340px;
     overflow: hidden;
@@ -1250,6 +1250,25 @@ p > .gatsby-resp-image-wrapper {
     margin-bottom: 30px;
     bottom: 0;
     }
+
+/* ========================= */
+/* ==========!FEED========== */
+/* ========================= */
+
+/* ----------!MAIN---------- */
+@media (min-width: 992px) {
+    .feed figure {
+        height: 340px;
+    	}
+    }
+.feed .headline {
+    padding: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-weight: 400;
+	}
 
 /* ============================= */
 /* ==========!TEMPLATE========== */
@@ -1274,7 +1293,7 @@ p > .gatsby-resp-image-wrapper {
     color: #1d2c3c;
     }
 
-/* ----------!CHEAT---------- */
+/* ----------!PRODUCT---------- */
 @media (min-width: 1200px) {
     #product .cheat-custom {
         margin-left: -25px;
@@ -1287,21 +1306,6 @@ p > .gatsby-resp-image-wrapper {
         margin-right: -30px;
         }
     }
-
-/* ----------!INDUSTRY---------- */
-@media (min-width: 992px) {
-    #industry .industry figure {
-        height: 340px;
-    	}
-    }
-#industry .industry .headline {
-    padding: 30px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    font-weight: 400;
-	}
 
 /* ----------!TESTIMONIAL---------- */
 #testimonial {
