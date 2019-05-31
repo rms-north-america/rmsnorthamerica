@@ -774,6 +774,9 @@ blockquote {
     left: 0;
     font-weight: 400;
 	}
+.effect-image figure figcaption > .caption {
+    width: 100%;
+    }
 .effect-image figure figcaption > .caption > .excerpt + .action {
     padding-top: 23px;
     }
