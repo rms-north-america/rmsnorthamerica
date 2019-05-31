@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 
 const Card = ({ node, column, effect, item, path }) => (
-    <article id={`${item}-${node.slug}`} className={`${item} ${item}-${node.order} effect-image ${column}`}>
+    <article id={`${item}-${node.slug}`} className={`${item} ${item}-${node.order || node.id} effect-image ${column}`}>
         <figure className={`effect-${effect}`}>
             <Img className="image fit" fluid={node.image.fluid} alt={node.title} />
             <figcaption className="dark-30 d-flex align-items-center">
