@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import * as path from '../path';
 import * as style from '../style';
@@ -9,6 +9,7 @@ import Hero from '../components/section/Hero';
 import Feed from '../components/section/Feed';
 import Modal from '../components/widget/Modal';
 import Button from '../components/unit/Button';
+import Card from '../components/unit/Card';
 import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 import CarouselTestimonial from '../components/project/CarouselTestimonial';
 
@@ -20,26 +21,7 @@ export default ({ location, data }) => {
         </article>
     ));
     const loopIndustry = industries.edges.map(({ node }) => (
-        <article key={node.id} id={`industry-${node.slug}`} className={`industry industry-${node.order} effect-image col-lg-6 col-xl-3`}>
-            <figure className="effect-oscar">
-                <Img className="image fit" fluid={node.image.fluid} alt={node.title} />
-                <figcaption className="dark-30 d-flex align-items-center">
-                    <h4 className="headline">{node.title}</h4>
-                    <div className="caption">
-                        <p
-                            className="excerpt"
-                            dangerouslySetInnerHTML={{
-                                __html: node.excerpt ? node.excerpt.excerpt : node.body.childMarkdownRemark.excerpt,
-                            }}
-                        />
-                        <p className="action">{`${node.action || 'Learn more'} →`}</p>
-                    </div>
-                    <Link className="link" to={`${path.INDUSTRY}/${node.slug}`}>
-                        view more
-                    </Link>
-                </figcaption>
-            </figure>
-        </article>
+        <Card key={node.id} node={node} column="col-lg-6 col-xl-3" item="industry" path={path.INDUSTRY} />
     ));
     return (
         <Layout template="home" location={location}>
@@ -106,7 +88,7 @@ export default ({ location, data }) => {
                         <div className="row gutter-20">{loopIndustry}</div>
                     </section>
                     <footer className="node-xs-50 node-lg-80 text-lg-center">
-                        <Button label={industry.action} />
+                        <Button label={industry.action} to={`/${industry.link.slug}`} />
                     </footer>
                 </Feed>
             )}
