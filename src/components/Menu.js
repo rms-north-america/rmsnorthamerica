@@ -11,7 +11,7 @@ const MenuLink = ({ label, to, external, child }) =>
             {label}
         </a>
     ) : (
-        <Link className={child ? 'dropdown-item' : 'nav-link'} activeClassName="active" title={label} to={to} partiallyActive>
+        <Link className={child ? 'dropdown-item' : 'nav-link'} activeClassName="active" title={label} to={to}>
             {label}
         </Link>
     );

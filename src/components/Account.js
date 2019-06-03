@@ -14,7 +14,7 @@ const Account = () => {
                 {label}
             </a>
         ) : (
-            <Link key={generateID()} className="dropdown-item" activeClassName="active" title={label} to={to} partiallyActive>
+            <Link key={generateID()} className="dropdown-item" activeClassName="active" title={label} to={to}>
                 {label}
             </Link>
         ),

@@ -709,6 +709,10 @@ blockquote {
     min-height: 340px;
     height: 100vh !important;
     }
+.height-short,
+.height-standard {
+    height: 340px !important;
+    }
 @media (min-width: 992px) {
     .height-standard {
         height: 550px !important;
@@ -1216,7 +1220,7 @@ p > .gatsby-resp-image-wrapper {
 
 /* ----------!MAIN---------- */
 .carousel {
-	height: 340px;
+	height: 100%;
 	overflow: hidden;
 	cursor: default;
     color: #fff;
@@ -1255,7 +1259,7 @@ p > .gatsby-resp-image-wrapper {
 
 /* ----------!MAIN---------- */
 .hero {
-    height: 340px;
+    height: 100%;
     overflow: hidden;
     cursor: default;
     color: #fff;
@@ -1291,6 +1295,9 @@ p > .gatsby-resp-image-wrapper {
     }
 
 /* ----------!PRODUCT---------- */
+#product .cheat-custom {
+    margin-bottom: -5px;
+    }
 @media (min-width: 1200px) {
     #product .cheat-custom {
         margin-left: -25px;
@@ -1307,7 +1314,6 @@ p > .gatsby-resp-image-wrapper {
 /* ----------!TESTIMONIAL---------- */
 #testimonial {
     overflow: visible;
-    z-index: 0;
     }
 #testimonial p {
     font-style: italic;
@@ -1321,10 +1327,14 @@ p > .gatsby-resp-image-wrapper {
         }
     }
 #testimonial .icon-quote {
-    margin-top: -25px;
-    position: relative;
+    margin-top: -24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     font-size: 48px;
     color: #f89c02;
+    z-index: 2;
 	}
 #testimonial .icon-quote::after {
     background-color: #f7f7f7;
@@ -1343,11 +1353,6 @@ p > .gatsby-resp-image-wrapper {
 #testimonial .carousel {
     color: #1d2c3c;
     text-align: center;
-	}
-@media (min-width: 992px) {
-	#testimonial .carousel {
-		height: 550px;
-		}
 	}
 #testimonial .carousel-indicators li {
     background-color: #006c8c;

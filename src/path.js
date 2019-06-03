@@ -11,7 +11,6 @@ export const REQUEST_DEMO = '/request-demo';
 export const PRIVACY_POLICY = '/privacy-policy';
 
 // Product
-export const PRODUCT_OVERVIEW = '/overview';
 export const PRODUCT_FEATURES = '/features';
 export const PRODUCT_RESOURCES = '/resources';
 export const PRODUCT_INTERFACES = '/interfaces';
