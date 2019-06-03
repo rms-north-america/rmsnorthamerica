@@ -1291,6 +1291,9 @@ p > .gatsby-resp-image-wrapper {
     }
 
 /* ----------!PRODUCT---------- */
+#product .cheat-custom {
+    margin-bottom: -5px;
+    }
 @media (min-width: 1200px) {
     #product .cheat-custom {
         margin-left: -25px;
