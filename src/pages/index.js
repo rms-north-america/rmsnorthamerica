@@ -139,7 +139,7 @@ export const query = graphql`
                 }
             }
         }
-        testimonials: allContentfulTestimonial(sort: { fields: order, order: ASC }) {
+        testimonials: allContentfulTestimonial(filter: { home: { eq: true } }, sort: { fields: order, order: ASC }) {
             edges {
                 node {
                     id
