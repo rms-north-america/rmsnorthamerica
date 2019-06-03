@@ -4,10 +4,10 @@ import * as path from './path';
 export const PRODUCT = [
     {
         label: 'Overview',
-        to: path.PRODUCT + path.PRODUCT_OVERVIEW,
+        to: path.PRODUCT,
     },
     {
-        label: 'Available Features',
+        label: 'Features',
         to: path.PRODUCT + path.PRODUCT_FEATURES,
     },
     {
@@ -51,7 +51,7 @@ export const INDUSTRY = [
 // About
 export const ABOUT = [
     {
-        label: 'Company Overview',
+        label: 'About RMS',
         to: path.ABOUT,
     },
     {
