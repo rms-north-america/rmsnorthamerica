@@ -41,7 +41,7 @@ const CarouselTestimonial = ({
         </Item>
     ));
     return (
-        <section id={id} className={`block height-${height} align-${align} background-${source ? 'image' : 'none'} color-${color}`}>
+        <section id={id} className={`complex block height-${height} align-${align} background-${source ? 'image' : 'none'} color-${color}`}>
             <div className="icon-quote d-flex justify-content-center">
                 <FontAwesomeIcon icon={faQuoteLeft} />
             </div>
