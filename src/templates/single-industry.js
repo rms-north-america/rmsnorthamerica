@@ -11,7 +11,6 @@ import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 export default ({ location, data }) => {
     const { industry } = data;
     const description = industry.excerpt ? industry.excerpt.excerpt : industry.body.childMarkdownRemark.excerpt.replace(/\n/g, ' ');
-    console.log(industry.testimonial);
     return (
         <Layout template="single single-industry" title={industry.title} description={description} location={location}>
             <Hero
