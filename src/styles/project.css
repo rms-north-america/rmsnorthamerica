@@ -1054,6 +1054,12 @@ p > .gatsby-resp-image-wrapper {
     margin-bottom: 36px;
     }
 
+/* ----------!CUSTOM---------- */
+.space-custom {
+    padding-top: 50px !important;
+    padding-bottom: 80px !important;
+    }
+
 /* ========================== */
 /* ==========!MODAL========== */
 /* ========================== */
