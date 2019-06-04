@@ -22,7 +22,7 @@ const CarouselTestimonial = ({
     pauseOnHover,
     slides,
 }) => {
-    const loopSlide = slides.edges.map(({ node: slide }) => (
+    const loopSlide = slides.map((slide) => (
         <Item key={slide.id} className={`slide-${slide.order}`}>
             {slide.image && <Img className="fit exact-center absolute" fluid={slide.image.fluid} alt={contentify(slide.title)} critical />}
             <div className={`display-table relative ${space} ${tint}`}>
@@ -66,7 +66,7 @@ CarouselTestimonial.propTypes = {
     indicators: PropTypes.bool,
     interval: PropTypes.number,
     pauseOnHover: PropTypes.bool,
-    slides: PropTypes.object.isRequired,
+    slides: PropTypes.array.isRequired,
 };
 
 CarouselTestimonial.defaultProps = {

@@ -10,8 +10,8 @@ import Feed from '../components/section/Feed';
 import Modal from '../components/widget/Modal';
 import Button from '../components/unit/Button';
 import Card from '../components/unit/Card';
-import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 import CarouselTestimonial from '../components/project/CarouselTestimonial';
+import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 
 export default ({ location, data }) => {
     const { points, industries, testimonials, splash, introduction, product, industry } = data;
@@ -92,8 +92,8 @@ export default ({ location, data }) => {
                     </footer>
                 </Feed>
             )}
-            {testimonials.edges.length > 0 && (
-                <CarouselTestimonial id="testimonial" fade={true} controls={false} indicators={false} slides={testimonials} />
+            {testimonials.nodes.length > 0 && (
+                <CarouselTestimonial id="testimonial" fade={true} controls={false} indicators={false} slides={testimonials.nodes} />
             )}
             <GeneralRequestDemo />
         </Layout>
@@ -140,18 +140,8 @@ export const query = graphql`
             }
         }
         testimonials: allContentfulTestimonial(filter: { home: { eq: true } }, sort: { fields: order, order: ASC }) {
-            edges {
-                node {
-                    id
-                    title
-                    body {
-                        childMarkdownRemark {
-                            html
-                        }
-                    }
-                    company
-                    order
-                }
+            nodes {
+                ...contentTestimonial
             }
         }
         splash: contentfulHero(slug: { eq: "splash" }) {

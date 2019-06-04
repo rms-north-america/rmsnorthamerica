@@ -274,7 +274,7 @@ blockquote {
     }
 .dropdown .dropdown-menu .dropdown-header,
 .dropdown .dropdown-menu .dropdown-text {
-    color: #eaeaea;
+    color: #f7f7f7;
     }
 .dropdown .dropdown-menu .dropdown-item {
     color: #1d2c3c;
@@ -658,10 +658,18 @@ blockquote {
 
 /* ----------!BORDER---------- */
 .style-border-top-grey {
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid #f7f7f7;
     }
 .style-border-top-grey .zone {
     margin-top: -1px;
+    }
+
+/* ----------!DIVISION---------- */
+@media (min-width: 992px) {
+    .division + .division {
+        border-top: 3px solid #f7f7f7;
+        margin-top: 80px;
+        }
     }
 
 /* ----------!CHEAT---------- */
@@ -1044,6 +1052,12 @@ p > .gatsby-resp-image-link,
 p > .gatsby-resp-image-wrapper {
     margin-top: 38px;
     margin-bottom: 36px;
+    }
+
+/* ----------!CUSTOM---------- */
+.space-custom {
+    padding-top: 50px !important;
+    padding-bottom: 80px !important;
     }
 
 /* ========================== */
