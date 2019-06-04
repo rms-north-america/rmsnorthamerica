@@ -115,3 +115,17 @@ export const contentHero = graphql`
         scroll
     }
 `;
+
+export const contentTestimonial = graphql`
+    fragment contentTestimonial on ContentfulTestimonial {
+        id
+        title
+        body {
+            childMarkdownRemark {
+                html
+            }
+        }
+        company
+        order
+    }
+`;
