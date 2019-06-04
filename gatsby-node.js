@@ -20,6 +20,14 @@ exports.createPages = ({ graphql, actions }) => {
                     }
                 }
             }
+            industries: allContentfulIndustry {
+                edges {
+                    node {
+                        title
+                        slug
+                    }
+                }
+            }
         }
     `).then(({ data, errors }) => {
         if (errors) {
@@ -27,7 +35,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Data
-        const { posts, simples } = data;
+        const { posts, simples, industries } = data;
 
         // Post
         const postTotal = posts.edges.length;
@@ -84,6 +92,28 @@ exports.createPages = ({ graphql, actions }) => {
                 context: {
                     total: simpleTotal,
                     archive: simpleArchive,
+                    slug,
+                    previous,
+                    next,
+                },
+            });
+        });
+
+        // Industry
+        const industryTotal = industries.edges.length;
+        const industryArchive = 'industry';
+
+        // Industry - Single
+        industries.edges.forEach(({ node }, index) => {
+            const { slug } = node;
+            const previous = index === industryTotal - 1 ? null : industries.edges[index + 1].node;
+            const next = index === 0 ? null : industries.edges[index - 1].node;
+            createPage({
+                path: `/${industryArchive}/${slug}`,
+                component: path.resolve('./src/templates/single-industry.js'),
+                context: {
+                    total: industryTotal,
+                    archive: industryArchive,
                     slug,
                     previous,
                     next,
