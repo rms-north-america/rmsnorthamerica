@@ -1,5 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import { logicDescription } from '../logic';
 import * as style from '../style';
 import Layout from '../components/Layout';
 import Basic from '../components/section/Basic';
@@ -10,30 +12,50 @@ import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 
 export default ({ location, data }) => {
     const { industry } = data;
-    const description = industry.excerpt ? industry.excerpt.excerpt : industry.body.childMarkdownRemark.excerpt.replace(/\n/g, ' ');
     return (
-        <Layout template="single single-industry" title={industry.title} description={description} location={location}>
+        <Layout template="single single-industry" title={industry.title} description={logicDescription(industry)} location={location}>
             <Hero
-                id="splash"
+                id={`hero-${industry.slug}`}
                 height="standard"
                 opacity="opacity-50"
                 tint={style.HERO_TINT}
                 color={style.HERO_COLOR}
                 source={industry.image.fluid}
                 alternate={industry.title}
-                scroll={industry.slug}
             >
-                <header className="node-xs-30 node-lg-50 text-lg-center">
-                    <h1>{industry.title}</h1>
-                    <h2>{description}</h2>
-                </header>
-                <footer className="node-xs-30 node-lg-50 d-flex justify-content-lg-center">
+                {industry.head ? (
+                    <header
+                        className="node-xs-30 node-lg-50 text-center"
+                        dangerouslySetInnerHTML={{ __html: industry.head.childMarkdownRemark.html }}
+                    />
+                ) : (
+                    <header className="node-xs-30 node-lg-50 text-center">
+                        <h1>{industry.title}</h1>
+                        <h2>{logicDescription(industry)}</h2>
+                    </header>
+                )}
+                <footer className="node-xs-30 node-lg-50 d-flex justify-content-center">
                     <Modal kind="link" size="xl" icon="play" label={industry.trigger} video={industry.video} />
                 </footer>
             </Hero>
-            <Basic id={industry.slug} space="space-xs-80 space-md-130 space-xl-210">
-                <section className="node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: industry.body.childMarkdownRemark.html }} />
-            </Basic>
+            {industry.body && (
+                <Basic id={`basic-${industry.slug}`} space="space-xs-80 space-md-130 space-xl-210">
+                    <div className="row gutter-50 gutter-lg-80">
+                        <div className="col-xl">
+                            {industry.figure ? (
+                                <Img className="cheat-left" fluid={industry.figure.fluid} alt={industry.title} />
+                            ) : (
+                                <figure className="cheat-left">
+                                    <Img className="fit exact-center" fluid={industry.image.fluid} alt={industry.title} />
+                                </figure>
+                            )}
+                        </div>
+                        <div className="col-xl">
+                            <header className="copy" dangerouslySetInnerHTML={{ __html: industry.body.childMarkdownRemark.html }} />
+                        </div>
+                    </div>
+                </Basic>
+            )}
             {industry.testimonial && (
                 <CarouselTestimonial id="testimonial" fade={true} controls={false} indicators={false} slides={industry.testimonial} />
             )}
@@ -48,7 +70,16 @@ export const query = graphql`
             title
             slug
             image {
-                ...imageSplash
+                ...imageHigh
+            }
+            head {
+                childMarkdownRemark {
+                    html
+                    excerpt
+                }
+            }
+            figure {
+                ...imageHigh
             }
             body {
                 childMarkdownRemark {

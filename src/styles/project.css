@@ -97,6 +97,11 @@ blockquote {
     padding: 20px 25px;
     }
 
+/* ----------!FIGURE---------- */
+figure {
+    height: 100%;
+    }
+
 /* ========================== */
 /* ==========!TABLE========== */
 /* ========================== */
@@ -888,6 +893,9 @@ blockquote {
         font-size: 34px;
         line-height: 40px;
         }
+    .copy p + h3 {
+        margin-top: 80px;
+        }
     }
 
 /* ----------!ATTENTION---------- */
@@ -1006,9 +1014,6 @@ ul + h3,
 table + h3 {
     border-top: 3px solid #f7f7f7;
     margin-top: 80px;
-    }
-.copy h3 + p {
-    padding-top: 23px;
     }
 
 /* ----------!TABLE---------- */
@@ -1294,6 +1299,11 @@ p > .gatsby-resp-image-wrapper {
     padding-top: 8px;
     }
 
+/* ----------!SINGLE-INDUSTRY---------- */
+.single-industry .copy {
+    padding-bottom: 1px;
+    }
+
 /* ============================ */
 /* ==========!SECTION========== */
 /* ============================ */
@@ -1306,6 +1316,9 @@ p > .gatsby-resp-image-wrapper {
     font-weight: 700;
     line-height: 30px;
     color: #1d2c3c;
+    }
+#point h3 + p {
+    padding-top: 23px;
     }
 
 /* ----------!PRODUCT---------- */

@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { logicDescription } from '../logic';
 import * as path from '../path';
 import Layout from '../components/Layout';
 import Basic from '../components/section/Basic';
@@ -8,10 +9,9 @@ import Pagination from '../components/widget/Pagination';
 
 export default ({ location, data, pageContext }) => {
     const { post } = data;
-    const description = post.excerpt ? post.excerpt.excerpt : post.body.childMarkdownRemark.excerpt.replace(/\n/g, ' ');
     const date = post.published || post.createdAt;
     return (
-        <Layout template="single single-post" title={post.title} description={description} location={location}>
+        <Layout template="single single-post" title={post.title} description={logicDescription(post)} location={location}>
             <Basic id={post.slug} space="space-custom">
                 <figure className="node-xs-50">
                     <Img className="image" fluid={post.image.fluid} alt={post.title} />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { logicDescription } from '../logic';
 import * as path from '../path';
 import Layout from '../components/Layout';
 import Feed from '../components/section/Feed';
@@ -9,7 +10,6 @@ import Pagination from '../components/widget/Pagination';
 export default ({ location, data, pageContext }) => {
     const { posts, archive } = data;
     const loopPost = posts.edges.map(({ node: post }) => {
-        const description = post.excerpt ? post.excerpt.excerpt : post.body.childMarkdownRemark.excerpt.replace(/\n/g, ' ');
         const date = post.published || post.createdAt;
         return (
             <article key={post.id} id={post.slug} className="post node-xs-80 node-lg-130">
@@ -23,7 +23,7 @@ export default ({ location, data, pageContext }) => {
                     <p className="date">{date}</p>
                 </header>
                 <section>
-                    <p className="excerpt" dangerouslySetInnerHTML={{ __html: description }} />
+                    <p className="excerpt" dangerouslySetInnerHTML={{ __html: logicDescription(post) }} />
                 </section>
             </article>
         );
