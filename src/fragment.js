@@ -8,8 +8,16 @@ export const imageGeneral = graphql`
     }
 `;
 
-export const imageSplash = graphql`
-    fragment imageSplash on ContentfulAsset {
+export const imageMaximum = graphql`
+    fragment imageMaximum on ContentfulAsset {
+        fluid(maxWidth: 1680, quality: 100, cropFocus: CENTER) {
+            ...GatsbyContentfulFluid
+        }
+    }
+`;
+
+export const imageHigh = graphql`
+    fragment imageHigh on ContentfulAsset {
         fluid(maxWidth: 1680, quality: 80, cropFocus: CENTER) {
             ...GatsbyContentfulFluid
         }
@@ -54,7 +62,7 @@ export const contentGeneral = graphql`
         title
         slug
         image {
-            ...imageGeneral
+            ...imageHigh
         }
         body {
             childMarkdownRemark {
@@ -100,7 +108,7 @@ export const contentSplash = graphql`
         slug
         height
         image {
-            ...imageSplash
+            ...imageHigh
         }
         body {
             childMarkdownRemark {

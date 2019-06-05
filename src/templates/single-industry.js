@@ -70,7 +70,7 @@ export const query = graphql`
             title
             slug
             image {
-                ...imageHero
+                ...imageHigh
             }
             head {
                 childMarkdownRemark {
@@ -79,7 +79,7 @@ export const query = graphql`
                 }
             }
             figure {
-                ...imageGeneral
+                ...imageHigh
             }
             body {
                 childMarkdownRemark {
