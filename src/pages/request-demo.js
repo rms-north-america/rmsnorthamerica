@@ -10,11 +10,15 @@ export default ({ location, data }) => {
         <Layout template={`page page-${page.slug}`} title={page.title} description={logicDescription(page)} location={location}>
             {page && (
                 <Basic id={`basic-${page.slug}`} space="space-custom">
-                    <header
-                        className="node-xs-30 node-lg-50 text-lg-center width"
-                        dangerouslySetInnerHTML={{ __html: page.head.childMarkdownRemark.html }}
-                    />
-                    <footer className="node-xs-30 node-lg-50 text-lg-center width" dangerouslySetInnerHTML={{ __html: form.code.code }} />
+                    {page.head && (
+                        <header
+                            className="node-xs-30 node-lg-50 text-lg-center width"
+                            dangerouslySetInnerHTML={{ __html: page.head.childMarkdownRemark.html }}
+                        />
+                    )}
+                    {form.code && (
+                        <footer className="node-xs-30 node-lg-50 text-lg-center width" dangerouslySetInnerHTML={{ __html: form.code.code }} />
+                    )}
                 </Basic>
             )}
         </Layout>
