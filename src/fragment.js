@@ -68,6 +68,31 @@ export const contentGeneral = graphql`
     }
 `;
 
+export const contentPage = graphql`
+    fragment contentPage on ContentfulPage {
+        title
+        slug
+        image {
+            ...imageHero
+        }
+        head {
+            childMarkdownRemark {
+                html
+                excerpt
+            }
+        }
+        body {
+            childMarkdownRemark {
+                html
+                excerpt
+            }
+        }
+        excerpt {
+            excerpt
+        }
+    }
+`;
+
 export const contentSplash = graphql`
     fragment contentSplash on ContentfulHero {
         id
