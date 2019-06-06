@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { slugify } from '../function';
 import { logicDescription } from '../logic';
 import * as path from '../path';
 import Layout from '../components/Layout';
@@ -15,6 +16,7 @@ export default ({ location, data, pageContext }) => {
             <article key={post.id} id={post.slug} className="post node-xs-80 node-lg-130">
                 <figure>
                     <Img className="image" fluid={post.image.fluid} alt={post.title} />
+                    {post.type && <div className={`flag flag-${slugify(post.type)}`}>{post.type}</div>}
                 </figure>
                 <header>
                     <h3 className="p-xs-20">
@@ -75,6 +77,7 @@ export const query = graphql`
                         excerpt
                     }
                     published(formatString: "MMMM D, YYYY")
+                    type
                 }
             }
         }
