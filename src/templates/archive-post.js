@@ -12,14 +12,16 @@ export default ({ location, data, pageContext }) => {
     const loopPost = posts.edges.map(({ node: post }) => {
         const date = post.published || post.createdAt;
         return (
-            <article key={post.id} id={post.slug} className="post node-xs-80 node-lg-130">
+            <article key={post.id} id={post.slug} className="post">
                 <figure>
                     <Img className="image" fluid={post.image.fluid} alt={post.title} />
                     {post.type && <div className={`flag flag-${slugify(post.type)}`}>{post.type}</div>}
                 </figure>
                 <header>
                     <h3 className="p-xs-20">
-                        <Link to={`/${pageContext.archive}/${post.slug}`}>{post.title}</Link>
+                        <Link className="stretched-link" to={`/${pageContext.archive}/${post.slug}`}>
+                            {post.title}
+                        </Link>
                     </h3>
                     <p className="date">{date}</p>
                 </header>
