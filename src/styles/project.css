@@ -69,7 +69,7 @@ a:active:not([class*="btn"]),
 a:hover:not([class*="btn"]),
 a:focus:not([class*="btn"]) {
     text-decoration: none;
-    color: #1d2c3c;
+    color: #117d9d;
     }
 a[href="/request-demo"] {
     color: #f89c02;
@@ -97,9 +97,15 @@ blockquote {
     padding: 20px 25px;
     }
 
+/* ----------!ARTICLE---------- */
+article {
+    position: relative;
+    }
+
 /* ----------!FIGURE---------- */
 figure {
     height: 100%;
+    position: relative;
     }
 
 /* ========================== */
@@ -208,6 +214,32 @@ figure {
 .to-video {
     min-width: unset;
     color: #fff !important;
+    }
+
+/* ========================= */
+/* ==========!FLAG========== */
+/* ========================= */
+
+/* ----------!MAIN---------- */
+.flag {
+    background-color: #1d2c3c;
+    padding: 5px 10px;
+    min-width: 140px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 20px;
+    color: #fff;
+    }
+.flag-blog {
+    background-color: #006c8c;
+    }
+.flag-press-release {
+    background-color: #f89c02;
     }
 
 /* ========================= */
@@ -740,8 +772,6 @@ figure {
 .effect-image figure {
     background: #1d2c3c;
     width: 100%;
-    height: 100%;
-    position: relative;
     text-align: center;
     overflow: hidden;
     cursor: default;
@@ -1297,6 +1327,26 @@ p > .gatsby-resp-image-wrapper {
 /* ----------!PAGE-CONTACT---------- */
 .page-contact h4 + p {
     padding-top: 8px;
+    }
+
+/* ----------!ARCHIVE-POST---------- */
+.archive-post .feed-post .post + .post {
+    margin-top: 80px !important;
+    }
+@media (min-width: 992px) {
+    .archive-post .feed-post .post + .post {
+        margin-top: 130px !important;
+        }
+    }
+.archive-post .feed-post .post .excerpt::after {
+    font-weight: 400;
+    color: #006c8c;
+    content: ' Read more \2192';
+    }
+.archive-post .feed-post .post:active .excerpt::after,
+.archive-post .feed-post .post:hover .excerpt::after,
+.archive-post .feed-post .post:focus .excerpt::after {
+    color: #117d9d;
     }
 
 /* ----------!SINGLE-INDUSTRY---------- */

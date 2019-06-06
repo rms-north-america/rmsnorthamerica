@@ -2,7 +2,7 @@
 export const ROOT = '/';
 export const PRODUCT = '/product';
 export const INDUSTRY = '/industry';
-export const POST = '/post';
+export const POST = '/news';
 export const ABOUT = '/about';
 export const TEAM = '/team';
 export const PARTNER_WITH_US = '/partner-with-us';

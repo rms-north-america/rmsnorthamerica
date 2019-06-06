@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { slugify } from '../function';
 import { logicDescription } from '../logic';
-import * as path from '../path';
 import Layout from '../components/Layout';
 import Feed from '../components/section/Feed';
 import Pagination from '../components/widget/Pagination';
@@ -12,13 +12,16 @@ export default ({ location, data, pageContext }) => {
     const loopPost = posts.edges.map(({ node: post }) => {
         const date = post.published || post.createdAt;
         return (
-            <article key={post.id} id={post.slug} className="post node-xs-80 node-lg-130">
+            <article key={post.id} id={post.slug} className="post">
                 <figure>
                     <Img className="image" fluid={post.image.fluid} alt={post.title} />
+                    {post.type && <div className={`flag flag-${slugify(post.type)}`}>{post.type}</div>}
                 </figure>
                 <header>
                     <h3 className="p-xs-20">
-                        <Link to={`/${pageContext.archive}/${post.slug}`}>{post.title}</Link>
+                        <Link className="stretched-link" to={`/${pageContext.archive}/${post.slug}`}>
+                            {post.title}
+                        </Link>
                     </h3>
                     <p className="date">{date}</p>
                 </header>
@@ -43,7 +46,7 @@ export default ({ location, data, pageContext }) => {
                             <section className="node-xs-80">{loopPost}</section>
                             {pageContext.numPages > 1 && (
                                 <footer className="node-xs-80">
-                                    <Pagination pageContext={pageContext} path={path.POST} />
+                                    <Pagination pageContext={pageContext} />
                                 </footer>
                             )}
                         </div>
@@ -75,6 +78,7 @@ export const query = graphql`
                         excerpt
                     }
                     published(formatString: "MMMM D, YYYY")
+                    type
                 }
             }
         }

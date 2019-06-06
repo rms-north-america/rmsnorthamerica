@@ -39,7 +39,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Post
         const postTotal = posts.edges.length;
-        const postArchive = 'post';
+        const postArchive = 'news';
 
         // Post - Single
         posts.edges.forEach(({ node }, index) => {
@@ -67,11 +67,11 @@ exports.createPages = ({ graphql, actions }) => {
                 path: i === 0 ? `/${postArchive}` : `/${postArchive}/${i + 1}`,
                 component: path.resolve('./src/templates/archive-post.js'),
                 context: {
+                    total: postTotal,
+                    archive: postArchive,
                     limit: postsPerPage,
                     skip: i * postsPerPage,
                     currentPage: i + 1,
-                    total: postTotal,
-                    archive: postArchive,
                     numPages,
                 },
             });
