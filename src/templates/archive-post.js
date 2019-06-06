@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { slugify } from '../function';
 import { logicDescription } from '../logic';
-import * as path from '../path';
 import Layout from '../components/Layout';
 import Feed from '../components/section/Feed';
 import Pagination from '../components/widget/Pagination';
@@ -45,7 +44,7 @@ export default ({ location, data, pageContext }) => {
                             <section className="node-xs-80">{loopPost}</section>
                             {pageContext.numPages > 1 && (
                                 <footer className="node-xs-80">
-                                    <Pagination pageContext={pageContext} path={path.POST} />
+                                    <Pagination pageContext={pageContext} />
                                 </footer>
                             )}
                         </div>

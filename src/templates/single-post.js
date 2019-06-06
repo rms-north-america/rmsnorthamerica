@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { slugify } from '../function';
 import { logicDescription } from '../logic';
-import * as path from '../path';
 import Layout from '../components/Layout';
 import Basic from '../components/section/Basic';
 import Pagination from '../components/widget/Pagination';
@@ -25,7 +24,7 @@ export default ({ location, data, pageContext }) => {
                 <section className="node-xs-50 node-xs-80" dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }} />
                 {pageContext.total > 1 && (
                     <footer className="node-xs-80">
-                        <Pagination pageContext={pageContext} path={path.POST} single />
+                        <Pagination pageContext={pageContext} single />
                     </footer>
                 )}
             </Basic>
