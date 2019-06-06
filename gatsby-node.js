@@ -39,7 +39,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Post
         const postTotal = posts.edges.length;
-        const postArchive = 'post';
+        const postArchive = 'news';
 
         // Post - Single
         posts.edges.forEach(({ node }, index) => {
