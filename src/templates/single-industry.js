@@ -35,7 +35,7 @@ export default ({ location, data }) => {
                     </header>
                 )}
                 <footer className="node-xs-30 node-lg-50 d-flex justify-content-center">
-                    <Modal kind="link" size="xl" icon="play" label={industry.trigger} video={industry.video} />
+                    <Modal kind="link" size="xl" icon="play" label={industry.trigger || undefined} video={industry.video} />
                 </footer>
             </Hero>
             {industry.body && (
@@ -78,6 +78,8 @@ export const query = graphql`
                     excerpt
                 }
             }
+            trigger
+            video
             figure {
                 ...imageHigh
             }
