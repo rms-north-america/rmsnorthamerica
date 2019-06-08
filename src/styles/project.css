@@ -1361,6 +1361,9 @@ p > .gatsby-resp-image-wrapper {
 .single-industry .copy {
     padding-bottom: 1px;
     }
+.single-industry .hero .image {
+    top: 130px;
+    }
 .single-industry .hero .to-video {
     margin-top: -17px;
     }

@@ -5,7 +5,7 @@ import Scroll from '../widget/Scroll';
 
 const Hero = ({ container, height, align, space, opacity, tint, color, id, source, alternate, scroll, children }) => (
     <section id={id} className={`hero block height-${height} align-${align} background-${source ? 'image' : 'none'} color-${color}`}>
-        {source && <Img className={`fit exact-center absolute ${opacity}`} fluid={source} alt={alternate} />}
+        {source && <Img className={`image fit exact-center absolute ${opacity}`} fluid={source} alt={alternate} />}
         {children && (
             <div className={`display-table relative ${space} ${tint}`}>
                 <div className="display-cell">

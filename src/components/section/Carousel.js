@@ -7,7 +7,7 @@ import { contentify } from '../../function';
 const Carousel = ({ container, height, align, space, tint, color, id, source, fade, controls, indicators, interval, pauseOnHover, slides }) => {
     const loopSlide = slides.edges.map(({ node: slide }) => (
         <Item key={slide.id} className={`slide-${slide.order}`}>
-            {slide.image && <Img className="fit exact-center absolute" fluid={slide.image.fluid} alt={contentify(slide.title)} critical />}
+            {slide.image && <Img className="image fit exact-center absolute" fluid={slide.image.fluid} alt={contentify(slide.title)} critical />}
             <div className={`display-table relative ${space} ${tint}`}>
                 <div className="display-cell">
                     <div className="zone">
