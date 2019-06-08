@@ -93,8 +93,15 @@ u {
 
 /* ----------!BLOCKQUOTE---------- */
 blockquote {
-    border-left: 5px solid #f7f7f7;
+    border-left: 3px solid #f7f7f7;
     padding: 20px 25px;
+    }
+
+/* ----------!HORIZONTAL---------- */
+hr {
+    border-top: 3px solid #f7f7f7;
+    margin-top: 79px;
+    margin-bottom: 78px;
     }
 
 /* ----------!ARTICLE---------- */
@@ -1196,20 +1203,21 @@ p > .gatsby-resp-image-wrapper {
     -webkit-box-shadow: none;
             box-shadow: none;
     }
+.page-link:active,
 .page-link:hover,
 .page-link:focus {
-    background-color: #f7f7f7;
-    border-color: #1d2c3c;
-    color: #1d2c3c;
+    background-color: #f7f7f7 !important;
+    border-color: #1d2c3c !important;
+    color: #1d2c3c !important;
     }
 .page-link.active,
 .page-link.active:active,
 .page-link.active:hover,
 .page-link.active:focus {
-    background-color: #006c8c;
-    border-color: #1d2c3c;
-    color: #fff;
-    cursor: default;
+    background-color: #006c8c !important;
+    border-color: #1d2c3c !important;
+    color: #fff !important;
+    cursor: default !important;
     }
 .page-link-previous,
 .page-link-next {
@@ -1352,6 +1360,12 @@ p > .gatsby-resp-image-wrapper {
 /* ----------!SINGLE-INDUSTRY---------- */
 .single-industry .copy {
     padding-bottom: 1px;
+    }
+.single-industry .hero .image {
+    top: 130px;
+    }
+.single-industry .hero .to-video {
+    margin-top: -17px;
     }
 
 /* ============================ */
