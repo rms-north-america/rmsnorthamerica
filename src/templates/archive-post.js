@@ -18,7 +18,7 @@ export default ({ location, data, pageContext }) => {
                     {post.type && <div className={`flag flag-${slugify(post.type)}`}>{post.type}</div>}
                 </figure>
                 <header>
-                    <h3 className="p-xs-20">
+                    <h3>
                         <Link className="stretched-link" to={`/${pageContext.archive}/${post.slug}`}>
                             {post.title}
                         </Link>
@@ -26,7 +26,7 @@ export default ({ location, data, pageContext }) => {
                     <p className="date">{date}</p>
                 </header>
                 <section>
-                    <p className="excerpt" dangerouslySetInnerHTML={{ __html: logicDescription(post) }} />
+                    <p className="excerpt read-more more" dangerouslySetInnerHTML={{ __html: logicDescription(post) }} />
                 </section>
             </article>
         );
