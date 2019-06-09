@@ -1477,7 +1477,6 @@ ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class
 ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) > li:not([class*="col"]):not([class*="gutter"]):not([class*="flex"]):not([class*="space"]):not([class*="node"]):not([class*="order"]),
 label:not([class*="col"]):not([class*="gutter"]):not([class*="flex"]):not([class*="space"]):not([class*="node"]):not([class*="order"]):not([class*="form-check-label"]),
 .headline:not([class*="col"]):not([class*="gutter"]):not([class*="flex"]):not([class*="space"]):not([class*="node"]):not([class*="order"]),
-.more:not([class*="col"]):not([class*="gutter"]):not([class*="flex"]):not([class*="space"]):not([class*="node"]):not([class*="order"]),
 [class*="xs-16"]:not([class*="col"]):not([class*="gutter"]):not([class*="flex"]):not([class*="space"]):not([class*="node"]):not([class*="order"]),
 [class*="xs-18"]:not([class*="col"]):not([class*="gutter"]):not([class*="flex"]):not([class*="space"]):not([class*="node"]):not([class*="order"]) {
   margin-left: 0px;
@@ -1773,7 +1772,7 @@ h3:not([class*="col"]):not([class*="gutter"]):not([class*="flex"]):not([class*="
 
 .p-xs-15, .card-panel .card-body .card-tagline, p, ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) > li,
 ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) > li, label:not([class*="form-check-label"]), .btn-lg,
-.btn-group-lg > .btn, .more, .loader, .toast-message, .table td,
+.btn-group-lg > .btn, .loader, .toast-message, .table td,
 .table th, .dashboard #toolbar .toolbar-brand,
 .dashboard #toolbar .toolbar-text,
 .dashboard #toolbar .toolbar-nav > li > a, .navbar .navbar-brand,
@@ -2763,10 +2762,6 @@ p + .instagram-media {
 /* ========================= */
 /* ==========!PART========== */
 /* ========================= */
-/* ----------!BUTTON---------- */
-/* ----------!MORE---------- */
-.more {
-  display: block; }
 
 /* ----------!CARD---------- */
 .card-panel .card-body {

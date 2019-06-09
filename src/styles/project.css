@@ -111,8 +111,8 @@ article {
 
 /* ----------!FIGURE---------- */
 figure {
-    height: 100%;
     position: relative;
+    overflow: hidden;
     }
 
 /* ========================== */
@@ -770,6 +770,9 @@ figure {
         height: 550px !important;
         }
     }
+.height-match {
+    height: 100% !important;
+    }
 
 /* =========================== */
 /* ==========!EFFECT========== */
@@ -780,7 +783,6 @@ figure {
     background: #1d2c3c;
     width: 100%;
     text-align: center;
-    overflow: hidden;
     cursor: default;
     }
 @media (min-width: 992px) {
@@ -953,6 +955,23 @@ figure {
     line-height: 20px;
     }
 
+/* ----------!MORE---------- */
+article .more::after {
+    font-weight: 400;
+    color: #006c8c;
+    }
+article:active .more::after,
+article:hover .more::after,
+article:focus .more::after {
+    color: #117d9d;
+    }
+article .read-more::after {
+    content: ' Read more \2192';
+    }
+article .learn-more::after {
+    content: ' Learn more \2192';
+    }
+
 /* ========================== */
 /* ==========!SPACE========== */
 /* ========================== */
@@ -1005,7 +1024,7 @@ h3 + p {
 h4 + p,
 h5 + p,
 h6 + p {
-    padding-top: 23px;
+    padding-top: 24px;
     }
 
 /* ----------!LIST---------- */
@@ -1345,16 +1364,6 @@ p > .gatsby-resp-image-wrapper {
     .archive-post .feed-post .post + .post {
         margin-top: 130px !important;
         }
-    }
-.archive-post .feed-post .post .excerpt::after {
-    font-weight: 400;
-    color: #006c8c;
-    content: ' Read more \2192';
-    }
-.archive-post .feed-post .post:active .excerpt::after,
-.archive-post .feed-post .post:hover .excerpt::after,
-.archive-post .feed-post .post:focus .excerpt::after {
-    color: #117d9d;
     }
 
 /* ----------!SINGLE-INDUSTRY---------- */
