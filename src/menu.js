@@ -8,19 +8,19 @@ export const PRODUCT = [
     },
     {
         label: 'Features',
-        to: path.PRODUCT + path.PRODUCT_FEATURES,
+        to: path.PRODUCT_FEATURES,
     },
     {
         label: 'Resources',
-        to: path.PRODUCT + path.PRODUCT_RESOURCES,
+        to: path.PRODUCT_RESOURCES,
     },
     {
         label: 'Interfaces',
-        to: path.PRODUCT + path.PRODUCT_INTERFACES,
+        to: path.PRODUCT_INTERFACES,
     },
     {
         label: 'Support',
-        to: path.PRODUCT + path.PRODUCT_SUPPORT,
+        to: path.PRODUCT_SUPPORT,
     },
 ];
 
@@ -28,19 +28,19 @@ export const PRODUCT = [
 export const INDUSTRY = [
     {
         label: 'Hotel',
-        to: path.INDUSTRY + path.INDUSTRY_HOTEL,
+        to: path.INDUSTRY_HOTEL,
     },
     {
         label: 'RV Park',
-        to: path.INDUSTRY + path.INDUSTRY_RV_PARK,
+        to: path.INDUSTRY_RV_PARK,
     },
     {
         label: 'Campground',
-        to: path.INDUSTRY + path.INDUSTRY_CAMPGROUND,
+        to: path.INDUSTRY_CAMPGROUND,
     },
     {
         label: 'Marina',
-        to: path.INDUSTRY + path.INDUSTRY_MARINA,
+        to: path.INDUSTRY_MARINA,
     },
     {
         label: 'Other',
@@ -189,7 +189,7 @@ export const FOOTER_THREE = [
     },
     {
         label: 'Product Support',
-        to: path.PRODUCT + path.PRODUCT_SUPPORT,
+        to: path.PRODUCT_SUPPORT,
     },
 ];
 

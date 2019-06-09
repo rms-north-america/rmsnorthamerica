@@ -2,12 +2,14 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { logicDescription } from '../logic';
+import * as path from '../path';
 import * as style from '../style';
 import Layout from '../components/Layout';
 import Basic from '../components/section/Basic';
 import Hero from '../components/section/Hero';
 import Modal from '../components/widget/Modal';
 import CarouselTestimonial from '../components/project/CarouselTestimonial';
+import FeedFeature from '../components/project/FeedFeature';
 import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 
 export default ({ location, data }) => {
@@ -45,7 +47,7 @@ export default ({ location, data }) => {
                             {industry.figure ? (
                                 <Img className="cheat-left" fluid={industry.figure.fluid} alt={industry.title} />
                             ) : (
-                                <figure className="cheat-left">
+                                <figure className="cheat-left height-match">
                                     <Img className="fit exact-center" fluid={industry.image.fluid} alt={industry.title} />
                                 </figure>
                             )}
@@ -55,6 +57,13 @@ export default ({ location, data }) => {
                         </div>
                     </div>
                 </Basic>
+            )}
+            {industry.feature && (
+                <FeedFeature id="feature-key" item="feature" path={path.PRODUCT_FEATURES} edges={industry.feature}>
+                    <header className="copy node-xs-50 node-lg-80 text-lg-center">
+                        <h3>Key Features</h3>
+                    </header>
+                </FeedFeature>
             )}
             {industry.testimonial && (
                 <CarouselTestimonial id="testimonial" fade={true} controls={false} indicators={false} slides={industry.testimonial} />
@@ -91,6 +100,9 @@ export const query = graphql`
             }
             excerpt {
                 excerpt
+            }
+            feature {
+                ...contentFeature
             }
             testimonial {
                 ...contentTestimonial
