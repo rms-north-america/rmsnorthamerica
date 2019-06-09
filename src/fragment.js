@@ -8,6 +8,14 @@ export const imageGeneral = graphql`
     }
 `;
 
+export const imageFeature = graphql`
+    fragment imageFeature on ContentfulAsset {
+        fluid(maxWidth: 340, maxHeight: 210, quality: 100, cropFocus: CENTER) {
+            ...GatsbyContentfulFluid
+        }
+    }
+`;
+
 export const imageMaximum = graphql`
     fragment imageMaximum on ContentfulAsset {
         fluid(maxWidth: 1680, quality: 100, cropFocus: CENTER) {
@@ -146,6 +154,27 @@ export const contentHero = graphql`
         trigger
         video
         scroll
+    }
+`;
+
+export const contentFeature = graphql`
+    fragment contentFeature on ContentfulFeature {
+        id
+        title
+        slug
+        image {
+            ...imageFeature
+        }
+        body {
+            childMarkdownRemark {
+                html
+                excerpt
+            }
+        }
+        excerpt {
+            excerpt
+        }
+        order
     }
 `;
 
