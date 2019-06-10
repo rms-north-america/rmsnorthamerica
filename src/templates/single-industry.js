@@ -14,7 +14,7 @@ import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 
 export default ({ location, data }) => {
     const { industry } = data;
-    const loopFeature = industry.feature.map((feature) => <ArticleFeature key={feature.id} feature={feature} />);
+    const loopFeature = industry.feature && industry.feature.map((feature) => <ArticleFeature key={feature.id} feature={feature} />);
     return (
         <Layout template="single single-industry" title={industry.title} description={logicDescription(industry)} location={location}>
             <Hero
