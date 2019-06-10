@@ -178,6 +178,27 @@ export const contentFeature = graphql`
     }
 `;
 
+export const contentIndustry = graphql`
+    fragment contentIndustry on ContentfulIndustry {
+        id
+        title
+        slug
+        image {
+            ...imageFeed
+        }
+        body {
+            childMarkdownRemark {
+                excerpt
+            }
+        }
+        excerpt {
+            excerpt
+        }
+        action
+        order
+    }
+`;
+
 export const contentTestimonial = graphql`
     fragment contentTestimonial on ContentfulTestimonial {
         id
