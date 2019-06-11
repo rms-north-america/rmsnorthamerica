@@ -63,7 +63,7 @@ export default ({ location, data }) => {
                     </div>
                 </Basic>
             )}
-            {loopFeatureKey.length > 0 && (
+            {industry.feature && loopFeatureKey.length > 0 && (
                 <Feed id="feed-feature-key" space="space-xs-80 space-md-130 space-xl-210" item="feature">
                     <header className="copy node-xs-50 node-lg-80 text-lg-center">
                         <h3>Key Features</h3>
@@ -73,7 +73,7 @@ export default ({ location, data }) => {
                     </section>
                 </Feed>
             )}
-            {loopFeatureOptional.length > 0 && (
+            {industry.feature && loopFeatureOptional.length > 0 && (
                 <Feed id="feed-feature-optional" space="space-xs-80 space-md-130 space-xl-210" item="feature">
                     <header className="copy node-xs-50 node-lg-80 text-lg-center">
                         <h3>Additional Options</h3>
