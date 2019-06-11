@@ -41,9 +41,11 @@ export default ({ location, data }) => {
                         <h2>{logicDescription(industry)}</h2>
                     </header>
                 )}
-                <footer className="node-xs-30 node-lg-50 d-flex justify-content-center">
-                    <Modal kind="link" size="xl" icon="play" label={industry.trigger || undefined} video={industry.video} />
-                </footer>
+                {industry.video && (
+                    <footer className="node-xs-30 node-lg-50 d-flex justify-content-center">
+                        <Modal kind="link" size="xl" icon="play" label={industry.trigger || undefined} video={industry.video} />
+                    </footer>
+                )}
             </Hero>
             {industry.body && (
                 <Basic id={`basic-${industry.slug}`} space="space-xs-80 space-md-130 space-xl-210">
