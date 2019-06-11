@@ -174,6 +174,7 @@ export const contentFeature = graphql`
         excerpt {
             excerpt
         }
+        type
         order
     }
 `;
