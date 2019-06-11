@@ -120,22 +120,7 @@ export const query = graphql`
         industries: allContentfulIndustry(filter: { type: { eq: "main" } }, sort: { fields: order, order: ASC }) {
             edges {
                 node {
-                    id
-                    title
-                    slug
-                    image {
-                        ...imageFeed
-                    }
-                    body {
-                        childMarkdownRemark {
-                            excerpt
-                        }
-                    }
-                    excerpt {
-                        excerpt
-                    }
-                    action
-                    order
+                    ...contentIndustry
                 }
             }
         }
