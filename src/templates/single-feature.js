@@ -12,14 +12,19 @@ import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 export default ({ location, data }) => {
     const { feature } = data;
     return (
-        <Layout template="single single-feature" title={feature.title} description={logicDescription(feature)} location={location}>
+        <Layout
+            template={`single single-feature single-feature-${feature.slug}`}
+            title={feature.title}
+            description={logicDescription(feature)}
+            location={location}
+        >
             <Hero
                 id={`hero-${feature.slug}`}
                 height="standard"
                 opacity="opacity-50"
                 tint={style.HERO_TINT}
                 color={style.HERO_COLOR}
-                source={feature.image.fluid}
+                source={(feature.cover && feature.cover.fluid) || feature.image.fluid}
                 alternate={feature.title}
             >
                 {feature.head ? (
@@ -68,6 +73,9 @@ export const query = graphql`
             title
             slug
             image {
+                ...imageHigh
+            }
+            cover {
                 ...imageHigh
             }
             head {

@@ -11,7 +11,7 @@ export default ({ location, data, pageContext }) => {
     const { post } = data;
     const date = post.published || post.createdAt;
     return (
-        <Layout template="single single-post" title={post.title} description={logicDescription(post)} location={location}>
+        <Layout template={`single single-post single-post-${post.slug}`} title={post.title} description={logicDescription(post)} location={location}>
             <Basic id={post.slug} space="space-custom">
                 <figure className="node-xs-50">
                     <Img className="image" fluid={post.image.fluid} alt={post.title} />
