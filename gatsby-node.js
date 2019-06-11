@@ -20,6 +20,14 @@ exports.createPages = ({ graphql, actions }) => {
                     }
                 }
             }
+            features: allContentfulFeature {
+                edges {
+                    node {
+                        title
+                        slug
+                    }
+                }
+            }
             industries: allContentfulIndustry {
                 edges {
                     node {
@@ -35,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Data
-        const { posts, simples, industries } = data;
+        const { posts, simples, features, industries } = data;
 
         // Post
         const postTotal = posts.edges.length;
@@ -92,6 +100,28 @@ exports.createPages = ({ graphql, actions }) => {
                 context: {
                     total: simpleTotal,
                     archive: simpleArchive,
+                    slug,
+                    previous,
+                    next,
+                },
+            });
+        });
+
+        // Feature
+        const featureTotal = features.edges.length;
+        const featureArchive = 'product/feature';
+
+        // Feature - Single
+        features.edges.forEach(({ node }, index) => {
+            const { slug } = node;
+            const previous = index === featureTotal - 1 ? null : features.edges[index + 1].node;
+            const next = index === 0 ? null : features.edges[index - 1].node;
+            createPage({
+                path: `/${featureArchive}/${slug}`,
+                component: path.resolve('./src/templates/single-feature.js'),
+                context: {
+                    total: featureTotal,
+                    archive: featureArchive,
                     slug,
                     previous,
                     next,
