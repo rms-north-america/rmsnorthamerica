@@ -7,7 +7,12 @@ import Basic from '../components/section/Basic';
 export default ({ location, data }) => {
     const { simple } = data;
     return (
-        <Layout template="single single-simple" title={simple.title} description={logicDescription(simple)} location={location}>
+        <Layout
+            template={`single single-simple single-simple-${simple.slug}`}
+            title={simple.title}
+            description={logicDescription(simple)}
+            location={location}
+        >
             <Basic id={simple.slug} space="space-custom">
                 <header className="node-xs-30 node-lg-50 text-lg-center">
                     <h1>{simple.title}</h1>

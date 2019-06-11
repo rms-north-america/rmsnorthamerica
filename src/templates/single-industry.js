@@ -20,14 +20,19 @@ export default ({ location, data }) => {
     const loopFeatureKey = featureKey && featureKey.map((feature) => <ArticleFeature key={feature.id} feature={feature} />);
     const loopFeatureOptional = featureOptional && featureOptional.map((feature) => <ArticleFeature key={feature.id} feature={feature} />);
     return (
-        <Layout template="single single-industry" title={industry.title} description={logicDescription(industry)} location={location}>
+        <Layout
+            template={`single single-industry single-industry-${industry.slug}`}
+            title={industry.title}
+            description={logicDescription(industry)}
+            location={location}
+        >
             <Hero
                 id={`hero-${industry.slug}`}
                 height="standard"
                 opacity="opacity-50"
                 tint={style.HERO_TINT}
                 color={style.HERO_COLOR}
-                source={industry.image.fluid}
+                source={(industry.cover && industry.cover.fluid) || industry.image.fluid}
                 alternate={industry.title}
             >
                 {industry.head ? (
@@ -41,9 +46,11 @@ export default ({ location, data }) => {
                         <h2>{logicDescription(industry)}</h2>
                     </header>
                 )}
-                <footer className="node-xs-30 node-lg-50 d-flex justify-content-center">
-                    <Modal kind="link" size="xl" icon="play" label={industry.trigger || undefined} video={industry.video} />
-                </footer>
+                {industry.video && (
+                    <footer className="node-xs-30 node-lg-50 d-flex justify-content-center">
+                        <Modal kind="link" size="xl" icon="play" label={industry.trigger || undefined} video={industry.video} />
+                    </footer>
+                )}
             </Hero>
             {industry.body && (
                 <Basic id={`basic-${industry.slug}`} space="space-xs-80 space-md-130 space-xl-210">
@@ -97,6 +104,9 @@ export const query = graphql`
             title
             slug
             image {
+                ...imageHigh
+            }
+            cover {
                 ...imageHigh
             }
             head {

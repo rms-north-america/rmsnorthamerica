@@ -39,10 +39,14 @@ export default ({ location, data }) => {
                     <div className="row">
                         <div className="col-lg-8">
                             <header className="node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: splash.body.childMarkdownRemark.html }} />
-                            <footer className="node-xs-30 node-lg-50 d-flex">
-                                <Button kind="main" size="xl" label={splash.action} to={`/${splash.link.slug}`} />
-                                <Modal kind="link" size="xl" icon="play" label={splash.trigger} video={splash.video} />
-                            </footer>
+                            {(splash.link || splash.video) && (
+                                <footer className="node-xs-30 node-lg-50 d-flex">
+                                    {splash.link && <Button kind="main" size="xl" label={splash.action || undefined} to={`/${splash.link.slug}`} />}
+                                    {splash.video && (
+                                        <Modal kind="link" size="xl" icon="play" label={splash.trigger || undefined} video={splash.video} />
+                                    )}
+                                </footer>
+                            )}
                         </div>
                     </div>
                 </Hero>
