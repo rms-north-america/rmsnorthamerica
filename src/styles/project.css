@@ -1352,6 +1352,22 @@ p > .gatsby-resp-image-wrapper {
 /* ==========!TEMPLATE========== */
 /* ============================= */
 
+/* ----------!PAGE-TEAM---------- */
+.page-team .person figure + header {
+    padding-top: 20px;
+    }
+.page-team .person .person-name {
+    font-weight: 700;
+    color: #1d2c3c;
+    }
+.page-team .person .person-position {
+    font-weight: 400;
+    color: #006c8c;
+    }
+.page-team .person .person-name + .person-position {
+    padding-top: 6px;
+    }
+
 /* ----------!PAGE-CONTACT---------- */
 .page-contact h4 + p {
     padding-top: 8px;
@@ -1460,7 +1476,10 @@ p > .gatsby-resp-image-wrapper {
     background-color: #006c8c;
     }
 #testimonial .author + .company {
-    padding-top: 7px;
+    padding-top: 6px;
+    }
+#testimonial .author {
+    display: block;
     }
 #testimonial .company {
     font-weight: 400;
