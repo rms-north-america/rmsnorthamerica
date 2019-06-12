@@ -3,15 +3,15 @@ import { graphql } from 'gatsby';
 export const imageGeneral = graphql`
     fragment imageGeneral on ContentfulAsset {
         fluid(maxWidth: 800, quality: 80) {
-            ...GatsbyContentfulFluid
+            ...GatsbyContentfulFluid_withWebp
         }
     }
 `;
 
-export const imageFeature = graphql`
-    fragment imageFeature on ContentfulAsset {
-        fluid(maxWidth: 340, maxHeight: 210, quality: 100, cropFocus: CENTER) {
-            ...GatsbyContentfulFluid
+export const imageSquare = graphql`
+    fragment imageSquare on ContentfulAsset {
+        fluid(maxWidth: 340, maxHeight: 340, quality: 100, cropFocus: CENTER) {
+            ...GatsbyContentfulFluid_withWebp
         }
     }
 `;
@@ -19,7 +19,7 @@ export const imageFeature = graphql`
 export const imageMaximum = graphql`
     fragment imageMaximum on ContentfulAsset {
         fluid(maxWidth: 1680, quality: 100, cropFocus: CENTER) {
-            ...GatsbyContentfulFluid
+            ...GatsbyContentfulFluid_withWebp
         }
     }
 `;
@@ -27,7 +27,7 @@ export const imageMaximum = graphql`
 export const imageHigh = graphql`
     fragment imageHigh on ContentfulAsset {
         fluid(maxWidth: 1680, quality: 80, cropFocus: CENTER) {
-            ...GatsbyContentfulFluid
+            ...GatsbyContentfulFluid_withWebp
         }
     }
 `;
@@ -35,7 +35,7 @@ export const imageHigh = graphql`
 export const imageHero = graphql`
     fragment imageHero on ContentfulAsset {
         fluid(maxWidth: 1680, maxHeight: 550, quality: 80, cropFocus: CENTER) {
-            ...GatsbyContentfulFluid
+            ...GatsbyContentfulFluid_withWebp
         }
     }
 `;
@@ -43,7 +43,7 @@ export const imageHero = graphql`
 export const imageFeed = graphql`
     fragment imageFeed on ContentfulAsset {
         fluid(maxWidth: 550, maxHeight: 275, quality: 80) {
-            ...GatsbyContentfulFluid
+            ...GatsbyContentfulFluid_withWebp
         }
     }
 `;
@@ -51,7 +51,7 @@ export const imageFeed = graphql`
 export const imageArchive = graphql`
     fragment imageArchive on ContentfulAsset {
         fluid(maxWidth: 890, maxHeight: 445, quality: 80) {
-            ...GatsbyContentfulFluid
+            ...GatsbyContentfulFluid_withWebp
         }
     }
 `;
@@ -59,7 +59,23 @@ export const imageArchive = graphql`
 export const imageSingle = graphql`
     fragment imageSingle on ContentfulAsset {
         fluid(maxWidth: 1110, maxHeight: 555, quality: 80) {
-            ...GatsbyContentfulFluid
+            ...GatsbyContentfulFluid_withWebp
+        }
+    }
+`;
+
+export const imageFigure = graphql`
+    fragment imageFigure on ContentfulAsset {
+        fluid(maxWidth: 1680, quality: 80, cropFocus: CENTER) {
+            ...GatsbyContentfulFluid_withWebp_noBase64
+        }
+    }
+`;
+
+export const imageIcon = graphql`
+    fragment imageIcon on ContentfulAsset {
+        fixed(width: 145, height: 146, quality: 100, cropFocus: CENTER) {
+            ...GatsbyContentfulFixed_withWebp_noBase64
         }
     }
 `;
@@ -71,6 +87,26 @@ export const contentGeneral = graphql`
         slug
         image {
             ...imageHigh
+        }
+        body {
+            childMarkdownRemark {
+                html
+            }
+        }
+        action
+        link {
+            slug
+        }
+    }
+`;
+
+export const contentFigure = graphql`
+    fragment contentFigure on ContentfulGeneral {
+        id
+        title
+        slug
+        image {
+            ...imageFigure
         }
         body {
             childMarkdownRemark {
@@ -163,7 +199,7 @@ export const contentFeature = graphql`
         title
         slug
         image {
-            ...imageFeature
+            ...imageIcon
         }
         body {
             childMarkdownRemark {
@@ -200,10 +236,24 @@ export const contentIndustry = graphql`
     }
 `;
 
+export const contentPerson = graphql`
+    fragment contentPerson on ContentfulPerson {
+        id
+        title
+        slug
+        image {
+            ...imageSquare
+        }
+        position
+        order
+    }
+`;
+
 export const contentTestimonial = graphql`
     fragment contentTestimonial on ContentfulTestimonial {
         id
         title
+        slug
         body {
             childMarkdownRemark {
                 html

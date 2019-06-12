@@ -7,8 +7,8 @@ import Button from '../unit/Button';
 
 const ArticleFeature = ({ feature }) => (
     <article key={feature.id} id={`feature-${feature.slug}`} className={`feature feature-${feature.order} feature-type-${feature.type} col-lg-4`}>
-        <figure className="node-xs-50">
-            <Img className="image" fluid={feature.image.fluid} alt={feature.title} />
+        <figure className="node-xs-50 d-flex justify-content-center">
+            <Img className="image" fixed={feature.image.fixed} alt={feature.title} />
         </figure>
         <header className="node-xs-50">
             <h4>{feature.title}</h4>

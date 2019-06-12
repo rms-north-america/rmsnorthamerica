@@ -137,10 +137,10 @@ export const query = graphql`
             ...contentSplash
         }
         introduction: contentfulGeneral(slug: { eq: "introduction" }) {
-            ...contentGeneral
+            ...contentFigure
         }
         product: contentfulGeneral(slug: { eq: "product" }) {
-            ...contentGeneral
+            ...contentFigure
         }
         industry: contentfulGeneral(slug: { eq: "industry" }) {
             ...contentGeneral

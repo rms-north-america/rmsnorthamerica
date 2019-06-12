@@ -118,7 +118,7 @@ export const query = graphql`
             trigger
             video
             figure {
-                ...imageHigh
+                ...imageFigure
             }
             body {
                 childMarkdownRemark {
