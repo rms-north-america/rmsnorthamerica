@@ -140,7 +140,7 @@ export const query = graphql`
             ...contentGeneral
         }
         product: contentfulGeneral(slug: { eq: "product" }) {
-            ...contentGeneral
+            ...contentFigure
         }
         industry: contentfulGeneral(slug: { eq: "industry" }) {
             ...contentGeneral
