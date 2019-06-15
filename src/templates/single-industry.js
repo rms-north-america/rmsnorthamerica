@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { includeByProperty } from '../filter';
 import { logicDescription } from '../logic';
 import * as style from '../style';
 import Layout from '../components/Layout';
@@ -15,10 +14,7 @@ import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 
 export default ({ location, data }) => {
     const { industry } = data;
-    const featureKey = industry.feature && includeByProperty(industry.feature, 'type', 'key');
-    const featureOptional = industry.feature && includeByProperty(industry.feature, 'type', 'optional');
-    const loopFeatureKey = featureKey && featureKey.map((feature) => <ArticleFeature key={feature.id} feature={feature} />);
-    const loopFeatureOptional = featureOptional && featureOptional.map((feature) => <ArticleFeature key={feature.id} feature={feature} />);
+    const loopFeature = industry.feature && industry.feature.map((feature) => <ArticleFeature key={feature.id} feature={feature} />);
     return (
         <Layout
             template={`single single-industry single-industry-${industry.slug}`}
@@ -70,23 +66,13 @@ export default ({ location, data }) => {
                     </div>
                 </Basic>
             )}
-            {industry.feature && loopFeatureKey.length > 0 && (
+            {industry.feature && loopFeature.length > 0 && (
                 <Feed id="feed-feature-key" space="space-xs-80 space-md-130 space-xl-210" item="feature">
                     <header className="copy node-xs-50 node-lg-80 text-lg-center">
-                        <h3>Key Features</h3>
+                        <h3>Available Features</h3>
                     </header>
                     <section className="node-xs-50 node-lg-80">
-                        <div className="row gutter-50 gutter-lg-80">{loopFeatureKey}</div>
-                    </section>
-                </Feed>
-            )}
-            {industry.feature && loopFeatureOptional.length > 0 && (
-                <Feed id="feed-feature-optional" space="space-xs-80 space-md-130 space-xl-210" item="feature">
-                    <header className="copy node-xs-50 node-lg-80 text-lg-center">
-                        <h3>Additional Options</h3>
-                    </header>
-                    <section className="node-xs-50 node-lg-80">
-                        <div className="row gutter-50 gutter-lg-80">{loopFeatureOptional}</div>
+                        <div className="row gutter-50 gutter-lg-80">{loopFeature}</div>
                     </section>
                 </Feed>
             )}
