@@ -6,8 +6,8 @@ import * as path from '../../path';
 import Button from '../unit/Button';
 
 const ArticleFeature = ({ feature }) => (
-    <article key={feature.id} id={`feature-${feature.slug}`} className={`feature feature-${feature.order} feature-type-${feature.type} col-lg-4`}>
-        <figure className="node-xs-50 d-flex justify-content-center">
+    <article key={feature.id} id={`feature-${feature.slug}`} className={`feature feature-${feature.order} col-lg-4`}>
+        <figure className="node-xs-50">
             <Img className="image" fixed={feature.image.fixed} alt={feature.title} />
         </figure>
         <header className="node-xs-50">

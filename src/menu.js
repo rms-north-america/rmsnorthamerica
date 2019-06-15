@@ -27,6 +27,10 @@ export const PRODUCT = [
 // Industry
 export const INDUSTRY = [
     {
+        label: 'All',
+        to: path.INDUSTRY,
+    },
+    {
         label: 'Hotel',
         to: path.INDUSTRY_HOTEL,
     },
@@ -41,10 +45,6 @@ export const INDUSTRY = [
     {
         label: 'Marina',
         to: path.INDUSTRY_MARINA,
-    },
-    {
-        label: 'Other',
-        to: path.INDUSTRY,
     },
 ];
 

@@ -10,16 +10,13 @@ import Hero from '../components/section/Hero';
 import Modal from '../components/widget/Modal';
 import Button from '../components/unit/Button';
 import Card from '../components/unit/Card';
+import ArticlePoint from '../components/project/ArticlePoint';
 import CarouselTestimonial from '../components/project/CarouselTestimonial';
 import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 
 export default ({ location, data }) => {
-    const { points, industries, testimonials, splash, introduction, product, industry } = data;
-    const loopPoint = points.edges.map(({ node }) => (
-        <article key={node.id} id={`point-${node.slug}`} className={`point point-${node.order} col-lg-4`}>
-            <header className="copy" dangerouslySetInnerHTML={{ __html: node.body.childMarkdownRemark.html }} />
-        </article>
-    ));
+    const { points, industries, testimonials, splash, introduction, point, product, industry } = data;
+    const loopPoint = points.edges.map(({ node: point }) => <ArticlePoint key={point.id} point={point} />);
     const loopIndustry = industries.edges.map(({ node }) => (
         <Card key={node.id} node={node} column="col-lg-6 col-xl-3" item="industry" path={path.INDUSTRY} />
     ));
@@ -65,7 +62,13 @@ export default ({ location, data }) => {
             )}
             {points.edges.length > 0 && (
                 <Feed id="point" space="space-xs-80 space-md-130 space-xl-210" item="point">
-                    <section>
+                    {point.body && (
+                        <header
+                            className="copy node-xs-50 node-lg-80 text-lg-center"
+                            dangerouslySetInnerHTML={{ __html: point.body.childMarkdownRemark.html }}
+                        />
+                    )}
+                    <section className="node-xs-50 node-lg-80">
                         <div className="row gutter-50 gutter-lg-80">{loopPoint}</div>
                     </section>
                 </Feed>
@@ -84,16 +87,20 @@ export default ({ location, data }) => {
             )}
             {industries.edges.length > 0 && (
                 <Feed id={industry.slug} space="space-xs-80 space-md-130 space-xl-210" item="industry">
-                    <header
-                        className="copy node-xs-50 node-lg-80 text-lg-center"
-                        dangerouslySetInnerHTML={{ __html: industry.body.childMarkdownRemark.html }}
-                    />
+                    {industry.body && (
+                        <header
+                            className="copy node-xs-50 node-lg-80 text-lg-center"
+                            dangerouslySetInnerHTML={{ __html: industry.body.childMarkdownRemark.html }}
+                        />
+                    )}
                     <section className="node-xs-50 node-lg-80 cheat-both">
                         <div className="row gutter-20">{loopIndustry}</div>
                     </section>
-                    <footer className="node-xs-50 node-lg-80 text-lg-center">
-                        <Button label={industry.action} to={`/${industry.link.slug}`} />
-                    </footer>
+                    {industry.link && (
+                        <footer className="node-xs-50 node-lg-80 text-lg-center">
+                            <Button label={industry.action} to={`/${industry.link.slug}`} />
+                        </footer>
+                    )}
                 </Feed>
             )}
             {testimonials.nodes.length > 0 && (
@@ -109,15 +116,7 @@ export const query = graphql`
         points: allContentfulPoint(sort: { fields: order, order: ASC }) {
             edges {
                 node {
-                    id
-                    title
-                    slug
-                    body {
-                        childMarkdownRemark {
-                            html
-                        }
-                    }
-                    order
+                    ...contentPoint
                 }
             }
         }
@@ -138,6 +137,9 @@ export const query = graphql`
         }
         introduction: contentfulGeneral(slug: { eq: "introduction" }) {
             ...contentFigure
+        }
+        point: contentfulGeneral(slug: { eq: "point" }) {
+            ...contentGeneral
         }
         product: contentfulGeneral(slug: { eq: "product" }) {
             ...contentFigure

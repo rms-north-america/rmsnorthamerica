@@ -1,36 +1,13 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import { slugify } from '../function';
-import { logicDescription } from '../logic';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Feed from '../components/section/Feed';
 import Pagination from '../components/widget/Pagination';
+import ArticlePost from '../components/project/ArticlePost';
 
 export default ({ location, data, pageContext }) => {
     const { posts, archive } = data;
-    const loopPost = posts.edges.map(({ node: post }) => {
-        const date = post.published || post.createdAt;
-        return (
-            <article key={post.id} id={post.slug} className="post">
-                <figure>
-                    <Img className="image" fluid={post.image.fluid} alt={post.title} />
-                    {post.type && <div className={`flag flag-${slugify(post.type)}`}>{post.type}</div>}
-                </figure>
-                <header>
-                    <h3>
-                        <Link className="stretched-link" to={`/${pageContext.archive}/${post.slug}`}>
-                            {post.title}
-                        </Link>
-                    </h3>
-                    <p className="date">{date}</p>
-                </header>
-                <section>
-                    <p className="excerpt read-more more" dangerouslySetInnerHTML={{ __html: logicDescription(post) }} />
-                </section>
-            </article>
-        );
-    });
+    const loopPost = posts.edges.map(({ node: post }) => <ArticlePost key={post.id} post={post} pageContext={pageContext} />);
     return (
         <Layout template="archive archive-post" title={archive.name} description={archive.description} location={location}>
             {posts.edges.length > 0 && (
