@@ -193,6 +193,23 @@ export const contentHero = graphql`
     }
 `;
 
+export const contentPoint = graphql`
+    fragment contentPoint on ContentfulPoint {
+        id
+        title
+        slug
+        image {
+            ...imageIcon
+        }
+        body {
+            childMarkdownRemark {
+                html
+            }
+        }
+        order
+    }
+`;
+
 export const contentFeature = graphql`
     fragment contentFeature on ContentfulFeature {
         id
@@ -210,7 +227,6 @@ export const contentFeature = graphql`
         excerpt {
             excerpt
         }
-        type
         order
     }
 `;

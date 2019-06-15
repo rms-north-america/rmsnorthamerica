@@ -1399,19 +1399,6 @@ p > .gatsby-resp-image-wrapper {
 /* ==========!SECTION========== */
 /* ============================ */
 
-/* ----------!POINT---------- */
-#point h3 {
-    margin-top: -7px;
-    margin-bottom: -8px;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 30px;
-    color: #1d2c3c;
-    }
-#point h3 + p {
-    padding-top: 23px;
-    }
-
 /* ----------!PRODUCT---------- */
 #product .cheat-custom {
     margin-bottom: -5px;
