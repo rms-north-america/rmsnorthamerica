@@ -14,7 +14,7 @@ export const PRIVACY_POLICY = '/privacy-policy';
 export const PRODUCT_FEATURES = PRODUCT + '/feature';
 export const PRODUCT_RESOURCES = PRODUCT + '/resource';
 export const PRODUCT_INTERFACES = PRODUCT + '/interface';
-export const PRODUCT_SUPPORT = PRODUCT + '/support';
+export const PRODUCT_SUPPORT = 'https://helpcentre.rmscloud.com/';
 
 // Industry
 export const INDUSTRY_HOTEL = INDUSTRY + '/hotel';

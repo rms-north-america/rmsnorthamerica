@@ -21,6 +21,7 @@ export const PRODUCT = [
     {
         label: 'Support',
         to: path.PRODUCT_SUPPORT,
+        external: true,
     },
 ];
 
