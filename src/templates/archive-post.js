@@ -1,25 +1,16 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
-import { capitalize, slugify, generateID } from '../function';
+import { graphql } from 'gatsby';
+import { generateID } from '../function';
 import Layout from '../components/Layout';
 import Feed from '../components/section/Feed';
 import Pagination from '../components/widget/Pagination';
+import Item from '../components/unit/Item';
 import ArticlePost from '../components/project/ArticlePost';
 
 export default ({ location, data, pageContext }) => {
     const { posts, archive } = data;
     const loopPost = posts.edges.map(({ node: post }) => <ArticlePost key={post.id} post={post} pageContext={pageContext} />);
-    const loopPostType = pageContext.types.map((type) => {
-        const title = capitalize(type);
-        const slug = slugify(type);
-        return (
-            <li key={generateID()} id={`post-type-${slug}`} className={`post-type post-type-${slug} menu-item`}>
-                <Link className="menu-link" title={title} to={`/${slug}`}>
-                    {title}
-                </Link>
-            </li>
-        );
-    });
+    const loopPostType = pageContext.types.map((type) => <Item key={generateID()} item={type} type="post-type" />);
     return (
         <Layout template="archive archive-post" title={archive.name} description={archive.description} location={location}>
             {posts.edges.length > 0 && (

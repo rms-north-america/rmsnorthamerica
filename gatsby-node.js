@@ -1,5 +1,4 @@
 const path = require('path');
-const _ = require('lodash');
 
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions;
@@ -12,6 +11,10 @@ exports.createPages = ({ actions, graphql }) => {
                         slug
                         type
                     }
+                }
+                group(field: type) {
+                    fieldValue
+                    totalCount
                 }
             }
             simples: allContentfulSimple {
@@ -53,14 +56,6 @@ exports.createPages = ({ actions, graphql }) => {
         const postPerPage = 10;
         const postNumPages = Math.ceil(postTotal / postPerPage);
 
-        let postTypes = [];
-        _.each(posts.edges, (edge) => {
-            if (_.get(edge, 'node.type')) {
-                postTypes = postTypes.concat(edge.node.type);
-            }
-        });
-        postTypes = _.uniq(postTypes);
-
         // Post - Single
         posts.edges.forEach(({ node }, index) => {
             const { slug } = node;
@@ -91,7 +86,7 @@ exports.createPages = ({ actions, graphql }) => {
                     skip: i * postPerPage,
                     currentPage: i + 1,
                     numPages: postNumPages,
-                    types: postTypes,
+                    types: posts.group,
                 },
             });
         });
