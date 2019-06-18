@@ -4,10 +4,10 @@ export const PRODUCT = '/product';
 export const INDUSTRY = '/industry';
 export const POST = '/news';
 export const ABOUT = '/about';
-export const TEAM = '/team';
-export const PARTNER_WITH_US = '/partner-with-us';
 export const CONTACT = '/contact';
 export const REQUEST_DEMO = '/request-demo';
+
+// Footer
 export const PRIVACY_POLICY = '/privacy-policy';
 
 // Product
@@ -22,6 +22,10 @@ export const INDUSTRY_RV_PARK = INDUSTRY + '/rv-park';
 export const INDUSTRY_CAMPGROUND = INDUSTRY + '/campground';
 export const INDUSTRY_MARINA = INDUSTRY + '/marina';
 export const INDUSTRY_MOTEL = INDUSTRY + '/motel';
+
+// ABOUT
+export const TEAM = '/team';
+export const PARTNER_WITH_US = '/partner-with-us';
 
 // Contact
 export const CONTACT_AUSTRALIA_ASIA = 'https://www.rmscloud.com/about-us/contact-us/australia/';
