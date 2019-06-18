@@ -1,5 +1,6 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import { capitalize, slugify, generateID } from '../function';
 import Layout from '../components/Layout';
 import Feed from '../components/section/Feed';
 import Pagination from '../components/widget/Pagination';
@@ -8,6 +9,17 @@ import ArticlePost from '../components/project/ArticlePost';
 export default ({ location, data, pageContext }) => {
     const { posts, archive } = data;
     const loopPost = posts.edges.map(({ node: post }) => <ArticlePost key={post.id} post={post} pageContext={pageContext} />);
+    const loopPostType = pageContext.types.map((type) => {
+        const title = capitalize(type);
+        const slug = slugify(type);
+        return (
+            <li key={generateID()} id={`post-type-${slug}`} className={`post-type post-type-${slug} menu-item`}>
+                <Link className="menu-link" title={title} to={`/${slug}`}>
+                    {title}
+                </Link>
+            </li>
+        );
+    });
     return (
         <Layout template="archive archive-post" title={archive.name} description={archive.description} location={location}>
             {posts.edges.length > 0 && (
@@ -26,6 +38,12 @@ export default ({ location, data, pageContext }) => {
                                     <Pagination pageContext={pageContext} />
                                 </footer>
                             )}
+                        </div>
+                        <div className="col">
+                            <aside className="panel">
+                                <h4>Sections</h4>
+                                <ul className="menu-list">{loopPostType}</ul>
+                            </aside>
                         </div>
                     </div>
                 </Feed>

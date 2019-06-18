@@ -56,7 +56,7 @@ exports.createPages = ({ actions, graphql }) => {
         let postTypes = [];
         _.each(posts.edges, (edge) => {
             if (_.get(edge, 'node.type')) {
-                postTypes = postTypes.concat(_.kebabCase(edge.node.type));
+                postTypes = postTypes.concat(edge.node.type);
             }
         });
         postTypes = _.uniq(postTypes);
