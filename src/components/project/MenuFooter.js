@@ -4,12 +4,33 @@ import { Link } from 'gatsby';
 import { generateID } from '../../function';
 import * as menu from '../../menu';
 
+const MenuLink = ({ label, to, external }) =>
+    external ? (
+        <a className="menu-link" title={label} href={to} target="_blank" rel="noopener noreferrer">
+            {label}
+        </a>
+    ) : (
+        <Link className="menu-link" title={label} to={to}>
+            {label}
+        </Link>
+    );
+
+MenuLink.propTypes = {
+    label: PropTypes.string,
+    to: PropTypes.string,
+    external: PropTypes.bool,
+};
+
+MenuLink.defaultProps = {
+    label: undefined,
+    to: undefined,
+    external: false,
+};
+
 const MenuList = ({ list, label, to }) => {
-    const loopList = list.map(({ label, to }) => (
+    const loopList = list.map(({ label, to, external }) => (
         <li key={generateID()} className="menu-item">
-            <Link className="menu-link" title={label} to={to}>
-                {label}
-            </Link>
+            <MenuLink label={label} to={to} external={external} />
         </li>
     ));
     return <ul className="menu-list">{loopList}</ul>;

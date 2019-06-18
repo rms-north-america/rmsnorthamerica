@@ -191,6 +191,7 @@ export const FOOTER_THREE = [
     {
         label: 'Product Support',
         to: path.PRODUCT_SUPPORT,
+        external: true,
     },
 ];
 
