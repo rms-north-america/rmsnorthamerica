@@ -9,20 +9,17 @@ import MenuPostType from '../components/project/MenuPostType';
 
 export default ({ location, data, pageContext }) => {
     const { posts, archive } = data;
+    const title = `${archive.name}: ${capitalize(pageContext.type)}`;
     const loopPost = posts.edges.map(({ node: post }) => <ArticlePost key={post.id} post={post} pageContext={pageContext} />);
     return (
-        <Layout template="archive archive-post" title={archive.name} description={archive.description} location={location}>
+        <Layout template="archive archive-post" title={title} description={archive.description} location={location}>
             {posts.edges.length > 0 && (
                 <Feed id="posts" space="space-custom" item="post">
                     <div className="row gutter-50 gutter-lg-80">
                         <div className="col-lg-9">
                             {archive && (
                                 <header className="node-xs-80">
-                                    {archive.name && (
-                                        <h1>
-                                            {archive.name}: {capitalize(pageContext.type)}
-                                        </h1>
-                                    )}
+                                    {archive.name && <h1>{title}</h1>}
                                     {archive.description && <h2>{archive.description}</h2>}
                                 </header>
                             )}
