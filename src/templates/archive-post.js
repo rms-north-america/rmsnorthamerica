@@ -43,29 +43,12 @@ export const query = graphql`
         posts: allContentfulPost(sort: { fields: published, order: DESC }, limit: $limit, skip: $skip) {
             edges {
                 node {
-                    id
-                    createdAt(formatString: "MMMM D, YYYY")
-                    title
-                    slug
-                    image {
-                        ...imageArchive
-                    }
-                    body {
-                        childMarkdownRemark {
-                            excerpt
-                        }
-                    }
-                    excerpt {
-                        excerpt
-                    }
-                    published(formatString: "MMMM D, YYYY")
-                    type
+                    ...contentPost
                 }
             }
         }
         archive: contentfulArchive(slug: { eq: "post" }) {
-            name
-            description
+            ...contentArchive
         }
     }
 `;

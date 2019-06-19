@@ -148,6 +148,35 @@ export const contentPage = graphql`
     }
 `;
 
+export const contentPost = graphql`
+    fragment contentPost on ContentfulPost {
+        id
+        createdAt(formatString: "MMMM D, YYYY")
+        title
+        slug
+        image {
+            ...imageArchive
+        }
+        body {
+            childMarkdownRemark {
+                excerpt
+            }
+        }
+        excerpt {
+            excerpt
+        }
+        published(formatString: "MMMM D, YYYY")
+        type
+    }
+`;
+
+export const contentArchive = graphql`
+    fragment contentArchive on ContentfulArchive {
+        name
+        description
+    }
+`;
+
 export const contentSplash = graphql`
     fragment contentSplash on ContentfulHero {
         id
