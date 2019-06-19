@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 
 const ArticlePoint = ({ point }) => (
     <article key={point.id} id={`point-${point.slug}`} className={`point point-${point.order} col-lg-4`}>
-        <figure className="node-xs-50">
+        <figure className="node-xs-50 d-flex">
             <Img className="image" fixed={point.image.fixed} alt={point.title} />
         </figure>
         <header className="node-xs-50">

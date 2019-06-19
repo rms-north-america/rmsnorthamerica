@@ -133,6 +133,9 @@ export const contentPage = graphql`
                 excerpt
             }
         }
+        figure {
+            ...imageFigure
+        }
         body {
             childMarkdownRemark {
                 html
@@ -142,6 +145,35 @@ export const contentPage = graphql`
         excerpt {
             excerpt
         }
+    }
+`;
+
+export const contentPost = graphql`
+    fragment contentPost on ContentfulPost {
+        id
+        createdAt(formatString: "MMMM D, YYYY")
+        title
+        slug
+        image {
+            ...imageArchive
+        }
+        body {
+            childMarkdownRemark {
+                excerpt
+            }
+        }
+        excerpt {
+            excerpt
+        }
+        published(formatString: "MMMM D, YYYY")
+        type
+    }
+`;
+
+export const contentArchive = graphql`
+    fragment contentArchive on ContentfulArchive {
+        name
+        description
     }
 `;
 

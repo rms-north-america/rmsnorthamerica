@@ -1,6 +1,7 @@
 const path = require('path');
+const _ = require('lodash');
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions;
     return graphql(`
         {
@@ -9,7 +10,12 @@ exports.createPages = ({ graphql, actions }) => {
                     node {
                         title
                         slug
+                        type
                     }
+                }
+                group(field: type) {
+                    fieldValue
+                    totalCount
                 }
             }
             simples: allContentfulSimple {
@@ -46,8 +52,10 @@ exports.createPages = ({ graphql, actions }) => {
         const { posts, simples, features, industries } = data;
 
         // Post
-        const postTotal = posts.edges.length;
         const postArchive = 'news';
+        const postTotal = posts.edges.length;
+        const postPerPage = 10;
+        const postNumPages = Math.ceil(postTotal / postPerPage);
 
         // Post - Single
         posts.edges.forEach(({ node }, index) => {
@@ -58,8 +66,8 @@ exports.createPages = ({ graphql, actions }) => {
                 path: `/${postArchive}/${slug}`,
                 component: path.resolve('./src/templates/single-post.js'),
                 context: {
-                    total: postTotal,
                     archive: postArchive,
+                    total: postTotal,
                     slug,
                     previous,
                     next,
@@ -68,26 +76,42 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         // Post - Archive
-        const postsPerPage = 10;
-        const numPages = Math.ceil(postTotal / postsPerPage);
-        Array.from({ length: numPages }).forEach((_, i) => {
+        Array.from({ length: postNumPages }).forEach((_, i) => {
             createPage({
                 path: i === 0 ? `/${postArchive}` : `/${postArchive}/${i + 1}`,
                 component: path.resolve('./src/templates/archive-post.js'),
                 context: {
-                    total: postTotal,
                     archive: postArchive,
-                    limit: postsPerPage,
-                    skip: i * postsPerPage,
+                    total: postTotal,
+                    limit: postPerPage,
+                    skip: i * postPerPage,
                     currentPage: i + 1,
-                    numPages,
+                    numPages: postNumPages,
+                    types: posts.group,
+                },
+            });
+        });
+
+        // Post - Archive - Type
+        posts.group.forEach((item) => {
+            const { fieldValue, totalCount } = item;
+            const slug = _.kebabCase(fieldValue);
+            createPage({
+                path: `/${postArchive}/${slug}/`,
+                component: path.resolve('./src/templates/archive-post-type.js'),
+                context: {
+                    archive: postArchive,
+                    total: totalCount,
+                    type: fieldValue,
+                    types: posts.group,
+                    slug,
                 },
             });
         });
 
         // Simple
-        const simpleTotal = simples.edges.length;
         const simpleArchive = '/';
+        const simpleTotal = simples.edges.length;
 
         // Simple - Single
         simples.edges.forEach(({ node }, index) => {
@@ -98,8 +122,8 @@ exports.createPages = ({ graphql, actions }) => {
                 path: `/${slug}`,
                 component: path.resolve('./src/templates/single-simple.js'),
                 context: {
-                    total: simpleTotal,
                     archive: simpleArchive,
+                    total: simpleTotal,
                     slug,
                     previous,
                     next,
@@ -108,8 +132,8 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         // Feature
-        const featureTotal = features.edges.length;
         const featureArchive = 'product/feature';
+        const featureTotal = features.edges.length;
 
         // Feature - Single
         features.edges.forEach(({ node }, index) => {
@@ -120,8 +144,8 @@ exports.createPages = ({ graphql, actions }) => {
                 path: `/${featureArchive}/${slug}`,
                 component: path.resolve('./src/templates/single-feature.js'),
                 context: {
-                    total: featureTotal,
                     archive: featureArchive,
+                    total: featureTotal,
                     slug,
                     previous,
                     next,
@@ -130,8 +154,8 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         // Industry
-        const industryTotal = industries.edges.length;
         const industryArchive = 'industry';
+        const industryTotal = industries.edges.length;
 
         // Industry - Single
         industries.edges.forEach(({ node }, index) => {
@@ -142,8 +166,8 @@ exports.createPages = ({ graphql, actions }) => {
                 path: `/${industryArchive}/${slug}`,
                 component: path.resolve('./src/templates/single-industry.js'),
                 context: {
-                    total: industryTotal,
                     archive: industryArchive,
+                    total: industryTotal,
                     slug,
                     previous,
                     next,

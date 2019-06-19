@@ -127,7 +127,7 @@ export const query = graphql`
                 }
             }
         }
-        testimonials: allContentfulTestimonial(filter: { home: { eq: true } }, sort: { fields: order, order: ASC }) {
+        testimonials: allContentfulTestimonial(filter: { page: { in: "home" } }, sort: { fields: order, order: ASC }) {
             nodes {
                 ...contentTestimonial
             }

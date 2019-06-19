@@ -2,6 +2,7 @@ require('dotenv').config();
 
 module.exports = {
     siteMetadata: {
+        siteUrl: 'https://sleepy-pasteur-0771b3.netlify.com/',
         title: 'RMS',
         description: 'A fully integrated Cloud Based Property Management System',
         author: 'RMS',
@@ -25,6 +26,7 @@ module.exports = {
         'gatsby-plugin-offline',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sharp',
+        'gatsby-plugin-sitemap',
         {
             resolve: 'gatsby-source-contentful',
             options: {
