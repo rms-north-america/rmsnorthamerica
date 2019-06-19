@@ -13,8 +13,8 @@ import CarouselTestimonial from '../components/project/CarouselTestimonial';
 import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 
 export default ({ location, data }) => {
-    const { industry } = data;
-    const loopFeature = industry.feature && industry.feature.map((feature) => <ArticleFeature key={feature.id} feature={feature} />);
+    const { features, testimonials, industry } = data;
+    const loopFeature = features.edges.map(({ node: feature }) => <ArticleFeature key={feature.id} feature={feature} />);
     return (
         <Layout
             template={`single single-industry single-industry-${industry.slug}`}
@@ -66,7 +66,7 @@ export default ({ location, data }) => {
                     </div>
                 </Basic>
             )}
-            {industry.feature && loopFeature.length > 0 && (
+            {loopFeature.length > 0 && (
                 <Feed id="feed-feature" space="space-xs-80 space-md-130 space-xl-210" item="feature">
                     <header className="copy node-xs-50 node-lg-80 text-lg-center">
                         <h3>Available Features</h3>
@@ -76,8 +76,8 @@ export default ({ location, data }) => {
                     </section>
                 </Feed>
             )}
-            {industry.testimonial && (
-                <CarouselTestimonial id="testimonial" fade={true} controls={false} indicators={false} slides={industry.testimonial} />
+            {testimonials.nodes.length > 0 && (
+                <CarouselTestimonial id="testimonial" fade={true} controls={false} indicators={false} slides={testimonials.nodes} />
             )}
             <GeneralRequestDemo />
         </Layout>
@@ -86,6 +86,18 @@ export default ({ location, data }) => {
 
 export const query = graphql`
     query industryBySlug($slug: String!) {
+        features: allContentfulFeature(filter: { industry: { elemMatch: { slug: { eq: $slug } } } }, sort: { fields: order, order: ASC }) {
+            edges {
+                node {
+                    ...contentFeature
+                }
+            }
+        }
+        testimonials: allContentfulTestimonial(filter: { industry: { elemMatch: { slug: { eq: $slug } } } }, sort: { fields: order, order: ASC }) {
+            nodes {
+                ...contentTestimonial
+            }
+        }
         industry: contentfulIndustry(slug: { eq: $slug }) {
             title
             slug
@@ -114,12 +126,6 @@ export const query = graphql`
             }
             excerpt {
                 excerpt
-            }
-            feature {
-                ...contentFeature
-            }
-            testimonial {
-                ...contentTestimonial
             }
         }
     }
