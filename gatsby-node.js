@@ -1,4 +1,5 @@
 const path = require('path');
+const _ = require('lodash');
 
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions;
@@ -87,6 +88,23 @@ exports.createPages = ({ actions, graphql }) => {
                     currentPage: i + 1,
                     numPages: postNumPages,
                     types: posts.group,
+                },
+            });
+        });
+
+        // Post - Archive - Type
+        posts.group.forEach((item) => {
+            const { fieldValue, totalCount } = item;
+            const slug = _.kebabCase(fieldValue);
+            createPage({
+                path: `/${postArchive}/${slug}/`,
+                component: path.resolve('./src/templates/archive-post-type.js'),
+                context: {
+                    archive: postArchive,
+                    total: totalCount,
+                    type: fieldValue,
+                    types: posts.group,
+                    slug,
                 },
             });
         });
