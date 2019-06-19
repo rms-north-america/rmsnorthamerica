@@ -22,24 +22,27 @@ const CarouselTestimonial = ({
     pauseOnHover,
     slides,
 }) => {
-    const loopSlide = slides.map((slide) => (
-        <Item key={slide.id} className={`slide-${slide.order}`}>
-            {slide.image && <Img className="fit exact-center absolute" fluid={slide.image.fluid} alt={contentify(slide.title)} critical />}
-            <div className={`display-table relative ${space} ${tint}`}>
-                <div className="display-cell">
-                    <div className="zone">
-                        <div className={container}>
-                            <section dangerouslySetInnerHTML={{ __html: slide.body.childMarkdownRemark.html }} />
-                            <footer>
-                                <strong className="author p-xs-15">{slide.title}</strong>
-                                <h4 className="company p-xs-15">{slide.company}</h4>
-                            </footer>
+    const loopSlide = slides.map((slide, index) => {
+        const count = index + 1;
+        return (
+            <Item key={slide.id} className={`slide-${count}`}>
+                {slide.image && <Img className="fit exact-center absolute" fluid={slide.image.fluid} alt={contentify(slide.title)} critical />}
+                <div className={`display-table relative ${space} ${tint}`}>
+                    <div className="display-cell">
+                        <div className="zone">
+                            <div className={container}>
+                                <section dangerouslySetInnerHTML={{ __html: slide.body.childMarkdownRemark.html }} />
+                                <footer>
+                                    <strong className="author p-xs-15">{slide.title}</strong>
+                                    <h4 className="company p-xs-15">{slide.company}</h4>
+                                </footer>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </Item>
-    ));
+            </Item>
+        );
+    });
     return (
         <section id={id} className={`complex block height-${height} align-${align} background-${source ? 'image' : 'none'} color-${color}`}>
             <div className="icon-quote d-flex justify-content-center">
