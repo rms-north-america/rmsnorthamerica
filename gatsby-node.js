@@ -13,6 +13,8 @@ exports.createPages = ({ actions, graphql }) => {
                         type
                     }
                 }
+            }
+            postTypes: allContentfulPost {
                 group(field: type) {
                     fieldValue
                     totalCount
@@ -49,10 +51,11 @@ exports.createPages = ({ actions, graphql }) => {
         }
 
         // Data
-        const { posts, simples, features, industries } = data;
+        const { posts, postTypes, simples, features, industries } = data;
 
         // Post
         const postArchive = 'news';
+        const postDirectory = postArchive;
         const postTotal = posts.edges.length;
         const postPerPage = 10;
         const postNumPages = Math.ceil(postTotal / postPerPage);
@@ -62,11 +65,13 @@ exports.createPages = ({ actions, graphql }) => {
             const { slug } = node;
             const previous = index === postTotal - 1 ? null : posts.edges[index + 1].node;
             const next = index === 0 ? null : posts.edges[index - 1].node;
+
             createPage({
-                path: `/${postArchive}/${slug}`,
+                path: `/${postDirectory}/${slug}`,
                 component: path.resolve('./src/templates/single-post.js'),
                 context: {
                     archive: postArchive,
+                    directory: postDirectory,
                     total: postTotal,
                     slug,
                     previous,
@@ -78,39 +83,49 @@ exports.createPages = ({ actions, graphql }) => {
         // Post - Archive
         Array.from({ length: postNumPages }).forEach((_, i) => {
             createPage({
-                path: i === 0 ? `/${postArchive}` : `/${postArchive}/${i + 1}`,
+                path: i === 0 ? `/${postDirectory}` : `/${postDirectory}/${i + 1}`,
                 component: path.resolve('./src/templates/archive-post.js'),
                 context: {
                     archive: postArchive,
+                    directory: postDirectory,
                     total: postTotal,
                     limit: postPerPage,
                     skip: i * postPerPage,
                     currentPage: i + 1,
                     numPages: postNumPages,
-                    types: posts.group,
                 },
             });
         });
 
         // Post - Archive - Type
-        posts.group.forEach((item) => {
+        postTypes.group.forEach((item) => {
             const { fieldValue, totalCount } = item;
             const slug = _.kebabCase(fieldValue);
-            createPage({
-                path: `/${postArchive}/${slug}/`,
-                component: path.resolve('./src/templates/archive-post-type.js'),
-                context: {
-                    archive: postArchive,
-                    total: totalCount,
-                    type: fieldValue,
-                    types: posts.group,
-                    slug,
-                },
+            const directory = `${postArchive}/${slug}`;
+            const numPages = Math.ceil(totalCount / postPerPage);
+
+            Array.from({ length: numPages }).forEach((_, i) => {
+                createPage({
+                    path: i === 0 ? `/${directory}` : `/${directory}/${i + 1}`,
+                    component: path.resolve('./src/templates/archive-post-type.js'),
+                    context: {
+                        archive: postDirectory,
+                        total: totalCount,
+                        limit: postPerPage,
+                        skip: i * postPerPage,
+                        currentPage: i + 1,
+                        type: fieldValue,
+                        slug,
+                        directory,
+                        numPages,
+                    },
+                });
             });
         });
 
         // Simple
         const simpleArchive = '/';
+        const simpleDirectory = simpleArchive;
         const simpleTotal = simples.edges.length;
 
         // Simple - Single
@@ -118,11 +133,13 @@ exports.createPages = ({ actions, graphql }) => {
             const { slug } = node;
             const previous = index === simpleTotal - 1 ? null : simples.edges[index + 1].node;
             const next = index === 0 ? null : simples.edges[index - 1].node;
+
             createPage({
                 path: `/${slug}`,
                 component: path.resolve('./src/templates/single-simple.js'),
                 context: {
                     archive: simpleArchive,
+                    directory: simpleDirectory,
                     total: simpleTotal,
                     slug,
                     previous,
@@ -132,7 +149,8 @@ exports.createPages = ({ actions, graphql }) => {
         });
 
         // Feature
-        const featureArchive = 'product/feature';
+        const featureArchive = 'feature';
+        const featureDirectory = `product/${featureArchive}`;
         const featureTotal = features.edges.length;
 
         // Feature - Single
@@ -140,11 +158,13 @@ exports.createPages = ({ actions, graphql }) => {
             const { slug } = node;
             const previous = index === featureTotal - 1 ? null : features.edges[index + 1].node;
             const next = index === 0 ? null : features.edges[index - 1].node;
+
             createPage({
-                path: `/${featureArchive}/${slug}`,
+                path: `/${featureDirectory}/${slug}`,
                 component: path.resolve('./src/templates/single-feature.js'),
                 context: {
                     archive: featureArchive,
+                    directory: featureDirectory,
                     total: featureTotal,
                     slug,
                     previous,
@@ -155,6 +175,7 @@ exports.createPages = ({ actions, graphql }) => {
 
         // Industry
         const industryArchive = 'industry';
+        const industryDirectory = industryArchive;
         const industryTotal = industries.edges.length;
 
         // Industry - Single
@@ -162,11 +183,13 @@ exports.createPages = ({ actions, graphql }) => {
             const { slug } = node;
             const previous = index === industryTotal - 1 ? null : industries.edges[index + 1].node;
             const next = index === 0 ? null : industries.edges[index - 1].node;
+
             createPage({
-                path: `/${industryArchive}/${slug}`,
+                path: `/${industryDirectory}/${slug}`,
                 component: path.resolve('./src/templates/single-industry.js'),
                 context: {
                     archive: industryArchive,
+                    directory: industryDirectory,
                     total: industryTotal,
                     slug,
                     previous,
