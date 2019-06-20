@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { capitalize, slugify } from '../../function';
 
-const Item = ({ item, type, archive }) => {
+const Item = ({ item, type, path }) => {
     const title = capitalize(item.fieldValue);
     const slug = slugify(item.fieldValue);
     return (
         <li id={`${type}-${slug}`} className={`${type} ${type}-${slug} menu-item`}>
-            <Link className="menu-link" title={title} to={archive ? `/${archive}/${slug}` : `/${slug}`}>
+            <Link className="menu-link" title={title} to={path ? `${path}/${slug}` : `/${slug}`}>
                 {title} ({item.totalCount})
             </Link>
         </li>
@@ -18,11 +18,11 @@ const Item = ({ item, type, archive }) => {
 Item.propTypes = {
     item: PropTypes.object.isRequired,
     type: PropTypes.string.isRequired,
-    archive: PropTypes.string,
+    path: PropTypes.string,
 };
 
 Item.defaultProps = {
-    archive: undefined,
+    path: undefined,
 };
 
 export default Item;
