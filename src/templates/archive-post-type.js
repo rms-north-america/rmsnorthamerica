@@ -31,7 +31,7 @@ export default ({ location, data, pageContext }) => {
                             )}
                         </div>
                         <div className="col">
-                            <MenuPostType pageContext={pageContext} />
+                            <MenuPostType />
                         </div>
                     </div>
                 </Feed>
@@ -41,8 +41,8 @@ export default ({ location, data, pageContext }) => {
 };
 
 export const query = graphql`
-    query postsByType($type: String!) {
-        posts: allContentfulPost(filter: { type: { eq: $type } }, sort: { fields: published, order: DESC }) {
+    query postsByType($type: String!, $limit: Int!, $skip: Int!) {
+        posts: allContentfulPost(filter: { type: { eq: $type } }, sort: { fields: published, order: DESC }, limit: $limit, skip: $skip) {
             edges {
                 node {
                     ...contentPost

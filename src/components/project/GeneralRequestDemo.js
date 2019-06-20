@@ -1,6 +1,6 @@
 import React from 'react';
-import Basic from '../section/Basic';
 import generalRequestDemo from '../../queries/generalRequestDemo';
+import Basic from '../section/Basic';
 
 const GeneralRequestDemo = () => {
     const { slug, body } = generalRequestDemo();
