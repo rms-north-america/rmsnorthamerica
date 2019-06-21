@@ -8,12 +8,14 @@ import Basic from '../components/section/Basic';
 import Feed from '../components/section/Feed';
 import Hero from '../components/section/Hero';
 import Modal from '../components/widget/Modal';
+import ArticleClient from '../components/project/ArticleClient';
 import ArticleFeature from '../components/project/ArticleFeature';
 import CarouselTestimonial from '../components/project/CarouselTestimonial';
 import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 
 export default ({ location, data }) => {
-    const { features, testimonials, industry } = data;
+    const { clients, features, testimonials, industry } = data;
+    const loopClient = clients.edges.map(({ node: client }) => <ArticleClient key={client.id} client={client} />);
     const loopFeature = features.edges.map(({ node: feature }) => <ArticleFeature key={feature.id} feature={feature} />);
     return (
         <Layout
@@ -48,6 +50,11 @@ export default ({ location, data }) => {
                     </footer>
                 )}
             </Hero>
+            {loopClient.length > 0 && (
+                <Feed id="client" space="space-xs-50 space-lg-80" color={5}>
+                    <div className="row align-items-center justify-content-center gutter-50">{loopClient}</div>
+                </Feed>
+            )}
             {industry.body && (
                 <Basic id={`basic-${industry.slug}`} space="space-xs-80 space-md-130 space-xl-210">
                     <div className="row gutter-50 gutter-lg-80">
@@ -86,6 +93,13 @@ export default ({ location, data }) => {
 
 export const query = graphql`
     query industryBySlug($slug: String!) {
+        clients: allContentfulClient(filter: { industry: { elemMatch: { slug: { eq: $slug } } } }, sort: { fields: order, order: ASC }, limit: 6) {
+            edges {
+                node {
+                    ...contentClient
+                }
+            }
+        }
         features: allContentfulFeature(filter: { industry: { elemMatch: { slug: { eq: $slug } } } }, sort: { fields: order, order: ASC }) {
             edges {
                 node {
