@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { logicDescription } from '../../logic';
-import * as path from '../../path';
-import Button from '../unit/Button';
 
 const ArticleFeature = ({ feature }) => (
     <article key={feature.id} id={`feature-${feature.slug}`} className={`feature feature-${feature.order} col-lg-4`}>
@@ -14,9 +12,6 @@ const ArticleFeature = ({ feature }) => (
             <h4>{feature.title}</h4>
             <p className="excerpt" dangerouslySetInnerHTML={{ __html: logicDescription(feature) }} />
         </header>
-        <footer className="node-xs-50">
-            <Button label={feature.action || 'Learn more'} to={`${path.PRODUCT_FEATURES}/${feature.slug}`} />
-        </footer>
     </article>
 );
 

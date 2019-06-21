@@ -148,31 +148,6 @@ exports.createPages = ({ actions, graphql }) => {
             });
         });
 
-        // Feature
-        const featureArchive = 'feature';
-        const featureDirectory = `product/${featureArchive}`;
-        const featureTotal = features.edges.length;
-
-        // Feature - Single
-        features.edges.forEach(({ node }, index) => {
-            const { slug } = node;
-            const previous = index === featureTotal - 1 ? null : features.edges[index + 1].node;
-            const next = index === 0 ? null : features.edges[index - 1].node;
-
-            createPage({
-                path: `/${featureDirectory}/${slug}`,
-                component: path.resolve('./src/templates/single-feature.js'),
-                context: {
-                    archive: featureArchive,
-                    directory: featureDirectory,
-                    total: featureTotal,
-                    slug,
-                    previous,
-                    next,
-                },
-            });
-        });
-
         // Industry
         const industryArchive = 'industry';
         const industryDirectory = industryArchive;
