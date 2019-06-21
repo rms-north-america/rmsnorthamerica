@@ -48,31 +48,21 @@ MenuList.defaultProps = {
     to: undefined,
 };
 
-const MenuFooter = ({ className }) => (
-    <section className={className}>
-        <div className="row gutter-50 gutter-lg-80">
-            <div className="col-lg">
-                <MenuList list={menu.FOOTER_ONE} />
-            </div>
-            <div className="col-lg">
-                <MenuList list={menu.FOOTER_TWO} />
-            </div>
-            <div className="col-lg">
-                <MenuList list={menu.FOOTER_THREE} />
-            </div>
-            <div className="col-lg">
-                <MenuList list={menu.FOOTER_FOUR} />
-            </div>
+const MenuFooter = () => (
+    <div className="row gutter-50 gutter-lg-80">
+        <div className="col-lg">
+            <MenuList list={menu.FOOTER_ONE} />
         </div>
-    </section>
+        <div className="col-lg">
+            <MenuList list={menu.FOOTER_TWO} />
+        </div>
+        <div className="col-lg">
+            <MenuList list={menu.FOOTER_THREE} />
+        </div>
+        <div className="col-lg">
+            <MenuList list={menu.FOOTER_FOUR} />
+        </div>
+    </div>
 );
-
-MenuFooter.propTypes = {
-    className: PropTypes.string,
-};
-
-MenuFooter.defaultProps = {
-    className: undefined,
-};
 
 export default MenuFooter;

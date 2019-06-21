@@ -702,10 +702,10 @@ figure {
 
 /* ----------!BORDER---------- */
 .style-border-top-grey {
-    border-top: 1px solid #f7f7f7;
+    border-top: 3px solid #f7f7f7 !important;
     }
-.style-border-top-grey .zone {
-    margin-top: -1px;
+.style-border-top-grey > * {
+    margin-top: -3px !important;
     }
 
 /* ----------!DIVISION---------- */
@@ -1390,9 +1390,11 @@ p > .gatsby-resp-image-wrapper {
 .single-industry .hero .to-video {
     margin-top: -17px;
     }
-.single-industry-hotel .hero .image,
-.single-industry-marina .hero .image {
-    top: 130px;
+@media (min-width: 992px) {
+    .single-industry-hotel .hero .image,
+    .single-industry-marina .hero .image {
+        top: 130px;
+        }
     }
 
 /* ============================ */
@@ -1530,33 +1532,23 @@ p > .gatsby-resp-image-wrapper {
 #footer .copyright {
     margin: 0;
     }
-#footer .footer-first {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    }
-@media (min-width: 992px) {
-    #footer .footer-first {
-        padding-top: 80px;
-        padding-bottom: 80px;
-        }
-    }
-#footer .footer-second {
+#footer #footer-second .zone {
     padding-bottom: 25px;
     }
 @media (min-width: 992px) {
-    #footer .footer-second {
+    #footer #footer-second .zone {
         margin-top: -9px;
         }
     }
-#footer .footer-second .separator {
+#footer #footer-second .separator {
     margin: 0 30px;
     color: #f89c02;
     }
-#footer .footer-second .copyright {
+#footer #footer-second .copyright {
     padding-top: 43px;
     }
 @media (min-width: 992px) {
-    #footer .footer-second .copyright {
+    #footer #footer-second .copyright {
         padding-top: 0;
         text-align: right;
         }
