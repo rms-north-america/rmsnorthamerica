@@ -64,6 +64,14 @@ export const imageSingle = graphql`
     }
 `;
 
+export const imageClient = graphql`
+    fragment imageClient on ContentfulAsset {
+        fluid(maxWidth: 130, quality: 100, cropFocus: CENTER) {
+            ...GatsbyContentfulFluid_withWebp_noBase64
+        }
+    }
+`;
+
 export const imageFigure = graphql`
     fragment imageFigure on ContentfulAsset {
         fluid(maxWidth: 1680, quality: 80, cropFocus: CENTER) {
@@ -237,6 +245,18 @@ export const contentPoint = graphql`
             childMarkdownRemark {
                 html
             }
+        }
+        order
+    }
+`;
+
+export const contentClient = graphql`
+    fragment contentClient on ContentfulClient {
+        id
+        title
+        slug
+        image {
+            ...imageClient
         }
         order
     }
