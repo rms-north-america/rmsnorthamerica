@@ -1119,11 +1119,17 @@ h4 + .menu-list {
         }
     }
 
-/* ----------!IMAGE---------- */
+/* ----------!REMARK---------- */
 p > .gatsby-resp-image-link,
 p > .gatsby-resp-image-wrapper {
     margin-top: 38px;
     margin-bottom: 36px;
+    }
+p + .gatsby-resp-iframe-wrapper {
+    margin-top: 80px;
+    }
+.gatsby-resp-iframe-wrapper + p {
+    padding-top: 78px;
     }
 
 /* ----------!CUSTOM---------- */
