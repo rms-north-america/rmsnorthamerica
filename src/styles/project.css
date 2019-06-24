@@ -1393,12 +1393,12 @@ p + .gatsby-resp-iframe-wrapper {
     padding-top: 8px;
     }
 
-/* ----------!ARCHIVE-POST---------- */
-.archive-post .feed-post .post + .post {
+/* ----------!ARCHIVE---------- */
+.archive .feed article + article {
     margin-top: 80px !important;
     }
 @media (min-width: 992px) {
-    .archive-post .feed-post .post + .post {
+    .archive .feed article + article {
         margin-top: 130px !important;
         }
     }

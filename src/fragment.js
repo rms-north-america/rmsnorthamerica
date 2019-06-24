@@ -299,6 +299,28 @@ export const contentFeature = graphql`
     }
 `;
 
+export const contentResource = graphql`
+    fragment contentResource on ContentfulResource {
+        id
+        createdAt(formatString: "MMMM D, YYYY")
+        title
+        slug
+        image {
+            ...imageArchive
+        }
+        body {
+            childMarkdownRemark {
+                excerpt
+            }
+        }
+        excerpt {
+            excerpt
+        }
+        published(formatString: "MMMM D, YYYY")
+        type
+    }
+`;
+
 export const contentInterface = graphql`
     fragment contentInterface on ContentfulInterface {
         id

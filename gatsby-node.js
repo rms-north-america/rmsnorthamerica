@@ -140,7 +140,7 @@ exports.createPages = ({ actions, graphql }) => {
 
         // Resource
         const resourceArchive = 'resource';
-        const resourceDirectory = resourceArchive;
+        const resourceDirectory = `product/${resourceArchive}`;
         const resourceTotal = resources.edges.length;
         const resourcePerPage = 10;
         const resourceNumPages = Math.ceil(resourceTotal / resourcePerPage);
@@ -161,6 +161,23 @@ exports.createPages = ({ actions, graphql }) => {
                     slug,
                     previous,
                     next,
+                },
+            });
+        });
+
+        // Resource - Archive
+        Array.from({ length: resourceNumPages }).forEach((_, i) => {
+            createPage({
+                path: i === 0 ? `/${resourceDirectory}` : `/${resourceDirectory}/${i + 1}`,
+                component: path.resolve('./src/templates/archive-resource.js'),
+                context: {
+                    archive: resourceArchive,
+                    directory: resourceDirectory,
+                    total: resourceTotal,
+                    limit: resourcePerPage,
+                    skip: i * resourcePerPage,
+                    currentPage: i + 1,
+                    numPages: resourceNumPages,
                 },
             });
         });
