@@ -20,11 +20,12 @@ exports.createPages = ({ actions, graphql }) => {
                     totalCount
                 }
             }
-            simples: allContentfulSimple {
+            resources: allContentfulResource(sort: { fields: published, order: DESC }, limit: 1000) {
                 edges {
                     node {
                         title
                         slug
+                        type
                     }
                 }
             }
@@ -50,6 +51,14 @@ exports.createPages = ({ actions, graphql }) => {
                     }
                 }
             }
+            simples: allContentfulSimple {
+                edges {
+                    node {
+                        title
+                        slug
+                    }
+                }
+            }
         }
     `).then(({ data, errors }) => {
         if (errors) {
@@ -57,7 +66,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
 
         // Data
-        const { posts, postTypes, simples, interfaces, interfaceTypes, industries } = data;
+        const { posts, postTypes, resources, interfaces, interfaceTypes, industries, simples } = data;
 
         // Post
         const postArchive = 'news';
@@ -129,24 +138,26 @@ exports.createPages = ({ actions, graphql }) => {
             });
         });
 
-        // Simple
-        const simpleArchive = '/';
-        const simpleDirectory = simpleArchive;
-        const simpleTotal = simples.edges.length;
+        // Resource
+        const resourceArchive = 'resource';
+        const resourceDirectory = resourceArchive;
+        const resourceTotal = resources.edges.length;
+        const resourcePerPage = 10;
+        const resourceNumPages = Math.ceil(resourceTotal / resourcePerPage);
 
-        // Simple - Single
-        simples.edges.forEach(({ node }, index) => {
+        // Resource - Single
+        resources.edges.forEach(({ node }, index) => {
             const { slug } = node;
-            const previous = index === simpleTotal - 1 ? null : simples.edges[index + 1].node;
-            const next = index === 0 ? null : simples.edges[index - 1].node;
+            const previous = index === resourceTotal - 1 ? null : resources.edges[index + 1].node;
+            const next = index === 0 ? null : resources.edges[index - 1].node;
 
             createPage({
-                path: `/${slug}`,
-                component: path.resolve('./src/templates/single-simple.js'),
+                path: `/${resourceDirectory}/${slug}`,
+                component: path.resolve('./src/templates/single-resource.js'),
                 context: {
-                    archive: simpleArchive,
-                    directory: simpleDirectory,
-                    total: simpleTotal,
+                    archive: resourceArchive,
+                    directory: resourceDirectory,
+                    total: resourceTotal,
                     slug,
                     previous,
                     next,
@@ -222,6 +233,31 @@ exports.createPages = ({ actions, graphql }) => {
                     archive: industryArchive,
                     directory: industryDirectory,
                     total: industryTotal,
+                    slug,
+                    previous,
+                    next,
+                },
+            });
+        });
+
+        // Simple
+        const simpleArchive = '/';
+        const simpleDirectory = simpleArchive;
+        const simpleTotal = simples.edges.length;
+
+        // Simple - Single
+        simples.edges.forEach(({ node }, index) => {
+            const { slug } = node;
+            const previous = index === simpleTotal - 1 ? null : simples.edges[index + 1].node;
+            const next = index === 0 ? null : simples.edges[index - 1].node;
+
+            createPage({
+                path: `/${slug}`,
+                component: path.resolve('./src/templates/single-simple.js'),
+                context: {
+                    archive: simpleArchive,
+                    directory: simpleDirectory,
+                    total: simpleTotal,
                     slug,
                     previous,
                     next,

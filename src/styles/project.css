@@ -223,6 +223,15 @@ figure {
     color: #fff !important;
     }
 
+/* ============================== */
+/* ==========!SEPARATOR========== */
+/* ============================== */
+
+/* ----------!MAIN---------- */
+.separator {
+    color: #f89c02;
+    }
+
 /* ========================= */
 /* ==========!FLAG========== */
 /* ========================= */
@@ -954,6 +963,7 @@ figure {
     margin-bottom: -5px;
     font-size: 16px;
     line-height: 20px;
+    text-transform: capitalize;
     }
 
 /* ----------!MORE---------- */
@@ -1542,7 +1552,6 @@ p > .gatsby-resp-image-wrapper {
     }
 #footer #footer-second .separator {
     margin: 0 30px;
-    color: #f89c02;
     }
 #footer #footer-second .copyright {
     padding-top: 43px;
