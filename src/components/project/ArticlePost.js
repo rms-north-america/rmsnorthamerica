@@ -13,7 +13,7 @@ const ArticlePost = ({ post, pageContext }) => (
         </figure>
         <header>
             <h3>
-                <Link className="stretched-link" to={`/${pageContext.archive}/${post.slug}`}>
+                <Link className="stretched-link" to={pageContext.directory === '/' ? `/${post.slug}` : `/${pageContext.directory}/${post.slug}`}>
                     {post.title}
                 </Link>
             </h3>

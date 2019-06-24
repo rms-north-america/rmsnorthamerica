@@ -18,7 +18,7 @@ export default ({ location, data }) => {
     const { points, industries, testimonials, splash, introduction, point, product, industry } = data;
     const loopPoint = points.edges.map(({ node: point }) => <ArticlePoint key={point.id} point={point} />);
     const loopIndustry = industries.edges.map(({ node }) => (
-        <Card key={node.id} node={node} column="col-lg-6 col-xl-3" item="industry" path={path.INDUSTRY} />
+        <Card key={node.id} node={node} column="col-lg-6 col-xl-3" item="industry" directory={path.INDUSTRY} />
     ));
     return (
         <Layout template="home" location={location}>

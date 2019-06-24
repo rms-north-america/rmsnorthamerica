@@ -11,7 +11,7 @@ import GeneralRequestDemo from '../components/project/GeneralRequestDemo';
 export default ({ location, data }) => {
     const { industries, clients, page } = data;
     const loopIndustry = industries.edges.map(({ node }) => (
-        <Card key={node.id} node={node} column="col-lg-6 col-xl-3" item="industry" path={path.INDUSTRY} />
+        <Card key={node.id} node={node} column="col-lg-6 col-xl-3" item="industry" directory={path.INDUSTRY} />
     ));
     const loopClient = clients.edges.map(({ node: client }) => <ArticleClient key={client.id} client={client} />);
     return (
