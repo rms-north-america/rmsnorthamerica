@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Feed from '../components/section/Feed';
 import ArticleInterface from '../components/project/ArticleInterface';
-import MenuPostType from '../components/project/MenuPostType';
+import MenuInterfaceType from '../components/project/MenuInterfaceType';
 
 export default ({ location, data }) => {
     const { interfaces, archive } = data;
@@ -25,7 +25,7 @@ export default ({ location, data }) => {
                             </section>
                         </div>
                         <div className="col">
-                            <MenuPostType />
+                            <MenuInterfaceType />
                         </div>
                     </div>
                 </Feed>
