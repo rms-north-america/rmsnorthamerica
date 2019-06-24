@@ -1125,6 +1125,10 @@ p > .gatsby-resp-image-wrapper {
     margin-top: 38px;
     margin-bottom: 36px;
     }
+p:last-child > .gatsby-resp-image-link,
+p:last-child > .gatsby-resp-image-wrapper {
+    margin-bottom: 8px !important;
+    }
 p + .gatsby-resp-iframe-wrapper {
     margin-top: 80px;
     }
