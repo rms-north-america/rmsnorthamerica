@@ -10,7 +10,7 @@ export default ({ location, data, pageContext }) => {
     const title = `${archive.name}: ${pageContext.type}`;
     const loopInterface = interfaces.edges.map(({ node }) => <ArticleInterface key={node.id} node={node} />);
     return (
-        <Layout template="archive archive-interface" title={archive.name} description={archive.description} location={location}>
+        <Layout template="archive archive-interface" title={title} description={archive.description} location={location}>
             {interfaces.edges.length > 0 && (
                 <Feed id="interfaces" space="space-custom" item="interface">
                     <div className="row gutter-50 gutter-lg-80">
