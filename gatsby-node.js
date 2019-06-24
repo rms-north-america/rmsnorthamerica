@@ -28,7 +28,7 @@ exports.createPages = ({ actions, graphql }) => {
                     }
                 }
             }
-            features: allContentfulFeature {
+            interfaces: allContentfulInterface {
                 edges {
                     node {
                         title
@@ -51,7 +51,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
 
         // Data
-        const { posts, postTypes, simples, features, industries } = data;
+        const { posts, postTypes, simples, interfaces, industries } = data;
 
         // Post
         const postArchive = 'news';
@@ -144,6 +144,30 @@ exports.createPages = ({ actions, graphql }) => {
                     slug,
                     previous,
                     next,
+                },
+            });
+        });
+
+        // Interface
+        const interfaceArchive = 'interface';
+        const interfaceDirectory = `product/${interfaceArchive}`;
+        const interfaceTotal = interfaces.edges.length;
+        const interfacePerPage = 10;
+        const interfaceNumPages = 1;
+
+        // Interface - Archive
+        Array.from({ length: interfaceNumPages }).forEach((_, i) => {
+            createPage({
+                path: i === 0 ? `/${interfaceDirectory}` : `/${interfaceDirectory}/${i + 1}`,
+                component: path.resolve('./src/templates/archive-interface.js'),
+                context: {
+                    archive: interfaceArchive,
+                    directory: interfaceDirectory,
+                    total: interfaceTotal,
+                    limit: interfacePerPage,
+                    skip: i * interfacePerPage,
+                    currentPage: i + 1,
+                    numPages: interfaceNumPages,
                 },
             });
         });

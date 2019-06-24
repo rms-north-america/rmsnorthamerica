@@ -72,6 +72,14 @@ export const imageClient = graphql`
     }
 `;
 
+export const imageInterface = graphql`
+    fragment imageInterface on ContentfulAsset {
+        fluid(maxWidth: 230, quality: 100, cropFocus: CENTER) {
+            ...GatsbyContentfulFluid_withWebp_noBase64
+        }
+    }
+`;
+
 export const imageFigure = graphql`
     fragment imageFigure on ContentfulAsset {
         fluid(maxWidth: 1680, quality: 80, cropFocus: CENTER) {
@@ -279,6 +287,20 @@ export const contentFeature = graphql`
         excerpt {
             excerpt
         }
+        order
+    }
+`;
+
+export const contentInterface = graphql`
+    fragment contentInterface on ContentfulInterface {
+        id
+        title
+        slug
+        image {
+            ...imageInterface
+        }
+        link
+        type
         order
     }
 `;
