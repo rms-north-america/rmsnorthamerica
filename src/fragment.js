@@ -80,6 +80,14 @@ export const imageInterface = graphql`
     }
 `;
 
+export const imagePerson = graphql`
+    fragment imagePerson on ContentfulAsset {
+        fluid(maxWidth: 340, maxHeight: 340, quality: 100, cropFocus: CENTER) {
+            ...GatsbyContentfulFluid_withWebp_noBase64
+        }
+    }
+`;
+
 export const imageFigure = graphql`
     fragment imageFigure on ContentfulAsset {
         fluid(maxWidth: 1680, quality: 80, cropFocus: CENTER) {
@@ -332,7 +340,7 @@ export const contentPerson = graphql`
         title
         slug
         image {
-            ...imageSquare
+            ...imagePerson
         }
         position
         order
