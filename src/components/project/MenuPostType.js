@@ -5,7 +5,7 @@ import postTypes from '../../queries/postTypes';
 import Item from '../unit/Item';
 
 const MenuPostType = () => {
-    const loopPostType = postTypes().map((type) => <Item key={generateID()} item={type} directory={path.POST} type="post-type" />);
+    const loopPostType = postTypes().map((type) => <Item key={generateID()} item={type} directory={path.POST} type="post-type" total />);
     return (
         <aside className="panel">
             <h4>Sections</h4>
