@@ -6,7 +6,7 @@ import { slugify } from '../../function';
 import { logicDescription } from '../../logic';
 
 const ArticlePost = ({ post, pageContext }) => (
-    <article key={post.id} id={post.slug} className="post">
+    <article id={post.slug} className="post">
         <figure>
             <Img className="image" fluid={post.image.fluid} alt={post.title} />
             {post.type && <div className={`flag flag-${slugify(post.type)}`}>{post.type}</div>}

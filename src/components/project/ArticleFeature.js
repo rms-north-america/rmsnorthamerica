@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import { logicDescription } from '../../logic';
 
 const ArticleFeature = ({ feature }) => (
-    <article key={feature.id} id={`feature-${feature.slug}`} className={`feature feature-${feature.order} col-lg-4`}>
+    <article id={`feature-${feature.slug}`} className={`feature feature-${feature.order} col-lg-4`}>
         <figure className="node-xs-50 d-flex">
             <Img className="image" fixed={feature.image.fixed} alt={feature.title} />
         </figure>
