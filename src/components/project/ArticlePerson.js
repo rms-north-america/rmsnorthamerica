@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
 const ArticlePerson = ({ person }) => (
-    <article key={person.id} id={`person-${person.slug}`} className={`person person-${person.order} col-lg-3 text-center`}>
+    <article id={`person-${person.slug}`} className={`person person-${person.order} col-lg-3 text-center`}>
         <figure>
             <Img className="image" fluid={person.image.fluid} alt={person.title} />
         </figure>

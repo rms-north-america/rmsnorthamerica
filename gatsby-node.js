@@ -28,12 +28,18 @@ exports.createPages = ({ actions, graphql }) => {
                     }
                 }
             }
-            features: allContentfulFeature {
+            interfaces: allContentfulInterface {
                 edges {
                     node {
                         title
                         slug
                     }
+                }
+            }
+            interfaceTypes: allContentfulInterface {
+                group(field: type) {
+                    fieldValue
+                    totalCount
                 }
             }
             industries: allContentfulIndustry {
@@ -51,7 +57,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
 
         // Data
-        const { posts, postTypes, simples, features, industries } = data;
+        const { posts, postTypes, simples, interfaces, interfaceTypes, industries } = data;
 
         // Post
         const postArchive = 'news';
@@ -101,7 +107,7 @@ exports.createPages = ({ actions, graphql }) => {
         postTypes.group.forEach((item) => {
             const { fieldValue, totalCount } = item;
             const slug = _.kebabCase(fieldValue);
-            const directory = `${postArchive}/${slug}`;
+            const directory = `${postDirectory}/${slug}`;
             const numPages = Math.ceil(totalCount / postPerPage);
 
             Array.from({ length: numPages }).forEach((_, i) => {
@@ -148,28 +154,53 @@ exports.createPages = ({ actions, graphql }) => {
             });
         });
 
-        // Feature
-        const featureArchive = 'feature';
-        const featureDirectory = `product/${featureArchive}`;
-        const featureTotal = features.edges.length;
+        // Interface
+        const interfaceArchive = 'interface';
+        const interfaceDirectory = `product/${interfaceArchive}`;
+        const interfaceTotal = interfaces.edges.length;
+        const interfacePerPage = 10;
+        const interfaceNumPages = 1;
 
-        // Feature - Single
-        features.edges.forEach(({ node }, index) => {
-            const { slug } = node;
-            const previous = index === featureTotal - 1 ? null : features.edges[index + 1].node;
-            const next = index === 0 ? null : features.edges[index - 1].node;
-
+        // Interface - Archive
+        Array.from({ length: interfaceNumPages }).forEach((_, i) => {
             createPage({
-                path: `/${featureDirectory}/${slug}`,
-                component: path.resolve('./src/templates/single-feature.js'),
+                path: i === 0 ? `/${interfaceDirectory}` : `/${interfaceDirectory}/${i + 1}`,
+                component: path.resolve('./src/templates/archive-interface.js'),
                 context: {
-                    archive: featureArchive,
-                    directory: featureDirectory,
-                    total: featureTotal,
-                    slug,
-                    previous,
-                    next,
+                    archive: interfaceArchive,
+                    directory: interfaceDirectory,
+                    total: interfaceTotal,
+                    limit: interfacePerPage,
+                    skip: i * interfacePerPage,
+                    currentPage: i + 1,
+                    numPages: interfaceNumPages,
                 },
+            });
+        });
+
+        // Interface - Archive - Type
+        interfaceTypes.group.forEach((item) => {
+            const { fieldValue, totalCount } = item;
+            const slug = _.kebabCase(fieldValue);
+            const directory = `${interfaceDirectory}/${slug}`;
+            const numPages = 1;
+
+            Array.from({ length: numPages }).forEach((_, i) => {
+                createPage({
+                    path: i === 0 ? `/${directory}` : `/${directory}/${i + 1}`,
+                    component: path.resolve('./src/templates/archive-interface-type.js'),
+                    context: {
+                        archive: interfaceDirectory,
+                        total: totalCount,
+                        limit: interfacePerPage,
+                        skip: i * interfacePerPage,
+                        currentPage: i + 1,
+                        type: fieldValue,
+                        slug,
+                        directory,
+                        numPages,
+                    },
+                });
             });
         });
 
