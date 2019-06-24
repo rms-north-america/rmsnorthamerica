@@ -16,7 +16,7 @@ export default ({ location, data, pageContext }) => {
             {posts.edges.length > 0 && (
                 <Feed id="posts" space="space-custom" item="post">
                     <div className="row gutter-50 gutter-lg-80">
-                        <div className="col-lg-9">
+                        <div className="col-xl-9">
                             {archive && (
                                 <header className="node-xs-80">
                                     {archive.name && <h1>{title}</h1>}
