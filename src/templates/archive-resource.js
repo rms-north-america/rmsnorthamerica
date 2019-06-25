@@ -4,11 +4,13 @@ import Layout from '../components/Layout';
 import Feed from '../components/section/Feed';
 import Pagination from '../components/widget/Pagination';
 import ArticleResource from '../components/project/ArticleResource';
-import MenuPostType from '../components/project/MenuPostType';
+import MenuResourceType from '../components/project/MenuResourceType';
 
 export default ({ location, data, pageContext }) => {
     const { resources, archive } = data;
-    const loopPost = resources.edges.map(({ node: resource }) => <ArticleResource key={resource.id} resource={resource} pageContext={pageContext} />);
+    const loopResource = resources.edges.map(({ node: resource }) => (
+        <ArticleResource key={resource.id} resource={resource} pageContext={pageContext} />
+    ));
     return (
         <Layout template="archive archive-resource" title={archive.name} description={archive.description} location={location}>
             {resources.edges.length > 0 && (
@@ -21,7 +23,7 @@ export default ({ location, data, pageContext }) => {
                                     {archive.description && <h2>{archive.description}</h2>}
                                 </header>
                             )}
-                            <section className="node-xs-80">{loopPost}</section>
+                            <section className="node-xs-80">{loopResource}</section>
                             {pageContext.numPages > 1 && (
                                 <footer className="node-xs-80">
                                     <Pagination pageContext={pageContext} />
@@ -29,7 +31,7 @@ export default ({ location, data, pageContext }) => {
                             )}
                         </div>
                         <div className="col">
-                            <MenuPostType />
+                            <MenuResourceType total />
                         </div>
                     </div>
                 </Feed>
