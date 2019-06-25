@@ -1,10 +1,10 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
 export default () => {
-    const { allContentfulInterface } = useStaticQuery(
+    const { allContentfulResource } = useStaticQuery(
         graphql`
             query {
-                allContentfulInterface {
+                allContentfulResource {
                     group(field: type) {
                         fieldValue
                         totalCount
@@ -14,5 +14,5 @@ export default () => {
             }
         `,
     );
-    return allContentfulInterface;
+    return allContentfulResource;
 };

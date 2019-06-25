@@ -4,8 +4,9 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { slugify } from '../../function';
 import { logicDescription } from '../../logic';
+import * as path from '../../path';
 
-const ArticlePost = ({ post, pageContext }) => (
+const ArticlePost = ({ post }) => (
     <article id={post.slug} className="post">
         <figure>
             <Img className="image" fluid={post.image.fluid} alt={post.title} />
@@ -13,7 +14,7 @@ const ArticlePost = ({ post, pageContext }) => (
         </figure>
         <header>
             <h3>
-                <Link className="stretched-link" to={`/${pageContext.archive}/${post.slug}`}>
+                <Link className="stretched-link" to={path.POST === '/' ? `/${post.slug}` : `${path.POST}/${post.slug}`}>
                     {post.title}
                 </Link>
             </h3>

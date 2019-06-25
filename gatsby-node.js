@@ -20,12 +20,19 @@ exports.createPages = ({ actions, graphql }) => {
                     totalCount
                 }
             }
-            simples: allContentfulSimple {
+            resources: allContentfulResource(sort: { fields: published, order: DESC }, limit: 1000) {
                 edges {
                     node {
                         title
                         slug
+                        type
                     }
+                }
+            }
+            resourceTypes: allContentfulResource {
+                group(field: type) {
+                    fieldValue
+                    totalCount
                 }
             }
             interfaces: allContentfulInterface {
@@ -50,6 +57,14 @@ exports.createPages = ({ actions, graphql }) => {
                     }
                 }
             }
+            simples: allContentfulSimple {
+                edges {
+                    node {
+                        title
+                        slug
+                    }
+                }
+            }
         }
     `).then(({ data, errors }) => {
         if (errors) {
@@ -57,7 +72,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
 
         // Data
-        const { posts, postTypes, simples, interfaces, interfaceTypes, industries } = data;
+        const { posts, postTypes, resources, resourceTypes, interfaces, interfaceTypes, industries, simples } = data;
 
         // Post
         const postArchive = 'news';
@@ -99,6 +114,7 @@ exports.createPages = ({ actions, graphql }) => {
                     skip: i * postPerPage,
                     currentPage: i + 1,
                     numPages: postNumPages,
+                    type: 'all',
                 },
             });
         });
@@ -113,9 +129,9 @@ exports.createPages = ({ actions, graphql }) => {
             Array.from({ length: numPages }).forEach((_, i) => {
                 createPage({
                     path: i === 0 ? `/${directory}` : `/${directory}/${i + 1}`,
-                    component: path.resolve('./src/templates/archive-post-type.js'),
+                    component: path.resolve('./src/templates/archive-post.js'),
                     context: {
-                        archive: postDirectory,
+                        archive: postArchive,
                         total: totalCount,
                         limit: postPerPage,
                         skip: i * postPerPage,
@@ -129,28 +145,74 @@ exports.createPages = ({ actions, graphql }) => {
             });
         });
 
-        // Simple
-        const simpleArchive = '/';
-        const simpleDirectory = simpleArchive;
-        const simpleTotal = simples.edges.length;
+        // Resource
+        const resourceArchive = 'resource';
+        const resourceDirectory = `product/${resourceArchive}`;
+        const resourceTotal = resources.edges.length;
+        const resourcePerPage = 10;
+        const resourceNumPages = Math.ceil(resourceTotal / resourcePerPage);
 
-        // Simple - Single
-        simples.edges.forEach(({ node }, index) => {
+        // Resource - Single
+        resources.edges.forEach(({ node }, index) => {
             const { slug } = node;
-            const previous = index === simpleTotal - 1 ? null : simples.edges[index + 1].node;
-            const next = index === 0 ? null : simples.edges[index - 1].node;
+            const previous = index === resourceTotal - 1 ? null : resources.edges[index + 1].node;
+            const next = index === 0 ? null : resources.edges[index - 1].node;
 
             createPage({
-                path: `/${slug}`,
-                component: path.resolve('./src/templates/single-simple.js'),
+                path: `/${resourceDirectory}/${slug}`,
+                component: path.resolve('./src/templates/single-resource.js'),
                 context: {
-                    archive: simpleArchive,
-                    directory: simpleDirectory,
-                    total: simpleTotal,
+                    archive: resourceArchive,
+                    directory: resourceDirectory,
+                    total: resourceTotal,
                     slug,
                     previous,
                     next,
                 },
+            });
+        });
+
+        // Resource - Archive
+        Array.from({ length: resourceNumPages }).forEach((_, i) => {
+            createPage({
+                path: i === 0 ? `/${resourceDirectory}` : `/${resourceDirectory}/${i + 1}`,
+                component: path.resolve('./src/templates/archive-resource.js'),
+                context: {
+                    archive: resourceArchive,
+                    directory: resourceDirectory,
+                    total: resourceTotal,
+                    limit: resourcePerPage,
+                    skip: i * resourcePerPage,
+                    currentPage: i + 1,
+                    numPages: resourceNumPages,
+                    type: 'all',
+                },
+            });
+        });
+
+        // Resource - Archive - Type
+        resourceTypes.group.forEach((item) => {
+            const { fieldValue, totalCount } = item;
+            const slug = _.kebabCase(fieldValue);
+            const directory = `${resourceDirectory}/${slug}`;
+            const numPages = Math.ceil(totalCount / resourcePerPage);
+
+            Array.from({ length: numPages }).forEach((_, i) => {
+                createPage({
+                    path: i === 0 ? `/${directory}` : `/${directory}/${i + 1}`,
+                    component: path.resolve('./src/templates/archive-resource.js'),
+                    context: {
+                        archive: resourceArchive,
+                        total: totalCount,
+                        limit: resourcePerPage,
+                        skip: i * resourcePerPage,
+                        currentPage: i + 1,
+                        type: fieldValue,
+                        slug,
+                        directory,
+                        numPages,
+                    },
+                });
             });
         });
 
@@ -174,6 +236,7 @@ exports.createPages = ({ actions, graphql }) => {
                     skip: i * interfacePerPage,
                     currentPage: i + 1,
                     numPages: interfaceNumPages,
+                    type: 'all',
                 },
             });
         });
@@ -188,9 +251,9 @@ exports.createPages = ({ actions, graphql }) => {
             Array.from({ length: numPages }).forEach((_, i) => {
                 createPage({
                     path: i === 0 ? `/${directory}` : `/${directory}/${i + 1}`,
-                    component: path.resolve('./src/templates/archive-interface-type.js'),
+                    component: path.resolve('./src/templates/archive-interface.js'),
                     context: {
-                        archive: interfaceDirectory,
+                        archive: interfaceArchive,
                         total: totalCount,
                         limit: interfacePerPage,
                         skip: i * interfacePerPage,
@@ -222,6 +285,31 @@ exports.createPages = ({ actions, graphql }) => {
                     archive: industryArchive,
                     directory: industryDirectory,
                     total: industryTotal,
+                    slug,
+                    previous,
+                    next,
+                },
+            });
+        });
+
+        // Simple
+        const simpleArchive = '/';
+        const simpleDirectory = simpleArchive;
+        const simpleTotal = simples.edges.length;
+
+        // Simple - Single
+        simples.edges.forEach(({ node }, index) => {
+            const { slug } = node;
+            const previous = index === simpleTotal - 1 ? null : simples.edges[index + 1].node;
+            const next = index === 0 ? null : simples.edges[index - 1].node;
+
+            createPage({
+                path: `/${slug}`,
+                component: path.resolve('./src/templates/single-simple.js'),
+                context: {
+                    archive: simpleArchive,
+                    directory: simpleDirectory,
+                    total: simpleTotal,
                     slug,
                     previous,
                     next,

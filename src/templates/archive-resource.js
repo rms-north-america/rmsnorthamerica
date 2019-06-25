@@ -4,18 +4,18 @@ import { capitalize } from '../function';
 import Layout from '../components/Layout';
 import Feed from '../components/section/Feed';
 import Pagination from '../components/widget/Pagination';
-import ArticlePost from '../components/project/ArticlePost';
-import MenuPostType from '../components/project/MenuPostType';
+import ArticleResource from '../components/project/ArticleResource';
+import MenuResourceType from '../components/project/MenuResourceType';
 
 export default ({ location, data, pageContext }) => {
-    const { posts, postTypes, archive } = data;
+    const { resources, resourceTypes, archive } = data;
     const title = pageContext.type === 'all' ? archive.name : `${archive.name}: ${capitalize(pageContext.type)}`;
-    const collection = pageContext.type === 'all' ? posts.edges : postTypes.edges;
-    const loopPost = collection.map(({ node: post }) => <ArticlePost key={post.id} post={post} pageContext={pageContext} />);
+    const collection = pageContext.type === 'all' ? resources.edges : resourceTypes.edges;
+    const loopResource = collection.map(({ node: resource }) => <ArticleResource key={resource.id} resource={resource} pageContext={pageContext} />);
     return (
-        <Layout template="archive archive-post" title={title} description={archive.description} location={location}>
+        <Layout template="archive archive-resource" title={title} description={archive.description} location={location}>
             {collection.length > 0 && (
-                <Feed id="posts" space="space-custom" item="post">
+                <Feed id="resources" space="space-custom" item="resource">
                     <div className="row gutter-50 gutter-lg-80">
                         <div className="col-xl-9">
                             {archive && (
@@ -24,7 +24,7 @@ export default ({ location, data, pageContext }) => {
                                     {archive.description && <h2>{archive.description}</h2>}
                                 </header>
                             )}
-                            <section className="node-xs-80">{loopPost}</section>
+                            <section className="node-xs-80">{loopResource}</section>
                             {pageContext.numPages > 1 && (
                                 <footer className="node-xs-80">
                                     <Pagination pageContext={pageContext} />
@@ -32,7 +32,7 @@ export default ({ location, data, pageContext }) => {
                             )}
                         </div>
                         <div className="col">
-                            <MenuPostType total />
+                            <MenuResourceType total />
                         </div>
                     </div>
                 </Feed>
@@ -42,22 +42,22 @@ export default ({ location, data, pageContext }) => {
 };
 
 export const query = graphql`
-    query postArchive($limit: Int!, $skip: Int!, $type: String!) {
-        posts: allContentfulPost(sort: { fields: published, order: DESC }, limit: $limit, skip: $skip) {
+    query resourceArchive($limit: Int!, $skip: Int!, $type: String!) {
+        resources: allContentfulResource(sort: { fields: published, order: DESC }, limit: $limit, skip: $skip) {
             edges {
                 node {
-                    ...contentPost
+                    ...contentResource
                 }
             }
         }
-        postTypes: allContentfulPost(filter: { type: { eq: $type } }, sort: { fields: published, order: DESC }, limit: $limit, skip: $skip) {
+        resourceTypes: allContentfulResource(filter: { type: { eq: $type } }, sort: { fields: published, order: DESC }, limit: $limit, skip: $skip) {
             edges {
                 node {
-                    ...contentPost
+                    ...contentResource
                 }
             }
         }
-        archive: contentfulArchive(slug: { eq: "post" }) {
+        archive: contentfulArchive(slug: { eq: "resource" }) {
             ...contentArchive
         }
     }

@@ -223,6 +223,15 @@ figure {
     color: #fff !important;
     }
 
+/* ============================== */
+/* ==========!SEPARATOR========== */
+/* ============================== */
+
+/* ----------!MAIN---------- */
+.separator {
+    color: #f89c02;
+    }
+
 /* ========================= */
 /* ==========!FLAG========== */
 /* ========================= */
@@ -954,6 +963,7 @@ figure {
     margin-bottom: -5px;
     font-size: 16px;
     line-height: 20px;
+    text-transform: capitalize;
     }
 
 /* ----------!MORE---------- */
@@ -1109,11 +1119,21 @@ h4 + .menu-list {
         }
     }
 
-/* ----------!IMAGE---------- */
+/* ----------!REMARK---------- */
 p > .gatsby-resp-image-link,
 p > .gatsby-resp-image-wrapper {
     margin-top: 38px;
     margin-bottom: 36px;
+    }
+p:last-child > .gatsby-resp-image-link,
+p:last-child > .gatsby-resp-image-wrapper {
+    margin-bottom: 8px !important;
+    }
+p + .gatsby-resp-iframe-wrapper {
+    margin-top: 80px;
+    }
+.gatsby-resp-iframe-wrapper + p {
+    padding-top: 78px;
     }
 
 /* ----------!CUSTOM---------- */
@@ -1373,12 +1393,12 @@ p > .gatsby-resp-image-wrapper {
     padding-top: 8px;
     }
 
-/* ----------!ARCHIVE-POST---------- */
-.archive-post .feed-post .post + .post {
+/* ----------!ARCHIVE---------- */
+.archive .feed section > article + article {
     margin-top: 80px !important;
     }
 @media (min-width: 992px) {
-    .archive-post .feed-post .post + .post {
+    .archive .feed section > article + article {
         margin-top: 130px !important;
         }
     }
@@ -1542,7 +1562,6 @@ p > .gatsby-resp-image-wrapper {
     }
 #footer #footer-second .separator {
     margin: 0 30px;
-    color: #f89c02;
     }
 #footer #footer-second .copyright {
     padding-top: 43px;
