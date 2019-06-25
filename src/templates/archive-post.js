@@ -29,7 +29,7 @@ export default ({ location, data, pageContext }) => {
                             )}
                         </div>
                         <div className="col">
-                            <MenuPostType />
+                            <MenuPostType total />
                         </div>
                     </div>
                 </Feed>

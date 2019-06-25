@@ -9,9 +9,10 @@ export default () => {
                         fieldValue
                         totalCount
                     }
+                    totalCount
                 }
             }
         `,
     );
-    return allContentfulPost.group;
+    return allContentfulPost;
 };
