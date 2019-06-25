@@ -16,7 +16,7 @@ const ArticleResource = ({ resource }) => (
             <h3>
                 <Link
                     className="stretched-link"
-                    to={path.PRODUCT_RESOURCES === '/' ? `/${resource.slug}` : `/${path.PRODUCT_RESOURCES}/${resource.slug}`}
+                    to={path.PRODUCT_RESOURCES === '/' ? `/${resource.slug}` : `${path.PRODUCT_RESOURCES}/${resource.slug}`}
                 >
                     {resource.title}
                 </Link>

@@ -14,7 +14,7 @@ const ArticlePost = ({ post }) => (
         </figure>
         <header>
             <h3>
-                <Link className="stretched-link" to={path.POST === '/' ? `/${post.slug}` : `/${path.POST}/${post.slug}`}>
+                <Link className="stretched-link" to={path.POST === '/' ? `/${post.slug}` : `${path.POST}/${post.slug}`}>
                     {post.title}
                 </Link>
             </h3>
