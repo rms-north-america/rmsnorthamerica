@@ -1394,11 +1394,11 @@ p + .gatsby-resp-iframe-wrapper {
     }
 
 /* ----------!ARCHIVE---------- */
-.archive .feed article + article {
+.archive .feed section > article + article {
     margin-top: 80px !important;
     }
 @media (min-width: 992px) {
-    .archive .feed article + article {
+    .archive .feed section > article + article {
         margin-top: 130px !important;
         }
     }
