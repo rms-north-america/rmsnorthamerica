@@ -9,9 +9,10 @@ export default () => {
                         fieldValue
                         totalCount
                     }
+                    totalCount
                 }
             }
         `,
     );
-    return allContentfulInterface.group;
+    return allContentfulInterface;
 };
