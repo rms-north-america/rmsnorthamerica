@@ -123,21 +123,22 @@ exports.createPages = ({ actions, graphql }) => {
         postTypes.group.forEach((item) => {
             const { fieldValue, totalCount } = item;
             const slug = _.kebabCase(fieldValue);
+            const directory = `${postDirectory}/${slug}`;
             const numPages = Math.ceil(totalCount / postPerPage);
 
             Array.from({ length: numPages }).forEach((_, i) => {
                 createPage({
-                    path: i === 0 ? `/${postDirectory}/${slug}` : `/${postDirectory}/${slug}/${i + 1}`,
+                    path: i === 0 ? `/${directory}` : `/${directory}/${i + 1}`,
                     component: path.resolve('./src/templates/archive-post.js'),
                     context: {
                         archive: postArchive,
-                        directory: postDirectory,
                         total: totalCount,
                         limit: postPerPage,
                         skip: i * postPerPage,
                         currentPage: i + 1,
                         type: fieldValue,
                         slug,
+                        directory,
                         numPages,
                     },
                 });
@@ -193,21 +194,22 @@ exports.createPages = ({ actions, graphql }) => {
         resourceTypes.group.forEach((item) => {
             const { fieldValue, totalCount } = item;
             const slug = _.kebabCase(fieldValue);
+            const directory = `${resourceDirectory}/${slug}`;
             const numPages = Math.ceil(totalCount / resourcePerPage);
 
             Array.from({ length: numPages }).forEach((_, i) => {
                 createPage({
-                    path: i === 0 ? `/${resourceDirectory}/${slug}` : `/${resourceDirectory}/${slug}/${i + 1}`,
+                    path: i === 0 ? `/${directory}` : `/${directory}/${i + 1}`,
                     component: path.resolve('./src/templates/archive-resource.js'),
                     context: {
                         archive: resourceArchive,
-                        directory: resourceDirectory,
                         total: totalCount,
                         limit: resourcePerPage,
                         skip: i * resourcePerPage,
                         currentPage: i + 1,
                         type: fieldValue,
                         slug,
+                        directory,
                         numPages,
                     },
                 });
@@ -243,21 +245,22 @@ exports.createPages = ({ actions, graphql }) => {
         interfaceTypes.group.forEach((item) => {
             const { fieldValue, totalCount } = item;
             const slug = _.kebabCase(fieldValue);
+            const directory = `${interfaceDirectory}/${slug}`;
             const numPages = 1;
 
             Array.from({ length: numPages }).forEach((_, i) => {
                 createPage({
-                    path: i === 0 ? `/${interfaceDirectory}/${slug}` : `/${interfaceDirectory}/${slug}/${i + 1}`,
+                    path: i === 0 ? `/${directory}` : `/${directory}/${i + 1}`,
                     component: path.resolve('./src/templates/archive-interface.js'),
                     context: {
                         archive: interfaceArchive,
-                        directory: interfaceDirectory,
                         total: totalCount,
                         limit: interfacePerPage,
                         skip: i * interfacePerPage,
                         currentPage: i + 1,
                         type: fieldValue,
                         slug,
+                        directory,
                         numPages,
                     },
                 });

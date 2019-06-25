@@ -4,8 +4,9 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { slugify } from '../../function';
 import { logicDescription } from '../../logic';
+import * as path from '../../path';
 
-const ArticleResource = ({ resource, pageContext }) => (
+const ArticleResource = ({ resource }) => (
     <article id={resource.slug} className="resource">
         <figure>
             <Img className="image" fluid={resource.image.fluid} alt={resource.title} />
@@ -15,7 +16,7 @@ const ArticleResource = ({ resource, pageContext }) => (
             <h3>
                 <Link
                     className="stretched-link"
-                    to={pageContext.directory === '/' ? `/${resource.slug}` : `/${pageContext.directory}/${resource.slug}`}
+                    to={path.PRODUCT_RESOURCES === '/' ? `/${resource.slug}` : `/${path.PRODUCT_RESOURCES}/${resource.slug}`}
                 >
                     {resource.title}
                 </Link>
