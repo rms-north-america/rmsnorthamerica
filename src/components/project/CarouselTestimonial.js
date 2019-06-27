@@ -74,7 +74,7 @@ CarouselTestimonial.propTypes = {
 
 CarouselTestimonial.defaultProps = {
     container: 'container',
-    height: 'standard',
+    height: 'short',
     align: 'left',
     space: 'space-xs-50',
     tint: 'tint-none',
