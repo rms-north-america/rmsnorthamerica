@@ -1368,6 +1368,34 @@ p + .gatsby-resp-iframe-wrapper {
     bottom: 0;
     }
 
+/* ========================= */
+/* ==========!FORM========== */
+/* ========================= */
+
+/* ----------!MAIN---------- */
+.form label {
+    margin-top: -5px;
+    margin-bottom: -5px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    display: block;
+    }
+.form label > span {
+    color: #f89c02;
+    }
+.form label + .form-control {
+    margin-top: 10px;
+    }
+.form .form-control {
+    color: #006c8c;
+    }
+
+/* ----------!REQUEST-DEMO---------- */
+#form-request-demo {
+    max-width: 850px;
+    }
+
 /* ============================= */
 /* ==========!TEMPLATE========== */
 /* ============================= */
