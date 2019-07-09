@@ -7,7 +7,7 @@ import Account from '../Account';
 import Menu from '../Menu';
 import Logo from '../unit/Logo';
 
-const Header = ({ isOpen, onOpen }) => {
+const Header = ({ landing, isOpen, onOpen }) => {
     const { title } = siteMetadata();
     const type = 'fixed';
     const container = 'container';
@@ -21,35 +21,41 @@ const Header = ({ isOpen, onOpen }) => {
                 <Link className="navbar-brand" title={title} rel="home" to={path.ROOT}>
                     <Logo alternate={title} />
                 </Link>
-                <button
-                    type="button"
-                    id="menu-button"
-                    className="navbar-menu navbar-toggler"
-                    aria-label="Menu"
-                    aria-controls="menu-offcanvas"
-                    aria-expanded={isOpen}
-                    onClick={onOpen}
-                >
-                    <span className="icon-text sr-only">Menu</span>
-                    <span className="icon-bar">&#9472;</span>
-                    <span className="icon-bar">&#9472;</span>
-                    <span className="icon-bar">&#9472;</span>
-                </button>
-                <nav id="menu" className="navbar-collapse collapse">
-                    <Menu />
-                    <Account />
-                </nav>
+                {!landing && (
+                    <button
+                        type="button"
+                        id="menu-button"
+                        className="navbar-menu navbar-toggler"
+                        aria-label="Menu"
+                        aria-controls="menu-offcanvas"
+                        aria-expanded={isOpen}
+                        onClick={onOpen}
+                    >
+                        <span className="icon-text sr-only">Menu</span>
+                        <span className="icon-bar">&#9472;</span>
+                        <span className="icon-bar">&#9472;</span>
+                        <span className="icon-bar">&#9472;</span>
+                    </button>
+                )}
+                {!landing && (
+                    <nav id="menu" className="navbar-collapse collapse">
+                        <Menu />
+                        <Account />
+                    </nav>
+                )}
             </div>
         </header>
     );
 };
 
 Header.propTypes = {
+    landing: PropTypes.bool,
     isOpen: PropTypes.bool,
     onOpen: PropTypes.func.isRequired,
 };
 
 Header.defaultProps = {
+    landing: false,
     isOpen: false,
 };
 

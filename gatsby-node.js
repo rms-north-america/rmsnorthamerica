@@ -57,6 +57,14 @@ exports.createPages = ({ actions, graphql }) => {
                     }
                 }
             }
+            landings: allContentfulLanding {
+                edges {
+                    node {
+                        title
+                        slug
+                    }
+                }
+            }
             simples: allContentfulSimple {
                 edges {
                     node {
@@ -72,7 +80,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
 
         // Data
-        const { posts, postTypes, resources, resourceTypes, interfaces, interfaceTypes, industries, simples } = data;
+        const { posts, postTypes, resources, resourceTypes, interfaces, interfaceTypes, industries, landings, simples } = data;
 
         // Post
         const postArchive = 'news';
@@ -285,6 +293,31 @@ exports.createPages = ({ actions, graphql }) => {
                     archive: industryArchive,
                     directory: industryDirectory,
                     total: industryTotal,
+                    slug,
+                    previous,
+                    next,
+                },
+            });
+        });
+
+        // Landing
+        const landingArchive = '/';
+        const landingDirectory = landingArchive;
+        const landingTotal = landings.edges.length;
+
+        // Landing - Single
+        landings.edges.forEach(({ node }, index) => {
+            const { slug } = node;
+            const previous = index === landingTotal - 1 ? null : landings.edges[index + 1].node;
+            const next = index === 0 ? null : landings.edges[index - 1].node;
+
+            createPage({
+                path: `/${slug}`,
+                component: path.resolve('./src/templates/single-landing.js'),
+                context: {
+                    archive: landingArchive,
+                    directory: landingDirectory,
+                    total: landingTotal,
                     slug,
                     previous,
                     next,
