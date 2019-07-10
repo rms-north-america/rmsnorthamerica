@@ -166,11 +166,11 @@ export const FOOTER_ONE = [
 export const FOOTER_TWO = [
     {
         label: 'Careers',
-        to: path.ROOT,
+        to: path.CAREERS,
     },
     {
         label: 'Partnerships',
-        to: path.ROOT,
+        to: path.PARTNER_WITH_US,
     },
     {
         label: 'Referral Program',
@@ -199,7 +199,7 @@ export const FOOTER_THREE = [
 export const FOOTER_FOUR = [
     {
         label: 'User License',
-        to: path.ROOT,
+        to: path.USER_LICENSE,
     },
     {
         label: 'Privacy Policy',
@@ -207,6 +207,6 @@ export const FOOTER_FOUR = [
     },
     {
         label: 'PCI Compliance',
-        to: path.ROOT,
+        to: path.PCI_COMPLIANCE,
     },
 ];

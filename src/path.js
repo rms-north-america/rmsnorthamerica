@@ -8,7 +8,10 @@ export const CONTACT = '/contact';
 export const REQUEST_DEMO = '/request-demo';
 
 // Footer
+export const CAREERS = '/careers';
+export const PCI_COMPLIANCE = '/pci-compliance';
 export const PRIVACY_POLICY = '/privacy-policy';
+export const USER_LICENSE = '/user-license';
 
 // Product
 export const PRODUCT_FEATURES = PRODUCT + '/feature';
