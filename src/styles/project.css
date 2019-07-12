@@ -59,6 +59,10 @@ ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class
 ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) {
     padding-left: 50px;
     }
+ol > li > p,
+ul > li > p {
+    margin: 0;
+    }
 
 /* ----------!ANCHOR---------- */
 a {
@@ -934,6 +938,12 @@ figure {
     font-style: normal;
     }
 
+/* ----------!H3---------- */
+.carousel h3,
+.hero h3 {
+    color: #fff;
+    }
+
 /* ----------!COPY---------- */
 @media (min-width: 992px) {
     .copy h3 {
@@ -942,7 +952,9 @@ figure {
         font-size: 34px;
         line-height: 40px;
         }
-    .copy p + h3 {
+    .copy p + h3,
+    .copy ol + h3,
+    .copy ul + h3 {
         margin-top: 80px;
         }
     }
@@ -1150,7 +1162,6 @@ p + .gatsby-resp-iframe-wrapper {
 .modal .modal-dialog {
     margin-left: 15px;
     margin-right: 15px;
-    max-width: 1380px;
     }
 @media (min-width: 1440px) {
     .modal .modal-dialog {
@@ -1200,6 +1211,19 @@ p + .gatsby-resp-iframe-wrapper {
     }
 .modal-total .modal-content .modal-body iframe {
     background-color: #000;
+    }
+
+/* ----------!VIDEO---------- */
+.modal .modal-dialog.modal-video {
+    max-width: 1380px;
+    }
+
+/* ----------!FORM---------- */
+.modal .modal-dialog.modal-form {
+    max-width: 890px;
+    }
+.modal .modal-dialog.modal-form .modal-body {
+    padding: 50px;
     }
 
 /* ----------!SEARCH---------- */

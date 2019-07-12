@@ -1368,12 +1368,10 @@ address {
 /* ========================== */
 /* ----------!GUTTER---------- */
 .form-gutter-20 {
-  margin-left: -10px;
-  margin-right: -10px; }
+  margin: -10px; }
 
 .form-gutter-20 > .form-column {
-  padding-left: 10px;
-  padding-right: 10px; }
+  padding: 10px; }
 
 /* ========================== */
 /* ==========!BASIC========== */
@@ -2727,7 +2725,7 @@ p + .instagram-media {
 .form .form-row + .form-row,
 .form .form-action + .form-group,
 .form .form-node + .form-action {
-  margin-top: 20px; }
+  margin-top: 10px; }
 
 /* ============================== */
 /* ==========!COMPONENT========== */

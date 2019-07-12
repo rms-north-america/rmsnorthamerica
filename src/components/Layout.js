@@ -56,7 +56,7 @@ class Layout extends Component {
             });
     }
     render() {
-        const { location, template, title, description, children } = this.props;
+        const { location, template, title, description, landing, children } = this.props;
         const { isOpen, showScroll } = this.state;
         const style = {
             overlay: {
@@ -75,11 +75,11 @@ class Layout extends Component {
                         <Menu offcanvas />
                     </nav>
                 </OffCanvas>
-                <Header isOpen={isOpen} onOpen={this.onOpen} />
+                <Header landing={landing} isOpen={isOpen} onOpen={this.onOpen} />
                 <main id="main" className={isOpen ? 'offcanvas-push offcanvas-push-out' : 'offcanvas-push'} role="main">
                     <div className="container-fluid">{children}</div>
                 </main>
-                <Footer isOpen={isOpen} />
+                <Footer landing={landing} isOpen={isOpen} />
                 {showScroll && <Scroll position="fixed" up top />}
             </Fragment>
         );
@@ -91,6 +91,7 @@ Layout.propTypes = {
     template: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
+    landing: PropTypes.bool,
     children: PropTypes.node.isRequired,
 };
 
@@ -99,6 +100,7 @@ Layout.defaultProps = {
     template: undefined,
     title: undefined,
     description: undefined,
+    landing: false,
 };
 
 export default Layout;

@@ -3,10 +3,6 @@ import * as path from './path';
 // Product
 export const PRODUCT = [
     {
-        label: 'Overview',
-        to: path.PRODUCT,
-    },
-    {
         label: 'Features',
         to: path.PRODUCT_FEATURES,
     },
@@ -17,6 +13,10 @@ export const PRODUCT = [
     {
         label: 'Interfaces',
         to: path.PRODUCT_INTERFACES,
+    },
+    {
+        label: 'Developers',
+        to: path.PRODUCT_DEVELOPERS,
     },
     {
         label: 'Support',
@@ -166,15 +166,15 @@ export const FOOTER_ONE = [
 export const FOOTER_TWO = [
     {
         label: 'Careers',
-        to: path.ROOT,
+        to: path.CAREERS,
     },
     {
         label: 'Partnerships',
-        to: path.ROOT,
+        to: path.PARTNER_WITH_US,
     },
     {
         label: 'Referral Program',
-        to: path.ROOT,
+        to: path.REFERRAL_PROGRAM,
     },
 ];
 
@@ -199,7 +199,7 @@ export const FOOTER_THREE = [
 export const FOOTER_FOUR = [
     {
         label: 'User License',
-        to: path.ROOT,
+        to: path.USER_LICENSE,
     },
     {
         label: 'Privacy Policy',
@@ -207,6 +207,6 @@ export const FOOTER_FOUR = [
     },
     {
         label: 'PCI Compliance',
-        to: path.ROOT,
+        to: path.PCI_COMPLIANCE,
     },
 ];
