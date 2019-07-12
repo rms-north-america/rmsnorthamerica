@@ -59,6 +59,10 @@ ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class
 ul:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]) {
     padding-left: 50px;
     }
+ol > li > p,
+ul > li > p {
+    margin: 0;
+    }
 
 /* ----------!ANCHOR---------- */
 a {
@@ -934,6 +938,12 @@ figure {
     font-style: normal;
     }
 
+/* ----------!H3---------- */
+.carousel h3,
+.hero h3 {
+    color: #fff;
+    }
+
 /* ----------!COPY---------- */
 @media (min-width: 992px) {
     .copy h3 {
@@ -942,7 +952,9 @@ figure {
         font-size: 34px;
         line-height: 40px;
         }
-    .copy p + h3 {
+    .copy p + h3,
+    .copy ol + h3,
+    .copy ul + h3 {
         margin-top: 80px;
         }
     }

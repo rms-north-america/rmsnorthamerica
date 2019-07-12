@@ -3,10 +3,6 @@ import * as path from './path';
 // Product
 export const PRODUCT = [
     {
-        label: 'Overview',
-        to: path.PRODUCT,
-    },
-    {
         label: 'Features',
         to: path.PRODUCT_FEATURES,
     },
@@ -17,6 +13,10 @@ export const PRODUCT = [
     {
         label: 'Interfaces',
         to: path.PRODUCT_INTERFACES,
+    },
+    {
+        label: 'Developers',
+        to: path.PRODUCT_DEVELOPERS,
     },
     {
         label: 'Support',
@@ -174,7 +174,7 @@ export const FOOTER_TWO = [
     },
     {
         label: 'Referral Program',
-        to: path.ROOT,
+        to: path.REFERRAL_PROGRAM,
     },
 ];
 

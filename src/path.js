@@ -11,12 +11,14 @@ export const REQUEST_DEMO = '/request-demo';
 export const CAREERS = '/careers';
 export const PCI_COMPLIANCE = '/pci-compliance';
 export const PRIVACY_POLICY = '/privacy-policy';
+export const REFERRAL_PROGRAM = '/referral-program';
 export const USER_LICENSE = '/user-license';
 
 // Product
 export const PRODUCT_FEATURES = PRODUCT + '/feature';
 export const PRODUCT_RESOURCES = PRODUCT + '/resource';
 export const PRODUCT_INTERFACES = PRODUCT + '/interface';
+export const PRODUCT_DEVELOPERS = PRODUCT + '/developer';
 export const PRODUCT_SUPPORT = 'https://helpcentre.rmscloud.com/';
 
 // Industry
