@@ -185,8 +185,8 @@ export const FOOTER_THREE = [
         to: path.CONTACT,
     },
     {
-        label: 'Live Chat',
-        to: path.ROOT,
+        label: 'Developers',
+        to: path.PRODUCT_DEVELOPERS,
     },
     {
         label: 'Product Support',
