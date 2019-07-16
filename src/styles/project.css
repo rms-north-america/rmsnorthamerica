@@ -1624,6 +1624,10 @@ p + .gatsby-resp-iframe-wrapper {
         text-align: right;
         }
 	}
+#footer p > .gatsby-resp-image-link,
+#footer p > .gatsby-resp-image-wrapper {
+    margin: 0;
+    }
 
 /* =============================== */
 /* ==========!RESPONSIVE========== */

@@ -88,6 +88,41 @@ export default ({ location, data }) => {
                     </section>
                 </Basic>
             )}
+            {landing.additional && (
+                <Basic id="basic-additional" space="space-xs-80 space-md-130 space-xl-210">
+                    <section className="node-xs-80 node-lg-130">
+                        <div className="row gutter-50 gutter-lg-80">
+                            <div className="col-xl">
+                                <header
+                                    className="copy node-xs-30 node-lg-50"
+                                    dangerouslySetInnerHTML={{ __html: landing.additional.childMarkdownRemark.html }}
+                                />
+                                {landing.form && (
+                                    <footer className="node-xs-30 node-lg-50 d-flex">
+                                        <ModalForm
+                                            kind="main"
+                                            size="xl"
+                                            to="form"
+                                            label={landing.trigger || undefined}
+                                            modal={landing.modal}
+                                            form={landing.form}
+                                        />
+                                    </footer>
+                                )}
+                            </div>
+                            <div className="col-xl">
+                                {landing.figure ? (
+                                    <Img className="cheat-right" fluid={landing.picture.fluid} alt={landing.title} />
+                                ) : (
+                                    <figure className="cheat-right height-match">
+                                        <Img className="fit exact-center" fluid={landing.image.fluid} alt={landing.title} />
+                                    </figure>
+                                )}
+                            </div>
+                        </div>
+                    </section>
+                </Basic>
+            )}
             {landing.testimonial.length > 0 && (
                 <CarouselTestimonial id="testimonial" fade={true} controls={false} indicators={false} slides={landing.testimonial} />
             )}
@@ -123,6 +158,15 @@ export const query = graphql`
                 ...imageFigure
             }
             body {
+                childMarkdownRemark {
+                    html
+                    excerpt
+                }
+            }
+            picture {
+                ...imageFigure
+            }
+            additional {
                 childMarkdownRemark {
                     html
                     excerpt
