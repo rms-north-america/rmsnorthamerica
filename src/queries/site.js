@@ -11,6 +11,26 @@ export default () => {
                     link {
                         slug
                     }
+                    contact {
+                        childMarkdownRemark {
+                            html
+                        }
+                    }
+                    legal {
+                        childMarkdownRemark {
+                            html
+                        }
+                    }
+                    about {
+                        childMarkdownRemark {
+                            html
+                        }
+                    }
+                    extra {
+                        childMarkdownRemark {
+                            html
+                        }
+                    }
                 }
             }
         `,
