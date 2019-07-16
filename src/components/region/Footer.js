@@ -5,15 +5,16 @@ import * as path from '../../path';
 import site from '../../queries/site';
 import Basic from '../section/Basic';
 import MenuFooter from '../project/MenuFooter';
+import MenuFooterLanding from '../project/MenuFooterLanding';
 import Social from '../project/Social';
 
-const Footer = ({ isOpen }) => {
+const Footer = ({ landing, isOpen }) => {
     const { name: title } = site();
     return (
         <footer id="footer" className={isOpen ? 'offcanvas-push offcanvas-push-out' : 'offcanvas-push'} role="contentinfo">
             <div className="container-fluid">
                 <Basic id="footer-first" space="space-xs-50 space-lg-80">
-                    <MenuFooter />
+                    {landing ? <MenuFooterLanding /> : <MenuFooter />}
                 </Basic>
                 <Basic id="footer-second" space="space-none">
                     <div className="d-lg-flex align-items-center justify-content-center">
@@ -33,10 +34,12 @@ const Footer = ({ isOpen }) => {
 };
 
 Footer.propTypes = {
+    landing: PropTypes.bool,
     isOpen: PropTypes.bool,
 };
 
 Footer.defaultProps = {
+    landing: false,
     isOpen: false,
 };
 
