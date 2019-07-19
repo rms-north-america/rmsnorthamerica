@@ -12,13 +12,11 @@ export default ({ location, data }) => {
                 <Basic id={`basic-${page.slug}`} space="space-custom">
                     {page.head && (
                         <header
-                            className="node-xs-30 node-lg-50 text-lg-center width"
+                            className="node-xs-30 node-lg-50 text-lg-center"
                             dangerouslySetInnerHTML={{ __html: page.head.childMarkdownRemark.html }}
                         />
                     )}
-                    {form.code && (
-                        <footer className="node-xs-30 node-lg-50 text-lg-center width" dangerouslySetInnerHTML={{ __html: form.code.code }} />
-                    )}
+                    {form.code && <footer className="node-xs-30 node-lg-50 text-lg-center" dangerouslySetInnerHTML={{ __html: form.code.code }} />}
                 </Basic>
             )}
         </Layout>
