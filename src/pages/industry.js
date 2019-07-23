@@ -48,13 +48,6 @@ export const query = graphql`
                 }
             }
         }
-        clients: allContentfulClient(filter: { page: { in: "industry" } }, sort: { fields: order, order: ASC }) {
-            edges {
-                node {
-                    ...contentClient
-                }
-            }
-        }
         page: contentfulPage(slug: { eq: "industry" }) {
             ...contentPage
         }
