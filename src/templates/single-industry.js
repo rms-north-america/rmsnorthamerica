@@ -50,7 +50,7 @@ export default ({ location, data }) => {
                     </footer>
                 )}
             </Hero>
-            {loopClient.length > 0 && (
+            {false && loopClient.length > 0 && (
                 <Feed id="client" space="space-xs-50 space-lg-80" color={5}>
                     <div className="row align-items-center justify-content-center gutter-50">{loopClient}</div>
                 </Feed>
