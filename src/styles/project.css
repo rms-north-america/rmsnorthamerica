@@ -84,8 +84,7 @@ a[href="/request-demo"]:focus:not([class*="btn"]) {
     text-decoration: none;
     color: #f9ad13;
     }
-p:not([class*="copyright"]) > a,
-td > a {
+a:not([class*="no-underline"]):not([class*="btn"]):not([class*="navbar-brand"]):not([class*="nav-link"]):not([class*="navbar-link"]):not([class*="menu-link"]):not([class*="page-link"]):not([class*="dropdown-item"]):not([class*="stretched-link"]):not([class*="gatsby-resp-image-link"]) {
     border-bottom: 2px solid;
     }
 
