@@ -84,6 +84,10 @@ a[href="/request-demo"]:focus:not([class*="btn"]) {
     text-decoration: none;
     color: #f9ad13;
     }
+p:not([class*="copyright"]) > a,
+td > a {
+    border-bottom: 2px solid;
+    }
 
 /* ----------!STRONG---------- */
 strong {
