@@ -33,8 +33,7 @@ const CarouselTestimonial = ({
                             <div className={container}>
                                 <section dangerouslySetInnerHTML={{ __html: slide.body.childMarkdownRemark.html }} />
                                 <footer>
-                                    <strong className="author p-xs-15">{slide.title}</strong>
-                                    <h4 className="company p-xs-15">{slide.company}</h4>
+                                    <h4 className="company">{slide.title}</h4>
                                 </footer>
                             </div>
                         </div>
