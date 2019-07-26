@@ -379,7 +379,6 @@ export const contentTestimonial = graphql`
                 html
             }
         }
-        company
         order
     }
 `;
