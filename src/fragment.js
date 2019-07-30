@@ -157,9 +157,6 @@ export const contentPage = graphql`
                 excerpt
             }
         }
-        figure {
-            ...imageFigure
-        }
         body {
             childMarkdownRemark {
                 html
