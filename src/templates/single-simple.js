@@ -19,7 +19,7 @@ export default ({ location, data }) => {
                 </header>
                 <section className="node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: simple.body.childMarkdownRemark.html }} />
             </Basic>
-            <aside id="script-simple" dangerouslySetInnerHTML={{ __html: simple.script.script }} />
+            {simple.script && <aside id="script-simple" dangerouslySetInnerHTML={{ __html: simple.script.script }} />}
         </Layout>
     );
 };
