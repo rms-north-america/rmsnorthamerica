@@ -19,6 +19,7 @@ export default ({ location, data }) => {
                 </header>
                 <section className="node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: simple.body.childMarkdownRemark.html }} />
             </Basic>
+            {simple.script && <aside id="script-simple" dangerouslySetInnerHTML={{ __html: simple.script.script }} />}
         </Layout>
     );
 };
@@ -36,6 +37,9 @@ export const query = graphql`
             }
             excerpt {
                 excerpt
+            }
+            script {
+                script
             }
         }
     }
