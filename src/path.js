@@ -40,6 +40,7 @@ export const CONTACT_MIDDLE_EAST = 'https://www.rmscloud.com/about-us/contact-us
 export const CONTACT_UK_IRELAND = 'https://www.rmscloud.com/about-us/contact-us/uk-and-ireland/';
 
 // Account
+export const LOG_IN = 'https://app.rmscloud.com/Login';
 export const LOG_IN_RMS_NINE = 'https://web.rmscloud.com/';
 export const LOG_IN_RMS_NINE_PLUS = 'https://app.rmscloud.com/Login';
 export const CUSTOMER_SUPPORT_CENTER = 'http://support.rms.com.au';
