@@ -2,13 +2,19 @@ require('dotenv').config();
 
 module.exports = {
     siteMetadata: {
-        siteUrl: 'https://sleepy-pasteur-0771b3.netlify.com/',
+        siteUrl: 'https://rmsnorthamerica.com/',
         title: 'RMS',
         description: 'A fully integrated Cloud Based Property Management System',
         author: 'RMS',
     },
     plugins: [
         'gatsby-plugin-catch-links',
+        {
+            resolve: 'gatsby-plugin-google-tagmanager',
+            options: {
+                id: process.env.GOOGLE_TAGMANAGER_ID,
+            },
+        },
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
