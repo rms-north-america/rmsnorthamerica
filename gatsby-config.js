@@ -10,6 +10,12 @@ module.exports = {
     plugins: [
         'gatsby-plugin-catch-links',
         {
+            resolve: 'gatsby-plugin-google-tagmanager',
+            options: {
+                id: process.env.GOOGLE_TAGMANAGER_ID,
+            },
+        },
+        {
             resolve: 'gatsby-plugin-manifest',
             options: {
                 name: 'RMS',
