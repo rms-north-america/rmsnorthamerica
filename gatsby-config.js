@@ -2,7 +2,7 @@ require('dotenv').config();
 
 module.exports = {
     siteMetadata: {
-        siteUrl: 'https://rmsnorthamerica.com/',
+        siteUrl: 'https://www.rmsnorthamerica.com/',
         title: 'RMS',
         description: 'A fully integrated Cloud Based Property Management System',
         author: 'RMS',
