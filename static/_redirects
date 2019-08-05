@@ -3,5 +3,5 @@ http://rmsnorthamerica.com/*           https://www.rmsnorthamerica.com/:splat 30
 https://rmsnorthamerica.com/*          https://www.rmsnorthamerica.com/:splat 301!
 
 # Specific
-/educational-content                   /product/resource
-/request-a-demo-form                   /request-demo
+https://rmsnorthamerica.com/educational-content                   /product/resource
+https://rmsnorthamerica.com/request-a-demo-form                   /request-demo
