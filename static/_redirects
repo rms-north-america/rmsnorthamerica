@@ -1,0 +1,7 @@
+# General
+http://rmsnorthamerica.com/*           https://www.rmsnorthamerica.com/:splat 301!
+https://rmsnorthamerica.com/*          https://www.rmsnorthamerica.com/:splat 301!
+
+# Specific
+/educational-content                   /product/resource
+/request-a-demo-form                   /request-demo
