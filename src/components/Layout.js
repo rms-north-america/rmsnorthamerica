@@ -10,7 +10,6 @@ import Menu from './Menu';
 import Header from './region/Header';
 import Footer from './region/Footer';
 import Scroll from './widget/Scroll';
-import Script from './project/Script';
 
 class Layout extends Component {
     constructor(props) {
@@ -82,7 +81,6 @@ class Layout extends Component {
                 </main>
                 <Footer landing={landing} isOpen={isOpen} />
                 {showScroll && <Scroll position="fixed" up top />}
-                <Script />
             </Fragment>
         );
     }
