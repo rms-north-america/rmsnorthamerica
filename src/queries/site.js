@@ -31,9 +31,6 @@ export default () => {
                             html
                         }
                     }
-                    script {
-                        script
-                    }
                 }
             }
         `,
