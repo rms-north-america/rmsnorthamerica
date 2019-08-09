@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { logicDescription } from '../logic';
 import Layout from '../components/Layout';
@@ -19,7 +20,11 @@ export default ({ location, data }) => {
                 </header>
                 <section className="node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: simple.body.childMarkdownRemark.html }} />
             </Basic>
-            {simple.script && <aside id="script-simple" dangerouslySetInnerHTML={{ __html: simple.script.script }} />}
+            {simple.script && (
+                <Helmet>
+                    <script type="text/javascript">{simple.script.script}</script>
+                </Helmet>
+            )}
         </Layout>
     );
 };
