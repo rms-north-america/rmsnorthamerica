@@ -620,9 +620,17 @@ figure {
     padding-left: 0 !important;
     list-style: none !important;
     }
-.social > li + li {
-    padding-top: 0 !important;
-    padding-left: 15px !important;
+@media (max-width: 991.98px) {
+    .social > li > a {
+        line-height: 50px !important;
+        display: block !important;
+        }
+    }
+@media (min-width: 992px) {
+    .social > li + li {
+        padding-top: 0 !important;
+        padding-left: 15px !important;
+        }
     }
 
 /* ============================ */
@@ -1597,6 +1605,11 @@ p + .gatsby-resp-iframe-wrapper {
     }
 
 /* ----------!FOOTER---------- */
+@media (max-width: 991.98px) {
+    #footer {
+        padding-bottom: 80px;
+        }
+    }
 #footer,
 #footer p,
 #footer a {
