@@ -3,6 +3,14 @@ import * as path from './path';
 // Product
 export const PRODUCT = [
     {
+        label: 'RMS Prime',
+        to: path.PRODUCT_RMS_PRIME,
+    },
+    {
+        label: 'RMS Pro',
+        to: path.PRODUCT_RMS_PRO,
+    },
+    {
         label: 'Features',
         to: path.PRODUCT_FEATURES,
     },
@@ -101,7 +109,7 @@ export const CONTACT = [
 // Main
 export const MAIN = [
     {
-        label: 'Product',
+        label: 'Products',
         children: PRODUCT,
     },
     {
