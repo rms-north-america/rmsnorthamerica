@@ -49,6 +49,14 @@ exports.createPages = ({ actions, graphql }) => {
                     totalCount
                 }
             }
+            products: allContentfulProduct {
+                edges {
+                    node {
+                        title
+                        slug
+                    }
+                }
+            }
             industries: allContentfulIndustry {
                 edges {
                     node {
@@ -80,7 +88,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
 
         // Data
-        const { posts, postTypes, resources, resourceTypes, interfaces, interfaceTypes, industries, landings, simples } = data;
+        const { posts, postTypes, resources, resourceTypes, interfaces, interfaceTypes, products, industries, landings, simples } = data;
 
         // Post
         const postArchive = 'news';
@@ -272,6 +280,31 @@ exports.createPages = ({ actions, graphql }) => {
                         numPages,
                     },
                 });
+            });
+        });
+
+        // Product
+        const productArchive = 'product';
+        const productDirectory = productArchive;
+        const productTotal = products.edges.length;
+
+        // Product - Single
+        products.edges.forEach(({ node }, index) => {
+            const { slug } = node;
+            const previous = index === productTotal - 1 ? null : products.edges[index + 1].node;
+            const next = index === 0 ? null : products.edges[index - 1].node;
+
+            createPage({
+                path: `/${productArchive}/${slug}`,
+                component: path.resolve('./src/templates/single-product.js'),
+                context: {
+                    archive: productArchive,
+                    directory: productDirectory,
+                    total: productTotal,
+                    slug,
+                    previous,
+                    next,
+                },
             });
         });
 
