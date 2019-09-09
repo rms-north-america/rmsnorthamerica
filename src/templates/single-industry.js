@@ -2,12 +2,14 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { logicDescription } from '../logic';
+import * as path from '../path';
 import * as style from '../style';
 import Layout from '../components/Layout';
 import Basic from '../components/section/Basic';
 import Feed from '../components/section/Feed';
 import Hero from '../components/section/Hero';
 import Modal from '../components/widget/Modal';
+import Button from '../components/unit/Button';
 import ArticleClient from '../components/project/ArticleClient';
 import ArticleFeature from '../components/project/ArticleFeature';
 import CarouselTestimonial from '../components/project/CarouselTestimonial';
@@ -81,6 +83,9 @@ export default ({ location, data }) => {
                     <section className="node-xs-50 node-lg-80">
                         <div className="row gutter-50 gutter-lg-80">{loopFeature}</div>
                     </section>
+                    <footer className="node-xs-50 node-lg-80 text-lg-center">
+                        <Button label="View all features" to={path.PRODUCT_FEATURES} />
+                    </footer>
                 </Feed>
             )}
             {testimonials.nodes.length > 0 && (

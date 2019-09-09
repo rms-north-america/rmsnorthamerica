@@ -111,7 +111,7 @@ export default ({ location, data }) => {
                                 )}
                             </div>
                             <div className="col-xl">
-                                {landing.figure ? (
+                                {landing.picture ? (
                                     <Img className="cheat-right" fluid={landing.picture.fluid} alt={landing.title} />
                                 ) : (
                                     <figure className="cheat-right height-match">
