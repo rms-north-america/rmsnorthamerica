@@ -19,6 +19,7 @@ export default ({ location, data }) => {
                     <h1>{simple.title}</h1>
                 </header>
                 <section className="node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: simple.body.childMarkdownRemark.html }} />
+                {simple.form && <footer className="node-xs-30 node-lg-50 text-lg-center" dangerouslySetInnerHTML={{ __html: simple.form.form }} />}
             </Basic>
             {simple.script && (
                 <Helmet>
@@ -45,6 +46,9 @@ export const query = graphql`
             }
             script {
                 script
+            }
+            form {
+                form
             }
         }
     }
