@@ -5,6 +5,12 @@ export default function HTML(props) {
     return (
         <html {...props.htmlAttributes}>
             <head>
+                <script
+                    type="text/javascript"
+                    dangerouslySetInnerHTML={{
+                        __html: `(function(w,s){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://cdn.pagesense.io/js/rmsthehospitalitycloud/dc94acae8a6d4f769a583fe95b98875f.js";var x=document.getElementsByTagName("script")[0];x.parentNode.insertBefore(e,x);})(window,"script");`,
+                    }}
+                />
                 <meta charSet="utf-8" />
                 <meta httpEquiv="x-ua-compatible" content="ie=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
