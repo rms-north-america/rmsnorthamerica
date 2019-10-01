@@ -53,6 +53,10 @@ h3 {
 h4 {
     font-weight: 700;
     }
+h4 > .stretched-link {
+    font-weight: 700 !important;
+    color: #1d2c3c !important;
+    }
 
 /* ----------!LIST---------- */
 ol:not([class*="list-reset"]):not([class*="row"]):not([class*="nav"]):not([class*="navbar-nav"]):not([class*="dropdown-menu"]):not([class*="pagination"]):not([class*="carousel-indicators"]),
@@ -987,6 +991,13 @@ figure {
     font-size: 16px;
     line-height: 20px;
     text-transform: capitalize;
+    }
+
+/* ----------!EXCERPT---------- */
+.excerpt + .excerpt-link {
+    padding-top: 24px;
+    font-weight: 400;
+    color: #006c8c;
     }
 
 /* ----------!MORE---------- */
