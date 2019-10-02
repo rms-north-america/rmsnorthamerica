@@ -81,6 +81,14 @@ exports.createPages = ({ actions, graphql }) => {
                     }
                 }
             }
+            standards: allContentfulStandard {
+                edges {
+                    node {
+                        title
+                        slug
+                    }
+                }
+            }
             simples: allContentfulSimple {
                 edges {
                     node {
@@ -96,7 +104,20 @@ exports.createPages = ({ actions, graphql }) => {
         }
 
         // Data
-        const { posts, postTypes, resources, resourceTypes, interfaces, interfaceTypes, features, products, industries, landings, simples } = data;
+        const {
+            posts,
+            postTypes,
+            resources,
+            resourceTypes,
+            interfaces,
+            interfaceTypes,
+            features,
+            products,
+            industries,
+            landings,
+            standards,
+            simples,
+        } = data;
 
         // Post
         const postArchive = 'news';
@@ -384,6 +405,31 @@ exports.createPages = ({ actions, graphql }) => {
                     archive: landingArchive,
                     directory: landingDirectory,
                     total: landingTotal,
+                    slug,
+                    previous,
+                    next,
+                },
+            });
+        });
+
+        // Standard
+        const standardArchive = '/';
+        const standardDirectory = standardArchive;
+        const standardTotal = standards.edges.length;
+
+        // Standard - Single
+        standards.edges.forEach(({ node }, index) => {
+            const { slug } = node;
+            const previous = index === standardTotal - 1 ? null : standards.edges[index + 1].node;
+            const next = index === 0 ? null : standards.edges[index - 1].node;
+
+            createPage({
+                path: `/${slug}`,
+                component: path.resolve('./src/templates/single-standard.js'),
+                context: {
+                    archive: standardArchive,
+                    directory: standardDirectory,
+                    total: standardTotal,
                     slug,
                     previous,
                     next,
