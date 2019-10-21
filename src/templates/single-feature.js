@@ -67,7 +67,7 @@ export default ({ location, data }) => {
                     </div>
                 </Basic>
             )}
-            {loopFeature.length > 0 && (
+            {false && (
                 <Feed id="feed-feature" space="space-xs-80 space-md-130 space-xl-210" item="feature">
                     <header className="copy node-xs-50 node-lg-80 text-lg-center">
                         <h3>Related Features</h3>
