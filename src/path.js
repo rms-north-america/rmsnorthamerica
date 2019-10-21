@@ -24,11 +24,10 @@ export const PRODUCT_DEVELOPERS = PRODUCT + '/developer';
 export const PRODUCT_SUPPORT = 'https://helpcentre.rmscloud.com/';
 
 // Industry
-export const INDUSTRY_HOTEL = INDUSTRY + '/hotel';
-export const INDUSTRY_RV_PARK = INDUSTRY + '/rv-park';
-export const INDUSTRY_CAMPGROUND = INDUSTRY + '/campground';
-export const INDUSTRY_MARINA = INDUSTRY + '/marina';
-export const INDUSTRY_MOTEL = INDUSTRY + '/motel';
+export const INDUSTRY_HOTEL = INDUSTRY + '/hotel-reservation-system';
+export const INDUSTRY_RV_PARK = INDUSTRY + '/rv-park-software';
+export const INDUSTRY_CAMPGROUND = INDUSTRY + '/campground-software';
+export const INDUSTRY_MARINA = INDUSTRY + '/marina-management-software';
 
 // ABOUT
 export const TEAM = '/team';
