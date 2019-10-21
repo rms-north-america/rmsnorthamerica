@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Parent, { Body } from 'react-bootstrap/Modal';
+import Parent from 'react-bootstrap/Modal';
 import Embed from 'react-bootstrap/ResponsiveEmbed';
 import PropTypes from 'prop-types';
 
@@ -40,7 +40,7 @@ class Modal extends Component {
                     {label}
                 </button>
                 <Parent dialogClassName="modal-total modal-video" show={show} onHide={this.onHide} centered>
-                    <Body>
+                    <Parent.Body>
                         <Embed aspectRatio="16by9">
                             <iframe
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -49,7 +49,7 @@ class Modal extends Component {
                                 allowFullScreen
                             />
                         </Embed>
-                    </Body>
+                    </Parent.Body>
                 </Parent>
                 {show && (
                     <button type="button" className="modal-close close" onClick={this.onHide}>

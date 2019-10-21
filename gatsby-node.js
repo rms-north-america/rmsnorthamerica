@@ -49,6 +49,14 @@ exports.createPages = ({ actions, graphql }) => {
                     totalCount
                 }
             }
+            features: allContentfulFeature {
+                edges {
+                    node {
+                        title
+                        slug
+                    }
+                }
+            }
             products: allContentfulProduct {
                 edges {
                     node {
@@ -73,6 +81,14 @@ exports.createPages = ({ actions, graphql }) => {
                     }
                 }
             }
+            standards: allContentfulStandard {
+                edges {
+                    node {
+                        title
+                        slug
+                    }
+                }
+            }
             simples: allContentfulSimple {
                 edges {
                     node {
@@ -88,7 +104,20 @@ exports.createPages = ({ actions, graphql }) => {
         }
 
         // Data
-        const { posts, postTypes, resources, resourceTypes, interfaces, interfaceTypes, products, industries, landings, simples } = data;
+        const {
+            posts,
+            postTypes,
+            resources,
+            resourceTypes,
+            interfaces,
+            interfaceTypes,
+            features,
+            products,
+            industries,
+            landings,
+            standards,
+            simples,
+        } = data;
 
         // Post
         const postArchive = 'news';
@@ -283,6 +312,31 @@ exports.createPages = ({ actions, graphql }) => {
             });
         });
 
+        // Feature
+        const featureArchive = 'feature';
+        const featureDirectory = `product/${featureArchive}`;
+        const featureTotal = features.edges.length;
+
+        // Feature - Single
+        features.edges.forEach(({ node }, index) => {
+            const { slug } = node;
+            const previous = index === featureTotal - 1 ? null : features.edges[index + 1].node;
+            const next = index === 0 ? null : features.edges[index - 1].node;
+
+            createPage({
+                path: `/${featureDirectory}/${slug}`,
+                component: path.resolve('./src/templates/single-feature.js'),
+                context: {
+                    archive: featureArchive,
+                    directory: featureDirectory,
+                    total: featureTotal,
+                    slug,
+                    previous,
+                    next,
+                },
+            });
+        });
+
         // Product
         const productArchive = 'product';
         const productDirectory = productArchive;
@@ -351,6 +405,31 @@ exports.createPages = ({ actions, graphql }) => {
                     archive: landingArchive,
                     directory: landingDirectory,
                     total: landingTotal,
+                    slug,
+                    previous,
+                    next,
+                },
+            });
+        });
+
+        // Standard
+        const standardArchive = '/';
+        const standardDirectory = standardArchive;
+        const standardTotal = standards.edges.length;
+
+        // Standard - Single
+        standards.edges.forEach(({ node }, index) => {
+            const { slug } = node;
+            const previous = index === standardTotal - 1 ? null : standards.edges[index + 1].node;
+            const next = index === 0 ? null : standards.edges[index - 1].node;
+
+            createPage({
+                path: `/${slug}`,
+                component: path.resolve('./src/templates/single-standard.js'),
+                context: {
+                    archive: standardArchive,
+                    directory: standardDirectory,
+                    total: standardTotal,
                     slug,
                     previous,
                     next,
