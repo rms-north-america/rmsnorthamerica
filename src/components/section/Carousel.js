@@ -1,12 +1,12 @@
 import React from 'react';
-import Parent, { Item } from 'react-bootstrap/Carousel';
+import Parent from 'react-bootstrap/Carousel';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { contentify } from '../../function';
 
 const Carousel = ({ container, height, align, space, tint, color, id, source, fade, controls, indicators, interval, pauseOnHover, slides }) => {
     const loopSlide = slides.edges.map(({ node: slide }) => (
-        <Item key={slide.id} className={`slide-${slide.order}`}>
+        <Parent.Item key={slide.id} className={`slide-${slide.order}`}>
             {slide.image && <Img className="image fit exact-center absolute" fluid={slide.image.fluid} alt={contentify(slide.title)} critical />}
             <div className={`display-table relative ${space} ${tint}`}>
                 <div className="display-cell">
@@ -15,7 +15,7 @@ const Carousel = ({ container, height, align, space, tint, color, id, source, fa
                     </div>
                 </div>
             </div>
-        </Item>
+        </Parent.Item>
     ));
     return (
         <Parent

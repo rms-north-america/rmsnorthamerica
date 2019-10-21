@@ -1,5 +1,5 @@
 import React from 'react';
-import Parent, { Item } from 'react-bootstrap/Carousel';
+import Parent from 'react-bootstrap/Carousel';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -25,7 +25,7 @@ const CarouselTestimonial = ({
     const loopSlide = slides.map((slide, index) => {
         const count = index + 1;
         return (
-            <Item key={slide.id} className={`slide-${count}`}>
+            <Parent.Item key={slide.id} className={`slide-${count}`}>
                 {slide.image && <Img className="fit exact-center absolute" fluid={slide.image.fluid} alt={contentify(slide.title)} critical />}
                 <div className={`display-table relative ${space} ${tint}`}>
                     <div className="display-cell">
@@ -39,7 +39,7 @@ const CarouselTestimonial = ({
                         </div>
                     </div>
                 </div>
-            </Item>
+            </Parent.Item>
         );
     });
     return (

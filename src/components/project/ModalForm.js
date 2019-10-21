@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Parent, { Body } from 'react-bootstrap/Modal';
+import Parent from 'react-bootstrap/Modal';
 import PropTypes from 'prop-types';
 
 class ModalForm extends Component {
@@ -35,12 +35,12 @@ class ModalForm extends Component {
                     {label}
                 </button>
                 <Parent dialogClassName="modal-form" show={show} onHide={this.onHide} centered>
-                    <Body>
+                    <Parent.Body>
                         <header className="node-xs-30 node-lg-50 text-center">
                             <h3>{modal}</h3>
                         </header>
                         <section className="node-xs-30 node-lg-50" dangerouslySetInnerHTML={{ __html: form.form }} />
-                    </Body>
+                    </Parent.Body>
                 </Parent>
                 {show && (
                     <button type="button" className="modal-close close" onClick={this.onHide}>
