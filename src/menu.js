@@ -133,23 +133,13 @@ export const MAIN = [
 // Account - Log In
 export const ACCOUNT_LOG_IN = [
     {
-        label: 'Log in to RMS9',
-        to: path.LOG_IN_RMS_NINE,
+        label: 'RMS 9+',
+        to: path.LOG_IN,
         external: true,
     },
     {
-        label: 'Log in to RMS9+',
-        to: path.LOG_IN_RMS_NINE_PLUS,
-        external: true,
-    },
-    {
-        label: 'Customer Support Center',
-        to: path.CUSTOMER_SUPPORT_CENTER,
-        external: true,
-    },
-    {
-        label: 'Remote Assistance',
-        to: path.REMOTE_ASSISTANCE,
+        label: 'Pay Bill',
+        to: path.PAY_BILL,
         external: true,
     },
 ];
