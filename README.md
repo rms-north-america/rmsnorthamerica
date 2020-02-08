@@ -1,6 +1,6 @@
 # RMS North America
 
-Corporate website built with the Gatsby + Contentful + Netlify stack
+Corporate website built with Gatsby + Contentful + Netlify
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/37eaf333-4873-4ed3-ba55-a06c6590d43d/deploy-status)](https://app.netlify.com/sites/sleepy-pasteur-0771b3/deploys)
 
