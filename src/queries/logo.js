@@ -4,7 +4,7 @@ export default () => {
     const { contentfulAsset } = useStaticQuery(
         graphql`
             query {
-                contentfulAsset(title: { eq: "logo" }) {
+                contentfulAsset(title: { eq: "logo-rms" }) {
                     file {
                         url
                     }
