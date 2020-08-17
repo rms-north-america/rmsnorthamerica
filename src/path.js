@@ -17,6 +17,7 @@ export const USER_LICENSE = '/user-license';
 // Product
 export const PRODUCT_RMS_PRIME = PRODUCT + '/prime';
 export const PRODUCT_RMS_PRO = PRODUCT + '/pro';
+export const PRODUCT_RMS_POS = PRODUCT + '/pos';
 export const PRODUCT_FEATURES = PRODUCT;
 export const PRODUCT_RESOURCES = PRODUCT + '/resource';
 export const PRODUCT_INTERFACES = PRODUCT + '/interface';

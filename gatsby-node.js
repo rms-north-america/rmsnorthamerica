@@ -65,6 +65,14 @@ exports.createPages = ({ actions, graphql }) => {
                     }
                 }
             }
+            productextras: allContentfulProductextra {
+                edges {
+                    node {
+                        title
+                        slug
+                    }
+                }
+            }
             industries: allContentfulIndustry {
                 edges {
                     node {
@@ -113,6 +121,7 @@ exports.createPages = ({ actions, graphql }) => {
             interfaceTypes,
             features,
             products,
+            productextras,
             industries,
             landings,
             standards,
@@ -355,6 +364,30 @@ exports.createPages = ({ actions, graphql }) => {
                     archive: productArchive,
                     directory: productDirectory,
                     total: productTotal,
+                    slug,
+                    previous,
+                    next,
+                },
+            });
+        });
+        // ProductExtra
+        const productextraArchive = 'product';
+        const productextraDirectory = productArchive;
+        const productextraTotal = productextras.edges.length;
+
+        // Product - Extra
+        productextras.edges.forEach(({ node }, index) => {
+            const { slug } = node;
+            const previous = index === productextraTotal - 1 ? null : productextras.edges[index + 1].node;
+            const next = index === 0 ? null : productextras.edges[index - 1].node;
+
+            createPage({
+                path: `/${productArchive}/${slug}`,
+                component: path.resolve('./src/templates/product-extra.js'),
+                context: {
+                    archive: productextraArchive,
+                    directory: productextraDirectory,
+                    total: productextraTotal,
                     slug,
                     previous,
                     next,
