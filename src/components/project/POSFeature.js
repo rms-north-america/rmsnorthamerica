@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 
 const POSFeature = ({ feature }) => (
     <article className={`posfeature col-lg-4 text-center`}>
-        <div>
+        <div style={{padding: "20px"}}>
         <div className="relative">
             <div className={`node-xs-50 justify-content-center`}>
                 <Img className="image" fixed={feature.fixed} alt={feature.title} />
