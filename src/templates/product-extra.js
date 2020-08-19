@@ -159,8 +159,10 @@ export default ({ location, data }) => {
                                     <Button kind="main" size="xl" label="Contact Us" to={`/${productextra.industriesLink.slug}`} />
                                 </footer>
                             </div>
-                            <div className="col-md">
-                                <Img className="cheat-left" fluid={productextra.contactFigure.fluid} alt={productextra.contactFigure.title} />
+                            <div className="col d-none d-lg-flex" style={{paddingRight: '0px', paddingLeft: '0px', marginLeft: '80px', marginRight: '-200px'}}>
+                                <div className="d-flex align-self-center" style={{flexGrow: 1, marginLeft: '-80px'}}>
+                                    <Img style={{width: '100%', left: '0px'}} fluid={productextra.contactFigure.fluid} alt={productextra.contactFigure.title} />
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -264,7 +266,7 @@ export const query = graphql`
                 }
             }
             contactFigure {
-                ...imageFigure
+                ...imageHigh
             }
         }
     }
