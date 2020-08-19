@@ -123,20 +123,24 @@ export default ({ location, data }) => {
                         <div className="row gutter-50 gutter-lg-80">
                                 <header className="copy" dangerouslySetInnerHTML={{ __html: productextra.differentiatorBody.childMarkdownRemark.html }} />
                         </div>
-                        <div className="row gutter-50 gutter-lg-80">
-                            <div className="col-md">
-                                <Img className="cheat-left" fluid={productextra.differentiatorFigure.fluid} alt={productextra.contactFigure.title} />
+                    </section>
+                </Basic>
+                        <div className="row">
+                            <div className="col-md d-none d-lg-flex">
+                                <div className="d-flex align-self-center" style={{flexGrow: 1}}>
+                                <Img className="" style={{width: '100%', right: '2vw'}} fluid={productextra.differentiatorFigure.fluid} alt={productextra.contactFigure.title} />
+                                </div>
                             </div>
-                            <div className="col-md">
+                            <div className="col-md d-flex">
+                                <div className="d-flex align-self-center">
                                 {loopDifferentiator.length > 0 && (
-                                    <Feed id="client" space="space-xs-50 space-lg-80">
+                                    <Feed id="client" className="d-flex align-self-center" space="space-xs-50">
                                         <div className="row justify-content-center gutter-50 gutter-lg-80">{loopDifferentiator}</div>
                                     </Feed>
                                 )}
+                                </div>
                             </div>
                         </div>
-                    </section>
-                </Basic>
                 <Basic color={5}>
                     <section className="node-xs-80 node-lg-130">
                         <div className="row gutter-50 gutter-lg-80">
@@ -244,7 +248,7 @@ export const query = graphql`
                 ...imageTinyIcon
             }
             differentiatorFigure {
-                ...imageFigure
+                ...imageHigh
             }
             partnerBody {
                 childMarkdownRemark {
