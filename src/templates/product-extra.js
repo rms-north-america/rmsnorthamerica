@@ -20,13 +20,13 @@ import prevArrow from "../images/prevArrow.png";
 function NextArrow(props) {
     const { className, style, onClick } = props;
     return (
-        <img className={className} style={{ ...style, display: "block", width: "13px", height: "24px"}} onClick={onClick} src={nextArrow}/>
+        <img className={className} style={{ ...style, display: "block", width: "13px", height: "24px"}} onClick={onClick} src={nextArrow} alt="Next Arrow"/>
     );
 }
 function PrevArrow(props) {
     const { className, style, onClick } = props;
     return (
-        <img className={className} style={{ ...style, display: "block", width: "13px", height: "24px"}} onClick={onClick} src={prevArrow} />
+        <img className={className} style={{ ...style, display: "block", width: "13px", height: "24px"}} onClick={onClick} src={prevArrow} alt="Previous Arrow"/>
     );
 }
 
