@@ -144,10 +144,12 @@ export default ({ location, data }) => {
                         </div>
                     </section>
                 </Basic>
-                        <div className="row">
+                <Basic>
+                    <section className="node-xs-80 node-lg-130">
+                        <div className="row gutter-50 gutter-lg-80">
                             <div className="col-md d-none d-lg-flex">
-                                <div className="d-flex align-self-center" style={{flexGrow: 1}}>
-                                    <Img className="" style={{width: '100%', right: '2vw'}} fluid={productextra.differentiatorFigure.fluid} alt={productextra.contactFigure.title} />
+                                <div className="d-flex align-self-center" style={{flexGrow: 1, height: "100%"}}>
+                                    <Img className="" style={{width: '100%'}} fluid={productextra.differentiatorFigure.fluid} alt={productextra.contactFigure.title} />
                                 </div>
                             </div>
                             <div className="col-md d-flex">
@@ -160,6 +162,8 @@ export default ({ location, data }) => {
                                 </div>
                             </div>
                         </div>
+                    </section>
+                </Basic>
                 <Basic space="space-xs-80" color={5}>
                     <section className="node-xs-80 node-lg-130">
                         <div className="row gutter-50 gutter-lg-80">
@@ -183,9 +187,9 @@ export default ({ location, data }) => {
                                     <Button kind="main" size="xl" label="Contact Us" to={`/${productextra.industriesLink.slug}`} />
                                 </footer>
                             </div>
-                            <div className="col d-none d-lg-flex" style={{paddingRight: '0px', paddingLeft: '0px', marginLeft: '80px', marginRight: '-200px'}}>
-                                <div className="d-flex align-self-center" style={{flexGrow: 1, marginLeft: '-80px'}}>
-                                    <Img style={{width: '100%', left: '0px'}} fluid={productextra.contactFigure.fluid} alt={productextra.contactFigure.title} />
+                            <div className="col d-none d-lg-flex">
+                                <div className="d-flex align-self-center" style={{flexGrow: 1, height: "100%"}}>
+                                    <Img style={{width: '100%'}} fluid={productextra.contactFigure.fluid} alt={productextra.contactFigure.title} />
                                 </div>
                             </div>
                         </div>
