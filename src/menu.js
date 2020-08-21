@@ -3,7 +3,7 @@ import * as path from './path';
 // Product
 export const PRODUCT = [
     {
-        label: 'RMS Pro',
+        label: 'RMS PMS',
         to: path.PRODUCT_RMS_PRO,
     },
     {
