@@ -1,10 +1,15 @@
 import React from 'react';
-import Parent from 'react-bootstrap/Carousel';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import { contentify } from '../../function';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import nextArrow from "../../images/nextArrow.png";
+import prevArrow from "../../images/prevArrow.png";
+
 
 const CarouselTestimonial = ({
     container,
@@ -23,9 +28,8 @@ const CarouselTestimonial = ({
     slides,
 }) => {
     const loopSlide = slides.map((slide, index) => {
-        const count = index + 1;
         return (
-            <Parent.Item key={slide.id} className={`slide-${count}`}>
+            <div>
                 {slide.image && <Img className="fit exact-center absolute" fluid={slide.image.fluid} alt={contentify(slide.title)} critical />}
                 <div className={`display-table relative ${space} ${tint}`}>
                     <div className="display-cell">
@@ -39,17 +43,19 @@ const CarouselTestimonial = ({
                         </div>
                     </div>
                 </div>
-            </Parent.Item>
+            </div>
         );
     });
     return (
-        <section id={id} className={`complex block height-${height} align-${align} background-${source ? 'image' : 'none'} color-${color}`}>
+        <section id={id} className={`complex block height-${height} align-${align} background-${source ? 'image' : 'none'} color-${color} gutter-50 gutter-lg-80`}>
             <div className="icon-quote d-flex justify-content-center">
                 <FontAwesomeIcon icon={faQuoteLeft} />
             </div>
-            <Parent fade={fade} controls={controls} indicators={indicators} interval={interval} pauseOnHover={pauseOnHover}>
+            <div className="col">
+            <Slider {...sliderSettings} >
                 {loopSlide}
-            </Parent>
+            </Slider>
+            </div>
         </section>
     );
 };
@@ -86,5 +92,30 @@ CarouselTestimonial.defaultProps = {
     interval: undefined,
     pauseOnHover: undefined,
 };
+
+export const sliderSettings = {
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 10000,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+};
+
+function NextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <img className={`customarrow ${className}`} style={{ ...style, display: "block", width: "13px", height: "24px"}} onClick={onClick} src={nextArrow} alt="Next Arrow"/>
+    );
+}
+function PrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <img className={`customarrow ${className}`} style={{ ...style, display: "block", width: "13px", height: "24px"}} onClick={onClick} src={prevArrow} alt="Previous Arrow"/>
+    );
+}
+
 
 export default CarouselTestimonial;

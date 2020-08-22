@@ -1691,3 +1691,9 @@ p + .gatsby-resp-iframe-wrapper {
     outline: 1px solid #bbb;
     outline-offset: -26px;
 }
+.slick-prev.customarrow {
+    left: 0px;
+}
+.slick-next.customarrow {
+    right: 0px;
+}
