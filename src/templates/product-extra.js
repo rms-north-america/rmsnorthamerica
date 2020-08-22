@@ -11,31 +11,12 @@ import Button from '../components/unit/Button';
 import POSFeature from '../components/project/POSFeature';
 import POSDifferentiator from '../components/project/POSDifferentiator';
 import POSIndustry from '../components/project/POSIndustry';
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import nextArrow from "../images/nextArrow.png";
-import prevArrow from "../images/prevArrow.png";
-
-function NextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <img className={className} style={{ ...style, display: "block", width: "13px", height: "24px"}} onClick={onClick} src={nextArrow} alt="Next Arrow"/>
-    );
-}
-function PrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <img className={className} style={{ ...style, display: "block", width: "13px", height: "24px"}} onClick={onClick} src={prevArrow} alt="Previous Arrow"/>
-    );
-}
 
 export default ({ location, data }) => {
     const { productextra } = data;
     const loopFeature = productextra.features.map((features) => <POSFeature key={features.id} feature={features} />);
     const loopDifferentiator = productextra.differentiators.map((differentiators) => <POSDifferentiator key={differentiators.id} differentiator={differentiators} />);
     const loopIndustry = productextra.industries.map((industries) => <POSIndustry key={industries.id} industry={industries} />);
-    const loopPartners = productextra.partners.map((partners) => <div className="text-center"><Img className="image" fixed={partners.fixed} alt={partners.title} /></div>);
     return (
         <Layout
             template={`single single-product productextra single-product-${productextra.slug}`}
@@ -164,20 +145,6 @@ export default ({ location, data }) => {
                         </div>
                     </section>
                 </Basic>
-                <Basic space="space-xs-80" color={5}>
-                    <section className="node-xs-80 node-lg-130">
-                        <div className="row gutter-50 gutter-lg-80">
-                                <header className="copy" dangerouslySetInnerHTML={{ __html: productextra.partnerBody.childMarkdownRemark.html }} />
-                        </div>
-                        <div className="row gutter-50 gutter-lg-80">
-                            <div className="col">
-                            <Slider {...sliderSettings} >
-                                {loopPartners}
-                            </Slider>
-                            </div>
-                        </div>
-                    </section>
-                </Basic>
                 <Basic space="space-xs-80 space-lg-130">
                     <section className="node-xs-80 node-lg-130">
                         <div className="row gutter-50 gutter-lg-80">
@@ -280,20 +247,6 @@ export const query = graphql`
             differentiatorFigure {
                 ...imageHigh
             }
-            partnerBody {
-                childMarkdownRemark {
-                    html
-                }
-            }
-            partners {
-                id
-                title
-                description
-                ...imageMediumIcon
-            }
-            partnerImage {
-                ...imageFigure
-            }
             contactBody {
                 childMarkdownRemark {
                     html
@@ -305,4 +258,3 @@ export const query = graphql`
         }
     }
 `;
-export const sliderSettings = {infinite: true, speed: 500, slidesToShow: 3, slidesToScroll: 1, nextArrow: <NextArrow />, prevArrow: <PrevArrow />};
