@@ -125,7 +125,7 @@ export default ({ location, data }) => {
                         </div>
                     </section>
                 </Basic>
-                <Basic>
+                <Basic space="space-xs-80 space-lg-130">
                     <section className="node-xs-80 node-lg-130">
                         <div className="row gutter-50 gutter-lg-80">
                             <div className="col-md d-none d-lg-flex">
@@ -145,7 +145,7 @@ export default ({ location, data }) => {
                         </div>
                     </section>
                 </Basic>
-                <Basic space="space-xs-80 space-lg-130">
+                <Basic space="space-xs-80 space-lg-130" color={5}>
                     <section className="node-xs-80 node-lg-130">
                         <div className="row gutter-50 gutter-lg-80">
                             <div className="col-md">
