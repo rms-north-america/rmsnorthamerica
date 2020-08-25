@@ -9,7 +9,6 @@ import Feed from '../components/section/Feed';
 import Hero from '../components/section/Hero';
 import Button from '../components/unit/Button';
 import ArticleFeature from '../components/project/ArticleFeature';
-import CarouselTestimonial from '../components/project/CarouselTestimonial';
 
 export default ({ location, data }) => {
     const { product } = data;
@@ -83,9 +82,6 @@ export default ({ location, data }) => {
                 <Basic id="basic-additional-product" space="space-xs-50 space-lg-80" color={5}>
                     <header className="copy attention" dangerouslySetInnerHTML={{ __html: product.additional.childMarkdownRemark.html }} />
                 </Basic>
-            )}
-            {product.testimonial.length > 0 && (
-                <CarouselTestimonial id="testimonial" fade={true} controls={false} indicators={false} slides={product.testimonial} />
             )}
             {product.bottom && (
                 <Hero

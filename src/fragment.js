@@ -104,6 +104,30 @@ export const imageIcon = graphql`
     }
 `;
 
+export const imageTinyIcon = graphql`
+    fragment imageTinyIcon on ContentfulAsset {
+        fixed(width: 120, height: 50, quality: 100, resizingBehavior: PAD) {
+            ...GatsbyContentfulFixed_withWebp_noBase64
+        }
+    }
+`;
+
+export const imageMediumIcon = graphql`
+    fragment imageMediumIcon on ContentfulAsset {
+        fixed(width: 180, height: 180, quality: 100, resizingBehavior: PAD) {
+            ...GatsbyContentfulFixed_withWebp_noBase64
+        }
+    }
+`;
+
+export const imageSmallIcon = graphql`
+    fragment imageSmallIcon on ContentfulAsset {
+        fixed(width: 80, height: 80, quality: 100, resizingBehavior: PAD) {
+            ...GatsbyContentfulFixed_withWebp_noBase64
+        }
+    }
+`;
+
 export const contentGeneral = graphql`
     fragment contentGeneral on ContentfulGeneral {
         id

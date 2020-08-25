@@ -1680,3 +1680,20 @@ p + .gatsby-resp-iframe-wrapper {
         max-width: 1560px;
         }
     } */
+.productextra .basic h1, .productextra .basic h2, .productextra .basic h3, .productextra .basic h4 {
+    color: #001C38;
+    font-weight: 700;
+}
+.posfeature p {
+    font-size: 16px;
+}
+.posfeature {
+    outline: 1px solid #bbb;
+    outline-offset: -26px;
+}
+.slick-prev.customarrow {
+    left: 0px;
+}
+.slick-next.customarrow {
+    right: 0px;
+}
