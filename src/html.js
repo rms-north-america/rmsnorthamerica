@@ -23,6 +23,7 @@ export default function HTML(props) {
                         __html: `var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:"228f7b1d3f01f4abe143e86840971053d2b8f411329cf757cf449add5329ac3b2328560f25314e643baef2d1ed2d1423", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");`,
                     }}
                 />
+                <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8314619.js"></script>
             </body>
         </html>
     );
