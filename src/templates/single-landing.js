@@ -14,6 +14,9 @@ import ModalForm from '../components/project/ModalForm';
 
 export default ({ location, data }) => {
     const { landing } = data;
+    if (landing.feature.length <= 0) {
+        landing.feature = [];
+    }
     const loopFeature = landing.feature.map((feature) => <ArticleFeature key={feature.id} feature={feature} landing />);
     return (
         <Layout
