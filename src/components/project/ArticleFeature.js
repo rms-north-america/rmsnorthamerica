@@ -13,9 +13,7 @@ const ArticleFeature = ({ feature, landing }) => (
             </figure>
             <header className="node-xs-50">
                 <h4>
-                    <Link className="stretched-link" to={`${path.PRODUCT_FEATURES}/feature/${feature.slug}`}>
-                        {feature.title}
-                    </Link>
+                    {feature.title}
                 </h4>
                 {!landing && (
                     <Fragment>
