@@ -13,7 +13,12 @@ const ArticleFeature = ({ feature, landing }) => (
             </figure>
             <header className="node-xs-50">
                 <h4>
-                    {feature.title}
+                    {!landing && (
+                        <Link className="stretched-link" to={`${path.PRODUCT_FEATURES}/feature/${feature.slug}`}>
+                            {feature.title}
+                        </Link>
+                    )}
+                    {landing && feature.title}
                 </h4>
                 {!landing && (
                     <Fragment>
