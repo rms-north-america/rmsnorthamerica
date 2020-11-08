@@ -71,6 +71,18 @@ export const ABOUT = [
         label: 'Partner with Us',
         to: path.PARTNER_WITH_US,
     },
+    {
+        label: 'About Us',
+        to: path.ABOUTUS,
+    },
+    {
+        label: 'Careers',
+        to: path.CAREERS,
+    },
+    {
+        label: 'Gives Back',
+        to: path.RMS_GIVES,
+    },
 ];
 
 // Contact
