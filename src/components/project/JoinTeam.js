@@ -20,7 +20,7 @@ const JoinTeam = () => {
                 >
                     <div className="aboutus-bottom">
                         <span dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
-                        {action && <Button kind="main" size="xl" label={action || undefined} to={`/apply`} />}
+                        {action && <Button kind="main" size="xl" label={action || undefined} to={`/careers`} />}
                     </div>
                 </Hero>
             )}
