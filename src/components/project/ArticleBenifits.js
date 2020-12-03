@@ -87,7 +87,7 @@ const ArticleBenifits = ({}) => {
                     </svg>
                 </div>
                 <span className="span-benifits">
-                    Flexible Scedule
+                    Flexible Schedule
                 </span>
                 </div>
             </div>
