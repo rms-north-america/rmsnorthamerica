@@ -12,7 +12,7 @@ import Button from '../components/unit/Button'
 import Img from 'gatsby-image'
 export default ({ location, data }) => {
     const { page, diversity, wellness, recognition, growth } = data;
-    console.log(page)
+    // console.log(page)
     return (
         <Layout template={`page page-${page.slug}`} title={page.title} description={logicDescription(page)} location={location}>
             {page.head && (

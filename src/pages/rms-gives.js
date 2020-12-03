@@ -8,7 +8,7 @@ import ArticleRms from '../components/project/ArticleRms'
 import Hero from '../components/section/Hero';
 export default ({ location, data }) => {
     const { page, rmsArticle } = data;
-    console.log(page, rmsArticle)
+    // console.log(page, rmsArticle)
     return (
         <Layout template={`page page-${page.slug}`} title={page.title} description={logicDescription(page)} location={location}>
             {page.head && (

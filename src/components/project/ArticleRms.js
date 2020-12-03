@@ -2,7 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import Button from '../../components/unit/Button'
 const ArticleRms = ({data, showStyle, seemore, seeurl, alignment}) => {
-    console.log(data)
+    // console.log(data)
     return ( 
         <article className="row image-row">
             {showStyle === "image-right" && 
@@ -37,7 +37,7 @@ const ArticleRms = ({data, showStyle, seemore, seeurl, alignment}) => {
                                 </div>
                             </div>
                         </div>
-                        <span dangerouslySetInnerHTML={{__html: data.bottomContent.childMarkdownRemark.html}} />
+                        {data.bottomContent &&  <span dangerouslySetInnerHTML={{__html: data.bottomContent.childMarkdownRemark.html}} />}
                     </div>}
                 </div>
                 <div style={{marginLeft:"calc(50% - 60px)"}}>

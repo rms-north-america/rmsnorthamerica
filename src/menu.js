@@ -59,18 +59,18 @@ export const INDUSTRY = [
 
 // About
 export const ABOUT = [
-    {
-        label: 'About RMS',
-        to: path.ABOUT,
-    },
-    {
-        label: 'Meet the Team',
-        to: path.TEAM,
-    },
-    {
-        label: 'Partner with Us',
-        to: path.PARTNER_WITH_US,
-    },
+    // {
+    //     label: 'About RMS',
+    //     to: path.ABOUT,
+    // },
+    // {
+    //     label: 'Meet the Team',
+    //     to: path.TEAM,
+    // },
+    // {
+    //     label: 'Partner with Us',
+    //     to: path.PARTNER_WITH_US,
+    // },
     {
         label: 'About Us',
         to: path.ABOUTUS,
