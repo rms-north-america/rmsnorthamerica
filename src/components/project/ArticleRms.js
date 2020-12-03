@@ -78,7 +78,7 @@ const ArticleRms = ({data, showStyle, seemore, seeurl, alignment}) => {
                                 </div>
                             </div>
                         </div>
-                        <span dangerouslySetInnerHTML={{__html: data.bottomContent.childMarkdownRemark.html}} />
+                        {data.bottomContent &&  <span dangerouslySetInnerHTML={{__html: data.bottomContent.childMarkdownRemark.html}} /> }
                     </div>}
                 </div>
                 <div style={{marginLeft:"calc(7%)",marginTop:"30px"}}>
