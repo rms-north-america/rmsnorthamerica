@@ -22,7 +22,7 @@ Button.defaultProps = {
     kind: 'default',
     size: 'lg',
     display: 'initial',
-    to: '/',
+    to: '/rms-gives',
     disabled: false,
 };
 
