@@ -76,7 +76,7 @@ export default ({ location, data }) => {
                 fluid={page.valuephoto.fluid}
                 showStyle="image-left"
                 seemore={page.seemore}
-                seeurl="/"
+                seeurl="/rms-gives"
             />            
             <JoinTeam />           
         </Layout>
