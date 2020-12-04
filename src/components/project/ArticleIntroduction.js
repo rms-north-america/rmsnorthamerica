@@ -10,7 +10,7 @@ const ArticleIntroduction = ({detail, fluid, title, showStyle, seemore, seeurl})
                     <span dangerouslySetInnerHTML={{__html:detail}} />
                 </div>
                 <div style={{marginLeft:"calc(50% - 60px)"}}>
-                    {seemore && <Button kind="main" size="xl" label={seemore} to={seeurl} />}
+                    {seemore && <Button kind="main" size="xl" label={seemore} to={seeurl} /rms-gives>}
                 </div>
             </div>}
             <div className="col-md-5 col-xs-12 aboutus-image">
