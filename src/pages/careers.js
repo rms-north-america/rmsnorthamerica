@@ -67,7 +67,7 @@ export default ({ location, data }) => {
                     </div>
                 </article>
                 <div style={{textAlign:"center",marginTop:"40px"}}>
-                    <Button kind="main" size="xl" label="Our Open Positions" to="/" />
+                    <Button kind="main" size="xl" label="Our Open Positions" to="/apply" />
                 </div>
             </div> 
             <ArticleIntroduction 
