@@ -41,7 +41,7 @@ export default ({ location, data }) => {
             />
             <div className="container">
                 <span className="aboutus-sub-title">
-                    Benifits
+                    Benefits
                 </span>
                 <ArticleBenifits /> 
                 <article className="row" style={{marginTop:"50px"}}>

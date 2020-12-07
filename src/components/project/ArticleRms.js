@@ -61,6 +61,36 @@ const ArticleRms = ({data, showStyle, seemore, seeurl, alignment}) => {
                                         <Img fluid={data.subImageLeft.fluid} />
                                     }
                                 </div>
+                                <div className="rms-sub-row">
+                                    { data.firstSubContent && 
+                                        <span dangerouslySetInnerHTML={{__html: data.firstSubContent.childMarkdownRemark.html}} />
+                                    }
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className="rms-image-wrapper">
+                                    { data.subImageRight && 
+                                        <Img fluid={data.subImageRight.fluid} />
+                                    }
+                                </div>
+                                <div className="rms-sub-row">
+                                    { data.secondSubContent && 
+                                        <span dangerouslySetInnerHTML={{__html: data.secondSubContent.childMarkdownRemark.html}} />
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        {data.bottomContent &&  <span dangerouslySetInnerHTML={{__html: data.bottomContent.childMarkdownRemark.html}} /> }
+                    </div>}
+                    {alignment === "3" && <div className="">
+                        <span dangerouslySetInnerHTML={{__html: data.content.childMarkdownRemark.html}}  className="rms-content-top"/>
+                        <div className="row rms-row">
+                            <div className="col-6">
+                                <div className="rms-image-wrapper">
+                                    { data.subImageLeft && 
+                                        <Img fluid={data.subImageLeft.fluid} />
+                                    }
+                                </div>
                             </div>
                             <div className="col-6">
                                 <div className="rms-image-wrapper">

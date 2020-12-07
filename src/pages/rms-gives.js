@@ -8,7 +8,7 @@ import ArticleRms from '../components/project/ArticleRms'
 import Hero from '../components/section/Hero';
 export default ({ location, data }) => {
     const { page, rmsArticle } = data;
-    // console.log(page, rmsArticle)
+    console.log(rmsArticle)
     return (
         <Layout template={`page page-${page.slug}`} title={page.title} description={logicDescription(page)} location={location}>
             {page.head && (
@@ -53,7 +53,7 @@ export default ({ location, data }) => {
             <ArticleRms 
                 data={rmsArticle.nodes[0]} 
                 showStyle="image-left"
-                alignment="2"
+                alignment="3"
                 seemore="Upcoming Events"
                 seeurl="/"
             />

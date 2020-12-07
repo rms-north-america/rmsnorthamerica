@@ -78,7 +78,7 @@ const ArticleBenifits = ({}) => {
             </div>
             <div className="col-md-2 col-6 career-svg">
                 <div className="benifits-div">
-                <div style={{marginBottom:"15px"}}>
+                <div style={{marginBottom:"18px"}}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="54.893" height="49.936" viewBox="0 0 54.893 49.936">
                         <g id="calendar_1_" data-name="calendar (1)" transform="translate(0 -23.117)">
                             <path id="Path_177" data-name="Path 177" d="M50.584,26.75H45.025V24.725a1.608,1.608,0,1,0-3.216,0V26.75H13.084V24.725a1.608,1.608,0,1,0-3.216,0V26.75H4.309A4.314,4.314,0,0,0,0,31.059V68.744a4.314,4.314,0,0,0,4.309,4.309H50.584a4.314,4.314,0,0,0,4.309-4.309V31.059a4.314,4.314,0,0,0-4.309-4.309Zm1.092,41.994a1.107,1.107,0,0,1-1.092,1.092H4.309a1.107,1.107,0,0,1-1.092-1.092V31.059a1.107,1.107,0,0,1,1.092-1.092H9.868v1.967a1.608,1.608,0,1,0,3.216,0V29.967H41.808v1.967a1.608,1.608,0,1,0,3.216,0V29.967h5.559a1.107,1.107,0,0,1,1.092,1.092Z" fill="#00cdd6"/>
@@ -87,7 +87,7 @@ const ArticleBenifits = ({}) => {
                     </svg>
                 </div>
                 <span className="span-benifits">
-                    Flexible Scedule
+                    Flexible Schedule
                 </span>
                 </div>
             </div>
