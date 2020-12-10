@@ -1713,13 +1713,7 @@ p + .gatsby-resp-iframe-wrapper {
 .page-about-us .person .person-name + .person-position {
     padding-top: 6px;
     }
-.aboutus-header {
-    margin-top: 30vh;
-}
 @media (max-width: 992px) {
-    .aboutus-header {
-        margin-top: 10vh;
-    }
     .aboutus-header >span > h1 {
         font-size: 30px;
         line-height: 100%;
