@@ -4,6 +4,8 @@ export const PRODUCT = '/product';
 export const INDUSTRY = '/industry';
 export const POST = '/news';
 export const ABOUT = '/about';
+export const ABOUTUS = '/about-us';
+export const RMS_GIVES = '/rms-gives';
 export const CONTACT = '/contact';
 export const REQUEST_DEMO = '/request-demo';
 

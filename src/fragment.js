@@ -48,6 +48,14 @@ export const imageFeed = graphql`
     }
 `;
 
+export const imageAbout = graphql`
+    fragment imageAbout on ContentfulAsset {
+        fluid(maxWidth: 575, maxHeight: 440, quality: 80) {
+            ...GatsbyContentfulFluid_withWebp
+        }
+    }
+`
+
 export const imageArchive = graphql`
     fragment imageArchive on ContentfulAsset {
         fluid(maxWidth: 890, maxHeight: 445, quality: 80) {
@@ -75,6 +83,22 @@ export const imageClient = graphql`
 export const imageInterface = graphql`
     fragment imageInterface on ContentfulAsset {
         fluid(maxWidth: 230, quality: 100, cropFocus: CENTER) {
+            ...GatsbyContentfulFluid_withWebp_noBase64
+        }
+    }
+`;
+
+export const imageTestimonial = graphql`
+    fragment imageTestimonial on ContentfulAsset {
+        fluid(maxWidth: 150, quality: 100, cropFocus: CENTER) {
+            ...GatsbyContentfulFluid_withWebp_noBase64
+        }
+    }
+`;
+
+export const imageRms = graphql`
+    fragment imageRms on ContentfulAsset {
+        fluid(maxWidth: 350, quality: 100, cropFocus: CENTER) {
             ...GatsbyContentfulFluid_withWebp_noBase64
         }
     }
@@ -401,5 +425,8 @@ export const contentTestimonial = graphql`
             }
         }
         order
+        testimonialimage {
+            ...imageTestimonial
+        }
     }
 `;
