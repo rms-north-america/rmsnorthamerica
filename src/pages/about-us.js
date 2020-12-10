@@ -53,7 +53,7 @@ export default ({ location, data }) => {
                 <section className="row node-xs-50 node-lg-80">
                     <div className="col-lg-3 col-md-6">
                         <div className="aboutus-detail-up">
-                            <span>Founded in</span>
+                            <span>Founded</span>
                         </div>
                         <div className="aboutus-detail-down">
                             <span>1985</span>
@@ -61,7 +61,7 @@ export default ({ location, data }) => {
                     </div>
                     <div className="col-lg-3 col-md-6">
                         <div className="aboutus-detail-up">
-                            <span>Countries Covered</span>
+                            <span>Countries</span>
                         </div>
                         <div className="aboutus-detail-down">
                             <span>43</span>
@@ -69,33 +69,21 @@ export default ({ location, data }) => {
                     </div>
                     <div className="col-lg-3 col-md-6">
                         <div className="aboutus-detail-up">
-                            <span>Team Size</span>
+                            <span>Employees</span>
                         </div>
                         <div className="aboutus-detail-down">
-                            <span>171+</span>
+                            <span>200+</span>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6">
                         <div className="aboutus-detail-up">
-                            <span>Office(Worldwide)</span>
+                            <span>Locations</span>
                         </div>
                         <div className="aboutus-detail-down">
                             <span>07</span>
                         </div>
                     </div>
                 </section>
-                <span className="aboutus-sub-title">
-                    Testimonials
-                </span>
-                {testimonials.nodes.length > 0 && (
-                    <AboutTestimonial 
-                        id="about-testimonial" 
-                        fade={true}
-                        controls={false}
-                        indicators={false}
-                        slides={testimonials.nodes}
-                    />
-                )}
                 <span className="aboutus-sub-title-team">
                     Meet The Team
                 </span>
